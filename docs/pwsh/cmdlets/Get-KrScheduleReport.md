@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrScheduleReport
 nav_order: 60
 render_with_liquid: false

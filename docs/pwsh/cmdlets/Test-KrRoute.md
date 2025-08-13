@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Test-KrRoute
 nav_order: 92
 render_with_liquid: false

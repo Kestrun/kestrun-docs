@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Expand-KrObject
 nav_order: 51
 render_with_liquid: false

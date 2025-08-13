@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Suspend-KrSchedule
 nav_order: 90
 render_with_liquid: false

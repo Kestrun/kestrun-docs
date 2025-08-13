@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrAntiforgery
 nav_order: 2
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: New-KrLevelSwitch
 nav_order: 68
 render_with_liquid: false

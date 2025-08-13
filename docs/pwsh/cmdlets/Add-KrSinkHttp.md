@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSinkHttp
 nav_order: 38
 render_with_liquid: false

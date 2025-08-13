@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrJWTValidationParameter
 nav_order: 59
 render_with_liquid: false

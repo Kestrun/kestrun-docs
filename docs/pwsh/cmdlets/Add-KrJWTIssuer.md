@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrJWTIssuer
 nav_order: 23
 render_with_liquid: false

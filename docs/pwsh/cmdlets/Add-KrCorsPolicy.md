@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrCorsPolicy
 nav_order: 7
 render_with_liquid: false

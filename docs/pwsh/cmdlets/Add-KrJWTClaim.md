@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrJWTClaim
 nav_order: 21
 render_with_liquid: false

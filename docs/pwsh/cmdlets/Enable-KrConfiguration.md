@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Enable-KrConfiguration
 nav_order: 50
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: New-KsCertificateRequest
 nav_order: 72
 render_with_liquid: false

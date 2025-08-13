@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrJWTInfo
 nav_order: 57
 render_with_liquid: false

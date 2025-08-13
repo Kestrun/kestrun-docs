@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrEnrichWithErrorRecord
 nav_order: 11
 render_with_liquid: false

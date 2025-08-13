@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrPowerShellRuntime
 nav_order: 28
 render_with_liquid: false

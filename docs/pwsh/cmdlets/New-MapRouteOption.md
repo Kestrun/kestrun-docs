@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: New-MapRouteOption
 nav_order: 73
 render_with_liquid: false

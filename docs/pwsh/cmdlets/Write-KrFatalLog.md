@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrFatalLog
 nav_order: 102
 render_with_liquid: false

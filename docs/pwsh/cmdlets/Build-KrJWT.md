@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Build-KrJWT
 nav_order: 47
 render_with_liquid: false

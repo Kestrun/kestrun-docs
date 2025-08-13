@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Copy-KrJWTTokenBuilder
 nav_order: 49
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Register-KrSchedule
 nav_order: 77
 render_with_liquid: false

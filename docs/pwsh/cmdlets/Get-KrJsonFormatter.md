@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrJsonFormatter
 nav_order: 56
 render_with_liquid: false

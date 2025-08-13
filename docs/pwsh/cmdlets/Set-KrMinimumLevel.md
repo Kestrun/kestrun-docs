@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Set-KrMinimumLevel
 nav_order: 83
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrJWTToken
 nav_order: 58
 render_with_liquid: false

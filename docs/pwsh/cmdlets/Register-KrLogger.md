@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Register-KrLogger
 nav_order: 76
 render_with_liquid: false

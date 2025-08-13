@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Remove-KrServer
 nav_order: 78
 render_with_liquid: false

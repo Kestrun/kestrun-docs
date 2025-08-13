@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrLog
 nav_order: 107
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrFileServer
 nav_order: 17
 render_with_liquid: false

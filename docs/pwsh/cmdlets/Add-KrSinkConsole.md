@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSinkConsole
 nav_order: 35
 render_with_liquid: false

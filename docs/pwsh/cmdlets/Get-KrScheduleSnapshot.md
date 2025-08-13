@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrScheduleSnapshot
 nav_order: 61
 render_with_liquid: false

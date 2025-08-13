@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrScheduling
 nav_order: 32
 render_with_liquid: false

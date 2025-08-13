@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSinkSyslogLocal
 nav_order: 40
 render_with_liquid: false

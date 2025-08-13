@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrUserClaim
 nav_order: 44
 render_with_liquid: false

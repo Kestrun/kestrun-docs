@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrDefaultFile
 nav_order: 8
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSinkEventLog
 nav_order: 36
 render_with_liquid: false

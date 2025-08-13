@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrEnrichFromLogContext
 nav_order: 9
 render_with_liquid: false

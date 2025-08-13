@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrListener
 nav_order: 25
 render_with_liquid: false

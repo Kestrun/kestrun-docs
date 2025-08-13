@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Set-KrServerOption
 nav_order: 86
 render_with_liquid: false

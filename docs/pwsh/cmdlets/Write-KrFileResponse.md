@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrFileResponse
 nav_order: 103
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Close-KrLogger
 nav_order: 48
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrHtmlTemplateRoute
 nav_order: 18
 render_with_liquid: false

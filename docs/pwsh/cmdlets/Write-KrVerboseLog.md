@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrVerboseLog
 nav_order: 112
 render_with_liquid: false

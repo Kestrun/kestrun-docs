@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrSharedState
 nav_order: 62
 render_with_liquid: false

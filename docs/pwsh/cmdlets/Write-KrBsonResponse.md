@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrBsonResponse
 nav_order: 96
 render_with_liquid: false

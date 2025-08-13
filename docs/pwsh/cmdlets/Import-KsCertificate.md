@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Import-KsCertificate
 nav_order: 63
 render_with_liquid: false

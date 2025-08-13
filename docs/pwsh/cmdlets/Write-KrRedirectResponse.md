@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrRedirectResponse
 nav_order: 108
 render_with_liquid: false

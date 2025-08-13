@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Test-KsCertificate
 nav_order: 93
 render_with_liquid: false

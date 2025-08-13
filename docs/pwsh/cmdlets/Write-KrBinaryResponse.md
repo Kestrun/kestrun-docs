@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrBinaryResponse
 nav_order: 95
 render_with_liquid: false

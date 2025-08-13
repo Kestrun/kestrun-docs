@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrRazorPageService
 nav_order: 29
 render_with_liquid: false

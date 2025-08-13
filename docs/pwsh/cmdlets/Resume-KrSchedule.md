@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Resume-KrSchedule
 nav_order: 80
 render_with_liquid: false

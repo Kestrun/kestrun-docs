@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Test-KrJWT
 nav_order: 91
 render_with_liquid: false

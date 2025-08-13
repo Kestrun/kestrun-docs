@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Set-KrPythonRuntime
 nav_order: 84
 render_with_liquid: false

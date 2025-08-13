@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrResponseCompression
 nav_order: 30
 render_with_liquid: false

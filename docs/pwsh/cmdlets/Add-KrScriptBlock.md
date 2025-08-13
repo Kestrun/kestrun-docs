@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrScriptBlock
 nav_order: 33
 render_with_liquid: false

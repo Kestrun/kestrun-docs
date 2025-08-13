@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Set-KrServerLimit
 nav_order: 85
 render_with_liquid: false

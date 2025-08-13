@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrJsonResponse
 nav_order: 106
 render_with_liquid: false

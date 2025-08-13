@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KrCertificatePurpose
 nav_order: 54
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Write-KrCsvResponse
 nav_order: 98
 render_with_liquid: false

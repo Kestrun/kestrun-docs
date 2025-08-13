@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: New-KrSelfSignedCertificate
 nav_order: 70
 render_with_liquid: false

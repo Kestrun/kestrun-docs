@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Resolve-KrPath
 nav_order: 79
 render_with_liquid: false

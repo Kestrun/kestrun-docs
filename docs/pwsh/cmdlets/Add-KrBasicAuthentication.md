@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrBasicAuthentication
 nav_order: 4
 render_with_liquid: false

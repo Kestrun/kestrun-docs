@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrJWTHeader
 nav_order: 22
 render_with_liquid: false

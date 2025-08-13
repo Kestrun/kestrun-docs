@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Stop-KrServer
 nav_order: 89
 render_with_liquid: false

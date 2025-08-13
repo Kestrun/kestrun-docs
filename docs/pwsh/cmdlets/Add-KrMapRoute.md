@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrMapRoute
 nav_order: 26
 render_with_liquid: false

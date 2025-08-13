@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Get-KestrunRoot
 nav_order: 53
 render_with_liquid: false

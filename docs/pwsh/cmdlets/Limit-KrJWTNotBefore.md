@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Limit-KrJWTNotBefore
 nav_order: 64
 render_with_liquid: false

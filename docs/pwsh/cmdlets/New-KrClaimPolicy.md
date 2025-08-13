@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: New-KrClaimPolicy
 nav_order: 66
 render_with_liquid: false

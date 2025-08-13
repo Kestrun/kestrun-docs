@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrStaticFilesService
 nav_order: 43
 render_with_liquid: false

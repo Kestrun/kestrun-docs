@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrPowerShellRazorPagesRuntime
 nav_order: 27
 render_with_liquid: false

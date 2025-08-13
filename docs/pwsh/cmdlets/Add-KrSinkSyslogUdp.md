@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSinkSyslogUdp
 nav_order: 42
 render_with_liquid: false

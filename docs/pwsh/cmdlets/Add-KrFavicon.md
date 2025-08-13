@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrFavicon
 nav_order: 16
 render_with_liquid: false

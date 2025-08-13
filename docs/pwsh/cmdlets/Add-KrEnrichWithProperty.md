@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrEnrichWithProperty
 nav_order: 15
 render_with_liquid: false

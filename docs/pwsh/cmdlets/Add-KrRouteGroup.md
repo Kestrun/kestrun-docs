@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrRouteGroup
 nav_order: 31
 render_with_liquid: false

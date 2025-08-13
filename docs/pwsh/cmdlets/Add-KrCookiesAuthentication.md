@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrCookiesAuthentication
 nav_order: 6
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Protect-KrJWTPayload
 nav_order: 75
 render_with_liquid: false

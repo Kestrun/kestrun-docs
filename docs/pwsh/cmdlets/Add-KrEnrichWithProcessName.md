@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrEnrichWithProcessName
 nav_order: 14
 render_with_liquid: false

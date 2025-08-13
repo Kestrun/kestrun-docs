@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrSignalRHub
 nav_order: 34
 render_with_liquid: false

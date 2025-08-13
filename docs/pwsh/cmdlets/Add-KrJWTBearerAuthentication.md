@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrJWTBearerAuthentication
 nav_order: 20
 render_with_liquid: false

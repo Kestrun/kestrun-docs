@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Add-KrJWTSubject
 nav_order: 24
 render_with_liquid: false

@@ -1,4 +1,6 @@
 ---
+layout: default
+parent: PowerShell Cmdlets
 title: Update-KrJWT
 nav_order: 94
 render_with_liquid: false
