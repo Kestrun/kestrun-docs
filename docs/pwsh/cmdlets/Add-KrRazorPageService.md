@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: Add-KrRazorPageService
 nav_order: 29
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions?view=aspnetcore-8.0

@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: New-KrJWTBuilder
 nav_order: 67
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://docs.microsoft.com/en-us/dotnet/api/kestrun.authentication.claimpolicybuilder

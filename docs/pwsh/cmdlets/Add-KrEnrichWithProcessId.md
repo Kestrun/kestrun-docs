@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: Add-KrEnrichWithProcessId
 nav_order: 13
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.defaultfilesoptions?view=aspnetcore-8.0

@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: Add-KrHtmlTemplateRoute
 nav_order: 18
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.fileserveroptions?view=aspnetcore-8.0

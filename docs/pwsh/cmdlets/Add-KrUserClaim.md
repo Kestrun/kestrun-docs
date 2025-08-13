@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: Add-KrUserClaim
 nav_order: 44
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions?view=aspnetcore-8.0

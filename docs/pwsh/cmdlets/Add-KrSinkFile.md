@@ -4,8 +4,6 @@ parent: PowerShell Cmdlets
 title: Add-KrSinkFile
 nav_order: 37
 render_with_liquid: false
----
----
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://github.com/Kestrun/Kestrun
