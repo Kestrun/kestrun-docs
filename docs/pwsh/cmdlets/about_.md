@@ -4,9 +4,7 @@ parent: PowerShell Cmdlets
 title: Some Help Topic Name
 nav_order: 1
 render_with_liquid: false
----
-# 
-## about_
+ about_
 
 ```
 ABOUT TOPIC NOTE:
