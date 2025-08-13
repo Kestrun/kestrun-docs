@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,36 +15,42 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         .container {
             max-width: 600px;
             margin: auto;
             background: #fff;
             border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             padding: 40px 32px;
             margin-top: 80px;
             text-align: center;
         }
+
         h1 {
             color: #2b3a55;
             margin-bottom: 16px;
         }
+
         p {
             color: #4b5563;
             font-size: 1.2rem;
             margin-bottom: 32px;
         }
+
         .logo {
             width: 80px;
             height: 80px;
             margin-bottom: 24px;
         }
+
         .footer {
             margin-top: 48px;
             text-align: center;
             color: #9ca3af;
             font-size: 0.95rem;
         }
+
         .github-link {
             color: #2563eb;
             text-decoration: none;
@@ -51,10 +58,12 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <img src="docs/images/kestrel_logo_transparent.png" alt="Kestrun Logo" class="logo">
-        <pre style="font-family: 'Fira Mono', 'Consolas', monospace; background: #f3f4f6; color: #2b3a55; border-radius: 8px; padding: 16px; font-size: 0.95rem; overflow-x: auto; margin-bottom: 24px;">
+        <pre
+            style="font-family: 'Fira Mono', 'Consolas', monospace; background: #f3f4f6; color: #2b3a55; border-radius: 8px; padding: 16px; font-size: 0.95rem; overflow-x: auto; margin-bottom: 24px;">
 ██╗  ██╗███████╗███████╗████████╗██████╗ ██╗   ██╗███╗   ██╗
 ██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██╔══██╗██║   ██║████╗  ██║
 █████╔╝ █████╗  ███████╗   ██║   ██████╔╝██║   ██║██╔██╗ ██║
@@ -64,13 +73,17 @@
 Kestrun — PowerShell brains. Kestrel speed.
         </pre>
         <div style="margin-bottom: 16px;">
-            <img src="https://github.com/Kestrun/Kestrun/actions/workflows/dotnet.yml/badge.svg" alt="CI Status" style="vertical-align: middle; margin-right: 8px;">
-            <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" style="vertical-align: middle;">
+            <img src="https://github.com/Kestrun/Kestrun/actions/workflows/dotnet.yml/badge.svg" alt="CI Status"
+                style="vertical-align: middle; margin-right: 8px;">
+            <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"
+                style="vertical-align: middle;">
         </div>
         <h1>Kestrun</h1>
         <p style="margin-bottom: 24px;">
-            Kestrun is a hybrid web framework that combines the speed and scalability of ASP.NET Core (Kestrel) with the flexibility and scripting power of PowerShell.<br>
-            Build web APIs, automation endpoints, and dynamic services using both C# and PowerShell in a single, integrated environment.
+            Kestrun is a hybrid web framework that combines the speed and scalability of ASP.NET Core (Kestrel) with the
+            flexibility and scripting power of PowerShell.<br>
+            Build web APIs, automation endpoints, and dynamic services using both C# and PowerShell in a single,
+            integrated environment.
         </p>
         <h2>Core Capabilities</h2>
         <ul style="text-align: left; max-width: 540px; margin: 0 auto 24px auto;">
@@ -82,91 +95,32 @@ Kestrun — PowerShell brains. Kestrel speed.
         </ul>
         <h2>Documentation</h2>
         <div style="text-align: left; max-width: 540px; margin: 0 auto 24px auto;">
-            <ul>
+            <ul style="text-align: left; max-width: 540px; margin: 0 auto 24px auto;">
                 <li><a href="docs/pwsh/tutorial/Certificates.md">Certificates</a></li>
                 <li><a href="docs/pwsh/tutorial/Logging.md">Logging</a></li>
                 <li><a href="docs/pwsh/tutorial/RazorPages.md">Razor Pages</a></li>
                 <li><a href="docs/pwsh/tutorial/Scheduling.md">Scheduling</a></li>
-                <li><b>Cmdlets:</b>
-                    <ul style="column-count:2;">
-                        <li><a href="docs/pwsh/cmdlets/about_.md">about_</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrAntiforgery.md">Add-KrAntiforgery</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrApiKeyAuthentication.md">Add-KrApiKeyAuthentication</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrBasicAuthentication.md">Add-KrBasicAuthentication</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrClaimPolicy.md">Add-KrClaimPolicy</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrCookiesAuthentication.md">Add-KrCookiesAuthentication</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrCorsPolicy.md">Add-KrCorsPolicy</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrDefaultFile.md">Add-KrDefaultFile</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichFromLogContext.md">Add-KrEnrichFromLogContext</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithEnvironment.md">Add-KrEnrichWithEnvironment</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithErrorRecord.md">Add-KrEnrichWithErrorRecord</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithExceptionDetail.md">Add-KrEnrichWithExceptionDetail</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithProcessId.md">Add-KrEnrichWithProcessId</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithProcessName.md">Add-KrEnrichWithProcessName</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrEnrichWithProperty.md">Add-KrEnrichWithProperty</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrFavicon.md">Add-KrFavicon</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrFileServer.md">Add-KrFileServer</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrHtmlTemplateRoute.md">Add-KrHtmlTemplateRoute</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTAudience.md">Add-KrJWTAudience</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTBearerAuthentication.md">Add-KrJWTBearerAuthentication</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTClaim.md">Add-KrJWTClaim</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTHeader.md">Add-KrJWTHeader</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTIssuer.md">Add-KrJWTIssuer</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrJWTSubject.md">Add-KrJWTSubject</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrListener.md">Add-KrListener</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrMapRoute.md">Add-KrMapRoute</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrPowerShellRazorPagesRuntime.md">Add-KrPowerShellRazorPagesRuntime</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrPowerShellRuntime.md">Add-KrPowerShellRuntime</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrRazorPageService.md">Add-KrRazorPageService</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrResponseCompression.md">Add-KrResponseCompression</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrRouteGroup.md">Add-KrRouteGroup</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrScheduling.md">Add-KrScheduling</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrScriptBlock.md">Add-KrScriptBlock</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSignalRHub.md">Add-KrSignalRHub</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkConsole.md">Add-KrSinkConsole</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkEventLog.md">Add-KrSinkEventLog</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkFile.md">Add-KrSinkFile</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkHttp.md">Add-KrSinkHttp</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkPowerShell.md">Add-KrSinkPowerShell</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkSyslogLocal.md">Add-KrSinkSyslogLocal</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkSyslogTcp.md">Add-KrSinkSyslogTcp</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrSinkSyslogUdp.md">Add-KrSinkSyslogUdp</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrStaticFilesService.md">Add-KrStaticFilesService</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrUserClaim.md">Add-KrUserClaim</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Add-KrWindowsAuthentication.md">Add-KrWindowsAuthentication</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Build-KrClaimPolicy.md">Build-KrClaimPolicy</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Build-KrJWT.md">Build-KrJWT</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Close-KrLogger.md">Close-KrLogger</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Copy-KrJWTTokenBuilder.md">Copy-KrJWTTokenBuilder</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Enable-KrConfiguration.md">Enable-KrConfiguration</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Expand-KrObject.md">Expand-KrObject</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Export-KrCertificate.md">Export-KrCertificate</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KestrunRoot.md">Get-KestrunRoot</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrCertificatePurpose.md">Get-KrCertificatePurpose</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrDefaultLogger.md">Get-KrDefaultLogger</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrJsonFormatter.md">Get-KrJsonFormatter</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrJWTInfo.md">Get-KrJWTInfo</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrJWTToken.md">Get-KrJWTToken</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrJWTValidationParameter.md">Get-KrJWTValidationParameter</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrScheduleReport.md">Get-KrScheduleReport</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrScheduleSnapshot.md">Get-KrScheduleSnapshot</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Get-KrSharedState.md">Get-KrSharedState</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Import-KsCertificate.md">Import-KsCertificate</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Limit-KrJWTNotBefore.md">Limit-KrJWTNotBefore</a></li>
-                        <li><a href="docs/pwsh/cmdlets/Limit-KrJWTValidity.md">Limit-KrJWTValidity</a></li>
-                        <li><a href="docs/pwsh/cmdlets/New-KrClaimPolicy.md">New-KrClaimPolicy</a></li>
-                        <li><a href="docs/pwsh/cmdlets/New-KrJWTBuilder.md">New-KrJWTBuilder</a></li>
-                        <!-- ...more cmdlets available in docs/pwsh/cmdlets/ ... -->
-                    </ul>
+
+
                 </li>
             </ul>
-            <div style="margin-top: 12px;">
-                <a href="https://github.com/Kestrun/kestrun" target="_blank" rel="noopener" class="github-link">Visit our GitHub</a>
-            </div>
         </div>
+        <h2>PowerShell Cmdlets</h2>
+        <div style="text-align: left; max-width: 540px; margin: 0 auto 24px auto;">
+            <ul>
+                <li><a href="docs/pwsh/cmdlets/">Documentation </a></li>
+
+            </ul>
+        </div>
+        <div style="margin-top: 12px;">
+            <a href="https://github.com/Kestrun/kestrun" target="_blank" rel="noopener" class="github-link">Visit our
+                GitHub</a>
+        </div>
+    </div>
     </div>
     <div class="footer">
         &copy; 2025 Kestrun. All rights reserved.
     </div>
 </body>
+
 </html>
