@@ -1,4 +1,9 @@
 ---
+title: Add-KrCookiesAuthentication
+nav_order: 6
+render_with_liquid: false
+---
+---
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://docs.kestrun.dev/docs/powershell/kestrun/authentication

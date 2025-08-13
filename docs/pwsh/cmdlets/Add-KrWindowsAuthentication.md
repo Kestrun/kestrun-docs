@@ -1,4 +1,9 @@
 ---
+title: Add-KrWindowsAuthentication
+nav_order: 45
+render_with_liquid: false
+---
+---
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.windowsauthentication?view=aspnetcore-8.0

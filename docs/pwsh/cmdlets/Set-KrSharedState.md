@@ -1,4 +1,9 @@
 ---
+title: Set-KrSharedState
+nav_order: 87
+render_with_liquid: false
+---
+---
 external help file: Kestrun-help.xml
 Module Name: Kestrun
 online version: https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.jwt.jwtsecuritytoken?view=azure-dotnet
