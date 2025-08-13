@@ -1,0 +1,33 @@
+title: Kestrun
+description: Kestrun documentation
+url: https://kestrun.github.io
+baseurl: ""              # org/user site → keep empty
+
+theme: jekyll-theme-cayman  # or any GitHub Pages–supported theme
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Handy plugins that GitHub Pages supports natively
+plugins:
+  - jekyll-optional-front-matter   # renders .md without front matter
+  - jekyll-titles-from-headings    # uses first heading as the page title
+  - jekyll-relative-links          # keeps relative links working
+  - jekyll-sitemap                 # optional: sitemap.xml
+  - jekyll-seo-tag                 # optional: SEO tags
+
+# Apply plugins to the whole repo
+optional_front_matter:
+  remove_originals: false
+
+titles_from_headings:
+  strip_title: true
+  collections: true
+
+relative_links:
+  enabled: true
+  collections: true
+
+permalink: pretty
