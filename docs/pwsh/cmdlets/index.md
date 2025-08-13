@@ -1,8 +1,9 @@
 ---
 layout: default
 title: PowerShell Cmdlets
-nav_order: 1
 has_children: true
+nav_order: 10
+# parent defaults to "All Pages" via _config.yml
 ---
 
 # PowerShell Cmdlets
