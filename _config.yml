@@ -4,7 +4,6 @@ url: https://kestrun.github.io
 baseurl: ""
 
 remote_theme: just-the-docs/just-the-docs
-
 plugins:
   - jekyll-remote-theme
   - jekyll-optional-front-matter
@@ -14,22 +13,8 @@ permalink: pretty
 
 # 🔧 Defaults define the sidebar relationships
 defaults:
-  # Make EVERY page part of the global "All Pages" section
-  - scope:
-      path: ""              # entire repo
-      type: "pages"
+  - scope: { path: "" }
     values:
-      layout: default
-      parent: "All Pages"   # <-- global parent
-      nav_exclude: false
-      render_with_liquid: false
-
-  # Give cmdlets their own subsection under All Pages
-  - scope:
-      path: "docs/pwsh/cmdlets"
-      type: "pages"
-    values:
-      parent: "PowerShell Cmdlets"  # nested under the index below
       layout: default
       nav_exclude: false
       render_with_liquid: false
