@@ -1,40 +1,31 @@
-title: Kestrun
+title: Kestrun Docs
 description: Kestrun documentation
 url: https://kestrun.github.io
-baseurl: ""              # org/user site → keep empty
+baseurl: ""   # user/org site → keep empty
 
-theme: jekyll-theme-cayman  # or any GitHub Pages–supported theme
+# Sidebar theme with built-in search
+remote_theme: just-the-docs/just-the-docs
 
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-
-# Handy plugins that GitHub Pages supports natively
+# GitHub Pages supports these plugins
 plugins:
-  - jekyll-optional-front-matter   # renders .md without front matter
-  - jekyll-titles-from-headings    # uses first heading as the page title
-  - jekyll-relative-links          # keeps relative links working
-  - jekyll-sitemap                 # optional: sitemap.xml
-  - jekyll-seo-tag                 # optional: SEO tags
+  - jekyll-remote-theme
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
 
-# Apply plugins to the whole repo
-optional_front_matter:
-  remove_originals: false
-
-titles_from_headings:
-  strip_title: true
-  collections: true
-
-relative_links:
-  enabled: true
-  collections: true
-  
+# Make Jekyll treat your generated MD nicely
 defaults:
   - scope:
-      path: "docs/pwsh/cmdlets"   # no leading slash
+      path: "docs"       # no leading slash
     values:
-      render_with_liquid: false    # <- the magic
-      layout: default              # optional: gives pages a layout
+      layout: default
+      parent: "PowerShell Cmdlets"    # all pages nest under this in the sidebar
+      nav_exclude: false
+      render_with_liquid: false       # prevents Liquid from eating {{ placeholders }}
 
+# Pretty URLs like /Get-KrThing/
 permalink: pretty
+
+# Turn on search box
+just_the_docs:
+  search:
+    enabled: true
