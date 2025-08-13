@@ -29,5 +29,12 @@ titles_from_headings:
 relative_links:
   enabled: true
   collections: true
+  
+defaults:
+  - scope:
+      path: "docs/pwsh/cmdlets"   # no leading slash
+    values:
+      render_with_liquid: false    # <- the magic
+      layout: default              # optional: gives pages a layout
 
 permalink: pretty
