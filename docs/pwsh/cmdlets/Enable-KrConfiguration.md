@@ -66,8 +66,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-{{ Fill PassThru Description }}
 
 ```yaml
 Type: SwitchParameter
