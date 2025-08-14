@@ -14,7 +14,7 @@ permalink: pretty
 defaults:
   # PowerShell Cmdlets section
   - scope:
-      path: "pwsh/cmdlets"   # <- only this subtree
+      path: "docs/pwsh/cmdlets"   # <- only this subtree
       type: "pages"
     values:
       layout: default
@@ -24,7 +24,7 @@ defaults:
 
   # Tutorials section
   - scope:
-      path: "pwsh/tutorial"  # <- only this subtree
+      path: "docs/pwsh/tutorial"  # <- only this subtree
       type: "pages"
     values:
       layout: default
