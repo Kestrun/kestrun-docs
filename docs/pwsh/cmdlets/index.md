@@ -1,8 +1,7 @@
 ---
-layout: default
 title: PowerShell Cmdlets
-has_children: true
-nav_order: 20
+parent: PowerShell
+nav_order: 2
 # children inherit parent via _config.yml defaults
 ---
 
