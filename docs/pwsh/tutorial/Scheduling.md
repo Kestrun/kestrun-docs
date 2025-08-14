@@ -1,7 +1,10 @@
 ---
-title: Scheduler
+layout: default
 parent: Tutorials
-nav_order: 4
+title: Scheduler
+has_children: false
+#nav_order: 1
+# children inherit parent via _config.yml defaults
 ---
 
 # Kestrun Scheduler
