@@ -1,7 +1,7 @@
 ---
 layout: default
-title: C# API
+title: C#
 nav_order: 30
-permalink: /cs/
+permalink: /cs
 has_children: true
 ---

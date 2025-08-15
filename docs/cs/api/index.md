@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Kestrun assembly"
-parent: "C# API"
+title: C# API
+nav_order: 30
+permalink: /cs/api
+has_children: true
 ---
 # Kestrun assembly
 
