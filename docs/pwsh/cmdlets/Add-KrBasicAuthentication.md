@@ -124,12 +124,23 @@ Configures the Kestrun server to use basic authentication for incoming requests.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 ```powershell
-PS C:\> {{ Add example code here }}
+Add-KrBasicAuthentication -Server $server -Name "MyAuth" -Options $options -ScriptBlock $scriptBlock
+Configure Kestrun server to use basic authentication with the specified script block.
 ```
 
-{{ Add example description here }}
+### EXAMPLE 2
+```powershell
+Add-KrBasicAuthentication -Server $server -Name "MyAuth" -Options $options -Code $code -CodeLanguage $codeLanguage
+Configure Kestrun server to use basic authentication with the specified code.
+```
+
+### EXAMPLE 3
+```powershell
+Add-KrBasicAuthentication -Server $server -Name "MyAuth" -Options $options -CodeFilePath $codeFilePath
+Configure Kestrun server to use basic authentication with the specified code file.
+```
 
 ## PARAMETERS
 
@@ -444,5 +455,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Kestrun.Hosting.KestrunHost
 ## NOTES
+This function is part of the Kestrun.Authentication module and is used to configure basic authentication for Kestrun servers.
+Maps to Kestrun.Hosting.KestrunHostAuthExtensions.AddBasicAuthentication
 
 ## RELATED LINKS
