@@ -1,0 +1,11 @@
+title: "Kestrun documentation"
+description: "The official kestrun documentation"
+theme: just-the-docs
+
+plugins:
+  - jekyll-default-layout
+  
+url: https://kestrun.github.io
+
+aux_links:
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
