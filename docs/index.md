@@ -6,19 +6,16 @@ description: "Kestrun Documentation."
 permalink: /
 ---
 
-```
-██╗  ██╗███████╗███████╗████████╗██████╗ ██╗   ██╗███╗   ██╗
-██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██╔══██╗██║   ██║████╗  ██║
-█████╔╝ █████╗  ███████╗   ██║   ██████╔╝██║   ██║██╔██╗ ██║
-██╔═██╗ ██╔══╝  ╚════██║   ██║   ██╔██╗  ██║   ██║██║╚██╗██║
-██║  ██╗███████╗███████║   ██║   ██║ ██╗ ╚██████╔╝██║ ╚████║
-╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝ ╚═╝  ╚═════╝ ╚═╝  ╚═══╝
-Kestrun — PowerShell brains. Kestrel speed.
-```
+# Kestrun — PowerShell brains. Kestrel speed
+{: .fs-9 }
+
+Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+{: .fs-6 .fw-300 }
+
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub][Kestrun repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
-
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 **Kestrun** is a PowerShell-integrated web framework on ASP.NET Core (Kestrel) — blend C# power with the sensual flow of PowerShell scripts.
 
@@ -38,7 +35,7 @@ Kestrun — PowerShell brains. Kestrel speed.
 - 👉 **C# API**: [cs/api/](./cs/api/)
 - 📚 **Tutorials**: [pwsh/tutorial/](./pwsh/tutorial/)
 
-## Get started
+## Getting started
 
 ```powershell
 # spin up Kestrun
@@ -58,3 +55,5 @@ Add-KrMapRoute -Verbs Get -Path '/cs/hello' -Code @'
 Start-KrServer
 
 ```
+
+[Kestrun repo]: https://github.com/kestrun/kestrun
