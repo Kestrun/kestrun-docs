@@ -9,12 +9,9 @@ plugins:
 url: https://kestrun.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
-
-
+  Repository: https://github.com/kestrun/kestrun 
  
- 
-logo: "docs//kestrel_logo_transparent.png"
+logo: "docs/images/kestrel_logo_transparent.png"
 color_scheme: light
 search_enabled: true
 search:
