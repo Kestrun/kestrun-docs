@@ -22,7 +22,7 @@ Test-KrRoute [-Path] <String> [[-Verbs] <HttpVerb[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+This function checks if a specific route is defined in the Kestrun host's routing table.
 
 ## EXAMPLES
 
@@ -30,6 +30,12 @@ Test-KrRoute [-Path] <String> [[-Verbs] <HttpVerb[]>] [<CommonParameters>]
 ```powershell
 Test-KrRoute -Path "/api/test" -Verbs "GET"
 # Tests if a GET route exists for "/api/test".
+```
+
+### EXAMPLE 2
+```powershell
+Test-KrRoute -Path "/api/test" -Verbs "POST"
+# Tests if a POST route exists for "/api/test".
 ```
 
 ## PARAMETERS
