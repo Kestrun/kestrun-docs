@@ -6,7 +6,7 @@ nav_order: 19
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.jwt.jwtsecuritytoken?view=azure-dotnet
+online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbearerauthenticationextensions.addjwtbearerauthentication?view=aspnetcore-8.0
 schema: 2.0.0
 ---
 
@@ -39,12 +39,29 @@ Configures the Kestrun server to use JWT Bearer authentication for incoming requ
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 ```powershell
-PS C:\> {{ Add example code here }}
+Add-KrJWTBearerAuthentication -Server $server -Name "MyAuth" -ValidationParameter $validationParameter -ClaimPolicy $claimPolicy
+Configure Kestrun server to use JWT Bearer authentication with the specified validation parameters and claim policy.
 ```
 
-{{ Add example description here }}
+### EXAMPLE 2
+```powershell
+Add-KrJWTBearerAuthentication -Server $server -Name "MyAuth" -ValidIssuer "https://issuer" -ValidAudience "api" -ValidAlgorithms @("HS256") -SkipValidateIssuer -PassThru
+Configure Kestrun server to use JWT Bearer authentication with the specified issuer, audience, and algorithms, skipping issuer validation, and return the server instance.
+```
+
+### EXAMPLE 3
+```powershell
+Add-KrJWTBearerAuthentication -Server $server -Name "MyAuth" -ValidIssuer "https://issuer" -ValidAudience "api" -ValidAlgorithms @("HS256") -SkipValidateIssuer -PassThru
+Configure Kestrun server to use JWT Bearer authentication with the specified issuer, audience, and algorithms, skipping issuer validation, and return the server instance.
+```
+
+### EXAMPLE 4
+```powershell
+Add-KrJWTBearerAuthentication -Server $server -Name "MyAuth" -ValidIssuer "https://issuer" -ValidAudience "api" -ValidAlgorithms @("HS256") -SkipValidateIssuer -PassThru
+Configure Kestrun server to use JWT Bearer authentication with the specified issuer, audience, and algorithms, skipping issuer validation, and return the server instance.
+```
 
 ## PARAMETERS
 
@@ -349,5 +366,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Kestrun.Hosting.KestrunHost
 ## NOTES
+This function is part of the Kestrun.Authentication module and is used to configure JWT Bearer authentication for Kestrun servers.
+Maps to Kestrun.Hosting.KestrunHostAuthExtensions.AddJwtBearerAuthentication
 
 ## RELATED LINKS
+
+[https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbearerauthenticationextensions.addjwtbearerauthentication?view=aspnetcore-8.0](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbearerauthenticationextensions.addjwtbearerauthentication?view=aspnetcore-8.0)
+

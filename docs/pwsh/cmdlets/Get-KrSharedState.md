@@ -28,17 +28,18 @@ If the variable does not exist, \`$null\` is returned.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 ```powershell
-PS C:\> {{ Add example code here }}
+Get-KrSharedState -Name "MyVariable"
+This retrieves the value of the global variable "MyVariable".
 ```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
 Name of the variable to retrieve.
+This should be the fully qualified name of the variable, including any
+namespaces.
 
 ```yaml
 Type: String
@@ -60,5 +61,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+This function is part of the Kestrun.SharedState module and is used to retrieve the value of global variables.
 
 ## RELATED LINKS

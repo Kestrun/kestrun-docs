@@ -34,12 +34,17 @@ It can either take a token directly or extract it from the current HTTP context.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 ```powershell
-PS C:\> {{ Add example code here }}
+Update-KrJWT -Builder $jwtBuilder -Token $existingToken -Lifetime (New-TimeSpan -Minutes 30)
+This updates the existing JWT token with a new lifetime of 30 minutes.
 ```
 
-{{ Add example description here }}
+### EXAMPLE 2
+```powershell
+Update-KrJWT -Builder $jwtBuilder -FromContext -Lifetime (New-TimeSpan -Minutes 30)
+This updates the existing JWT token extracted from the HTTP context with a new lifetime of 30 minutes.
+```
 
 ## PARAMETERS
 

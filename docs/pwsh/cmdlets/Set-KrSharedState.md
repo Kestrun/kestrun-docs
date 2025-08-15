@@ -31,12 +31,17 @@ it is created.
 
 ## EXAMPLES
 
-### Example 1
+### EXAMPLE 1
 ```powershell
-PS C:\> {{ Add example code here }}
+Set-KrSharedState -Name "MyVariable" -Value "Hello, World!"
+This creates a global variable "MyVariable" with the value "Hello, World!".
 ```
 
-{{ Add example description here }}
+### EXAMPLE 2
+```powershell
+Set-KrSharedState -Name "MyNamespace.MyVariable" -Value @{item=42}
+This creates a global variable "MyNamespace.MyVariable" with the value @{item=42}.
+```
 
 ## PARAMETERS
 
@@ -79,5 +84,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Kestrun.Hosting.KestrunHost
 ## NOTES
+This function is part of the Kestrun.SharedState module and is used to define or update global variables.
 
 ## RELATED LINKS
