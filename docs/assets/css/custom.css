@@ -1,0 +1,7 @@
+@media (min-width: 64rem) { /* matches @include mq(lg) */
+  .site-nav,
+  .site-header,
+  .site-footer {
+    width: 20.5rem !important;
+  }
+}

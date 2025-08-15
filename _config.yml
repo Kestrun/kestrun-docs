@@ -30,6 +30,9 @@ nav_external_links:
     url: https://github.com/kestrun/kestrun
     hide_icon: false
  
+just_the_docs:
+  custom_css:
+    - docs/assets/css/custom.css
 
 # Footer settings
 footer_content: "Copyright &copy; 2025 Kestrun. Distributed by an <a href=\"https://github.com/kestrun/kestrun/blob/master/LICENSE.txt\">MIT license.</a>"
