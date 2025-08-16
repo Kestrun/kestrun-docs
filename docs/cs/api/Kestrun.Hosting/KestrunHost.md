@@ -16,32 +16,32 @@ public class KestrunHost : IDisposable
 
 | name | description |
 | --- | --- |
-| [KestrunHost](KestrunHost/KestrunHost.md)(…) | Initializes a new instance of the [`KestrunHost`](./KestrunHost.md) class with the specified application name, root directory, and optional module paths. (2 constructors) |
-| [ApplicationName](KestrunHost/ApplicationName.md) { get; } | Gets the application name for the Kestrun host. |
-| [IsRunning](KestrunHost/IsRunning.md) { get; } | Determines whether the Kestrun web application is currently running. |
-| [KestrunRoot](KestrunHost/KestrunRoot.md) { get; } | Gets the root directory path for the Kestrun application. |
-| [Options](KestrunHost/Options.md) { get; } | Gets the configuration options for the Kestrun host. |
-| [Scheduler](KestrunHost/Scheduler.md) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. |
-| [_Logger](KestrunHost/_Logger.md) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
-| [AddControllers](KestrunHost/AddControllers.md)(…) | Adds MVC / API controllers to the application. |
-| [AddFeature](KestrunHost/AddFeature.md)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
-| [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime.md)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
-| [AddScheduling](KestrunHost/AddScheduling.md)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
-| [AddService](KestrunHost/AddService.md)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
-| [AddSignalR&lt;T&gt;](KestrunHost/AddSignalR.md)(…) | Adds a SignalR hub to the application at the specified path. |
-| [Build](KestrunHost/Build.md)() | Builds the WebApplication. This method applies all queued services and middleware stages, and returns the built WebApplication instance. |
-| [ConfigureListener](KestrunHost/ConfigureListener.md)(…) | Configures a listener for the Kestrun host with the specified port, optional IP address, certificate, protocols, and connection logging. (3 methods) |
-| [CreateRunspacePool](KestrunHost/CreateRunspacePool.md)(…) | Creates and returns a new [`KestrunRunspacePoolManager`](../Kestrun.Scripting/KestrunRunspacePoolManager.md) instance with the specified maximum number of runspaces. |
-| [Dispose](KestrunHost/Dispose.md)() | Releases all resources used by the [`KestrunHost`](./KestrunHost.md) instance. |
-| [EnableConfiguration](KestrunHost/EnableConfiguration.md)(…) | Applies the configured options to the Kestrel server and initializes the runspace pool. |
-| [Run](KestrunHost/Run.md)() | Runs the Kestrun web application, applying configuration and starting the server. |
-| [StartAsync](KestrunHost/StartAsync.md)(…) | Starts the Kestrun web application asynchronously. |
-| [Stop](KestrunHost/Stop.md)() | Initiates a graceful shutdown of the Kestrun web application. |
-| [StopAsync](KestrunHost/StopAsync.md)(…) | Stops the Kestrun web application asynchronously. |
-| [Use](KestrunHost/Use.md)(…) | Adds a middleware stage to the application pipeline. |
+| [KestrunHost](KestrunHost/KestrunHost)(…) | Initializes a new instance of the [`KestrunHost`](./KestrunHost) class with the specified application name, root directory, and optional module paths. (2 constructors) |
+| [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
+| [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
+| [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |
+| [Options](KestrunHost/Options) { get; } | Gets the configuration options for the Kestrun host. |
+| [Scheduler](KestrunHost/Scheduler) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. |
+| [_Logger](KestrunHost/_Logger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
+| [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
+| [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
+| [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
+| [AddScheduling](KestrunHost/AddScheduling)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
+| [AddService](KestrunHost/AddService)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
+| [AddSignalR&lt;T&gt;](KestrunHost/AddSignalR)(…) | Adds a SignalR hub to the application at the specified path. |
+| [Build](KestrunHost/Build)() | Builds the WebApplication. This method applies all queued services and middleware stages, and returns the built WebApplication instance. |
+| [ConfigureListener](KestrunHost/ConfigureListener)(…) | Configures a listener for the Kestrun host with the specified port, optional IP address, certificate, protocols, and connection logging. (3 methods) |
+| [CreateRunspacePool](KestrunHost/CreateRunspacePool)(…) | Creates and returns a new [`KestrunRunspacePoolManager`](../Kestrun.Scripting/KestrunRunspacePoolManager) instance with the specified maximum number of runspaces. |
+| [Dispose](KestrunHost/Dispose)() | Releases all resources used by the [`KestrunHost`](./KestrunHost) instance. |
+| [EnableConfiguration](KestrunHost/EnableConfiguration)(…) | Applies the configured options to the Kestrel server and initializes the runspace pool. |
+| [Run](KestrunHost/Run)() | Runs the Kestrun web application, applying configuration and starting the server. |
+| [StartAsync](KestrunHost/StartAsync)(…) | Starts the Kestrun web application asynchronously. |
+| [Stop](KestrunHost/Stop)() | Initiates a graceful shutdown of the Kestrun web application. |
+| [StopAsync](KestrunHost/StopAsync)(…) | Stops the Kestrun web application asynchronously. |
+| [Use](KestrunHost/Use)(…) | Adds a middleware stage to the application pipeline. |
 
 ## See Also
 
-* namespace [Kestrun.Hosting](../Kestrun.md)
+* namespace [Kestrun.Hosting](../Kestrun)
 
 <!-- DO NOT EDIT: generated by xmldocmd for Kestrun.dll -->

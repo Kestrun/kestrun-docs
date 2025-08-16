@@ -16,31 +16,31 @@ public sealed class JwtTokenBuilder
 
 | name | description |
 | --- | --- |
-| [JwtTokenBuilder](JwtTokenBuilder/JwtTokenBuilder.md)() | The default constructor. |
-| static [New](JwtTokenBuilder/New.md)() | Creates a new instance of [`JwtTokenBuilder`](./JwtTokenBuilder.md). |
-| [Algorithm](JwtTokenBuilder/Algorithm.md) { get; } | Gets the algorithm used for signing the JWT token. |
-| [Audience](JwtTokenBuilder/Audience.md) { get; } | Gets the audience of the JWT token. |
-| [Issuer](JwtTokenBuilder/Issuer.md) { get; } | Gets the issuer of the JWT token. |
-| [AddClaim](JwtTokenBuilder/AddClaim.md)(…) | Adds a claim to the JWT token. |
-| [AddHeader](JwtTokenBuilder/AddHeader.md)(…) | Adds a custom header to the JWT token. |
-| [Build](JwtTokenBuilder/Build.md)() | Builds the JWT token and returns a [`JwtBuilderResult`](./JwtBuilderResult.md) containing the token, signing key, and validity period. |
-| [CloneBuilder](JwtTokenBuilder/CloneBuilder.md)() | Creates a new token builder instance by cloning the current configuration. |
-| [EncryptWithCertificate](JwtTokenBuilder/EncryptWithCertificate.md)(…) | Encrypts the JWT using the provided X.509 certificate. |
-| [EncryptWithPemPublic](JwtTokenBuilder/EncryptWithPemPublic.md)(…) | Encrypts the JWT using a PEM-encoded RSA public key. |
-| [EncryptWithSecret](JwtTokenBuilder/EncryptWithSecret.md)(…) | Encrypts the JWT using a symmetric key provided as a byte array. |
-| [EncryptWithSecretB64](JwtTokenBuilder/EncryptWithSecretB64.md)(…) | Encrypts the JWT using a symmetric key provided as a Base64Url-encoded string. |
-| [EncryptWithSecretHex](JwtTokenBuilder/EncryptWithSecretHex.md)(…) | Encrypts the JWT using a symmetric key provided as a hexadecimal string. |
-| [NotBefore](JwtTokenBuilder/NotBefore.md)(…) | Sets the 'not before' (nbf) claim for the JWT token. |
-| [RenewJwt](JwtTokenBuilder/RenewJwt.md)(…) | Renews a JWT token from the current request context, optionally extending its lifetime. (2 methods) |
-| [SignWithCertificate](JwtTokenBuilder/SignWithCertificate.md)(…) | Sign with an X.509 certificate (must have private key). |
-| [SignWithRsaPem](JwtTokenBuilder/SignWithRsaPem.md)(…) | Signs the JWT using an RSA private key provided in PEM format. |
-| [SignWithSecret](JwtTokenBuilder/SignWithSecret.md)(…) | Signs the JWT using a symmetric key provided as a Base64Url-encoded string. |
-| [SignWithSecretHex](JwtTokenBuilder/SignWithSecretHex.md)(…) | Signs the JWT using a symmetric key provided as a hexadecimal string. |
-| [SignWithSecretPassphrase](JwtTokenBuilder/SignWithSecretPassphrase.md)(…) | Signs the JWT using a symmetric key derived from the provided passphrase. |
-| [ValidFor](JwtTokenBuilder/ValidFor.md)(…) | Sets the lifetime (validity period) of the JWT token. |
-| [WithAudience](JwtTokenBuilder/WithAudience.md)(…) | Sets the audience of the JWT token. |
-| [WithIssuer](JwtTokenBuilder/WithIssuer.md)(…) | Sets the issuer of the JWT token. |
-| [WithSubject](JwtTokenBuilder/WithSubject.md)(…) | Sets the subject ('sub' claim) of the JWT token. |
+| [JwtTokenBuilder](JwtTokenBuilder/JwtTokenBuilder)() | The default constructor. |
+| static [New](JwtTokenBuilder/New)() | Creates a new instance of [`JwtTokenBuilder`](./JwtTokenBuilder). |
+| [Algorithm](JwtTokenBuilder/Algorithm) { get; } | Gets the algorithm used for signing the JWT token. |
+| [Audience](JwtTokenBuilder/Audience) { get; } | Gets the audience of the JWT token. |
+| [Issuer](JwtTokenBuilder/Issuer) { get; } | Gets the issuer of the JWT token. |
+| [AddClaim](JwtTokenBuilder/AddClaim)(…) | Adds a claim to the JWT token. |
+| [AddHeader](JwtTokenBuilder/AddHeader)(…) | Adds a custom header to the JWT token. |
+| [Build](JwtTokenBuilder/Build)() | Builds the JWT token and returns a [`JwtBuilderResult`](./JwtBuilderResult) containing the token, signing key, and validity period. |
+| [CloneBuilder](JwtTokenBuilder/CloneBuilder)() | Creates a new token builder instance by cloning the current configuration. |
+| [EncryptWithCertificate](JwtTokenBuilder/EncryptWithCertificate)(…) | Encrypts the JWT using the provided X.509 certificate. |
+| [EncryptWithPemPublic](JwtTokenBuilder/EncryptWithPemPublic)(…) | Encrypts the JWT using a PEM-encoded RSA public key. |
+| [EncryptWithSecret](JwtTokenBuilder/EncryptWithSecret)(…) | Encrypts the JWT using a symmetric key provided as a byte array. |
+| [EncryptWithSecretB64](JwtTokenBuilder/EncryptWithSecretB64)(…) | Encrypts the JWT using a symmetric key provided as a Base64Url-encoded string. |
+| [EncryptWithSecretHex](JwtTokenBuilder/EncryptWithSecretHex)(…) | Encrypts the JWT using a symmetric key provided as a hexadecimal string. |
+| [NotBefore](JwtTokenBuilder/NotBefore)(…) | Sets the 'not before' (nbf) claim for the JWT token. |
+| [RenewJwt](JwtTokenBuilder/RenewJwt)(…) | Renews a JWT token from the current request context, optionally extending its lifetime. (2 methods) |
+| [SignWithCertificate](JwtTokenBuilder/SignWithCertificate)(…) | Sign with an X.509 certificate (must have private key). |
+| [SignWithRsaPem](JwtTokenBuilder/SignWithRsaPem)(…) | Signs the JWT using an RSA private key provided in PEM format. |
+| [SignWithSecret](JwtTokenBuilder/SignWithSecret)(…) | Signs the JWT using a symmetric key provided as a Base64Url-encoded string. |
+| [SignWithSecretHex](JwtTokenBuilder/SignWithSecretHex)(…) | Signs the JWT using a symmetric key provided as a hexadecimal string. |
+| [SignWithSecretPassphrase](JwtTokenBuilder/SignWithSecretPassphrase)(…) | Signs the JWT using a symmetric key derived from the provided passphrase. |
+| [ValidFor](JwtTokenBuilder/ValidFor)(…) | Sets the lifetime (validity period) of the JWT token. |
+| [WithAudience](JwtTokenBuilder/WithAudience)(…) | Sets the audience of the JWT token. |
+| [WithIssuer](JwtTokenBuilder/WithIssuer)(…) | Sets the issuer of the JWT token. |
+| [WithSubject](JwtTokenBuilder/WithSubject)(…) | Sets the subject ('sub' claim) of the JWT token. |
 
 ## Examples
 
@@ -48,6 +48,6 @@ public sealed class JwtTokenBuilder
 
 ## See Also
 
-* namespace [Kestrun.Security](../Kestrun.md)
+* namespace [Kestrun.Security](../Kestrun)
 
 <!-- DO NOT EDIT: generated by xmldocmd for Kestrun.dll -->

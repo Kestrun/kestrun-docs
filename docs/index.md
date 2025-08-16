@@ -5,11 +5,14 @@ nav_order: 1
 description: "Kestrun Documentation."
 permalink: /
 ---
+{: .fs-11 }
 
-# Kestrun 
-## PowerShell brains. Kestrel speed
+# Kestrun
 
 {: .fs-9 }
+PowerShell brains. Kestrel speed
+
+{: .fs-7 }
 
 Kestrun jumpstarts your web automation with a fast, PowerShell-centric framework built on ASP.NET Core, blending scriptable flexibility with modern .NET performance.
 {: .fs-6 .fw-300 }
