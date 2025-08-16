@@ -5,8 +5,10 @@ nav_order: 1
 description: "Kestrun Documentation."
 permalink: /
 ---
-Kestrun {: .fs-10 .fw-700 .text-center}
-PowerShell brains. Kestrel speed {: .fs-7 .fw-500 .text-center}
+Kestrun
+{: .fs-10 .fw-700 .text-center}
+PowerShell brains. Kestrel speed
+{: .fs-7 .fw-500 .text-center}
 
 Kestrun jumpstarts your web automation with a fast, PowerShell-centric framework built on ASP.NET Core, blending scriptable flexibility with modern .NET performance.
 {: .fs-5 .fw-300 }
