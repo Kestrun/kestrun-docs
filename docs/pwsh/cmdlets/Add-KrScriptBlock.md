@@ -6,7 +6,7 @@ nav_order: 32
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://github.com/Kestrun/Kestrun
+online version:
 schema: 2.0.0
 ---
 
@@ -123,6 +123,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 This function is part of the Kestrun PowerShell module and is designed to facilitate the management of scriptblocks.
 
 ## RELATED LINKS
-
-[https://github.com/Kestrun/Kestrun](https://github.com/Kestrun/Kestrun)
-

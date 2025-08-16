@@ -6,7 +6,7 @@ nav_order: 65
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://docs.microsoft.com/en-us/dotnet/api/kestrun.authentication.claimpolicybuilder
+online version:
 schema: 2.0.0
 ---
 
@@ -45,6 +45,3 @@ This function is part of the Kestrun.Claims module and is used to manage claim p
 Maps to ClaimPolicyBuilder constructor.
 
 ## RELATED LINKS
-
-[https://docs.microsoft.com/en-us/dotnet/api/kestrun.authentication.claimpolicybuilder](https://docs.microsoft.com/en-us/dotnet/api/kestrun.authentication.claimpolicybuilder)
-

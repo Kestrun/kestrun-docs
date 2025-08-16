@@ -6,7 +6,7 @@ nav_order: 10
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.defaultfilesoptions?view=aspnetcore-8.0
+online version:
 schema: 2.0.0
 ---
 

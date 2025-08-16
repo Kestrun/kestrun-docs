@@ -6,7 +6,7 @@ nav_order: 44
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.windowsauthentication?view=aspnetcore-8.0
+online version:
 schema: 2.0.0
 ---
 
@@ -78,6 +78,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 This cmdlet is used to configure Windows authentication for the Kestrun server, allowing you to secure your APIs with Windows credentials.
 
 ## RELATED LINKS
-
-[https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.windowsauthentication?view=aspnetcore-8.0](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.windowsauthentication?view=aspnetcore-8.0)
-

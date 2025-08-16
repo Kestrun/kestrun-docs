@@ -6,7 +6,7 @@ nav_order: 69
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://docs.microsoft.com/en-us/dotnet/api/kestrun.authentication.claimpolicybuilder
+online version:
 schema: 2.0.0
 ---
 

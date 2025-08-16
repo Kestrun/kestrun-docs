@@ -6,7 +6,7 @@ nav_order: 72
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
-online version: https://docs.microsoft.com/en-us/dotnet/api/kestrun.hosting.options.maprouteoptions
+online version:
 schema: 2.0.0
 ---
 
@@ -69,6 +69,3 @@ This function is part of the Kestrun.Hosting module and is used to manage route 
 Maps to MapRouteOptions constructor.
 
 ## RELATED LINKS
-
-[https://docs.microsoft.com/en-us/dotnet/api/kestrun.hosting.options.maprouteoptions](https://docs.microsoft.com/en-us/dotnet/api/kestrun.hosting.options.maprouteoptions)
-
