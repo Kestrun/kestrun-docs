@@ -31,3 +31,17 @@
 
 /* (optional) hide default page title on homepage if you want a clean hero */
 .home .page-title { display: none; }
+
+
+// make sidebar wider (default: 264px)
+$nav-width: 360px; // or 340px, 360px depending on your strings
+
+.site-nav,
+.site-header,
+.site-footer {
+  width: 100%;
+
+  @include mq(lg) {
+    width: $nav-width;
+  }
+}
