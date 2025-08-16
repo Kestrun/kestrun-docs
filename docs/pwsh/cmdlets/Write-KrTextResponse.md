@@ -44,7 +44,7 @@ other object that can be converted to a string.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases:
+Aliases: Text
 
 Required: True
 Position: 1
