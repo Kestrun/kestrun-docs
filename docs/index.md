@@ -7,12 +7,12 @@ permalink: /
 ---
 {: .fs-11 }
 
-# Kestrun
+Kestrun
 
 {: .fs-9 }
 PowerShell brains. Kestrel speed
 
-{: .fs-7 }
+{: .fs-6 }
 
 Kestrun jumpstarts your web automation with a fast, PowerShell-centric framework built on ASP.NET Core, blending scriptable flexibility with modern .NET performance.
 {: .fs-6 .fw-300 }
@@ -36,9 +36,9 @@ Kestrun jumpstarts your web automation with a fast, PowerShell-centric framework
 
 ## Quick links
 
-- 👉 **PowerShell Cmdlets**: [pwsh/cmdlets/](./pwsh/cmdlets/)
-- 👉 **C# API**: [cs/api/](./cs/api/)
-- 📚 **Tutorials**: [pwsh/tutorial/](./pwsh/tutorial/)
+- 👉 **PowerShell Cmdlets**: [pwsh/cmdlets/](docs/pwsh/cmdlets/)
+- 👉 **C# API**: [cs/api/](docs/cs/api/)
+- 📚 **Tutorials**: [pwsh/tutorial/](docs/pwsh/tutorial/)
 
 ## Getting started
 
