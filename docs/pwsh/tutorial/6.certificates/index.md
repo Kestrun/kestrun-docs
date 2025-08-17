@@ -1,10 +1,15 @@
 ---
 title: Certificates
 parent: Tutorials
-nav_order: 93
+nav_order: 6
 ---
 
 # Kestrun Certificates
+
+> 🚧 **Work in Progress**
+>
+> This page is currently under development. Content will be expanded with guides, examples, and best practices soon.  
+> Thank you for your patience while we build it out.
 
 ## Overview
 

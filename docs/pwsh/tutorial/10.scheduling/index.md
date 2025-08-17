@@ -1,10 +1,15 @@
 ---
 title: Scheduler
 parent: Tutorials
-nav_order: 92
+nav_order: 10
 ---
 
 # Kestrun Scheduler
+
+> 🚧 **Work in Progress**
+>
+> This page is currently under development. Content will be expanded with guides, examples, and best practices soon.  
+> Thank you for your patience while we build it out.
 
 ## Overview
 
