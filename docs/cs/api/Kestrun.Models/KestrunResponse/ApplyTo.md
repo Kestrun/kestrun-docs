@@ -16,6 +16,10 @@ public Task ApplyTo(HttpResponse response)
 | --- | --- |
 | response | The HttpResponse to apply the response to. |
 
+## Return Value
+
+A task representing the asynchronous operation.
+
 ## See Also
 
 * class [KestrunResponse](../KestrunResponse)

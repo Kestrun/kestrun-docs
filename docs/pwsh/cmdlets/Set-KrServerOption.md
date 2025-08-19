@@ -24,9 +24,9 @@ Set-KrServerOption [[-Server] <KestrunHost>] [-AllowSynchronousIO] [-DisableResp
 ```
 
 ## DESCRIPTION
-The Set-KrServerOption function allows fine-grained configuration of a Kestrun server instance. 
-It enables administrators to control server behavior, resource usage, and protocol compliance by 
-setting limits on request sizes, connection counts, timeouts, and other operational parameters. 
+The Set-KrServerOption function allows fine-grained configuration of a Kestrun server instance.
+It enables administrators to control server behavior, resource usage, and protocol compliance by
+setting limits on request sizes, connection counts, timeouts, and other operational parameters.
 Each parameter is optional and, if not specified, the server will use its built-in default value.
 
 ## EXAMPLES
@@ -62,8 +62,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowSynchronousIO
-If set to $true, allows synchronous IO operations on the server. 
-Synchronous IO can impact scalability and is generally discouraged. 
+If set to $true, allows synchronous IO operations on the server.
+Synchronous IO can impact scalability and is generally discouraged.
 Default: $false.
 
 ```yaml
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableResponseHeaderCompression
-If set to $true, disables compression of HTTP response headers. 
+If set to $true, disables compression of HTTP response headers.
 Default: $false.
 
 ```yaml
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DenyServerHeader
-If set to $true, removes the 'Server' HTTP header from responses for improved privacy and security. 
+If set to $true, removes the 'Server' HTTP header from responses for improved privacy and security.
 Default: $false.
 
 ```yaml
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowAlternateSchemes
-If set to $true, allows alternate URI schemes (other than HTTP/HTTPS) in requests. 
+If set to $true, allows alternate URI schemes (other than HTTP/HTTPS) in requests.
 Default: $false.
 
 ```yaml
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowHostHeaderOverride
-If set to $true, permits overriding the Host header in incoming requests. 
+If set to $true, permits overriding the Host header in incoming requests.
 Default: $false.
 
 ```yaml
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableStringReuse
-If set to $true, disables internal string reuse optimizations, which may increase memory usage but can help with certain debugging scenarios. 
+If set to $true, disables internal string reuse optimizations, which may increase memory usage but can help with certain debugging scenarios.
 Default: $false.
 
 ```yaml

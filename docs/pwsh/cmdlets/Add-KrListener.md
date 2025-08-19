@@ -20,20 +20,20 @@ Creates a new Kestrun server instance with specified options and listeners.
 ### NoCert (Default)
 ```
 Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>] [-UseConnectionLogging]
- [-passThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### CertFile
 ```
 Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>] -CertPath <String>
- [-CertPassword <SecureString>] [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-passThru]
+ [-CertPassword <SecureString>] [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
  [<CommonParameters>]
 ```
 
 ### x509Certificate
 ```
 Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>]
- -X509Certificate <X509Certificate2> [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-passThru]
+ -X509Certificate <X509Certificate2> [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -179,7 +179,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -passThru
+### -PassThru
 If specified, the cmdlet will return the modified server instance after adding the listener.
 
 ```yaml

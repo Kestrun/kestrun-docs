@@ -42,7 +42,7 @@ Adds a new HTML template route to the current Kestrun server and returns the rou
 ## PARAMETERS
 
 ### -Server
-The Kestrun server instance to which the route will be added. 
+The Kestrun server instance to which the route will be added.
 If not specified, the function will attempt to resolve the current server context.
 
 ```yaml
@@ -124,7 +124,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Returns a Kestrun.Hosting.MapRoute object representing the newly created route if PassThru is specified.
+### [Microsoft.AspNetCore.Builder.IEndpointConventionBuilder] representing the created route.
 ## NOTES
 This function is part of the Kestrun PowerShell module and is used to manage routes
 

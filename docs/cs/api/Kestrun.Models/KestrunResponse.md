@@ -56,6 +56,7 @@ public class KestrunResponse
 | [WriteXmlResponseAsync](KestrunResponse/WriteXmlResponseAsync)(…) | Asynchronously writes an XML response with the specified input object, status code, and content type. |
 | [WriteYamlResponse](KestrunResponse/WriteYamlResponse)(…) | Writes a YAML response with the specified input object, status code, and content type. |
 | [WriteYamlResponseAsync](KestrunResponse/WriteYamlResponseAsync)(…) | Asynchronously writes a YAML response with the specified input object, status code, and content type. |
+| static readonly [TextBasedMimeTypes](KestrunResponse/TextBasedMimeTypes) | A set of MIME types that are considered text-based for response content. |
 | static [IsTextBasedContentType](KestrunResponse/IsTextBasedContentType)(…) | Determines whether the specified content type is text-based or supports a charset. |
 
 ## See Also

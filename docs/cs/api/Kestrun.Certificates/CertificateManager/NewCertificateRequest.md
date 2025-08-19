@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Creates a new Certificate Signing Request (CSR) and returns the PEM-encoded CSR and the private key.
 
 ```csharp
-public static (string csrPem, AsymmetricKeyParameter privateKey) NewCertificateRequest(CsrOptions o)
+public static CsrResult NewCertificateRequest(CsrOptions o)
 ```
 
 | parameter | description |
@@ -22,6 +22,7 @@ A tuple containing the PEM-encoded CSR and the private key.
 
 ## See Also
 
+* record [CsrResult](../CsrResult)
 * record [CsrOptions](../CertificateManager.CsrOptions)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)

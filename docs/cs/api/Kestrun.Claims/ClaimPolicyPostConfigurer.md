@@ -12,12 +12,21 @@ Copies [`ClaimPolicyConfig`](./ClaimPolicyConfig) into AuthorizationOptions afte
 public sealed class ClaimPolicyPostConfigurer : IPostConfigureOptions<AuthorizationOptions>
 ```
 
+| parameter | description |
+| --- | --- |
+| scheme | The authentication scheme name. |
+| basics | The options monitor for [`BasicAuthenticationOptions`](../Kestrun.Authentication/BasicAuthenticationOptions). |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [ClaimPolicyPostConfigurer](ClaimPolicyPostConfigurer/ClaimPolicyPostConfigurer)(…) | Initializes a new instance of the [`ClaimPolicyPostConfigurer`](./ClaimPolicyPostConfigurer) class. |
+| [ClaimPolicyPostConfigurer](ClaimPolicyPostConfigurer/ClaimPolicyPostConfigurer)(…) | Copies [`ClaimPolicyConfig`](./ClaimPolicyConfig) into AuthorizationOptions after configuration. |
 | [PostConfigure](ClaimPolicyPostConfigurer/PostConfigure)(…) | Applies the [`ClaimPolicyConfig`](./ClaimPolicyConfig) to the specified AuthorizationOptions after configuration. |
+
+## Remarks
+
+Initializes a new instance of the [`ClaimPolicyPostConfigurer`](./ClaimPolicyPostConfigurer) class.
 
 ## See Also
 

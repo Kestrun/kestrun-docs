@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
-Scriptblock within which you call Add-KrMapRoute for relative paths.
+ScriptBlock within which you call Add-KrMapRoute for relative paths.
 
 ```yaml
 Type: ScriptBlock

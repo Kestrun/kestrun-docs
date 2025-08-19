@@ -58,5 +58,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### LoggerConfiguration object allowing method chaining
 ## NOTES
+This function is part of the Kestrun logging infrastructure and should be used to enrich log events with process information.
+https://github.com/serilog/serilog-enrichers-process
 
 ## RELATED LINKS

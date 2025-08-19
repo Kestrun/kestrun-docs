@@ -29,8 +29,8 @@ This function finalizes the JWT token construction by invoking the Build method 
 ### EXAMPLE 1
 ```powershell
 $token = New-KrJWTTokenBuilder | Add-KrJWTSubject -Subject "mySubject" |
-          Add-KrJWTIssuer -Issuer "myIssuer" | 
-          Add-KrJWTAudience -Audience "myAudience" | 
+          Add-KrJWTIssuer -Issuer "myIssuer" |
+          Add-KrJWTAudience -Audience "myAudience" |
           Build-KrJWT
 This example creates a new JWT token builder, adds a subject, issuer, and audience, and then builds the JWT token.
 ```

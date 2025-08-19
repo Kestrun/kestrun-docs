@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # ClaimPolicyPostConfigurer constructor
 
-Initializes a new instance of the [`ClaimPolicyPostConfigurer`](../ClaimPolicyPostConfigurer) class.
+Copies [`ClaimPolicyConfig`](../ClaimPolicyConfig) into AuthorizationOptions after configuration.
 
 ```csharp
 public ClaimPolicyPostConfigurer(string scheme, IOptionsMonitor<IClaimsCommonOptions> basics)
@@ -16,6 +16,10 @@ public ClaimPolicyPostConfigurer(string scheme, IOptionsMonitor<IClaimsCommonOpt
 | --- | --- |
 | scheme | The authentication scheme name. |
 | basics | The options monitor for [`BasicAuthenticationOptions`](../../Kestrun.Authentication/BasicAuthenticationOptions). |
+
+## Remarks
+
+Initializes a new instance of the [`ClaimPolicyPostConfigurer`](../ClaimPolicyPostConfigurer) class.
 
 ## See Also
 

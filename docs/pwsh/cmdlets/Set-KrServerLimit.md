@@ -65,8 +65,7 @@ Applies the specified limits to the Kestrun server instance.
 ## PARAMETERS
 
 ### -Server
-The Kestrun server instance to configure.
-This parameter is mandatory and must be a valid server object.
+The Kestrun server instance to configure.This parameter is mandatory and must be a valid server object.
 
 ```yaml
 Type: KestrunHost
@@ -81,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxRequestBodySize
-Specifies the maximum allowed size of the HTTP request body in bytes. 
+Specifies the maximum allowed size of the HTTP request body in bytes.
 Requests exceeding this size will be rejected.
 Default: 30,000,000 bytes (28.6 MB).
 
@@ -98,8 +97,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentConnections
-Sets the maximum number of concurrent client connections allowed to the server. 
-Additional connection attempts will be queued or rejected. 
+Sets the maximum number of concurrent client connections allowed to the server.
+Additional connection attempts will be queued or rejected.
 Default: Unlimited (no explicit limit).
 
 ```yaml
@@ -115,8 +114,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxRequestHeaderCount
-Defines the maximum number of HTTP headers permitted in a single request. 
-Requests with more headers will be rejected. 
+Defines the maximum number of HTTP headers permitted in a single request.
+Requests with more headers will be rejected.
 Default: 100.
 
 ```yaml
@@ -132,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeepAliveTimeoutSeconds
-Specifies the duration, in seconds, that a connection is kept alive when idle before being closed. 
+Specifies the duration, in seconds, that a connection is kept alive when idle before being closed.
 Default: 120 seconds.
 
 ```yaml
@@ -148,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxRequestBufferSize
-Sets the maximum size, in bytes, of the buffer used for reading HTTP requests. 
+Sets the maximum size, in bytes, of the buffer used for reading HTTP requests.
 Default: 1048576 bytes (1 MB).
 
 ```yaml
@@ -164,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxRequestHeadersTotalSize
-Specifies the maximum combined size, in bytes, of all HTTP request headers. 
+Specifies the maximum combined size, in bytes, of all HTTP request headers.
 Requests exceeding this size will be rejected.
 Default: 32768 bytes (32 KB).
 
@@ -181,7 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxRequestLineSize
-Sets the maximum allowed length, in bytes, of the HTTP request line (method, URI, and version). 
+Sets the maximum allowed length, in bytes, of the HTTP request line (method, URI, and version).
 Default: 8192 bytes (8 KB).
 
 ```yaml
@@ -197,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxResponseBufferSize
-Specifies the maximum size, in bytes, of the buffer used for sending HTTP responses. 
+Specifies the maximum size, in bytes, of the buffer used for sending HTTP responses.
 Default: 65536 bytes (64 KB).
 
 ```yaml
@@ -213,8 +212,8 @@ Accept wildcard characters: False
 ```
 
 ### -MinRequestBodyDataRate
-Defines the minimum data rate, in bytes per second, required for receiving the request body. 
-If the rate falls below this threshold, the connection may be closed. 
+Defines the minimum data rate, in bytes per second, required for receiving the request body.
+If the rate falls below this threshold, the connection may be closed.
 Default: 240 bytes/second.
 
 ```yaml
@@ -230,7 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinResponseDataRate
-Sets the minimum data rate, in bytes per second, required for sending the response. 
+Sets the minimum data rate, in bytes per second, required for sending the response.
 Default: 240 bytes/second.
 
 ```yaml
@@ -246,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestHeadersTimeoutSeconds
-Specifies the maximum time, in seconds, allowed to receive the complete set of request headers. 
+Specifies the maximum time, in seconds, allowed to receive the complete set of request headers.
 Default: 30 seconds.
 
 ```yaml

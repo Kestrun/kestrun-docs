@@ -40,6 +40,7 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | static class [CertificateManager](./Kestrun.Certificates/CertificateManager.md) | Drop-in replacement for Pode’s certificate helpers, powered by Bouncy Castle. |
+| record [CsrResult](./Kestrun.Certificates/CsrResult.md) | Represents the result of creating a Certificate Signing Request (CSR), including the PEM-encoded CSR and the private key. |
 
 ## Kestrun.Claims namespace
 

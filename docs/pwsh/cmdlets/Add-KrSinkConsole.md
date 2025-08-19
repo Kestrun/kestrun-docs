@@ -41,30 +41,26 @@ This enables log messages to be displayed directly in the PowerShell console.
 ### EXAMPLE 1
 ```powershell
 Add-KrSinkConsole -LoggerConfig $config
-```
-
 Adds a console sink to the logging system, allowing log messages to be output to the console.
+```
 
 ### EXAMPLE 2
 ```powershell
 Add-KrSinkConsole -LoggerConfig $config -RestrictedToMinimumLevel Information
-```
-
 Adds a console sink that only outputs log events at Information level or higher.
+```
 
 ### EXAMPLE 3
 ```powershell
 Add-KrSinkConsole -LoggerConfig $config -OutputTemplate '[{Level}] {Message}{NewLine}'
-```
-
 Customizes the output template for console log messages.
+```
 
 ### EXAMPLE 4
 ```powershell
 Add-KrSinkConsole -LoggerConfig $config -Formatter $customFormatter
-```
-
 Uses a custom text formatter for console log output.
+```
 
 ## PARAMETERS
 

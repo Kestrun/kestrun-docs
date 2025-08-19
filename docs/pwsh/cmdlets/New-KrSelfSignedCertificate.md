@@ -23,7 +23,7 @@ New-KrSelfSignedCertificate [-DnsName] <String[]> [[-KeyType] <String>] [[-KeyLe
 ```
 
 ## DESCRIPTION
-The New-KrSelfSignedCertificate function generates a self-signed certificate for use in development or testing scenarios. 
+The New-KrSelfSignedCertificate function generates a self-signed certificate for use in development or testing scenarios.
 This certificate can be used for securing communications or authentication purposes.
 
 ## EXAMPLES

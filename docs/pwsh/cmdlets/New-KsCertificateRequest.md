@@ -165,7 +165,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Object
+### [Kestrun.Certificates.CertificateManager.CsrResult]
 ## NOTES
 
 ## RELATED LINKS

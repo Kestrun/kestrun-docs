@@ -23,7 +23,7 @@ Import-KsCertificate [-FilePath] <String> [[-Password] <SecureString>] [[-Privat
 ```
 
 ## DESCRIPTION
-The Import-KsCertificate function allows you to import a certificate into the Kestrun environment. 
+The Import-KsCertificate function allows you to import a certificate into the Kestrun environment.
 This may include loading a certificate from a file or other source and adding it to the appropriate certificate store or configuration.
 
 ## EXAMPLES

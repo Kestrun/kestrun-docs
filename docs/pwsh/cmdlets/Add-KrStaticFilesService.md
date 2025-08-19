@@ -38,7 +38,8 @@ It can be used to serve files like images, stylesheets, and scripts.
 ### EXAMPLE 1
 ```powershell
 $server | Add-KrStaticFilesService -RequestPath '/static' -HttpsCompression -ServeUnknownFileTypes -DefaultContentType 'application/octet-stream' -RedirectToAppendTrailingSlash
-This example adds a static file service to the server for the path '/static', enabling HTTPS compression, allowing serving unknown file types, setting the default content type to 'application/octet-stream', and redirecting requests to append a trailing slash.
+This example adds a static file service to the server for the path '/static', enabling HTTPS compression, allowing serving unknown file types,
+setting the default content type to 'application/octet-stream', and redirecting requests to append a trailing slash.
 ```
 
 ### EXAMPLE 2
