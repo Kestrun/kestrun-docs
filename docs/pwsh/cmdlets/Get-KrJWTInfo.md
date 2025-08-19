@@ -56,10 +56,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Security.JwtParameters]
+### [Kestrun.Jwt.JwtParameters]
 ### An object containing the extracted parameters from the JWT token.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to inspect JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to inspect JWT tokens.
 Maps to JwtInspector.ReadAllParameters
 
 ## RELATED LINKS

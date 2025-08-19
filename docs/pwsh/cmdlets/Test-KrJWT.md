@@ -89,7 +89,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### [bool]
 ### Returns true if the token is valid, otherwise false.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to validate JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to validate JWT tokens.
 Maps to JwtBuilderResult.Validate
 
 ## RELATED LINKS

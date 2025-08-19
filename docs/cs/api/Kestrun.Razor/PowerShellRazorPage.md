@@ -18,6 +18,10 @@ public static class PowerShellRazorPage
 | --- | --- |
 | static [UsePowerShellRazorPages](PowerShellRazorPage/UsePowerShellRazorPages)(…) | Enables `.cshtml` + `.cshtml.ps1` pairs. For a request to `/Foo` it will, in order: |
 
+## Remarks
+
+This middleware allows for dynamic content generation in Razor Pages by leveraging PowerShell scripts. Middleware that lets any Razor view (*.cshtml) load a sibling PowerShell script (*.cshtml.ps1) in the SAME request. The script can set `$Model` which then becomes available to the Razor page through HttpContext.Items. ----------------------------------------------------------------------------- Usage (inside KestrunHost.ApplyConfiguration): builder.Services.AddRazorPages(); // already present … /* AFTER you build App and create _runspacePool: */ App.UsePowerShellRazorPages(_runspacePool); That’s it – no per-page registration.
+
 ## See Also
 
 * namespace [Kestrun.Razor](../Kestrun)

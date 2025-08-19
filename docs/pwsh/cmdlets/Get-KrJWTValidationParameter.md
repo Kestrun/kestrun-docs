@@ -87,7 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### [System.IdentityModel.Tokens.Jwt.TokenValidationParameters]
 ### The validation parameters extracted from the JWT builder result.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to manage JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to manage JWT tokens.
 Maps to JwtBuilderResult.GetValidationParameters
 
 ## RELATED LINKS

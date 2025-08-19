@@ -200,10 +200,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Security.JwtTokenBuilder]
+### [Kestrun.Jwt.JwtTokenBuilder]
 ### Returns the modified JWT token builder with encryption applied.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to build and protect JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to build and protect JWT tokens.
 Internally maps to JwtTokenBuilder.EncryptWithSecretB64, EncryptWithSecretHex, EncryptWithSecret,
 EncryptWithPemPublic, and EncryptWithCertificate methods.
 

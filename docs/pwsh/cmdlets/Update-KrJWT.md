@@ -117,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### [string]
 ### The updated JWT token.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to manage JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to manage JWT tokens.
 Maps to JwtBuilderResult.Renew
 
 ## RELATED LINKS

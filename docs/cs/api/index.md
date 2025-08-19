@@ -77,6 +77,17 @@ parent: "C#"
 | class [ListenerOptions](./Kestrun.Hosting.Options/ListenerOptions.md) | Configuration for an individual Kestrel listener. |
 | record [MapRouteOptions](./Kestrun.Hosting.Options/MapRouteOptions.md) | Options for mapping a route, including pattern, HTTP verbs, script code, authorization, and metadata. |
 
+## Kestrun.Jwt namespace
+
+| public type | description |
+| --- | --- |
+| enum [JwtAlgorithm](./Kestrun.Jwt/JwtAlgorithm.md) | Specifies supported JWT signing algorithms. |
+| static class [JwtAlgorithmExtensions](./Kestrun.Jwt/JwtAlgorithmExtensions.md) | Provides extension methods for the JwtAlgorithm enum. |
+| class [JwtBuilderResult](./Kestrun.Jwt/JwtBuilderResult.md) | Represents the result of building a JWT, including the token, key, builder, issue time, and expiration. |
+| static class [JwtInspector](./Kestrun.Jwt/JwtInspector.md) | Provides methods for inspecting and extracting parameters from JWT tokens. |
+| class [JwtParameters](./Kestrun.Jwt/JwtParameters.md) | Represents all parameters extracted from a JWT, including header fields, standard properties, and claims. |
+| class [JwtTokenBuilder](./Kestrun.Jwt/JwtTokenBuilder.md) | Fluent utility to create any flavour of JWS/JWE in one line. |
+
 ## Kestrun.Languages namespace
 
 | public type | description |
@@ -185,17 +196,6 @@ parent: "C#"
 | static class [RouteHandlerBuilderLanguageExtensions](./Kestrun.Scripting/RouteHandlerBuilderLanguageExtensions.md) | Extension methods for RouteHandlerBuilder to support script language metadata. |
 | enum [ScriptLanguage](./Kestrun.Scripting/ScriptLanguage.md) | Specifies the supported scripting languages for script execution. |
 | class [ScriptLanguageAttribute](./Kestrun.Scripting/ScriptLanguageAttribute.md) | Attribute to specify the script language for a method or delegate. |
-
-## Kestrun.Security namespace
-
-| public type | description |
-| --- | --- |
-| enum [JwtAlgorithm](./Kestrun.Security/JwtAlgorithm.md) | Specifies supported JWT signing algorithms. |
-| static class [JwtAlgorithmExtensions](./Kestrun.Security/JwtAlgorithmExtensions.md) | Provides extension methods for the JwtAlgorithm enum. |
-| class [JwtBuilderResult](./Kestrun.Security/JwtBuilderResult.md) | Represents the result of building a JWT, including the token, key, builder, issue time, and expiration. |
-| static class [JwtInspector](./Kestrun.Security/JwtInspector.md) | Provides methods for inspecting and extracting parameters from JWT tokens. |
-| class [JwtParameters](./Kestrun.Security/JwtParameters.md) | Represents all parameters extracted from a JWT, including header fields, standard properties, and claims. |
-| class [JwtTokenBuilder](./Kestrun.Security/JwtTokenBuilder.md) | Fluent utility to create any flavour of JWS/JWE in one line. |
 
 ## Kestrun.SharedState namespace
 

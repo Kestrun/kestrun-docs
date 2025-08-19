@@ -69,10 +69,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Security.JwtTokenBuilder]
+### [Kestrun.Jwt.JwtTokenBuilder]
 ### A new cloned instance of the JwtTokenBuilder class.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to build JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to build JWT tokens.
 Maps to JwtTokenBuilder.New
 
 ## RELATED LINKS

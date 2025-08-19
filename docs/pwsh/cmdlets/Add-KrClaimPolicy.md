@@ -127,6 +127,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Kestrun.Claims.ClaimPolicyBuilder
 ## NOTES
-This function is part of the Kestrun.Security module and is used to build Claims
+This function is part of the Kestrun.Jwt module and is used to build Claims
 
 ## RELATED LINKS

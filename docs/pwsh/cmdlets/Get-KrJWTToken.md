@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### [string]
 ### The JWT token extracted from the builder result.
 ## NOTES
-This function is part of the Kestrun.Security module and is used to retrieve JWT tokens.
+This function is part of the Kestrun.Jwt module and is used to retrieve JWT tokens.
 Maps to JwtBuilderResult.Token
 
 ## RELATED LINKS
