@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "KestrunHost._Logger property"
+title: "KestrunHost.HostLogger property"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHost._Logger property
+# KestrunHost.HostLogger property
 
 Gets the Serilog logger instance used by the Kestrun host.
 
 ```csharp
-public ILogger _Logger { get; }
+public ILogger HostLogger { get; }
 ```
 
 ## See Also

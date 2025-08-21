@@ -18,11 +18,12 @@ public class KestrunHost : IDisposable
 | --- | --- |
 | [KestrunHost](KestrunHost/KestrunHost)(…) | Initializes a new instance of the [`KestrunHost`](./KestrunHost) class with the specified application name, root directory, and optional module paths. (2 constructors) |
 | [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
+| [HostLogger](KestrunHost/HostLogger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
 | [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
 | [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |
 | [Options](KestrunHost/Options) { get; } | Gets the configuration options for the Kestrun host. |
+| [RouteGroupStack](KestrunHost/RouteGroupStack) { get; } | Gets the stack used for managing route groups in the Kestrun host. |
 | [Scheduler](KestrunHost/Scheduler) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. |
-| [_Logger](KestrunHost/_Logger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |

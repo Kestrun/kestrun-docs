@@ -9,7 +9,7 @@ grand_parent: "C# API"
 If true, allows anonymous access to this route.
 
 ```csharp
-public bool AllowAnonymous { get; }
+public bool AllowAnonymous { get; set; }
 ```
 
 ## See Also

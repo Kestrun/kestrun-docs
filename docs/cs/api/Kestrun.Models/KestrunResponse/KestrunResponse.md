@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunResponse constructor
 
-Initializes a new instance of the [`KestrunResponse`](../KestrunResponse) class with the specified request and optional body async threshold.
+Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes.
 
 ```csharp
 public KestrunResponse(KestrunRequest request, int bodyAsyncThreshold = 8192)
@@ -16,6 +16,10 @@ public KestrunResponse(KestrunRequest request, int bodyAsyncThreshold = 8192)
 | --- | --- |
 | request | The associated [`KestrunRequest`](../KestrunRequest) for this response. |
 | bodyAsyncThreshold | The threshold in bytes for using async body write operations. Defaults to 8192. |
+
+## Remarks
+
+Initializes a new instance of the [`KestrunResponse`](../KestrunResponse) class with the specified request and optional body async threshold.
 
 ## See Also
 

@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the form data for the request as a dictionary of key-value pairs, if present.
 
 ```csharp
-public Dictionary<string, string>? Form { get; }
+public Dictionary<string, string>? Form { get; set; }
 ```
 
 ## See Also

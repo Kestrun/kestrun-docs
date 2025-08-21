@@ -9,7 +9,7 @@ grand_parent: "C# API"
 If true, disables antiforgery protection for this route.
 
 ```csharp
-public bool DisableAntiforgery { get; }
+public bool DisableAntiforgery { get; set; }
 ```
 
 ## See Also

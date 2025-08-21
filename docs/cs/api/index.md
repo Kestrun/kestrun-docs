@@ -50,7 +50,7 @@ parent: "C#"
 | class [ClaimPolicyConfig](./Kestrun.Claims/ClaimPolicyConfig.md) | A bag of named policies, each backed by a ClaimRule. |
 | static class [ClaimPolicyExtensions](./Kestrun.Claims/ClaimPolicyExtensions.md) | Extension methods for converting ClaimPolicyConfig into ASP.NET Core authorization setup. |
 | class [ClaimPolicyPostConfigurer](./Kestrun.Claims/ClaimPolicyPostConfigurer.md) | Copies [`ClaimPolicyConfig`](./Kestrun.Claims/ClaimPolicyConfig.md) into AuthorizationOptions after configuration. |
-| record [ClaimRule](./Kestrun.Claims/ClaimRule.md) | Represents one “claim must equal …” rule. |
+| record [ClaimRule](./Kestrun.Claims/ClaimRule.md) | Represents one claim must equal rule. |
 | static class [KestrunClaimExtensions](./Kestrun.Claims/KestrunClaimExtensions.md) | Provides extension methods for the KestrunClaim enum. |
 | enum [UserIdentityClaim](./Kestrun.Claims/UserIdentityClaim.md) | Represents the set of claims supported by Kestrun for authentication and authorization purposes. |
 

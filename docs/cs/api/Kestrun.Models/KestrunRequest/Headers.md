@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunRequest.Headers property
 
-Gets or sets the headers for the request as a dictionary of key-value pairs.
+Gets the headers for the request as a dictionary of key-value pairs.
 
 ```csharp
 public Dictionary<string, string> Headers { get; set; }

@@ -12,11 +12,15 @@ Wraps the PowerShell InvocationInfo object and exposes its properties for loggin
 public class InvocationInfoWrapper
 ```
 
+| parameter | description |
+| --- | --- |
+| invocationInfo | The PowerShell InvocationInfo object to wrap. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [InvocationInfoWrapper](InvocationInfoWrapper/InvocationInfoWrapper)(…) | Initializes a new instance of the [`InvocationInfoWrapper`](./InvocationInfoWrapper) class with the specified InvocationInfo. |
+| [InvocationInfoWrapper](InvocationInfoWrapper/InvocationInfoWrapper)(…) | Wraps the PowerShell InvocationInfo object and exposes its properties for logging purposes. |
 | [BoundParameters](InvocationInfoWrapper/BoundParameters) { get; } | Gets the dictionary of bound parameters for the PowerShell invocation. |
 | [CommandOrigin](InvocationInfoWrapper/CommandOrigin) { get; } | Gets the origin of the command (e.g., Runspace, Internal, etc.). |
 | [DisplayScriptPosition](InvocationInfoWrapper/DisplayScriptPosition) { get; } | Gets the script extent that displays the position of the command in the script. |
@@ -35,6 +39,10 @@ public class InvocationInfoWrapper
 | [ScriptName](InvocationInfoWrapper/ScriptName) { get; } | Gets the name of the script where the command is invoked. |
 | [UnboundArguments](InvocationInfoWrapper/UnboundArguments) { get; } | Gets the list of arguments that were not bound to parameters during the PowerShell invocation. |
 | override [ToString](InvocationInfoWrapper/ToString)() | Returns a string representation of the [`InvocationInfoWrapper`](./InvocationInfoWrapper) object. |
+
+## Remarks
+
+Initializes a new instance of the [`InvocationInfoWrapper`](./InvocationInfoWrapper) class with the specified InvocationInfo.
 
 ## See Also
 

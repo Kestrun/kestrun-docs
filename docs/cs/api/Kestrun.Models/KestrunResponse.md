@@ -12,11 +12,16 @@ Represents an HTTP response in the Kestrun framework, providing methods to write
 public class KestrunResponse
 ```
 
+| parameter | description |
+| --- | --- |
+| request | The associated [`KestrunRequest`](./KestrunRequest) for this response. |
+| bodyAsyncThreshold | The threshold in bytes for using async body write operations. Defaults to 8192. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [KestrunResponse](KestrunResponse/KestrunResponse)(…) | Initializes a new instance of the [`KestrunResponse`](./KestrunResponse) class with the specified request and optional body async threshold. |
+| [KestrunResponse](KestrunResponse/KestrunResponse)(…) | Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes. |
 | [AcceptCharset](KestrunResponse/AcceptCharset) { get; } | Global text encoding for all responses. Defaults to UTF-8. |
 | [Body](KestrunResponse/Body) { get; set; } | Gets or sets the body of the response, which can be a string, byte array, stream, or file info. |
 | [BodyAsyncThreshold](KestrunResponse/BodyAsyncThreshold) { get; set; } | If the response body is larger than this threshold (in bytes), async write will be used. |
@@ -58,6 +63,10 @@ public class KestrunResponse
 | [WriteYamlResponseAsync](KestrunResponse/WriteYamlResponseAsync)(…) | Asynchronously writes a YAML response with the specified input object, status code, and content type. |
 | static readonly [TextBasedMimeTypes](KestrunResponse/TextBasedMimeTypes) | A set of MIME types that are considered text-based for response content. |
 | static [IsTextBasedContentType](KestrunResponse/IsTextBasedContentType)(…) | Determines whether the specified content type is text-based or supports a charset. |
+
+## Remarks
+
+Initializes a new instance of the [`KestrunResponse`](./KestrunResponse) class with the specified request and optional body async threshold.
 
 ## See Also
 

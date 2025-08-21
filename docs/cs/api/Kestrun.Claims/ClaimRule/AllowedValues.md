@@ -6,8 +6,10 @@ grand_parent: "C# API"
 ---
 # ClaimRule.AllowedValues property
 
+Allowed values for the claim. Exposed as a read-only sequence.
+
 ```csharp
-public string[] AllowedValues { get; set; }
+public IReadOnlyList<string> AllowedValues { get; }
 ```
 
 ## See Also

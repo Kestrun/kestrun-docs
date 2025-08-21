@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # ErrorRecordWrapper constructor
 
-Initializes a new instance of the [`ErrorRecordWrapper`](../ErrorRecordWrapper) class using the specified ErrorRecord.
+Wraps an ErrorRecord object to provide additional logging information.
 
 ```csharp
 public ErrorRecordWrapper(ErrorRecord errorRecord)
@@ -15,6 +15,10 @@ public ErrorRecordWrapper(ErrorRecord errorRecord)
 | parameter | description |
 | --- | --- |
 | errorRecord | The error record to wrap. |
+
+## Remarks
+
+Initializes a new instance of the [`ErrorRecordWrapper`](../ErrorRecordWrapper) class using the specified ErrorRecord.
 
 ## See Also
 

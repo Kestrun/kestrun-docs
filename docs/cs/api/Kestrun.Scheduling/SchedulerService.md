@@ -12,11 +12,17 @@ Represents a service for managing scheduled tasks. Provides methods to schedule,
 public sealed class SchedulerService : IDisposable
 ```
 
+| parameter | description |
+| --- | --- |
+| pool | The runspace pool manager for executing PowerShell scripts. |
+| log | The logger instance for logging events. |
+| tz | The optional time zone information. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [SchedulerService](SchedulerService/SchedulerService)(…) | Initializes a new instance of the [`SchedulerService`](./SchedulerService) class. This constructor sets up the scheduler service with a specified runspace pool, logger, and optional time zone. The runspace pool is used for executing PowerShell scripts, while the logger is used for logging events. |
+| [SchedulerService](SchedulerService/SchedulerService)(…) | Represents a service for managing scheduled tasks. Provides methods to schedule, cancel, pause, resume, and report on tasks. This service is designed to run within a Kestrun application context. It supports both C# and PowerShell jobs, allowing for flexible scheduling options. |
 | [Cancel](SchedulerService/Cancel)(…) | Cancels a scheduled job by its name. |
 | [CancelAll](SchedulerService/CancelAll)() | Cancels all scheduled jobs. |
 | [Dispose](SchedulerService/Dispose)() | Disposes the scheduler and cancels all running tasks. |
@@ -32,6 +38,8 @@ public sealed class SchedulerService : IDisposable
 ## Remarks
 
 The service uses a runspace pool for PowerShell jobs and supports scheduling via cron expressions or intervals. It also provides methods to retrieve task reports in various formats, including typed objects and PowerShell-friendly hashtables.
+
+Initializes a new instance of the [`SchedulerService`](./SchedulerService) class. This constructor sets up the scheduler service with a specified runspace pool, logger, and optional time zone. The runspace pool is used for executing PowerShell scripts, while the logger is used for logging events.
 
 ## See Also
 

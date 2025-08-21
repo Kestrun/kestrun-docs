@@ -9,7 +9,7 @@ grand_parent: "C# API"
 The name of the rate limit policy to apply to this route, if any.
 
 ```csharp
-public string? RateLimitPolicyName { get; }
+public string? RateLimitPolicyName { get; set; }
 ```
 
 ## See Also

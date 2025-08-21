@@ -16,14 +16,25 @@ public class KestrunRequest
 
 | name | description |
 | --- | --- |
+| static [NewRequestSync](KestrunRequest/NewRequestSync)(…) | Synchronous helper for tests and simple call sites that prefer not to use async/await. Avoid in ASP.NET request pipelines; intended for unit tests only. |
 | [Authorization](KestrunRequest/Authorization) { get; } | Gets the authorization header value for the request, if present. |
-| [Body](KestrunRequest/Body) { get; set; } | Gets or sets the body content of the request as a string. |
-| [Cookies](KestrunRequest/Cookies) { get; } | Gets the cookies for the request as an IRequestCookieCollection, if present. |
-| [Form](KestrunRequest/Form) { get; } | Gets the form data for the request as a dictionary of key-value pairs, if present. |
-| [Headers](KestrunRequest/Headers) { get; set; } | Gets or sets the headers for the request as a dictionary of key-value pairs. |
-| [Method](KestrunRequest/Method) { get; set; } | Gets or sets the HTTP method for the request (e.g., GET, POST). |
-| [Path](KestrunRequest/Path) { get; set; } | Gets or sets the request path (e.g., "/api/resource"). |
-| [Query](KestrunRequest/Query) { get; set; } | Gets or sets the query parameters for the request as a dictionary of key-value pairs. |
+| [Body](KestrunRequest/Body) { get; set; } | Gets the body content of the request as a string. |
+| [ContentLength](KestrunRequest/ContentLength) { get; } | Gets the content length of the request, if available. |
+| [ContentType](KestrunRequest/ContentType) { get; } | Gets the content type of the request (e.g., "application/json"). |
+| [Cookies](KestrunRequest/Cookies) { get; set; } | Gets the cookies for the request as an IRequestCookieCollection, if present. |
+| [Form](KestrunRequest/Form) { get; set; } | Gets the form data for the request as a dictionary of key-value pairs, if present. |
+| [HasFormContentType](KestrunRequest/HasFormContentType) { get; } | Gets a value indicating whether the request has a form content type. |
+| [Headers](KestrunRequest/Headers) { get; set; } | Gets the headers for the request as a dictionary of key-value pairs. |
+| [Host](KestrunRequest/Host) { get; } | Gets the host header value for the request. |
+| [IsHttps](KestrunRequest/IsHttps) { get; } | Gets a value indicating whether the request is made over HTTPS. |
+| [Method](KestrunRequest/Method) { get; } | Gets the HTTP method for the request (e.g., GET, POST). |
+| [Path](KestrunRequest/Path) { get; } | Gets the request path (e.g., "/api/resource"). |
+| [PathBase](KestrunRequest/PathBase) { get; } | Gets the base path for the request (e.g., "/api"). |
+| [Protocol](KestrunRequest/Protocol) { get; } | Gets the protocol used for the request (e.g., "HTTP/1.1"). |
+| [Query](KestrunRequest/Query) { get; set; } | Gets the query parameters for the request as a dictionary of key-value pairs. |
+| [QueryString](KestrunRequest/QueryString) { get; } | Gets the query string for the request (e.g., "?id=123"). |
+| [RouteValues](KestrunRequest/RouteValues) { get; set; } | Gets the route values for the request as a RouteValueDictionary, if present. |
+| [Scheme](KestrunRequest/Scheme) { get; } | Gets the request scheme (e.g., "http", "https"). |
 | static [NewRequest](KestrunRequest/NewRequest)(…) | Creates a new [`KestrunRequest`](./KestrunRequest) instance from the specified HttpContext. |
 
 ## See Also

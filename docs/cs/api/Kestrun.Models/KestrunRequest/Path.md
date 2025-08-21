@@ -6,10 +6,10 @@ grand_parent: "C# API"
 ---
 # KestrunRequest.Path property
 
-Gets or sets the request path (e.g., "/api/resource").
+Gets the request path (e.g., "/api/resource").
 
 ```csharp
-public string Path { get; set; }
+public string Path { get; }
 ```
 
 ## See Also

@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunRequest.Query property
 
-Gets or sets the query parameters for the request as a dictionary of key-value pairs.
+Gets the query parameters for the request as a dictionary of key-value pairs.
 
 ```csharp
 public Dictionary<string, string> Query { get; set; }

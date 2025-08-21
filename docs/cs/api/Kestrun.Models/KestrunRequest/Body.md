@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunRequest.Body property
 
-Gets or sets the body content of the request as a string.
+Gets the body content of the request as a string.
 
 ```csharp
 public string Body { get; set; }

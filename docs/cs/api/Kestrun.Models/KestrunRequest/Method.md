@@ -6,10 +6,10 @@ grand_parent: "C# API"
 ---
 # KestrunRequest.Method property
 
-Gets or sets the HTTP method for the request (e.g., GET, POST).
+Gets the HTTP method for the request (e.g., GET, POST).
 
 ```csharp
-public string Method { get; set; }
+public string Method { get; }
 ```
 
 ## See Also

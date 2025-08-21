@@ -21,21 +21,21 @@ Adds a new map route to the Kestrun server.
 ```
 Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] [-ScriptBlock] <ScriptBlock>
  [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>]
- [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-PassThru] [-AllowDuplicate] [-DuplicateAction <String>]
+ [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate] [-DuplicateAction <String>] [-PassThru]
  [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrMapRoute [-Server <KestrunHost>] -Options <MapRouteOptions> [-PassThru] [-AllowDuplicate]
- [-DuplicateAction <String>] [<CommonParameters>]
+Add-KrMapRoute [-Server <KestrunHost>] -Options <MapRouteOptions> [-AllowDuplicate] [-DuplicateAction <String>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### CodeFilePath
 ```
 Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -CodeFilePath <String>
  [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>]
- [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-PassThru] [-AllowDuplicate] [-DuplicateAction <String>]
+ [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate] [-DuplicateAction <String>] [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -43,8 +43,8 @@ Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -C
 ```
 Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -Code <String>
  -Language <ScriptLanguage> [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>]
- [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-PassThru] [-AllowDuplicate]
- [-DuplicateAction <String>] [<CommonParameters>]
+ [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate]
+ [-DuplicateAction <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -271,21 +271,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-If specified, the function will return the created route object.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AllowDuplicate
 If specified, allows the addition of duplicate routes with the same path and HTTP verb.
 
@@ -314,6 +299,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: Throw
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+If specified, the function will return the created route object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

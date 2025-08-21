@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # ClaimRule record
 
-Represents one “claim must equal …” rule.
+Represents one claim must equal rule.
 
 ```csharp
 public record ClaimRule
@@ -16,9 +16,9 @@ public record ClaimRule
 
 | name | description |
 | --- | --- |
-| [ClaimRule](ClaimRule/ClaimRule)(…) | Represents one “claim must equal …” rule. |
-| [AllowedValues](ClaimRule/AllowedValues) { get; set; } |  |
-| [ClaimType](ClaimRule/ClaimType) { get; set; } |  |
+| [ClaimRule](ClaimRule/ClaimRule)(…) | Constructs a rule from a claim type and one or more allowed values. (2 constructors) |
+| [AllowedValues](ClaimRule/AllowedValues) { get; } | Allowed values for the claim. Exposed as a read-only sequence. |
+| [ClaimType](ClaimRule/ClaimType) { get; } | The claim type required by this rule. |
 
 ## Remarks
 

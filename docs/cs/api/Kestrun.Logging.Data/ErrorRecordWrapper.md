@@ -12,11 +12,15 @@ Wraps an ErrorRecord object to provide additional logging information.
 public class ErrorRecordWrapper
 ```
 
+| parameter | description |
+| --- | --- |
+| errorRecord | The error record to wrap. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [ErrorRecordWrapper](ErrorRecordWrapper/ErrorRecordWrapper)(…) | Initializes a new instance of the [`ErrorRecordWrapper`](./ErrorRecordWrapper) class using the specified ErrorRecord. |
+| [ErrorRecordWrapper](ErrorRecordWrapper/ErrorRecordWrapper)(…) | Wraps an ErrorRecord object to provide additional logging information. |
 | [CategoryInfo](ErrorRecordWrapper/CategoryInfo) { get; } | Gets the error category information associated with the error record. |
 | [ErrorDetails](ErrorRecordWrapper/ErrorDetails) { get; set; } | Gets or sets the error details associated with the error record. |
 | [ExceptionDetails](ErrorRecordWrapper/ExceptionDetails) { get; } | Gets the exception details associated with the error record, if available. |
@@ -27,6 +31,10 @@ public class ErrorRecordWrapper
 | [ScriptStackTrace](ErrorRecordWrapper/ScriptStackTrace) { get; } | Gets the script stack trace associated with the error record. |
 | [TargetObject](ErrorRecordWrapper/TargetObject) { get; } | Gets the target object associated with the error record. |
 | override [ToString](ErrorRecordWrapper/ToString)() | Returns a string representation of the current [`ErrorRecordWrapper`](./ErrorRecordWrapper) instance. |
+
+## Remarks
+
+Initializes a new instance of the [`ErrorRecordWrapper`](./ErrorRecordWrapper) class using the specified ErrorRecord.
 
 ## See Also
 

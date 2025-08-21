@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunRuntimeApiAttribute constructor
 
-Initializes a new instance of the [`KestrunRuntimeApiAttribute`](../KestrunRuntimeApiAttribute) class with the specified API contexts.
+Attribute to specify runtime API context and notes for Kestrun routes or schedules.
 
 ```csharp
 public KestrunRuntimeApiAttribute(KestrunApiContext contexts)
@@ -15,6 +15,10 @@ public KestrunRuntimeApiAttribute(KestrunApiContext contexts)
 | parameter | description |
 | --- | --- |
 | contexts | The API contexts in which the route or schedule can be executed. |
+
+## Remarks
+
+Initializes a new instance of the [`KestrunRuntimeApiAttribute`](../KestrunRuntimeApiAttribute) class with the specified API contexts.
 
 ## See Also
 

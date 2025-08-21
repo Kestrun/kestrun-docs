@@ -1,20 +1,31 @@
 ---
 layout: default
-title: "ClaimRule constructor"
+title: "ClaimRule constructor (1 of 2)"
 parent: "Kestrun.Claims"
 grand_parent: "C# API"
 ---
-# ClaimRule constructor
+# ClaimRule constructor (1 of 2)
 
-Represents one “claim must equal …” rule.
+Constructs a rule from a claim type and an explicit read-only list of values.
 
 ```csharp
-public ClaimRule(string ClaimType, params string[] AllowedValues)
+public ClaimRule(string claimType, IReadOnlyList<string> allowedValues)
 ```
 
-## Remarks
+## See Also
 
-This is used to define authorization policies that require a specific claim type with specific allowed values. It is typically used in conjunction with [`ClaimPolicyConfig`](../ClaimPolicyConfig) to define multiple policies.
+* record [ClaimRule](../ClaimRule)
+* namespace [Kestrun.Claims](../../Kestrun)
+
+---
+
+# ClaimRule constructor (2 of 2)
+
+Constructs a rule from a claim type and one or more allowed values.
+
+```csharp
+public ClaimRule(string claimType, params string[] allowedValues)
+```
 
 ## See Also
 

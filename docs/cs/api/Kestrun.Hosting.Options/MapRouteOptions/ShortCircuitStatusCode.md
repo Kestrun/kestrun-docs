@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Status code to return if short-circuiting the pipeline after this route.
 
 ```csharp
-public int? ShortCircuitStatusCode { get; }
+public int? ShortCircuitStatusCode { get; set; }
 ```
 
 ## See Also

@@ -19,26 +19,28 @@ Creates a grouped route context (prefix + shared options) for nested Add-KrMapRo
 
 ### ScriptBlock (Default)
 ```
-Add-KrRouteGroup [-Prefix <String>] [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>]
- [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-ScriptBlock] <ScriptBlock>
- [-NoInherit] [<CommonParameters>]
+Add-KrRouteGroup [-Server <KestrunHost>] [-Prefix <String>] [-AuthorizationSchema <String[]>]
+ [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>]
+ [-Arguments <Hashtable>] [-ScriptBlock] <ScriptBlock> [-NoInherit] [-PassThru] [<CommonParameters>]
 ```
 
 ### FileNameWithOptions
 ```
-Add-KrRouteGroup -Options <MapRouteOptions> -FileName <String> [-NoInherit] [<CommonParameters>]
+Add-KrRouteGroup [-Server <KestrunHost>] -Options <MapRouteOptions> -FileName <String> [-NoInherit] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### ScriptBlockWithOptions
 ```
-Add-KrRouteGroup -Options <MapRouteOptions> [-ScriptBlock] <ScriptBlock> [-NoInherit] [<CommonParameters>]
+Add-KrRouteGroup [-Server <KestrunHost>] -Options <MapRouteOptions> [-ScriptBlock] <ScriptBlock> [-NoInherit]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### FileName
 ```
-Add-KrRouteGroup [-Prefix <String>] [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>]
- [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] -FileName <String> [-NoInherit]
- [<CommonParameters>]
+Add-KrRouteGroup [-Server <KestrunHost>] [-Prefix <String>] [-AuthorizationSchema <String[]>]
+ [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>]
+ [-Arguments <Hashtable>] -FileName <String> [-NoInherit] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,6 +70,22 @@ Add the new route group defined in the specified file.
 ```
 
 ## PARAMETERS
+
+### -Server
+The Kestrun server instance to which the route will be added.
+If not specified, the function will attempt to resolve the current server context.
+
+```yaml
+Type: KestrunHost
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -Options
 The options to apply to all routes in the group.
@@ -220,6 +238,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PassThru
+If specified, the function will return the created route object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -228,5 +261,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+This function is part of the Kestrun PowerShell module and is used to manage routes
 
 ## RELATED LINKS

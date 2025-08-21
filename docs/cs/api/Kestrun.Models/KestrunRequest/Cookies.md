@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the cookies for the request as an IRequestCookieCollection, if present.
 
 ```csharp
-public IRequestCookieCollection? Cookies { get; }
+public Dictionary<string, string> Cookies { get; set; }
 ```
 
 ## See Also

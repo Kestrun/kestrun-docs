@@ -17,36 +17,36 @@ public enum HttpVerb
 
 | name | value | description |
 | --- | --- | --- |
-| Get | `0x0` | Represents the HTTP GET method. |
-| Head | `0x1` | Represents the HTTP HEAD method. |
-| Post | `0x2` | Represents the HTTP POST method. |
-| Put | `0x3` | Represents the HTTP PUT method. |
-| Patch | `0x4` | Represents the HTTP PATCH method. |
-| Delete | `0x5` | Represents the HTTP DELETE method. |
-| Options | `0x6` | Represents the HTTP OPTIONS method. |
-| Trace | `0x7` | Represents the HTTP TRACE method. |
-| PropFind | `0x8` | Represents the HTTP PROPFIND method (WebDAV). |
-| PropPatch | `0x9` | Represents the HTTP PROPPATCH method (WebDAV). |
-| MkCol | `0xA` | Represents the HTTP MKCOL method (WebDAV). |
-| Copy | `0xB` | Represents the HTTP COPY method (WebDAV). |
-| Move | `0xC` | Represents the HTTP MOVE method (WebDAV). |
-| Lock | `0xD` | Represents the HTTP LOCK method (WebDAV). |
-| Unlock | `0xE` | Represents the HTTP UNLOCK method (WebDAV). |
-| Report | `0xF` | Represents the HTTP REPORT method (WebDAV). |
-| Acl | `0x10` | Represents the HTTP ACL method (WebDAV). |
-| Search | `0x11` | Represents the HTTP SEARCH method (WebDAV). |
-| Merge | `0x12` | Represents the HTTP MERGE method (WebDAV). |
-| Bind | `0x13` | Represents the HTTP BIND method (WebDAV). |
-| Unbind | `0x14` | Represents the HTTP UNBIND method (WebDAV). |
-| Rebind | `0x15` | Represents the HTTP REBIND method (WebDAV). |
-| Update | `0x16` | Represents the HTTP UPDATE method (WebDAV). |
-| VersionControl | `0x17` | Represents the HTTP VERSION-CONTROL method (WebDAV). |
-| Checkin | `0x18` | Represents the HTTP CHECKIN method (WebDAV). |
-| Checkout | `0x19` | Represents the HTTP CHECKOUT method (WebDAV). |
-| Uncheckout | `0x1A` | Represents the HTTP UNCHECKOUT method (WebDAV). |
-| MkWorkspace | `0x1B` | Represents the HTTP MKWORKSPACE method (WebDAV). |
-| Label | `0x1C` | Represents the HTTP LABEL method (WebDAV). |
-| OrderPatch | `0x1D` | Represents the HTTP ORDERPATCH method (WebDAV). |
+| Get | `0x1` | Represents the HTTP GET method. |
+| Head | `0x2` | Represents the HTTP HEAD method. |
+| Post | `0x4` | Represents the HTTP POST method. |
+| Put | `0x8` | Represents the HTTP PUT method. |
+| Patch | `0x10` | Represents the HTTP PATCH method. |
+| Delete | `0x20` | Represents the HTTP DELETE method. |
+| Options | `0x40` | Represents the HTTP OPTIONS method. |
+| Trace | `0x80` | Represents the HTTP TRACE method. |
+| PropFind | `0x100` | Represents the HTTP PROPFIND method (WebDAV). |
+| PropPatch | `0x200` | Represents the HTTP PROPPATCH method (WebDAV). |
+| MkCol | `0x400` | Represents the HTTP MKCOL method (WebDAV). |
+| Copy | `0x800` | Represents the HTTP COPY method (WebDAV). |
+| Move | `0x1000` | Represents the HTTP MOVE method (WebDAV). |
+| Lock | `0x2000` | Represents the HTTP LOCK method (WebDAV). |
+| Unlock | `0x4000` | Represents the HTTP UNLOCK method (WebDAV). |
+| Report | `0x8000` | Represents the HTTP REPORT method (WebDAV). |
+| Acl | `0x10000` | Represents the HTTP ACL method (WebDAV). |
+| Search | `0x20000` | Represents the HTTP SEARCH method (WebDAV). |
+| Merge | `0x40000` | Represents the HTTP MERGE method (WebDAV). |
+| Bind | `0x80000` | Represents the HTTP BIND method (WebDAV). |
+| Unbind | `0x100000` | Represents the HTTP UNBIND method (WebDAV). |
+| Rebind | `0x200000` | Represents the HTTP REBIND method (WebDAV). |
+| Update | `0x400000` | Represents the HTTP UPDATE method (WebDAV). |
+| VersionControl | `0x800000` | Represents the HTTP VERSION-CONTROL method (WebDAV). |
+| Checkin | `0x1000000` | Represents the HTTP CHECKIN method (WebDAV). |
+| Checkout | `0x2000000` | Represents the HTTP CHECKOUT method (WebDAV). |
+| Uncheckout | `0x4000000` | Represents the HTTP UNCHECKOUT method (WebDAV). |
+| MkWorkspace | `0x8000000` | Represents the HTTP MKWORKSPACE method (WebDAV). |
+| Label | `0x10000000` | Represents the HTTP LABEL method (WebDAV). |
+| OrderPatch | `0x20000000` | Represents the HTTP ORDERPATCH method (WebDAV). |
 
 ## Remarks
 

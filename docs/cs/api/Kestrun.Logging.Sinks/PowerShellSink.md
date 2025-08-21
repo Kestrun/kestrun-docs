@@ -12,15 +12,32 @@ A Serilog sink that formats log events and invokes a callback for PowerShell int
 public class PowerShellSink : ILogEventSink
 ```
 
+| parameter | description |
+| --- | --- |
+| callback | The callback action invoked with the log event and its formatted message. |
+| outputTemplate | The output template used for formatting log messages. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [PowerShellSink](PowerShellSink/PowerShellSink)(…) | Initializes a new instance of the [`PowerShellSink`](./PowerShellSink) class. |
+| [PowerShellSink](PowerShellSink/PowerShellSink)(…) | A Serilog sink that formats log events and invokes a callback for PowerShell integration. |
 | [Callback](PowerShellSink/Callback) { get; set; } | Gets or sets the callback action that is invoked with the log event and its formatted message. |
 | [TextFormatter](PowerShellSink/TextFormatter) { get; set; } | Gets or sets the text formatter used to format log events. |
 | [Emit](PowerShellSink/Emit)(…) | Emits a log event by formatting it and invoking the callback action. |
 | const [DEFAULT_OUTPUT_TEMPLATE](PowerShellSink/DEFAULT_OUTPUT_TEMPLATE) | The default output template used for formatting log messages. |
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentNullException | Thrown if *callback* is null. |
+
+## Remarks
+
+Initializes a new instance of the [`PowerShellSink`](./PowerShellSink) class.
+
+This constructor initializes the text formatter and callback action for the sink.
 
 ## See Also
 

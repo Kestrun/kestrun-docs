@@ -9,7 +9,7 @@ grand_parent: "C# API"
 If true, short-circuits the pipeline after this route.
 
 ```csharp
-public bool ShortCircuit { get; }
+public bool ShortCircuit { get; set; }
 ```
 
 ## See Also

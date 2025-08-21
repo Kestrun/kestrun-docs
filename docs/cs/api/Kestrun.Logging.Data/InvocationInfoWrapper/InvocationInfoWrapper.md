@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # InvocationInfoWrapper constructor
 
-Initializes a new instance of the [`InvocationInfoWrapper`](../InvocationInfoWrapper) class with the specified InvocationInfo.
+Wraps the PowerShell InvocationInfo object and exposes its properties for logging purposes.
 
 ```csharp
 public InvocationInfoWrapper(InvocationInfo invocationInfo)
@@ -15,6 +15,10 @@ public InvocationInfoWrapper(InvocationInfo invocationInfo)
 | parameter | description |
 | --- | --- |
 | invocationInfo | The PowerShell InvocationInfo object to wrap. |
+
+## Remarks
+
+Initializes a new instance of the [`InvocationInfoWrapper`](../InvocationInfoWrapper) class with the specified InvocationInfo.
 
 ## See Also
 

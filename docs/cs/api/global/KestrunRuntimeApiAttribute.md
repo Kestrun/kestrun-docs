@@ -13,14 +13,22 @@ Attribute to specify runtime API context and notes for Kestrun routes or schedul
 public sealed class KestrunRuntimeApiAttribute : Attribute
 ```
 
+| parameter | description |
+| --- | --- |
+| contexts | The API contexts in which the route or schedule can be executed. |
+
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [KestrunRuntimeApiAttribute](KestrunRuntimeApiAttribute/KestrunRuntimeApiAttribute)(…) | Initializes a new instance of the [`KestrunRuntimeApiAttribute`](./KestrunRuntimeApiAttribute) class with the specified API contexts. |
+| [KestrunRuntimeApiAttribute](KestrunRuntimeApiAttribute/KestrunRuntimeApiAttribute)(…) | Attribute to specify runtime API context and notes for Kestrun routes or schedules. |
 | [Contexts](KestrunRuntimeApiAttribute/Contexts) { get; } | Gets the API contexts in which the route or schedule can be executed. |
 | [Notes](KestrunRuntimeApiAttribute/Notes) { get; set; } | Optional notes or description for the route. |
 | [SafeForUntrusted](KestrunRuntimeApiAttribute/SafeForUntrusted) { get; set; } | Indicates whether the route is safe to be executed by untrusted callers. |
+
+## Remarks
+
+Initializes a new instance of the [`KestrunRuntimeApiAttribute`](./KestrunRuntimeApiAttribute) class with the specified API contexts.
 
 ## See Also
 

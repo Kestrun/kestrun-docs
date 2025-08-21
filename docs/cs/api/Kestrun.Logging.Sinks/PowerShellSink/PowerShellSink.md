@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # PowerShellSink constructor
 
-Initializes a new instance of the [`PowerShellSink`](../PowerShellSink) class.
+A Serilog sink that formats log events and invokes a callback for PowerShell integration.
 
 ```csharp
 public PowerShellSink(Action<LogEvent, string> callback, string outputTemplate = "{Message:lj}")
@@ -24,6 +24,8 @@ public PowerShellSink(Action<LogEvent, string> callback, string outputTemplate =
 | ArgumentNullException | Thrown if *callback* is null. |
 
 ## Remarks
+
+Initializes a new instance of the [`PowerShellSink`](../PowerShellSink) class.
 
 This constructor initializes the text formatter and callback action for the sink.
 

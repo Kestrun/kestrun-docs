@@ -6,8 +6,10 @@ grand_parent: "C# API"
 ---
 # ClaimRule.ClaimType property
 
+The claim type required by this rule.
+
 ```csharp
-public string ClaimType { get; set; }
+public string ClaimType { get; }
 ```
 
 ## See Also
