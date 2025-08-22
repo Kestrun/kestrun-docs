@@ -16,7 +16,7 @@ public record CsGlobals
 
 | name | description |
 | --- | --- |
-| [CsGlobals](CsGlobals/CsGlobals)(…) | Initializes a new instance of the [`CsGlobals`](./CsGlobals) class with the specified global variables. (3 constructors) |
+| [CsGlobals](CsGlobals/CsGlobals)(…) | Initializes a new instance of the [`CsGlobals`](./CsGlobals) class with the specified global variables. (4 constructors) |
 | [Context](CsGlobals/Context) { get; } | Gets the Kestrun execution context for delegate execution. |
 | [Globals](CsGlobals/Globals) { get; } | Gets the dictionary containing global variables for delegate execution. |
 | [Locals](CsGlobals/Locals) { get; } | Gets the dictionary containing local variables for delegate execution. |

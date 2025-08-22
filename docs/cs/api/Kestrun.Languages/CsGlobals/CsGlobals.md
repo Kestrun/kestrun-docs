@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "CsGlobals constructor (1 of 3)"
+title: "CsGlobals constructor (1 of 4)"
 parent: "Kestrun.Languages"
 grand_parent: "C# API"
 ---
-# CsGlobals constructor (1 of 3)
+# CsGlobals constructor (1 of 4)
 
 Initializes a new instance of the [`CsGlobals`](../CsGlobals) class with the specified global variables.
 
@@ -23,7 +23,28 @@ public CsGlobals(IReadOnlyDictionary<string, object?> globals)
 
 ---
 
-# CsGlobals constructor (2 of 3)
+# CsGlobals constructor (2 of 4)
+
+Initializes a new instance with the specified global and local variables (no execution context).
+
+```csharp
+public CsGlobals(IReadOnlyDictionary<string, object?> globals, 
+    IReadOnlyDictionary<string, object?> locals)
+```
+
+| parameter | description |
+| --- | --- |
+| globals | Global variables. |
+| locals | Local variables. |
+
+## See Also
+
+* record [CsGlobals](../CsGlobals)
+* namespace [Kestrun.Languages](../../Kestrun)
+
+---
+
+# CsGlobals constructor (3 of 4)
 
 Initializes a new instance of the [`CsGlobals`](../CsGlobals) class with the specified global variables and context.
 
@@ -44,7 +65,7 @@ public CsGlobals(IReadOnlyDictionary<string, object?> globals, KestrunContext kr
 
 ---
 
-# CsGlobals constructor (3 of 3)
+# CsGlobals constructor (4 of 4)
 
 Initializes a new instance of the [`CsGlobals`](../CsGlobals) class with the specified global variables, context, and local variables.
 
