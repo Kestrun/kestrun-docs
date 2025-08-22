@@ -19,7 +19,7 @@ Adds a new map route to the Kestrun server.
 
 ### ScriptBlock (Default)
 ```
-Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] [-ScriptBlock] <ScriptBlock>
+Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Pattern <String>] [-ScriptBlock] <ScriptBlock>
  [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>]
  [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate] [-DuplicateAction <String>] [-PassThru]
  [<CommonParameters>]
@@ -33,7 +33,7 @@ Add-KrMapRoute [-Server <KestrunHost>] -Options <MapRouteOptions> [-AllowDuplica
 
 ### CodeFilePath
 ```
-Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -CodeFilePath <String>
+Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Pattern <String>] -CodeFilePath <String>
  [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>]
  [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate] [-DuplicateAction <String>] [-PassThru]
  [<CommonParameters>]
@@ -41,7 +41,7 @@ Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -C
 
 ### Code
 ```
-Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Path <String>] -Code <String>
+Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Pattern <String>] -Code <String>
  -Language <ScriptLanguage> [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>]
  [-ExtraImports <String[]>] [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-AllowDuplicate]
  [-DuplicateAction <String>] [-PassThru] [<CommonParameters>]
@@ -100,7 +100,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -120,13 +120,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
+### -Pattern
 The URL path for the new route.
 
 ```yaml
 Type: String
 Parameter Sets: ScriptBlock, CodeFilePath, Code
-Aliases:
+Aliases: Path
 
 Required: False
 Position: Named

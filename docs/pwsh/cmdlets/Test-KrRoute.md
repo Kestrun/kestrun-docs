@@ -18,7 +18,7 @@ Tests if a route exists in the Kestrun host.
 ## SYNTAX
 
 ```
-Test-KrRoute [-Path] <String> [[-Verbs] <HttpVerb[]>] [<CommonParameters>]
+Test-KrRoute [-Pattern] <String> [[-Verbs] <HttpVerb[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,13 +40,13 @@ Test-KrRoute -Path "/api/test" -Verbs "POST"
 
 ## PARAMETERS
 
-### -Path
+### -Pattern
 The path of the route to test.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: True
 Position: 1

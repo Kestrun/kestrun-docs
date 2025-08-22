@@ -9,7 +9,7 @@ grand_parent: "C# API"
 The HTTP verbs (methods) that this route responds to.
 
 ```csharp
-public IEnumerable<HttpVerb> HttpVerbs { get; set; }
+public List<HttpVerb> HttpVerbs { get; set; }
 ```
 
 ## See Also

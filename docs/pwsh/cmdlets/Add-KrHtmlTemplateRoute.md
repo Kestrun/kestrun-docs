@@ -18,7 +18,7 @@ Adds a new HTML template route to the Kestrun server.
 ## SYNTAX
 
 ```
-Add-KrHtmlTemplateRoute [[-Server] <KestrunHost>] [-Path] <String> [-HtmlTemplatePath] <String>
+Add-KrHtmlTemplateRoute [[-Server] <KestrunHost>] [-Pattern] <String> [-HtmlTemplatePath] <String>
  [[-Authorization] <String[]>] [-PassThru] [<CommonParameters>]
 ```
 
@@ -57,13 +57,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Path
+### -Pattern
 The URL path for the new route.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: True
 Position: 2
