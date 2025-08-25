@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Represents a scheduled task with its configuration and state.
 
 ```csharp
-public JobInfo(string Name, DateTimeOffset? LastRunAt, DateTimeOffset NextRunAt, bool IsSuspended)
+public JobInfo(string Name, DateTimeOffset? LastRunAt, DateTimeOffset NextRunAt, bool IsSuspended, 
+    bool IsCompleted = false)
 ```
 
 | parameter | description |
@@ -18,6 +19,7 @@ public JobInfo(string Name, DateTimeOffset? LastRunAt, DateTimeOffset NextRunAt,
 | LastRunAt | The last time the task was run. |
 | NextRunAt | The next scheduled run time for the task. |
 | IsSuspended | Indicates whether the task is currently suspended. |
+| IsCompleted | Indicates whether the scheduling loop has exited (task fully cancelled). |
 
 ## Remarks
 

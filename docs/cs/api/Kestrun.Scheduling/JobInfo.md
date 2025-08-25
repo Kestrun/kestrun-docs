@@ -17,6 +17,7 @@ public record JobInfo
 | name | description |
 | --- | --- |
 | [JobInfo](JobInfo/JobInfo)(…) | Represents a scheduled task with its configuration and state. |
+| [IsCompleted](JobInfo/IsCompleted) { get; set; } | Indicates whether the scheduling loop has exited (task fully cancelled). |
 | [IsSuspended](JobInfo/IsSuspended) { get; set; } | Indicates whether the task is currently suspended. |
 | [LastRunAt](JobInfo/LastRunAt) { get; set; } | The last time the task was run. |
 | [Name](JobInfo/Name) { get; set; } | The name of the scheduled task. |
