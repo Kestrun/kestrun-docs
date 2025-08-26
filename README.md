@@ -1,7 +1,3 @@
-Here’s a professional, structured `README.md` draft for the repository containing the Kestrun website:
-
----
-
 # Kestrun Website
 
 This repository contains the source code, documentation, and assets for the **Kestrun** official website, including feature overviews, tutorials, and API references.
@@ -20,7 +16,7 @@ The website serves as the central hub for:
 
 ## 🗂 Repository Structure
 
-```
+```text
 .
 ├── docs/                  # Documentation files
 │   ├── pwsh/               # PowerShell Cmdlet Docs
@@ -30,34 +26,6 @@ The website serves as the central hub for:
 |   └── index.md                # Homepage content
 └── README.md               # This file
 ```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-* **Ruby** and **Bundler** for Jekyll
-* **Git**
-* (Optional) **PowerShell** for testing cmdlet documentation
-
-### Install Dependencies
-
-```bash
-bundle install
-```
-
-### Run Locally
-
-```bash
-bundle exec jekyll serve
-```
-
-Then visit:
-[http://localhost:4000](http://localhost:4000)
-
-## 🌐 Deployment
-
-This site is automatically deployed to **GitHub Pages** when changes are pushed to the `main` branch.
-The workflow builds the documentation and publishes it to the `gh-pages` branch.
 
 ## 📂 Documentation Organization
 
@@ -81,13 +49,10 @@ The homepage highlights:
    ```bash
    git checkout -b feature/my-improvement
    ```
+
 3. Commit changes and push.
 4. Open a Pull Request.
 
 ## 📜 License
 
 This repository is licensed under the [MIT License](LICENSE).
-
----
-
-If you want, I can also prepare a **visually appealing homepage `index.md`** that showcases all Kestrun features with quick links. That would give your site an inviting landing page.
