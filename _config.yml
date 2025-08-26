@@ -11,7 +11,7 @@ url: https://kestrun.github.io
 aux_links:
   Repository: https://github.com/kestrun/kestrun 
  
-logo: "docs/assets/kestrel_logo_transparent.png"
+logo: "https://www.kestrun.dev/assets/kestrel_logo_transparent.png"
 color_scheme: light
 search_enabled: true
 search:

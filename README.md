@@ -26,7 +26,6 @@ The website serves as the central hub for:
 │   ├── pwsh/               # PowerShell Cmdlet Docs
 │   │   ├── tutorial/       # PowerShell tutorials
 |   |   └── ...
-│   ├── assets/                 # Images, icons, and static resources
 |   ├── _config.yml             # Jekyll site configuration
 |   └── index.md                # Homepage content
 └── README.md               # This file
