@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Get-KrRequestRouteValue
+title: Get-KrRequestRouteParam
 nav_order: 64
 render_with_liquid: false
 external help file: Kestrun-help.xml
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-KrRequestRouteValue
+# Get-KrRequestRouteParam
 
 ## SYNOPSIS
 Retrieves a request route value from the HTTP request.
@@ -18,7 +18,7 @@ Retrieves a request route value from the HTTP request.
 ## SYNTAX
 
 ```
-Get-KrRequestRouteValue [-Name] <String> [<CommonParameters>]
+Get-KrRequestRouteParam [-Name] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,7 +29,7 @@ of the specified request route value by name.
 
 ### EXAMPLE 1
 ```powershell
-$value = Get-KrRequestRouteValue -Name "param1"
+$value = Get-KrRequestRouteParam -Name "param1"
 Retrieves the value of the request route value "param1" from the HTTP request.
 ```
 
