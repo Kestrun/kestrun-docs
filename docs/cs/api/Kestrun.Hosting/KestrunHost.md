@@ -19,6 +19,7 @@ public class KestrunHost : IDisposable
 | [KestrunHost](KestrunHost/KestrunHost)(…) | Initializes a new instance of the [`KestrunHost`](./KestrunHost) class with the specified application name, root directory, and optional module paths. (2 constructors) |
 | [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
 | [HostLogger](KestrunHost/HostLogger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
+| [IsConfigured](KestrunHost/IsConfigured) { get; } | Indicates whether the Kestrun host configuration has been applied. |
 | [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
 | [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |
 | [Options](KestrunHost/Options) { get; } | Gets the configuration options for the Kestrun host. |

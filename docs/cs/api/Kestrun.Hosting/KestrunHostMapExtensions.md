@@ -18,7 +18,7 @@ public static class KestrunHostMapExtensions
 | --- | --- |
 | static [AddHtmlTemplateRoute](KestrunHostMapExtensions/AddHtmlTemplateRoute)(…) | Adds an HTML template route to the KestrunHost for the specified pattern and HTML file path. (2 methods) |
 | static [AddMapRoute](KestrunHostMapExtensions/AddMapRoute)(…) | Adds a native route to the KestrunHost for the specified pattern and HTTP verb. (6 methods) |
-| static [AddStaticOverride](KestrunHostMapExtensions/AddStaticOverride)(…) | Adds a static override route to the KestrunHost for the specified pattern and handler. This allows you to override static file serving with dynamic content. Call this method before adding static file components to ensure it takes precedence. (4 methods) |
+| static [AddStaticMapOverride](KestrunHostMapExtensions/AddStaticMapOverride)(…) | Adds a static override route to the KestrunHost for the specified pattern and handler. This allows you to override static file serving with dynamic content. Call this method before adding static file components to ensure it takes precedence. (4 methods) |
 | static [GetMapRouteOptions](KestrunHostMapExtensions/GetMapRouteOptions)(…) | Retrieves the [`MapRouteOptions`](../Kestrun.Hosting.Options/MapRouteOptions) associated with a given route pattern and HTTP verb, if registered. |
 | static [MapExists](KestrunHostMapExtensions/MapExists)(…) | Checks if a route with the specified pattern and optional HTTP method exists in the KestrunHost. (2 methods) |
 | delegate [KestrunHandler](KestrunHostMapExtensions.KestrunHandler) | Represents a delegate that handles a Kestrun request with the provided context. |

@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: New-MapRouteOption
-nav_order: 78
+title: New-KrMapRouteOption
+nav_order: 76
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-MapRouteOption
+# New-KrMapRouteOption
 
 ## SYNOPSIS
 Creates a new instance of the Kestrun.Hosting.Options.MapRouteOptions class.
@@ -18,7 +18,7 @@ Creates a new instance of the Kestrun.Hosting.Options.MapRouteOptions class.
 ## SYNTAX
 
 ```
-New-MapRouteOption [-Property] <Hashtable> [<CommonParameters>]
+New-KrMapRouteOption [-Property] <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,7 +29,7 @@ routing options for Kestrun server routes.
 
 ### EXAMPLE 1
 ```powershell
-$options = New-MapRouteOption -Property @{
+$options = New-KrMapRouteOption -Property @{
     Path = "/myroute"
     HttpVerbs = "Get", "Post"
 }

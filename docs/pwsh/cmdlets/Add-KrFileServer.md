@@ -19,8 +19,9 @@ Registers a file server to serve static files from a specified path.
 
 ### Items (Default)
 ```
-Add-KrFileServer [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
- [-EnableDirectoryBrowsing] [-RedirectToAppendTrailingSlash] [-PassThru] [<CommonParameters>]
+Add-KrFileServer [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>] [-HttpsCompression]
+ [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-EnableDirectoryBrowsing]
+ [-RedirectToAppendTrailingSlash] [-ContentTypeMap <Hashtable>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
@@ -109,6 +110,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HttpsCompression
+If specified, enables HTTPS compression for the static files.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServeUnknownFileTypes
+If specified, allows serving files with unknown MIME types.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultContentType
+The default content type to use for files served by the static file service.
+
+```yaml
+Type: String
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnableDirectoryBrowsing
 If specified, enables directory browsing for the file server.
 
@@ -135,6 +181,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContentTypeMap
+A hashtable mapping file extensions to MIME types (e.g., @{ ".yaml"="application/x-yaml"; ".yml"="application/x-yaml" }).
+This allows for serving files with the correct \`Content-Type\` header.
+
+```yaml
+Type: Hashtable
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

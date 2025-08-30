@@ -21,7 +21,7 @@ Registers a static file server to serve files from a specified path.
 ```
 Add-KrStaticFilesService [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
  [-HttpsCompression] [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-RedirectToAppendTrailingSlash]
- [-PassThru] [<CommonParameters>]
+ [-ContentTypeMap <Hashtable>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
@@ -166,6 +166,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContentTypeMap
+{{ Fill ContentTypeMap Description }}
+
+```yaml
+Type: Hashtable
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

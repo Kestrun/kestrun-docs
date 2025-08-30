@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Close-KrLogger
-nav_order: 46
+nav_order: 47
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "KestrunHostMapExtensions.AddStaticOverride method (1 of 4)"
+title: "KestrunHostMapExtensions.AddStaticMapOverride method (1 of 4)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHostMapExtensions.AddStaticOverride method (1 of 4)
+# KestrunHostMapExtensions.AddStaticMapOverride method (1 of 4)
 
 Adds a static override route to the KestrunHost using the specified MapRouteOptions. This allows you to override static file serving with dynamic content. Call this method before adding static file components to ensure it takes precedence.
 
 ```csharp
-public static KestrunHost AddStaticOverride(this KestrunHost host, MapRouteOptions options)
+public static KestrunHost AddStaticMapOverride(this KestrunHost host, MapRouteOptions options)
 ```
 
 | parameter | description |
@@ -30,12 +30,12 @@ The KestrunHost instance for method chaining.
 
 ---
 
-# KestrunHostMapExtensions.AddStaticOverride method (2 of 4)
+# KestrunHostMapExtensions.AddStaticMapOverride method (2 of 4)
 
 Adds a static override route to the KestrunHost using the specified MapRouteOptions and handler. This allows you to override static file serving with dynamic content by providing a handler that will be executed for the specified route pattern.
 
 ```csharp
-public static KestrunHost AddStaticOverride(this KestrunHost host, MapRouteOptions options, 
+public static KestrunHost AddStaticMapOverride(this KestrunHost host, MapRouteOptions options, 
     KestrunHandler handler)
 ```
 
@@ -59,12 +59,12 @@ The KestrunHost instance for method chaining.
 
 ---
 
-# KestrunHostMapExtensions.AddStaticOverride method (3 of 4)
+# KestrunHostMapExtensions.AddStaticMapOverride method (3 of 4)
 
 Adds a static override route to the KestrunHost for the specified pattern and handler. This allows you to override static file serving with dynamic content. Call this method before adding static file components to ensure it takes precedence.
 
 ```csharp
-public static KestrunHost AddStaticOverride(this KestrunHost host, string pattern, 
+public static KestrunHost AddStaticMapOverride(this KestrunHost host, string pattern, 
     KestrunHandler handler, string[]? requireSchemes = null)
 ```
 
@@ -92,12 +92,12 @@ This method allows you to override static file serving with dynamic content by p
 
 ---
 
-# KestrunHostMapExtensions.AddStaticOverride method (4 of 4)
+# KestrunHostMapExtensions.AddStaticMapOverride method (4 of 4)
 
 Adds a static override route to the KestrunHost for the specified pattern and script code. This allows you to override static file serving with dynamic content. /// Call this method before adding static file components to ensure it takes precedence.
 
 ```csharp
-public static KestrunHost AddStaticOverride(this KestrunHost host, string pattern, string code, 
+public static KestrunHost AddStaticMapOverride(this KestrunHost host, string pattern, string code, 
     ScriptLanguage language = ScriptLanguage.PowerShell, string[]? requireSchemes = null, 
     Dictionary<string, object?>? arguments = null)
 ```
