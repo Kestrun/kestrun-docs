@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrRazorPageService
-nav_order: 28
+nav_order: 27
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

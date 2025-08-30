@@ -17,6 +17,7 @@ public static class KestrunHostStaticFilesExtensions
 | name | description |
 | --- | --- |
 | static [AddDefaultFiles](KestrunHostStaticFilesExtensions/AddDefaultFiles)(…) | Adds default files middleware to the application. This middleware serves default files like index.html when a directory is requested. (2 methods) |
+| static [AddDirectoryBrowser](KestrunHostStaticFilesExtensions/AddDirectoryBrowser)(…) | Adds a directory browser middleware to the application. This middleware enables directory browsing for a specified request path. |
 | static [AddFavicon](KestrunHostStaticFilesExtensions/AddFavicon)(…) | Adds a favicon middleware to the application. |
 | static [AddFileServer](KestrunHostStaticFilesExtensions/AddFileServer)(…) | Adds a file server middleware to the application. (2 methods) |
 | static [AddStaticFiles](KestrunHostStaticFilesExtensions/AddStaticFiles)(…) | Adds static files to the application. This overload allows you to specify configuration options. (2 methods) |

@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Get-KestrunRoot
-nav_order: 52
+title: Get-KrRoot
+nav_order: 63
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-KestrunRoot
+# Get-KrRoot
 
 ## SYNOPSIS
 Retrieves the Kestrun root directory.
@@ -18,7 +18,7 @@ Retrieves the Kestrun root directory.
 ## SYNTAX
 
 ```
-Get-KestrunRoot [<CommonParameters>]
+Get-KrRoot [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ This function returns the path to the Kestrun root directory, which is used as a
 
 ### EXAMPLE 1
 ```powershell
-$kestrunRoot = Get-KestrunRoot
+$kestrunRoot = get-KrRoot
 Retrieves the Kestrun root directory and stores it in the variable $kestrunRoot.
 ```
 

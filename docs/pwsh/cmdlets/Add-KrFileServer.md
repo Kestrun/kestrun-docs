@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrFileServer
-nav_order: 16
+nav_order: 15
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -19,7 +19,7 @@ Registers a file server to serve static files from a specified path.
 
 ### Items (Default)
 ```
-Add-KrFileServer [-Server <KestrunHost>] [-FileProvider <PhysicalFileProvider>] [-RequestPath <String>]
+Add-KrFileServer [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
  [-EnableDirectoryBrowsing] [-RedirectToAppendTrailingSlash] [-PassThru] [<CommonParameters>]
 ```
 
@@ -79,11 +79,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FileProvider
-An optional file provider to use for serving the files.
+### -RootPath
+The root path from which to serve files.
 
 ```yaml
-Type: PhysicalFileProvider
+Type: String
 Parameter Sets: Items
 Aliases:
 

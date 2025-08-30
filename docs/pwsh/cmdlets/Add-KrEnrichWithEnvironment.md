@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrEnrichWithEnvironment
-nav_order: 9
+nav_order: 8
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

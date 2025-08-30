@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Import-KsCertificate
-nav_order: 68
+nav_order: 67
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrSinkPowerShell
-nav_order: 38
+nav_order: 37
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

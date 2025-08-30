@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Get-KrCertificatePurpose
-nav_order: 53
+nav_order: 51
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -58,7 +58,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+### System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 ## NOTES
 This function is part of the Kestrun module.
 

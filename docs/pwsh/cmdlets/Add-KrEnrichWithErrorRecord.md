@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrEnrichWithErrorRecord
-nav_order: 10
+nav_order: 9
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
