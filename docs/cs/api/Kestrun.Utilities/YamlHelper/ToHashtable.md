@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "YamlHelper.FromYamlToPSCustomObject method"
+title: "YamlHelper.ToHashtable method"
 parent: "Kestrun.Utilities"
 grand_parent: "C# API"
 ---
-# YamlHelper.FromYamlToPSCustomObject method
+# YamlHelper.ToHashtable method
 
-Deserializes a YAML string into a PowerShell PSObject (PSCustomObject).
+Deserializes a YAML string into a PowerShell Hashtable.
 
 ```csharp
-public static PSObject FromYamlToPSCustomObject(string yaml)
+public static Hashtable ToHashtable(string yaml)
 ```
 
 | parameter | description |
@@ -18,7 +18,7 @@ public static PSObject FromYamlToPSCustomObject(string yaml)
 
 ## Return Value
 
-A PSObject containing the deserialized YAML content.
+A Hashtable containing the deserialized YAML content.
 
 ## See Also
 

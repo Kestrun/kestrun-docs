@@ -16,8 +16,8 @@ public static class YamlHelper
 
 | name | description |
 | --- | --- |
-| static [FromYamlToHashtable](YamlHelper/FromYamlToHashtable)(…) | Deserializes a YAML string into a PowerShell Hashtable. |
-| static [FromYamlToPSCustomObject](YamlHelper/FromYamlToPSCustomObject)(…) | Deserializes a YAML string into a PowerShell PSObject (PSCustomObject). |
+| static [ToHashtable](YamlHelper/ToHashtable)(…) | Deserializes a YAML string into a PowerShell Hashtable. |
+| static [ToPSCustomObject](YamlHelper/ToPSCustomObject)(…) | Deserializes a YAML string into a PowerShell PSObject (PSCustomObject). |
 | static [ToYaml](YamlHelper/ToYaml)(…) | Serializes any PowerShell object to YAML format. |
 
 ## See Also
