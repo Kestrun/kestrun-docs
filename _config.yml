@@ -10,7 +10,9 @@ url: https://kestrun.github.io
 
 sass:
   quiet_deps: true
-  
+
+source: docs
+
 aux_links:
   Repository: https://github.com/kestrun/kestrun 
  
