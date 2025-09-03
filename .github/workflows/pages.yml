@@ -40,39 +40,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Copy (replace) examples & create zip
-        run: |
-          set -e
-          echo "Checking for docs/_includes/examples directory (new source)..."
-          if [ -d docs/_includes/examples ]; then
-            echo "Found docs/_includes/examples. Copying contents to _includes/examples ..."
-            # Remove any existing destination to ensure full replacement
-            if [ -d _includes/examples ]; then
-              echo "Removing existing _includes/examples directory for clean replace..."
-              rm -rf _includes/examples
-            fi
-            echo "Creating _includes/examples directory..."
-            mkdir -p _includes/examples
-            echo "Copying contents to _includes/examples ..."
-            # Copy (preserve attributes); trailing /. ensures contents not parent folder
-            cp -a docs/_includes/examples/. _includes/examples/
-          else
-            echo "No docs/_includes/examples directory present. Skipping copy."
-          fi
-
-          echo "Creating examples.zip under tutorial directory..."
-          # Ensure tutorial directory exists (assuming PowerShell tutorial path)
-          mkdir -p docs/pwsh/tutorial
-          if [ -d _includes/examples ]; then
-            (cd _includes/examples && zip -r ../../docs/pwsh/tutorial/examples.zip .)
-            echo "examples.zip created at docs/pwsh/tutorial/examples.zip"
-          else
-            echo "_includes/examples does not exist; zip will be empty placeholder."
-            cd docs/pwsh/tutorial
-            zip -r examples.zip /dev/null || true
-            cd -
-          fi
-        shell: bash
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
