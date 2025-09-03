@@ -19,7 +19,6 @@ public static class KestrunHostManager
 | static [Default](KestrunHostManager/Default) { get; } | Gets the default KestrunHost instance, if one has been set. |
 | static [InstanceNames](KestrunHostManager/InstanceNames) { get; } | Gets the collection of names for all KestrunHost instances. |
 | static [KestrunRoot](KestrunHostManager/KestrunRoot) { get; set; } | Gets or sets the root path for Kestrun operations. |
-| static [VariableBaseline](KestrunHostManager/VariableBaseline) { get; set; } | Gets or sets the baseline variables for Kestrun operations. |
 | static [Contains](KestrunHostManager/Contains)(…) | Determines whether a KestrunHost instance with the specified name exists. |
 | static [Create](KestrunHostManager/Create)(…) | Creates a new KestrunHost instance using the provided factory function. (3 methods) |
 | static [Destroy](KestrunHostManager/Destroy)(…) | Destroys the specified KestrunHost instance and disposes its resources. |

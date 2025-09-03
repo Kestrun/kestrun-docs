@@ -18,7 +18,7 @@ Starts the Kestrun server and listens for incoming requests.
 ## SYNTAX
 
 ```
-Stop-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [-NoClearVariable] [<CommonParameters>]
+Stop-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,21 +67,6 @@ Accept wildcard characters: False
 
 ### -Quiet
 If specified, suppresses output messages during the startup process.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoClearVariable
-If specified, prevents clearing of Kestrun-related variables after the server is stopped.
 
 ```yaml
 Type: SwitchParameter

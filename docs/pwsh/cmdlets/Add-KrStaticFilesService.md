@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentTypeMap
-{{ Fill ContentTypeMap Description }}
+A hashtable mapping file extensions to MIME types.
 
 ```yaml
 Type: Hashtable
