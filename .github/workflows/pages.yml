@@ -40,6 +40,35 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Relocate examples & create zip
+        run: |
+          set -e
+          echo "Checking for docs/examples directory..."
+          if [ -d docs/examples ]; then
+            echo "Found docs/examples. Moving contents to _includes/examples ..."
+            mkdir -p _includes/examples
+            # Move (not copy) contents so they don't get processed twice by Jekyll
+            shopt -s dotglob || true
+            mv docs/examples/* _includes/examples/ 2>/dev/null || true
+            # Remove now-empty source directory
+            rmdir docs/examples 2>/dev/null || true
+          else
+            echo "No docs/examples directory present. Skipping move."
+          fi
+
+          echo "Creating examples.zip under tutorial directory..."
+          # Ensure tutorial directory exists (assuming PowerShell tutorial path)
+          mkdir -p docs/pwsh/tutorial
+          if [ -d _includes/examples ]; then
+            (cd _includes/examples && zip -r ../../docs/pwsh/tutorial/examples.zip .)
+            echo "examples.zip created at docs/pwsh/tutorial/examples.zip"
+          else
+            echo "_includes/examples does not exist; zip will be empty placeholder."
+            cd docs/pwsh/tutorial
+            zip -r examples.zip /dev/null || true
+            cd -
+          fi
+        shell: bash
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

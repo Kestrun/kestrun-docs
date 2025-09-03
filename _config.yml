@@ -8,6 +8,9 @@ plugins:
   
 url: https://kestrun.github.io
 
+sass:
+  quiet_deps: true
+  
 aux_links:
   Repository: https://github.com/kestrun/kestrun 
  
