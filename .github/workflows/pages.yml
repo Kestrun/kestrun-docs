@@ -51,7 +51,9 @@ jobs:
               echo "Removing existing _includes/examples directory for clean replace..."
               rm -rf _includes/examples
             fi
+            echo "Creating _includes/examples directory..."
             mkdir -p _includes/examples
+            echo "Copying contents to _includes/examples ..."
             # Copy (preserve attributes); trailing /. ensures contents not parent folder
             cp -a docs/_includes/examples/. _includes/examples/
           else
