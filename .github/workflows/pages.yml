@@ -40,20 +40,22 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Relocate examples & create zip
+      - name: Copy (replace) examples & create zip
         run: |
           set -e
-          echo "Checking for docs/examples directory..."
-          if [ -d docs/examples ]; then
-            echo "Found docs/examples. Moving contents to _includes/examples ..."
+          echo "Checking for docs/_includes/examples directory (new source)..."
+          if [ -d docs/_includes/examples ]; then
+            echo "Found docs/_includes/examples. Copying contents to _includes/examples ..."
+            # Remove any existing destination to ensure full replacement
+            if [ -d _includes/examples ]; then
+              echo "Removing existing _includes/examples directory for clean replace..."
+              rm -rf _includes/examples
+            fi
             mkdir -p _includes/examples
-            # Move (not copy) contents so they don't get processed twice by Jekyll
-            shopt -s dotglob || true
-            mv docs/examples/* _includes/examples/ 2>/dev/null || true
-            # Remove now-empty source directory
-            rmdir docs/examples 2>/dev/null || true
+            # Copy (preserve attributes); trailing /. ensures contents not parent folder
+            cp -a docs/_includes/examples/. _includes/examples/
           else
-            echo "No docs/examples directory present. Skipping move."
+            echo "No docs/_includes/examples directory present. Skipping copy."
           fi
 
           echo "Creating examples.zip under tutorial directory..."
