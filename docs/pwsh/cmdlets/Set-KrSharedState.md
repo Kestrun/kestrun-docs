@@ -18,7 +18,7 @@ Defines or updates a global variable accessible across Kestrun scripts.
 ## SYNTAX
 
 ```
-Set-KrSharedState [-Name] <String> [-Value] <Object> [<CommonParameters>]
+Set-KrSharedState [-Name] <String> [-Value] <Object> [-AllowsValueType] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,6 +71,21 @@ Aliases:
 Required: True
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowsValueType
+If specified, allows the variable to hold value types (e.g., int, bool).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

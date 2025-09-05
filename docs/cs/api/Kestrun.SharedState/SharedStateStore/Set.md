@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Add or overwrite a value (reference‑types only).
 
 ```csharp
-public static bool Set(string name, object? value)
+public static bool Set(string name, object? value, bool allowsValueType = false)
 ```
 
 ## See Also

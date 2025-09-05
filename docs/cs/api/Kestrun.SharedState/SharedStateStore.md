@@ -16,6 +16,7 @@ public static class SharedStateStore
 
 | name | description |
 | --- | --- |
+| static [Contains](SharedStateStore/Contains)(…) | Checks if a variable with the specified name exists in the shared state. |
 | static [Get](SharedStateStore/Get)(…) | Untyped fetch; `null` if absent. |
 | static [KeySnapshot](SharedStateStore/KeySnapshot)() | Snapshot of keys only—handy for quick listings. |
 | static [Set](SharedStateStore/Set)(…) | Add or overwrite a value (reference‑types only). |
