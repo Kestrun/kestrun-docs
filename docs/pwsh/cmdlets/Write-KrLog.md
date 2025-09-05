@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Write-KrLog
-nav_order: 113
+nav_order: 109
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -17,9 +17,16 @@ Logs a message with the specified log level and parameters.
 
 ## SYNTAX
 
+### LoggerName (Default)
 ```
-Write-KrLog [-LogLevel] <LogEventLevel> [-Message] <String> [[-Name] <String>] [[-Exception] <Exception>]
- [[-ErrorRecord] <ErrorRecord>] [[-Values] <Object[]>] [-PassThru] [<CommonParameters>]
+Write-KrLog -Level <LogEventLevel> -Message <String> [-Name <String>] [-Exception <Exception>]
+ [-ErrorRecord <ErrorRecord>] [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+```
+
+### LoggerManager
+```
+Write-KrLog -Level <LogEventLevel> -Message <String> -Logger <Logger> [-Exception <Exception>]
+ [-ErrorRecord <ErrorRecord>] [-Values <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,25 +37,25 @@ It supports various log levels and can output the formatted message to the pipel
 
 ### EXAMPLE 1
 ```powershell
-Write-KrLog -LogLevel Information -Message 'Info log message
+Write-KrLog -Level Information -Message 'Info log message
 This example logs a simple information message.
 ```
 
 ### EXAMPLE 2
 ```powershell
-Write-KrLog -LogLevel Warning -Message 'Processed {@Position} in {Elapsed:000} ms.' -Values $position, $elapsedMs
+Write-KrLog -Level Warning -Message 'Processed {@Position} in {Elapsed:000} ms.' -Values $position, $elapsedMs
 This example logs a warning message with formatted properties.
 ```
 
 ### EXAMPLE 3
 ```powershell
-Write-KrLog -LogLevel Error -Message 'Error occurred' -Exception ([System.Exception]::new('Some exception'))
+Write-KrLog -Level Error -Message 'Error occurred' -Exception ([System.Exception]::new('Some exception'))
 This example logs an error message with an exception.
 ```
 
 ## PARAMETERS
 
-### -LogLevel
+### -Level
 The log level to use for the log event.
 
 ```yaml
@@ -58,7 +65,7 @@ Aliases:
 Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -73,7 +80,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -85,13 +92,28 @@ If not specified, the default logger is used.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: LoggerName
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Logger
+{{ Fill Logger Description }}
+
+```yaml
+Type: Logger
+Parameter Sets: LoggerManager
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -104,7 +126,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,7 +141,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -134,7 +156,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
