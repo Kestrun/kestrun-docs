@@ -103,7 +103,8 @@ Accept wildcard characters: False
 ```
 
 ### -Logger
-{{ Fill Logger Description }}
+The Serilog logger instance to use for logging.
+If not specified, the logger with the specified Name or the default logger is used.
 
 ```yaml
 Type: Logger
