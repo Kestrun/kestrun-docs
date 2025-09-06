@@ -17,8 +17,14 @@ Creates a new Kestrun server instance.
 
 ## SYNTAX
 
+### Logger (Default)
 ```
-New-KrServer [-Name] <String> [[-Logger] <ILogger>] [-PassThru] [-Force] [<CommonParameters>]
+New-KrServer -Name <String> [-Logger <ILogger>] [-PassThru] [-Force] [<CommonParameters>]
+```
+
+### LoggerName
+```
+New-KrServer -Name <String> -LoggerName <String> [-PassThru] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,7 +49,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -51,15 +57,34 @@ Accept wildcard characters: False
 
 ### -Logger
 An optional Serilog logger instance to use for logging.
+It's mutually exclusive with the LoggerName parameter.
+If not specified, the default logger will be used.
 
 ```yaml
 Type: ILogger
-Parameter Sets: (All)
+Parameter Sets: Logger
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: [Serilog.Log]::Logger
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoggerName
+An optional name of a registered logger to use for logging.
+It's mutually exclusive with the Logger parameter.
+If specified, the logger with this name will be used instead of the default logger.
+
+```yaml
+Type: String
+Parameter Sets: LoggerName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

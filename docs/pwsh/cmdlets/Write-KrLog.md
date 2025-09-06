@@ -17,16 +17,40 @@ Logs a message with the specified log level and parameters.
 
 ## SYNTAX
 
-### LoggerName (Default)
+### LoggerName_MsgTemp (Default)
 ```
-Write-KrLog -Level <LogEventLevel> -Message <String> [-Name <String>] [-Exception <Exception>]
- [-ErrorRecord <ErrorRecord>] [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+Write-KrLog -Level <LogEventLevel> -Message <String> [-LoggerName <String>] [-Values <Object[]>] [-PassThru]
+ [<CommonParameters>]
 ```
 
-### LoggerManager
+### LoggerManager_Exception
 ```
-Write-KrLog -Level <LogEventLevel> -Message <String> -Logger <Logger> [-Exception <Exception>]
- [-ErrorRecord <ErrorRecord>] [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+Write-KrLog -Level <LogEventLevel> [-Message <String>] -Logger <Logger> -Exception <Exception>
+ [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+```
+
+### LoggerManager_ErrRec
+```
+Write-KrLog -Level <LogEventLevel> [-Message <String>] -Logger <Logger> -ErrorRecord <ErrorRecord>
+ [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+```
+
+### LoggerManager_MsgTemp
+```
+Write-KrLog -Level <LogEventLevel> -Message <String> -Logger <Logger> [-Values <Object[]>] [-PassThru]
+ [<CommonParameters>]
+```
+
+### LoggerName_Exception
+```
+Write-KrLog -Level <LogEventLevel> [-Message <String>] [-LoggerName <String>] -Exception <Exception>
+ [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+```
+
+### LoggerName_ErrRec
+```
+Write-KrLog -Level <LogEventLevel> [-Message <String>] [-LoggerName <String>] -ErrorRecord <ErrorRecord>
+ [-Values <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,7 +100,7 @@ The message template describing the event.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: LoggerName_MsgTemp, LoggerManager_MsgTemp
 Aliases:
 
 Required: True
@@ -86,13 +110,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
+```yaml
+Type: String
+Parameter Sets: LoggerManager_Exception, LoggerManager_ErrRec, LoggerName_Exception, LoggerName_ErrRec
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoggerName
 The name of the logger to use.
 If not specified, the default logger is used.
 
 ```yaml
 Type: String
-Parameter Sets: LoggerName
+Parameter Sets: LoggerName_MsgTemp, LoggerName_Exception, LoggerName_ErrRec
 Aliases:
 
 Required: False
@@ -104,17 +140,17 @@ Accept wildcard characters: False
 
 ### -Logger
 The Serilog logger instance to use for logging.
-If not specified, the logger with the specified Name or the default logger is used.
+If not specified, the logger with the specified LoggerName or the default logger is used.
 
 ```yaml
 Type: Logger
-Parameter Sets: LoggerManager
+Parameter Sets: LoggerManager_Exception, LoggerManager_ErrRec, LoggerManager_MsgTemp
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -123,10 +159,10 @@ The exception related to the event.
 
 ```yaml
 Type: Exception
-Parameter Sets: (All)
+Parameter Sets: LoggerManager_Exception, LoggerName_Exception
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -138,10 +174,10 @@ The error record related to the event.
 
 ```yaml
 Type: ErrorRecord
-Parameter Sets: (All)
+Parameter Sets: LoggerManager_ErrRec, LoggerName_ErrRec
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

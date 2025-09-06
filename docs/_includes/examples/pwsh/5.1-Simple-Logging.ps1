@@ -1,18 +1,15 @@
 <#
     Sample Kestrun Server demonstrating basic logging.
-    Creates a logger with file + console sinks, registers it as default, then maps simple routes.
+    Creates a logger with file + console sinks, registers it by name, then maps simple routes.
+    Use -SetAsDefault on Register-KrLogger or pass -Logger/-LoggerName to New-KrServer to enable framework logs.
     FileName: 5.1-Simple-Logging.ps1
 #>
-
-# Import the Kestrun module
-#Install-PSResource -Name Kestrun
-
 
 $myLogger = New-KrLogger |
     Set-KrMinimumLevel -Value Debug |
     Add-KrSinkFile -Path '.\logs\sample.log' -RollingInterval Hour |
     Add-KrSinkConsole |
-    Register-KrLogger -Name 'DefaultLogger' -SetAsDefault -PassThru
+    Register-KrLogger -Name 'myLogger' -PassThru
 
 # Create a new Kestrun server
 New-KrServer -Name "Simple Server"
@@ -31,7 +28,7 @@ Enable-KrConfiguration
 # Map the route with PowerShell
 Add-KrMapRoute -Verbs Get -Path "/hello-powershell" -ScriptBlock {
     $response = "Hello, World!"
-    Write-KrLog -Level Debug -Message "Handling /hello-powershell response {response}" -Values $response
+    Write-KrLog -Logger $myLogger -Level Debug -Message "Handling /hello-powershell response {response}" -Values $response
     Write-KrTextResponse -InputObject $response -StatusCode 200
 }
 
