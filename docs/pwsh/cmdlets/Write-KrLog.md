@@ -19,38 +19,38 @@ Logs a message with the specified log level and parameters.
 
 ### LoggerName_MsgTemp (Default)
 ```
-Write-KrLog -Level <LogEventLevel> -Message <String> [-LoggerName <String>] [-Values <Object[]>] [-PassThru]
- [<CommonParameters>]
+Write-KrLog -Level <LogEventLevel> -Message <String> [-LoggerName <String>] [-Properties <Object[]>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### LoggerManager_Exception
 ```
 Write-KrLog -Level <LogEventLevel> [-Message <String>] -Logger <Logger> -Exception <Exception>
- [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+ [-Properties <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ### LoggerManager_ErrRec
 ```
 Write-KrLog -Level <LogEventLevel> [-Message <String>] -Logger <Logger> -ErrorRecord <ErrorRecord>
- [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+ [-Properties <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ### LoggerManager_MsgTemp
 ```
-Write-KrLog -Level <LogEventLevel> -Message <String> -Logger <Logger> [-Values <Object[]>] [-PassThru]
+Write-KrLog -Level <LogEventLevel> -Message <String> -Logger <Logger> [-Properties <Object[]>] [-PassThru]
  [<CommonParameters>]
 ```
 
 ### LoggerName_Exception
 ```
 Write-KrLog -Level <LogEventLevel> [-Message <String>] [-LoggerName <String>] -Exception <Exception>
- [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+ [-Properties <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ### LoggerName_ErrRec
 ```
 Write-KrLog -Level <LogEventLevel> [-Message <String>] [-LoggerName <String>] -ErrorRecord <ErrorRecord>
- [-Values <Object[]>] [-PassThru] [<CommonParameters>]
+ [-Properties <Object[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +67,7 @@ This example logs a simple information message.
 
 ### EXAMPLE 2
 ```powershell
-Write-KrLog -Level Warning -Message 'Processed {@Position} in {Elapsed:000} ms.' -Values $position, $elapsedMs
+Write-KrLog -Level Warning -Message 'Processed {@Position} in {Elapsed:000} ms.' -Properties $position, $elapsedMs
 This example logs a warning message with formatted properties.
 ```
 
@@ -184,7 +184,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Values
+### -Properties
 Objects positionally formatted into the message template.
 
 ```yaml
@@ -222,7 +222,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Message - Message template describing the event.
 ## OUTPUTS
 
-### None or Message populated with Values into pipeline if PassThru specified.
+### None or Message populated with Properties into pipeline if PassThru specified.
 ## NOTES
 This function is part of the Kestrun logging framework and is used to log messages at various levels.
 It can be used in scripts and modules that utilize Kestrun for logging.

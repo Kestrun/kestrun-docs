@@ -78,7 +78,7 @@ Register a job that runs nightly at 3 AM, executing the script at 'Scripts/Clean
 ### EXAMPLE 3
 ```powershell
 Register-KrSchedule -Name Heartbeat -Cron '*/10 * * * * *' -ScriptBlock {
-    Write-KrLog -Level Information -Message "💓 Heartbeat at {0:O}" -Values $([DateTimeOffset]::UtcNow)
+    Write-KrLog -Level Information -Message "💓 Heartbeat at {0:O}" -Properties $([DateTimeOffset]::UtcNow)
 }
 Register a job that runs every 10 seconds, logging a heartbeat message.
 ```
@@ -108,7 +108,7 @@ Register a job that runs daily at 1 AM, executing the C# script at 'Scripts/Back
 ### EXAMPLE 7
 ```powershell
 Register-KrSchedule -Server $server -Name 'RunOnce' -Interval '00:01:00' -ScriptBlock {
-    Write-KrLog -Level Information -Message "Running once at {0:O}" -Values $([DateTimeOffset]::UtcNow)
+    Write-KrLog -Level Information -Message "Running once at {0:O}" -Properties $([DateTimeOffset]::UtcNow)
 } -RunImmediately
 Register a job that runs once immediately after registration, then every minute.
 ```
