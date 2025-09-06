@@ -13,6 +13,16 @@ public static ILogger Add(string name, Action<LoggerConfiguration>? config = nul
     bool setAsDefault = false)
 ```
 
+| parameter | description |
+| --- | --- |
+| name | The name of the logger. |
+| config | An optional configuration action to customize the logger. |
+| setAsDefault | If true, sets the added logger as the Serilog default logger. |
+
+## Return Value
+
+The created logger instance.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

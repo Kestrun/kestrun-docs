@@ -12,6 +12,10 @@ Access the Serilog default logger.
 public static ILogger DefaultLogger { get; set; }
 ```
 
+## Remarks
+
+Setting this property to null resets the default logger to a new empty logger.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

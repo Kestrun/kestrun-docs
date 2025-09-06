@@ -34,8 +34,8 @@ Creates a new logger configuration instance that can be used to add sinks and en
 
 ### EXAMPLE 2
 ```powershell
-$loggerConfig = New-KrLogger | Add-KrSinkConsole | Add-KrEnrichWithProperty -Name 'ScriptName' -Value 'Test'
-Creates a new logger configuration instance, adds a console sink, and enriches logs with a property.
+$loggerConfig = New-KrLogger | Add-KrSinkConsole | Add-KrEnrichProperty -Name 'ScriptName' -Value 'Test'
+    Creates a new logger configuration instance, adds a console sink, and enriches logs with a property.
 ```
 
 ## PARAMETERS

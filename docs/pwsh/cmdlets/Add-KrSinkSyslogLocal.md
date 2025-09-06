@@ -19,7 +19,9 @@ Adds a Syslog Local sink to the Serilog logger configuration.
 
 ```
 Add-KrSinkSyslogLocal [-LoggerConfig] <LoggerConfiguration> [[-AppName] <String>] [[-Facility] <Facility>]
- [[-OutputTemplate] <String>] [[-RestrictedToMinimumLevel] <LogEventLevel>] [<CommonParameters>]
+ [[-OutputTemplate] <String>] [[-RestrictedToMinimumLevel] <LogEventLevel>]
+ [[-SeverityMapping] <System.Func`2[Serilog.Events.LogEventLevel,Serilog.Sinks.Syslog.Severity]>]
+ [[-Formatter] <ITextFormatter>] [[-LevelSwitch] <LoggingLevelSwitch>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,6 +40,18 @@ Adds a Syslog Local sink to the logging system that sends log events with the sp
 ```powershell
 Add-KrSinkSyslogLocal -LoggerConfig $config
 Adds a Syslog Local sink to the logging system with default parameters.
+```
+
+### EXAMPLE 3
+```powershell
+Add-KrSinkSyslogLocal -LoggerConfig $config -AppName "MyApp" -SeverityMapping { param($level) if ($level -eq 'Error') { return 'Alert' } else { return 'Info' } }
+Adds a Syslog Local sink with a custom severity mapping function.
+```
+
+### EXAMPLE 4
+```powershell
+Add-KrSinkSyslogLocal -LoggerConfig $config -LevelSwitch $levelSwitch
+Adds a Syslog Local sink with a dynamic level switch to control the minimum log level.
 ```
 
 ## PARAMETERS
@@ -101,7 +115,7 @@ Aliases:
 
 Required: False
 Position: 4
-Default value: {Message}{NewLine}{Exception}{ErrorRecord}
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -119,6 +133,51 @@ Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
 Required: False
 Position: 5
 Default value: Verbose
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SeverityMapping
+An optional function to map Serilog log levels to Syslog severity levels.
+
+```yaml
+Type: System.Func`2[Serilog.Events.LogEventLevel,Serilog.Sinks.Syslog.Severity]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Formatter
+An optional ITextFormatter for custom message formatting.
+
+```yaml
+Type: ITextFormatter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LevelSwitch
+An optional LoggingLevelSwitch to dynamically control the minimum log level.
+
+```yaml
+Type: LoggingLevelSwitch
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

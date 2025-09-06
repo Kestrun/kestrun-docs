@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrEnrichWithProcessName
+title: Add-KrEnrichProcessName
 nav_order: 12
 render_with_liquid: false
 external help file: Kestrun-help.xml
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrEnrichWithProcessName
+# Add-KrEnrichProcessName
 
 ## SYNOPSIS
 Adds the process name to the log context.
@@ -18,7 +18,7 @@ Adds the process name to the log context.
 ## SYNTAX
 
 ```
-Add-KrEnrichWithProcessName [-loggerConfig] <LoggerConfiguration> [<CommonParameters>]
+Add-KrEnrichProcessName [-loggerConfig] <LoggerConfiguration> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ Adds the process name to the log context, allowing it to be included in log even
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrEnrichWithProcessName | Register-KrLogger
+New-KrLogger | Add-KrEnrichProcessName | Register-KrLogger
 ```
 
 ## PARAMETERS

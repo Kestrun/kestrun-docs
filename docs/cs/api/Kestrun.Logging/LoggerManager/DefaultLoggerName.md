@@ -12,6 +12,12 @@ The name of the logger currently set as the Serilog default.
 public static string DefaultLoggerName { get; set; }
 ```
 
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentException | When the specified logger name is not found. |
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

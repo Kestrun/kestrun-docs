@@ -20,11 +20,12 @@ public static class LoggerManager
 | static [DefaultLoggerName](LoggerManager/DefaultLoggerName) { get; set; } | The name of the logger currently set as the Serilog default. |
 | static [Add](LoggerManager/Add)(…) | Add or replace a logger by name and optionally set it as the default logger. |
 | static [Clear](LoggerManager/Clear)() | Remove and dispose all registered loggers. |
+| static [CloseAndFlush](LoggerManager/CloseAndFlush)(…) | CloseAndFlush a logger by name. (2 methods) |
+| static [Contains](LoggerManager/Contains)(…) | Check if a logger, configuration, or name exists. (3 methods) |
 | static [Get](LoggerManager/Get)(…) | Get a logger by name, or null if not found. |
 | static [List](LoggerManager/List)() | List all registered logger names. |
 | static [New](LoggerManager/New)(…) | Create a new LoggerConfiguration associated with a name. |
 | static [Register](LoggerManager/Register)(…) | Register an existing Serilog logger instance under a name. |
-| static [Remove](LoggerManager/Remove)(…) | Remove a logger by name. |
 
 ## See Also
 

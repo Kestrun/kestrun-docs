@@ -12,6 +12,14 @@ Get a logger by name, or null if not found.
 public static ILogger? Get(string name)
 ```
 
+| parameter | description |
+| --- | --- |
+| name | The name of the logger. |
+
+## Return Value
+
+The logger instance, or null if not found.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

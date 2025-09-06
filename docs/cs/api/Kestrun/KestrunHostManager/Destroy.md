@@ -9,12 +9,17 @@ grand_parent: "C# API"
 Destroys the specified KestrunHost instance and disposes its resources.
 
 ```csharp
-public static void Destroy(string name)
+public static void Destroy(string name, bool disposeLogger = false)
 ```
 
 | parameter | description |
 | --- | --- |
 | name | The name of the KestrunHost instance to destroy. |
+| disposeLogger | Whether to dispose the Serilog logger if this was the last instance. |
+
+## Remarks
+
+If this is the last instance, the logger will be disposed to release any resources.
 
 ## See Also
 

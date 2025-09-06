@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrEnrichWithProperty
+title: Add-KrEnrichProperty
 nav_order: 13
 render_with_liquid: false
 external help file: Kestrun-help.xml
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrEnrichWithProperty
+# Add-KrEnrichProperty
 
 ## SYNOPSIS
 Enriches log events with custom property.
@@ -18,8 +18,8 @@ Enriches log events with custom property.
 ## SYNTAX
 
 ```
-Add-KrEnrichWithProperty [-LoggerConfig] <LoggerConfiguration> [-Name] <String> [-Value] <String>
- [[-DestructureObjects] <Boolean>] [<CommonParameters>]
+Add-KrEnrichProperty [-LoggerConfig] <LoggerConfiguration> [-Name] <String> [-Value] <Object>
+ [-DestructureObjects] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,7 +30,7 @@ For example script name.
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrEnrichWithProperty -Name ScriptName -Value 'Test' | Add-KrSinkConsole | Register-KrLogger
+New-KrLogger | Add-KrEnrichProperty -Name ScriptName -Value 'Test' | Add-KrSinkConsole | Register-KrLogger
 ```
 
 ## PARAMETERS
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 The value of the property
 
 ```yaml
-Type: String
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
@@ -81,15 +81,15 @@ Accept wildcard characters: False
 ```
 
 ### -DestructureObjects
-If true, and the value is a non-primitive, non-array type, then the value will be converted to a structure; otherwise, unknown types will be converted to scalars, which are generally stored as strings.
+If present, and the value is a non-primitive, non-array type, then the value will be converted to a structure; otherwise, unknown types will be converted to scalars, which are generally stored as strings.
 
 ```yaml
-Type: Boolean
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False

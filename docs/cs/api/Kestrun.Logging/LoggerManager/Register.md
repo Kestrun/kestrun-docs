@@ -12,6 +12,16 @@ Register an existing Serilog logger instance under a name.
 public static ILogger Register(string name, ILogger logger, bool setAsDefault = false)
 ```
 
+| parameter | description |
+| --- | --- |
+| name | The name of the logger. |
+| logger | The logger instance to register. |
+| setAsDefault | If true, sets the registered logger as the Serilog default logger. |
+
+## Return Value
+
+The registered logger instance.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

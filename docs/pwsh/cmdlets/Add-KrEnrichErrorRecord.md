@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrEnrichWithErrorRecord
-nav_order: 9
+title: Add-KrEnrichErrorRecord
+nav_order: 8
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrEnrichWithErrorRecord
+# Add-KrEnrichErrorRecord
 
 ## SYNOPSIS
 Enriches log events with ErrorRecord property if available.
@@ -18,7 +18,7 @@ Enriches log events with ErrorRecord property if available.
 ## SYNTAX
 
 ```
-Add-KrEnrichWithErrorRecord [-LoggerConfig] <LoggerConfiguration> [-DestructureObjects] [<CommonParameters>]
+Add-KrEnrichErrorRecord [-LoggerConfig] <LoggerConfiguration> [-DestructureObjects] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,7 +29,7 @@ Use -ErrorRecord parameter on Write-*Log cmdlets to add ErrorRecord.
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrEnrichWithErrorRecord | Add-KrSinkPowerShell | Register-KrLogger
+New-KrLogger | Add-KrEnrichErrorRecord | Add-KrSinkPowerShell | Register-KrLogger
 ```
 
 ## PARAMETERS

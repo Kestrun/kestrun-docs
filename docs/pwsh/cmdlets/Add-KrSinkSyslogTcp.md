@@ -20,33 +20,68 @@ Adds a Syslog TCP sink to the logging system.
 ```
 Add-KrSinkSyslogTcp [-LoggerConfig] <LoggerConfiguration> [-Hostname] <String> [[-Port] <Int32>]
  [[-AppName] <String>] [[-FramingType] <FramingType>] [[-Format] <SyslogFormat>] [[-Facility] <Facility>]
- [[-SecureProtocols] <SslProtocols>] [[-CertProvider] <ICertificateProvider>]
+ [-UseTls] [[-CertProvider] <ICertificateProvider>]
  [[-CertValidationCallback] <RemoteCertificateValidationCallback>] [[-OutputTemplate] <String>]
- [[-RestrictedToMinimumLevel] <LogEventLevel>] [<CommonParameters>]
+ [[-RestrictedToMinimumLevel] <LogEventLevel>] [[-MessageIdPropertyName] <String>] [[-BatchSizeLimit] <Int32>]
+ [[-PeriodSeconds] <Int32>] [[-QueueLimit] <Int32>] [-EagerlyEmitFirstEvent] [[-SourceHost] <String>]
+ [[-SeverityMapping] <System.Func`2[Serilog.Events.LogEventLevel,Serilog.Sinks.Syslog.Severity]>]
+ [[-Formatter] <ITextFormatter>] [[-LevelSwitch] <LoggingLevelSwitch>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Add-KrSinkSyslogTcp function configures a logging sink that sends log events to a Syslog server over TCP.
-It allows customization of the Syslog server hostname, port, application name, format, facility, output template, and minimum log level.
+Configures a Serilog sink that sends log events to a Syslog server over TCP.
+Supports hostname, port, app name, framing, format, facility, TLS, certificate options,
+output template, minimum level, batching, severity mapping, and advanced syslog parameters.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
+# simplest: send logs over tcp with defaults
 Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com"
-Adds a Syslog TCP sink to the logging system that sends log events to "syslog.example.com" on the default port 1468.
 ```
 
 ### EXAMPLE 2
 ```powershell
-Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -Port 1468 -AppName "MyApp"
-Adds a Syslog TCP sink that sends log events to "syslog.example.com" with the application name "MyApp".
+# custom port, app name, and TLS enabled
+Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -Port 6514 -AppName "MyApp" -UseTls
 ```
 
 ### EXAMPLE 3
 ```powershell
-Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -Port 1468 -Format RFC5424 -Facility Local1
-Adds a Syslog TCP sink that sends log events to "syslog.example.com" with the RFC5424 format and Local1 facility.
+# use RFC3164 format and Local1 facility
+Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -Format RFC3164 -Facility Local1
+```
+
+### EXAMPLE 4
+```powershell
+# add batching configuration
+Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" `
+    -BatchSizeLimit 50 -PeriodSeconds 1 -QueueLimit 5000 -EagerlyEmitFirstEvent
+```
+
+### EXAMPLE 5
+```powershell
+# apply a custom severity mapping
+$map = [System.Func[Serilog.Events.LogEventLevel,Serilog.Sinks.Syslog.Severity]]{
+    param($level)
+    switch ($level) {
+        'Information' { [Serilog.Sinks.Syslog.Severity]::Notice }
+        'Fatal'       { [Serilog.Sinks.Syslog.Severity]::Emergency }
+        default       { [Serilog.Sinks.Syslog.Severity]::Informational }
+    }
+}
+Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -SeverityMapping $map
+```
+
+### EXAMPLE 6
+```powershell
+# advanced: secure connection with certificate validation
+$callback = [System.Net.Security.RemoteCertificateValidationCallback]{
+    param($sender, $cert, $chain, $errors) $true
+}
+Add-KrSinkSyslogTcp -LoggerConfig $config -Hostname "syslog.example.com" -UseTls `
+    -CertValidationCallback $callback -AppName "SecureApp"
 ```
 
 ## PARAMETERS
@@ -83,7 +118,7 @@ Accept wildcard characters: False
 
 ### -Port
 The port number on which the Syslog server is listening.
-Defaults to 1468.
+Defaults to 514.
 
 ```yaml
 Type: Int32
@@ -92,7 +127,7 @@ Aliases:
 
 Required: False
 Position: 3
-Default value: 1468
+Default value: 514
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -164,19 +199,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SecureProtocols
-The SSL/TLS protocols to use for secure connections.
-Defaults to Tls12.
+### -UseTls
+Switch to enable TLS encryption for the TCP connection.
+Defaults to false.
 
 ```yaml
-Type: SslProtocols
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Ssl2, Ssl3, Tls, Default, Tls11, Tls12, Tls13
 
 Required: False
-Position: 8
-Default value: Tls12
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -190,7 +224,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -205,7 +239,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -213,7 +247,6 @@ Accept wildcard characters: False
 
 ### -OutputTemplate
 The output template string for formatting log messages.
-Defaults to '{Message}{NewLine}{Exception}{ErrorRecord}'.
 
 ```yaml
 Type: String
@@ -221,8 +254,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
-Default value: {Message}{NewLine}{Exception}{ErrorRecord}
+Position: 10
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -238,8 +271,144 @@ Aliases:
 Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
 
 Required: False
-Position: 12
+Position: 11
 Default value: Verbose
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MessageIdPropertyName
+The property name used for RFC5424 message ID.
+Defaults to the sink's built-in constant.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
+Default value: [Serilog.Sinks.Syslog.Rfc5424Formatter]::DefaultMessageIdPropertyName
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BatchSizeLimit
+Maximum number of events per batch (optional).
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PeriodSeconds
+Flush period for batches in seconds (optional).
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 14
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QueueLimit
+Maximum number of buffered events (optional).
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 15
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EagerlyEmitFirstEvent
+If specified, the first event is sent immediately without waiting for the batch period.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceHost
+Optional value for the \`sourceHost\` field in syslog messages.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 16
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SeverityMapping
+Custom delegate to map Serilog log levels to syslog severities.
+
+```yaml
+Type: System.Func`2[Serilog.Events.LogEventLevel,Serilog.Sinks.Syslog.Severity]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 17
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Formatter
+Optional custom ITextFormatter for full control over message formatting.
+
+```yaml
+Type: ITextFormatter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 18
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LevelSwitch
+Optional LoggingLevelSwitch to dynamically control the log level.
+
+```yaml
+Type: LoggingLevelSwitch
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 19
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

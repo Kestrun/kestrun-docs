@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrEnrichWithEnvironment
-nav_order: 8
+title: Add-KrEnrichProcessId
+nav_order: 11
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,26 +10,25 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrEnrichWithEnvironment
+# Add-KrEnrichProcessId
 
 ## SYNOPSIS
-Adds environment information to the log context.
+Adds the process ID to the log context.
 
 ## SYNTAX
 
 ```
-Add-KrEnrichWithEnvironment [-loggerConfig] <LoggerConfiguration> [-UserName] [-MachineName]
- [<CommonParameters>]
+Add-KrEnrichProcessId [-loggerConfig] <LoggerConfiguration> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds environment information such as UserName and MachineName to the log context, allowing it to be included in log events.
+Adds the process ID to the log context, allowing it to be included in log events.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrEnrichWithEnvironment | Register-KrLogger
+New-KrLogger | Add-KrEnrichProcessId | Register-KrLogger
 ```
 
 ## PARAMETERS
@@ -49,36 +48,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -UserName
-If specified, enriches logs with the current user's name.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MachineName
-If specified, enriches logs with the current machine's name.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -89,5 +58,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### LoggerConfiguration object allowing method chaining
 ## NOTES
+This function is part of the Kestrun logging infrastructure and should be used to enrich log events with process information.
+https://github.com/serilog/serilog-enrichers-process
 
 ## RELATED LINKS

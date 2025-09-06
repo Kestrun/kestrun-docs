@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Stop-KrServer
-nav_order: 96
+title: Push-KrLogContextProperty
+nav_order: 82
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,63 +10,66 @@ online version:
 schema: 2.0.0
 ---
 
-# Stop-KrServer
+# Push-KrLogContextProperty
 
 ## SYNOPSIS
-Starts the Kestrun server and listens for incoming requests.
+Push a property into Serilog's LogContext for the current scope.
 
 ## SYNTAX
 
 ```
-Stop-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [<CommonParameters>]
+Push-KrLogContextProperty [-Name] <String> [-Value] <Object> [-Destructure] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This function starts the Kestrun server, allowing it to accept incoming HTTP requests.
+Adds a property to Serilog's ambient LogContext so all log events written within the scope
+include the property.
+Returns an IDisposable; dispose it to remove the property.
+
+Requires the logger to be configured with Add-KrEnrichFromLogContext.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Start-KrServer -Server $server
-Starts the specified Kestrun server instance and listens for incoming requests.
+$d = Push-KrLogContextProperty -Name CorrelationId -Value $corr
+PS> try { Write-KrLog -Level Information -Message 'Hello' } finally { $d.Dispose() }
 ```
 
 ## PARAMETERS
 
-### -Server
-The Kestrun server instance to start.
-This parameter is mandatory.
+### -Name
+Property name to attach.
 
 ```yaml
-Type: KestrunHost
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NoWait
-If specified, the function will not wait for the server to start and will return immediately.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Quiet
-If specified, suppresses output messages during the startup process.
+### -Value
+Property value to attach.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Destructure
+If set, complex objects will be destructured into structured properties.
 
 ```yaml
 Type: SwitchParameter
@@ -87,8 +90,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### System.IDisposable
 ## NOTES
-This function is designed to be used after the server has been configured and routes have been added.
-It will block the console until the server is stopped or Ctrl+C is pressed.
 
 ## RELATED LINKS

@@ -12,6 +12,14 @@ Create a new LoggerConfiguration associated with a name.
 public static LoggerConfiguration New(string name)
 ```
 
+| parameter | description |
+| --- | --- |
+| name | The name of the logger configuration. |
+
+## Return Value
+
+The new logger configuration.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

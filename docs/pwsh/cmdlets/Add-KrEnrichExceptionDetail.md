@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrEnrichWithExceptionDetail
-nav_order: 10
+title: Add-KrEnrichExceptionDetail
+nav_order: 9
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrEnrichWithExceptionDetail
+# Add-KrEnrichExceptionDetail
 
 ## SYNOPSIS
 Adds exception details to the log context.
@@ -18,7 +18,7 @@ Adds exception details to the log context.
 ## SYNTAX
 
 ```
-Add-KrEnrichWithExceptionDetail [-LoggerConfig] <LoggerConfiguration> [<CommonParameters>]
+Add-KrEnrichExceptionDetail [-LoggerConfig] <LoggerConfiguration> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ Adds exception details to the log context, allowing them to be included in log e
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrEnrichWithExceptionDetail | Register-KrLogger
+New-KrLogger | Add-KrEnrichExceptionDetail | Register-KrLogger
 ```
 
 ## PARAMETERS

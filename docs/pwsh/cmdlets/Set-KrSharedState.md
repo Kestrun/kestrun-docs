@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Set-KrSharedState
-nav_order: 93
+nav_order: 94
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

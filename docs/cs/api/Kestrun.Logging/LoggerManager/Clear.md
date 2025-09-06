@@ -12,6 +12,10 @@ Remove and dispose all registered loggers.
 public static void Clear()
 ```
 
+## Remarks
+
+Also clears the default logger.
+
 ## See Also
 
 * class [LoggerManager](../LoggerManager)

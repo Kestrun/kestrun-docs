@@ -17,8 +17,24 @@ Closes the logger and flushes all logs.
 
 ## SYNTAX
 
+### AllLogs (Default)
 ```
-Close-KrLogger [[-Logger] <ILogger>] [<CommonParameters>]
+Close-KrLogger [<CommonParameters>]
+```
+
+### Logger
+```
+Close-KrLogger [-Logger <ILogger>] [<CommonParameters>]
+```
+
+### LoggerName
+```
+Close-KrLogger [-LoggerName <String>] [<CommonParameters>]
+```
+
+### Default
+```
+Close-KrLogger [-DefaultLogger] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +52,19 @@ Closes the specified logger and flushes all logs.
 ### EXAMPLE 2
 ```powershell
 Close-KrLogger
-Closes the default logger and flushes all logs.
+Closes all active loggers and flushes any remaining logs.
+```
+
+### EXAMPLE 3
+```powershell
+Close-KrLogger -LoggerName 'MyLogger'
+Closes the logger with the specified name and any remaining logs.
+```
+
+### EXAMPLE 4
+```powershell
+Close-KrLogger -DefaultLogger
+Closes the default logger and flushes any remaining logs.
 ```
 
 ## PARAMETERS
@@ -47,13 +75,44 @@ If not specified, the default logger will be closed.
 
 ```yaml
 Type: ILogger
-Parameter Sets: (All)
+Parameter Sets: Logger
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LoggerName
+Name of the logger to close.
+If specified, the logger with this name will be closed
+
+```yaml
+Type: String
+Parameter Sets: LoggerName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLogger
+If specified, closes the default logger.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Default
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
