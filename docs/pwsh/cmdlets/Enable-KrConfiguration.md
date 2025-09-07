@@ -18,8 +18,8 @@ Enables Kestrun server configuration and starts the server.
 ## SYNTAX
 
 ```
-Enable-KrConfiguration [[-Server] <KestrunHost>] [[-ExcludeVariables] <String[]>] [-Quiet] [-PassThru]
- [<CommonParameters>]
+Enable-KrConfiguration [[-Server] <KestrunHost>] [[-ExcludeVariables] <String[]>]
+ [[-ExcludeFunctions] <String[]>] [-Quiet] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,6 +61,21 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeFunctions
+An array of function name patterns to exclude from the runspaces.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

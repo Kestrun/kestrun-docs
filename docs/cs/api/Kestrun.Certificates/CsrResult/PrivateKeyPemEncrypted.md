@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "CsrResult.Pem property"
+title: "CsrResult.PrivateKeyPemEncrypted property"
 parent: "Kestrun.Certificates"
 grand_parent: "C# API"
 ---
-# CsrResult.Pem property
+# CsrResult.PrivateKeyPemEncrypted property
 
-The PEM-encoded CSR string.
+The PEM-encoded encrypted private key string, if an encryption password was provided; otherwise, null.
 
 ```csharp
-public string Pem { get; set; }
+public string? PrivateKeyPemEncrypted { get; set; }
 ```
 
 ## See Also

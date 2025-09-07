@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Import-KsCertificate
+title: Import-KrCertificate
 nav_order: 69
 render_with_liquid: false
 external help file: Kestrun-help.xml
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Import-KsCertificate
+# Import-KrCertificate
 
 ## SYNOPSIS
 Imports a PFX/PEM certificate file and returns X509Certificate2.
@@ -18,19 +18,19 @@ Imports a PFX/PEM certificate file and returns X509Certificate2.
 ## SYNTAX
 
 ```
-Import-KsCertificate [-FilePath] <String> [[-Password] <SecureString>] [[-PrivateKeyPath] <String>]
+Import-KrCertificate [-FilePath] <String> [[-Password] <SecureString>] [[-PrivateKeyPath] <String>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Import-KsCertificate function allows you to import a certificate into the Kestrun environment.
+The Import-KrCertificate function allows you to import a certificate into the Kestrun environment.
 This may include loading a certificate from a file or other source and adding it to the appropriate certificate store or configuration.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Import-KsCertificate -Path "C:\certs\mycert.pfx" -Password (ConvertTo-SecureString "password" -AsPlainText -Force)
+Import-KrCertificate -Path "C:\certs\mycert.pfx" -Password (ConvertTo-SecureString "password" -AsPlainText -Force)
 This example imports a certificate from the specified path using the provided password.
 ```
 

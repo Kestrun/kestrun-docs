@@ -9,16 +9,24 @@ grand_parent: "C# API"
 Creates a new Certificate Signing Request (CSR) and returns the PEM-encoded CSR and the private key.
 
 ```csharp
-public static CsrResult NewCertificateRequest(CsrOptions o)
+public static CsrResult NewCertificateRequest(CsrOptions options, 
+    ReadOnlySpan<char> encryptionPassword = default)
 ```
 
 | parameter | description |
 | --- | --- |
-| o | Options for creating the CSR. |
+| options | The options for the CSR. |
+| encryptionPassword | The password to encrypt the private key, if desired. |
 
 ## Return Value
 
-A tuple containing the PEM-encoded CSR and the private key.
+A [`CsrResult`](../CsrResult) containing the CSR and private key information.
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentOutOfRangeException |  |
 
 ## See Also
 

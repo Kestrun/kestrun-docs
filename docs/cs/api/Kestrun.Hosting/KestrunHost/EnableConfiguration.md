@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Applies the configured options to the Kestrel server and initializes the runspace pool.
 
 ```csharp
-public void EnableConfiguration(Dictionary<string, object>? userVariables = null)
+public void EnableConfiguration(Dictionary<string, object>? userVariables = null, 
+    Dictionary<string, string>? userFunctions = null)
 ```
 
 ## See Also

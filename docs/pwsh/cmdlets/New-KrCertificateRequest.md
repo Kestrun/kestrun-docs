@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: New-KsCertificateRequest
-nav_order: 79
+title: New-KrCertificateRequest
+nav_order: 73
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-KsCertificateRequest
+# New-KrCertificateRequest
 
 ## SYNOPSIS
 Creates a PEM-encoded CSR (and returns the private key).
@@ -18,7 +18,7 @@ Creates a PEM-encoded CSR (and returns the private key).
 ## SYNTAX
 
 ```
-New-KsCertificateRequest [-DnsName] <String[]> [[-KeyType] <String>] [[-KeyLength] <Int32>]
+New-KrCertificateRequest [-DnsNames] <String[]> [[-KeyType] <String>] [[-KeyLength] <Int32>]
  [[-Country] <String>] [[-Org] <String>] [[-OrgUnit] <String>] [[-CommonName] <String>] [<CommonParameters>]
 ```
 
@@ -30,21 +30,21 @@ The CSR can be used to request a certificate from a CA (Certificate Authority).
 
 ### EXAMPLE 1
 ```powershell
-$csr, $priv = New-KestrunCertificateRequest -DnsName 'example.com' -Country US
+$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US
 $csr | Set-Content -Path 'C:\path\to\csr.pem'
 $priv | Set-Content -Path 'C:\path\to\private.key'
 ```
 
 ### EXAMPLE 2
 ```powershell
-$csr, $priv = New-KestrunCertificateRequest -DnsName 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
+$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
 $csr | Set-Content -Path 'C:\path\to\csr.pem'
 $priv | Set-Content -Path 'C:\path\to\private.key'
 ```
 
 ## PARAMETERS
 
-### -DnsName
+### -DnsNames
 The DNS name(s) for which the certificate is requested.
 This can include multiple names for Subject Alternative Names (SANs).
 

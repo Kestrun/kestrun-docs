@@ -17,8 +17,14 @@ public record CsrResult
 | name | description |
 | --- | --- |
 | [CsrResult](CsrResult/CsrResult)(…) | Represents the result of creating a Certificate Signing Request (CSR), including the PEM-encoded CSR and the private key. |
-| [Pem](CsrResult/Pem) { get; set; } | The PEM-encoded CSR string. |
+| [CsrDer](CsrResult/CsrDer) { get; set; } | The DER-encoded CSR bytes. |
+| [CsrPem](CsrResult/CsrPem) { get; set; } | The PEM-encoded CSR string. |
 | [PrivateKey](CsrResult/PrivateKey) { get; set; } | The private key associated with the CSR. |
+| [PrivateKeyDer](CsrResult/PrivateKeyDer) { get; set; } | The DER-encoded private key bytes. |
+| [PrivateKeyPem](CsrResult/PrivateKeyPem) { get; set; } | The PEM-encoded private key string. |
+| [PrivateKeyPemEncrypted](CsrResult/PrivateKeyPemEncrypted) { get; set; } | The PEM-encoded encrypted private key string, if an encryption password was provided; otherwise, null. |
+| [PublicKeyDer](CsrResult/PublicKeyDer) { get; set; } | The DER-encoded public key bytes. |
+| [PublicKeyPem](CsrResult/PublicKeyPem) { get; set; } | The PEM-encoded public key string. |
 
 ## See Also
 

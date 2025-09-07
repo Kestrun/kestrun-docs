@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Test-KsCertificate
-nav_order: 100
+title: Test-KrCertificate
+nav_order: 98
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Test-KsCertificate
+# Test-KrCertificate
 
 ## SYNOPSIS
 Validates a certificate's chain, EKU, and cryptographic strength.
@@ -18,7 +18,7 @@ Validates a certificate's chain, EKU, and cryptographic strength.
 ## SYNTAX
 
 ```
-Test-KsCertificate [-Certificate] <X509Certificate2> [-CheckRevocation] [-AllowWeakAlgorithms]
+Test-KrCertificate [-Certificate] <X509Certificate2> [-CheckRevocation] [-AllowWeakAlgorithms]
  [-DenySelfSigned] [[-ExpectedPurpose] <String[]>] [-StrictPurpose] [<CommonParameters>]
 ```
 

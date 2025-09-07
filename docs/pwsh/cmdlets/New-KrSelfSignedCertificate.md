@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: New-KrSelfSignedCertificate
-nav_order: 77
+nav_order: 78
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -18,7 +18,7 @@ Creates a new self-signed certificate.
 ## SYNTAX
 
 ```
-New-KrSelfSignedCertificate [-DnsName] <String[]> [[-KeyType] <String>] [[-KeyLength] <Int32>]
+New-KrSelfSignedCertificate [-DnsNames] <String[]> [[-KeyType] <String>] [[-KeyLength] <Int32>]
  [[-ValidDays] <Int32>] [-Ephemeral] [-Exportable] [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ This example creates a self-signed certificate with the subject "CN=MyCert" and 
 
 ## PARAMETERS
 
-### -DnsName
+### -DnsNames
 The DNS name(s) for the certificate.
 
 ```yaml

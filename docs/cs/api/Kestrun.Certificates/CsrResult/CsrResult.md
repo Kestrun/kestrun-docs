@@ -9,13 +9,21 @@ grand_parent: "C# API"
 Represents the result of creating a Certificate Signing Request (CSR), including the PEM-encoded CSR and the private key.
 
 ```csharp
-public CsrResult(string Pem, AsymmetricKeyParameter PrivateKey)
+public CsrResult(string CsrPem, byte[] CsrDer, AsymmetricKeyParameter PrivateKey, 
+    string PrivateKeyPem, byte[] PrivateKeyDer, string? PrivateKeyPemEncrypted, 
+    string PublicKeyPem, byte[] PublicKeyDer)
 ```
 
 | parameter | description |
 | --- | --- |
-| Pem | The PEM-encoded CSR string. |
+| CsrPem | The PEM-encoded CSR string. |
+| CsrDer | The DER-encoded CSR bytes. |
 | PrivateKey | The private key associated with the CSR. |
+| PrivateKeyPem | The PEM-encoded private key string. |
+| PrivateKeyDer | The DER-encoded private key bytes. |
+| PrivateKeyPemEncrypted | The PEM-encoded encrypted private key string, if an encryption password was provided; otherwise, null. |
+| PublicKeyPem | The PEM-encoded public key string. |
+| PublicKeyDer | The DER-encoded public key bytes. |
 
 ## See Also
 
