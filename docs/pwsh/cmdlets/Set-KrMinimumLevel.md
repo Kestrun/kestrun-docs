@@ -17,20 +17,14 @@ Sets the minimum log level for the logger configuration.
 
 ## SYNTAX
 
-### Level
+### Static (Default)
 ```
-Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -Value <LogEventLevel> [-ToPreference]
- [<CommonParameters>]
-```
-
-### Switch
-```
-Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -ControlledBy <LoggingLevelSwitch> [<CommonParameters>]
+Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -Value <LogEventLevel> [<CommonParameters>]
 ```
 
-### Preference
+### Dynamic
 ```
-Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> [-FromPreference] [<CommonParameters>]
+Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -Dynamic <LogEventLevel> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,23 +42,11 @@ Sets the minimum log level of the specified logger configuration to Warning.
 
 ### EXAMPLE 2
 ```powershell
-Set-KrMinimumLevel -LoggerConfig $myLoggerConfig -Value Debug -ToPreference
-Sets the minimum log level of the specified logger configuration to Debug and updates the user's logging preferences.
-```
-
-### EXAMPLE 3
-```powershell
 Set-KrMinimumLevel -LoggerConfig $myLoggerConfig -ControlledBy $myLevelSwitch
 Sets the minimum log level of the specified logger configuration to be controlled by the specified level switch.
 ```
 
-### EXAMPLE 4
-```powershell
-Set-KrMinimumLevel -LoggerConfig $myLoggerConfig -FromPreference
-Sets the minimum log level of the specified logger configuration from the user's logging preferences.
-```
-
-### EXAMPLE 5
+### EXAMPLE 3
 ```powershell
 $myLoggerConfig | Set-KrMinimumLevel -Value Information -PassThru
 Sets the minimum log level of the specified logger configuration to Information and outputs the LoggerConfiguration object into the pipeline.
@@ -92,7 +74,7 @@ The minimum log level to set for the logger configuration.
 
 ```yaml
 Type: LogEventLevel
-Parameter Sets: Level
+Parameter Sets: Static
 Aliases:
 Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
 
@@ -103,47 +85,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ToPreference
-If specified, sets the minimum level to the user's preference.
+### -Dynamic
+If specified, the minimum log level will be controlled by a level switch.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: Level
+Type: LogEventLevel
+Parameter Sets: Dynamic
 Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ControlledBy
-Instance of Serilog.Core.LoggingLevelSwitch to control the minimum level.
-
-```yaml
-Type: LoggingLevelSwitch
-Parameter Sets: Switch
-Aliases:
+Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FromPreference
-If specified, sets the minimum level from the user's preference.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Preference
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

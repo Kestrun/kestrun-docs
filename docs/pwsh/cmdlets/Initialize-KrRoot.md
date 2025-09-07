@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Initialize-KrRoot
-nav_order: 69
+nav_order: 70
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

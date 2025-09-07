@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Set-KrLevelSwitch
-nav_order: 89
+title: Get-KrLevelSwitch
+nav_order: 58
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,40 +10,40 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-KrLevelSwitch
+# Get-KrLevelSwitch
 
 ## SYNOPSIS
-Sets the minimum logging level for a level switch.
+Gets the current logging level for a level switch.
 
 ## SYNTAX
 
 ### LoggerName (Default)
 ```
-Set-KrLevelSwitch [-LoggerName <String>] -MinimumLevel <LogEventLevel> [<CommonParameters>]
+Get-KrLevelSwitch [-LoggerName <String>] [<CommonParameters>]
 ```
 
 ### Logger
 ```
-Set-KrLevelSwitch -Logger <Logger> -MinimumLevel <LogEventLevel> [<CommonParameters>]
+Get-KrLevelSwitch -Logger <Logger> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Sets the minimum logging level for a specified level switch.
-If ToPreference is specified,
-the logging level will be set to the user's preference.
+Retrieves the current logging level for a specified level switch.
+If the LoggerName is not provided,
+it will be derived from the provided Logger instance.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Set-KrLevelSwitch -LoggerName "MyLogger" -MinimumLevel Warning
-Sets the minimum logging level of the level switch for the logger named "MyLogger" to Warning.
+Get-KrLevelSwitch -LoggerName "MyLogger"
+Retrieves the current logging level of the level switch for the logger named "MyLogger".
 ```
 
 ### EXAMPLE 2
 ```powershell
-Set-KrLevelSwitch -Logger $myLogger -MinimumLevel Error
-Sets the minimum logging level of the level switch for the specified logger instance to Error.
+Get-KrLevelSwitch -Logger $myLogger
+Retrieves the current logging level of the level switch for the specified logger instance.
 ```
 
 ## PARAMETERS
@@ -80,22 +80,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MinimumLevel
-The minimum logging level to set for the switch.
-
-```yaml
-Type: LogEventLevel
-Parameter Sets: (All)
-Aliases:
-Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -103,6 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### Serilog.Events.LogEventLevel
 ## NOTES
 
 ## RELATED LINKS

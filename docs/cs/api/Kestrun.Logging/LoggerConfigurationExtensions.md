@@ -16,6 +16,7 @@ public static class LoggerConfigurationExtensions
 
 | name | description |
 | --- | --- |
+| static [EnsureSwitch](LoggerConfigurationExtensions/EnsureSwitch)(…) | Ensure that the logger configuration has a logging level switch controlling its minimum level. |
 | static [Register](LoggerConfigurationExtensions/Register)(…) | Create a logger from this configuration and register it by name. |
 
 ## See Also

@@ -18,14 +18,18 @@ public static class LoggerManager
 | --- | --- |
 | static [DefaultLogger](LoggerManager/DefaultLogger) { get; set; } | Access the Serilog default logger. |
 | static [DefaultLoggerName](LoggerManager/DefaultLoggerName) { get; set; } | The name of the logger currently set as the Serilog default. |
-| static [Add](LoggerManager/Add)(…) | Add or replace a logger by name and optionally set it as the default logger. |
 | static [Clear](LoggerManager/Clear)() | Remove and dispose all registered loggers. |
 | static [CloseAndFlush](LoggerManager/CloseAndFlush)(…) | CloseAndFlush a logger by name. (2 methods) |
 | static [Contains](LoggerManager/Contains)(…) | Check if a logger, configuration, or name exists. (3 methods) |
 | static [Get](LoggerManager/Get)(…) | Get a logger by name, or null if not found. |
+| static [GetLevelSwitch](LoggerManager/GetLevelSwitch)(…) | Get the current minimum level for a named logger’s switch. |
+| static [GetName](LoggerManager/GetName)(…) | Get the name of a registered logger instance. |
 | static [List](LoggerManager/List)() | List all registered logger names. |
+| static [ListLevels](LoggerManager/ListLevels)() | List all switches and their current levels. |
 | static [New](LoggerManager/New)(…) | Create a new LoggerConfiguration associated with a name. |
 | static [Register](LoggerManager/Register)(…) | Register an existing Serilog logger instance under a name. |
+| static [SetLevelSwitch](LoggerManager/SetLevelSwitch)(…) | Set the minimum level for a named logger’s switch. |
+| static [TryGetName](LoggerManager/TryGetName)(…) | Try to get the name of a registered logger instance. |
 
 ## See Also
 

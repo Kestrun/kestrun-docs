@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Register an existing Serilog logger instance under a name.
 
 ```csharp
-public static ILogger Register(string name, ILogger logger, bool setAsDefault = false)
+public static ILogger Register(string name, ILogger logger, bool setAsDefault = false, 
+    LoggingLevelSwitch? levelSwitch = null)
 ```
 
 | parameter | description |
@@ -17,6 +18,7 @@ public static ILogger Register(string name, ILogger logger, bool setAsDefault = 
 | name | The name of the logger. |
 | logger | The logger instance to register. |
 | setAsDefault | If true, sets the registered logger as the Serilog default logger. |
+| levelSwitch | An optional logging level switch to associate with the logger for dynamic level control. |
 
 ## Return Value
 

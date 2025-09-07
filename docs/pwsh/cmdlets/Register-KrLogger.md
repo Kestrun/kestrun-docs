@@ -17,16 +17,9 @@ Starts the Kestrun logger.
 
 ## SYNTAX
 
-### Full
 ```
-Register-KrLogger -Name <String> -LoggerConfig <LoggerConfiguration> [-SetAsDefault] [-PassThru]
+Register-KrLogger [-Name] <String> [-LoggerConfig] <LoggerConfiguration> [-SetAsDefault] [-PassThru]
  [<CommonParameters>]
-```
-
-### Short
-```
-Register-KrLogger -Name <String> [-MinimumLevel <LogEventLevel>] [-Console] [-PowerShell] [-FilePath <String>]
- [-FileRollingInterval <RollingInterval>] [-SetAsDefault] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,7 +63,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,93 +74,13 @@ A Serilog logger configuration object to set up the logger.
 
 ```yaml
 Type: LoggerConfiguration
-Parameter Sets: Full
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -MinimumLevel
-The minimum log level for the logger.
-Default is Information.
-
-```yaml
-Type: LogEventLevel
-Parameter Sets: Short
-Aliases:
-Accepted values: Verbose, Debug, Information, Warning, Error, Fatal
-
-Required: False
-Position: Named
-Default value: Information
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Console
-If specified, adds a console sink to the logger.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Short
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PowerShell
-If specified, adds a PowerShell sink to the logger.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Short
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilePath
-The file path where logs will be written.
-If not specified, defaults to a predefined path
-
-```yaml
-Type: String
-Parameter Sets: Short
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FileRollingInterval
-The rolling interval for the log file.
-Default is Infinite.
-
-```yaml
-Type: RollingInterval
-Parameter Sets: Short
-Aliases:
-Accepted values: Infinite, Year, Month, Day, Hour, Minute
-
-Required: False
-Position: Named
-Default value: Infinite
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
