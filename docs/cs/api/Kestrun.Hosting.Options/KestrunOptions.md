@@ -18,10 +18,14 @@ public class KestrunOptions
 | --- | --- |
 | [KestrunOptions](KestrunOptions/KestrunOptions)() | Initializes a new instance of the [`KestrunOptions`](./KestrunOptions) class with default values. |
 | [ApplicationName](KestrunOptions/ApplicationName) { get; set; } | Application name (optional, for diagnostics). |
+| [HttpsConnectionAdapter](KestrunOptions/HttpsConnectionAdapter) { get; } | Gets the HTTPS connection adapter options. |
 | [Listeners](KestrunOptions/Listeners) { get; } | List of configured listeners for the Kestrel server. Each listener can be configured with its own IP address, port, protocols, and other options. |
+| [ListenUnixSocket](KestrunOptions/ListenUnixSocket) { get; set; } | Optional path to a Unix domain socket for Kestrel to listen on. |
 | [MaxRunspaces](KestrunOptions/MaxRunspaces) { get; set; } | Gets or sets the maximum number of runspaces to use for script execution. |
 | [MaxSchedulerRunspaces](KestrunOptions/MaxSchedulerRunspaces) { get; set; } | Gets or sets the maximum number of runspaces to use for the scheduler service. Defaults to 8. |
 | [MinRunspaces](KestrunOptions/MinRunspaces) { get; set; } | Gets or sets the minimum number of runspaces to use for script execution. Defaults to 1. |
+| [NamedPipeName](KestrunOptions/NamedPipeName) { get; set; } | Optional name of a Named Pipe for Kestrel to listen on. |
+| [NamedPipeOptions](KestrunOptions/NamedPipeOptions) { get; set; } | Gets or sets the Named Pipe transport options. |
 | [ServerLimits](KestrunOptions/ServerLimits) { get; } | Provides access to request limit options. Use a hashtable or a KestrelServerLimits instance. |
 | [ServerOptions](KestrunOptions/ServerOptions) { get; set; } | Gets or sets the Kestrel server options. |
 
