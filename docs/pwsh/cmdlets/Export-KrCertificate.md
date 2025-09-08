@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Export-KrCertificate
-nav_order: 51
+nav_order: 53
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

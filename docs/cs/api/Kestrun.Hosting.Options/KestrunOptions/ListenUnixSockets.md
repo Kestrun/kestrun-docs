@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "KestrunOptions.NamedPipeName property"
+title: "KestrunOptions.ListenUnixSockets property"
 parent: "Kestrun.Hosting.Options"
 grand_parent: "C# API"
 ---
-# KestrunOptions.NamedPipeName property
+# KestrunOptions.ListenUnixSockets property
 
-Optional name of a Named Pipe for Kestrel to listen on.
+Optional path to a Unix domain socket for Kestrel to listen on.
 
 ```csharp
-public string? NamedPipeName { get; set; }
+public string[] ListenUnixSockets { get; }
 ```
 
 ## See Also

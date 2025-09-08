@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the HTTPS connection adapter options.
 
 ```csharp
-public HttpsConnectionAdapterOptions HttpsConnectionAdapter { get; }
+public HttpsConnectionAdapterOptions? HttpsConnectionAdapter { get; set; }
 ```
 
 ## See Also

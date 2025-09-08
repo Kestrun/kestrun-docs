@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Write-KrHtmlResponse
-nav_order: 108
+nav_order: 112
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

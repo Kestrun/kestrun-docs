@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Push-KrLogContextProperty
-nav_order: 82
+nav_order: 84
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

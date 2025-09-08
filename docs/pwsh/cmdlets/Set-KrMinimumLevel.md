@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Set-KrMinimumLevel
-nav_order: 90
+nav_order: 92
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
