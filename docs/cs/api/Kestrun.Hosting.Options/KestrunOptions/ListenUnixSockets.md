@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Optional path to a Unix domain socket for Kestrel to listen on.
 
 ```csharp
-public string[] ListenUnixSockets { get; }
+public List<string> ListenUnixSockets { get; }
 ```
 
 ## See Also

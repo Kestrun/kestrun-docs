@@ -19,20 +19,20 @@ Creates a new Kestrun server instance with specified options and listeners.
 
 ### NoCert (Default)
 ```
-Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>] [-UseConnectionLogging]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-UseConnectionLogging]
  [-PassThru] [<CommonParameters>]
 ```
 
 ### CertFile
 ```
-Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>] -CertPath <String>
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] -CertPath <String>
  [-CertPassword <SecureString>] [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
  [<CommonParameters>]
 ```
 
 ### x509Certificate
 ```
-Add-KrListener [-Server <KestrunHost>] -Port <Int32> [-IPAddress <IPAddress>]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>]
  -X509Certificate <X509Certificate2> [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
  [<CommonParameters>]
 ```
@@ -68,14 +68,14 @@ Accept wildcard characters: False
 
 ### -Port
 The port on which the server will listen for incoming requests.
-This parameter is mandatory.
+The default is 0, which means a random available port will be assigned.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: 0
 Accept pipeline input: False

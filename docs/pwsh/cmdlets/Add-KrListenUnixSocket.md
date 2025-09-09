@@ -18,7 +18,7 @@ Adds a Unix socket listener to a Kestrun server instance.
 ## SYNTAX
 
 ```
-Add-KrListenUnixSocket [[-Server] <KestrunHost>] [-ListenUnixSocket] <String> [-PassThru] [<CommonParameters>]
+Add-KrListenUnixSocket [[-Server] <KestrunHost>] [-SocketPath] <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ This function adds a Unix socket listener to the specified Kestrun server instan
 
 ### EXAMPLE 1
 ```powershell
-Add-KrListenUnixSocket -Server $server -ListenUnixSocket "/tmp/mysocket"
+Add-KrListenUnixSocket -Server $server -SocketPath "/tmp/mysocket"
 Adds a Unix socket listener with the specified path to the given Kestrun server instance.
 ```
 
@@ -50,7 +50,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ListenUnixSocket
+### -SocketPath
 The path of the Unix domain socket on which the server will listen for incoming requests.
 This parameter is mandatory.
 

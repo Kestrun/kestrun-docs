@@ -54,6 +54,14 @@ parent: "C#"
 | static class [KestrunClaimExtensions](./Kestrun.Claims/KestrunClaimExtensions.md) | Provides extension methods for the KestrunClaim enum. |
 | enum [UserIdentityClaim](./Kestrun.Claims/UserIdentityClaim.md) | Represents the set of claims supported by Kestrun for authentication and authorization purposes. |
 
+## Kestrun.Client namespace
+
+| public type | description |
+| --- | --- |
+| static class [KrHttpClientFactory](./Kestrun.Client/KrHttpClientFactory.md) | Factory methods to create HttpClient instances for different transport types. |
+| class [KrHttpClientOptions](./Kestrun.Client/KrHttpClientOptions.md) | Extra options to shape HttpClient behavior. |
+| static class [KrHttpDownloads](./Kestrun.Client/KrHttpDownloads.md) | Helper methods for common HTTP download scenarios. |
+
 ## Kestrun.Hosting namespace
 
 | public type | description |

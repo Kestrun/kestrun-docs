@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Optional name of a Named Pipe for Kestrel to listen on.
 
 ```csharp
-public string[] NamedPipeNames { get; }
+public List<string> NamedPipeNames { get; }
 ```
 
 ## See Also
