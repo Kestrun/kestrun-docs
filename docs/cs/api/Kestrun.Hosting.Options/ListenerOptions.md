@@ -17,6 +17,7 @@ public class ListenerOptions
 | name | description |
 | --- | --- |
 | [ListenerOptions](ListenerOptions/ListenerOptions)() | Initializes a new instance of the [`ListenerOptions`](./ListenerOptions) class with default values. |
+| [DisableAltSvcHeader](ListenerOptions/DisableAltSvcHeader) { get; set; } | Gets or sets a value that controls whether the "Alt-Svc" header is included with response headers. The "Alt-Svc" header is used by clients to upgrade HTTP/1.1 and HTTP/2 connections to HTTP/3. |
 | [IPAddress](ListenerOptions/IPAddress) { get; set; } | The IP address to bind to. |
 | [Port](ListenerOptions/Port) { get; set; } | The port to listen on. |
 | [Protocols](ListenerOptions/Protocols) { get; set; } | HTTP protocols supported by the listener. |
