@@ -30,6 +30,12 @@ Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] 
  [<CommonParameters>]
 ```
 
+### SelfSignedCert
+```
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-SelfSignedCert]
+ [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
+```
+
 ### x509Certificate
 ```
 Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>]
@@ -130,6 +136,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SelfSignedCert
+If specified, a self-signed certificate will be generated and used for HTTPS.
+This parameter is optional.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: SelfSignedCert
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -X509Certificate
 An X509Certificate2 object representing the SSL certificate.
 This parameter is mandatory if using HTTPS
@@ -152,7 +174,7 @@ Defaults to Http1 for HTTP listeners and Http1OrHttp2 for HTTPS listeners.
 
 ```yaml
 Type: HttpProtocols
-Parameter Sets: CertFile, x509Certificate
+Parameter Sets: CertFile, SelfSignedCert, x509Certificate
 Aliases:
 Accepted values: None, Http1, Http2, Http1AndHttp2, Http3, Http1AndHttp2AndHttp3
 

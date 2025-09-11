@@ -28,7 +28,7 @@ Add-KrCookiesAuthentication [-Server <KestrunHost>] -Name <String> [-ClaimPolicy
 ### Options
 ```
 Add-KrCookiesAuthentication [-Server <KestrunHost>] -Name <String> -Options <CookieAuthenticationOptions>
- [-ClaimPolicy <ClaimPolicyConfig>] [-Cookie <CookieBuilder>] [-PassThru] [<CommonParameters>]
+ [-ClaimPolicy <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +46,20 @@ Adds cookie authentication to the specified Kestrun server with the provided opt
 ```powershell
 Add-KrCookiesAuthentication -Name 'MyCookieAuth' -SlidingExpiration -LoginPath '/Login' -LogoutPath '/Logout' -AccessDeniedPath '/Denied' -ExpireTimeSpan (New-TimeSpan -Days 14)
 Configures cookie authentication with sliding expiration and custom paths for login, logout, and access denied
+```
+
+### EXAMPLE 3
+```powershell
+$cookie = New-KrCookieBuilder -Name 'AuthCookie' -HttpOnly -SameSite Lax
+Add-KrCookiesAuthentication -Name 'MyCookieAuth' -Cookie $cookie -SlidingExpiration -ExpireTimeSpan (New-TimeSpan -Days 7)
+Configures cookie authentication using a custom cookie with HttpOnly and SameSite=Lax, along with sliding expiration.
+```
+
+### EXAMPLE 4
+```powershell
+New-KrCookieBuilder -Name 'AuthCookie' -HttpOnly -SameSite Lax |
+    Add-KrCookiesAuthentication -Name 'MyCookieAuth' -SlidingExpiration -ExpireTimeSpan (New-TimeSpan -Days 7)
+Configures cookie authentication using a custom cookie created via pipeline with HttpOnly and SameSite=Lax, along with sliding expiration.
 ```
 
 ## PARAMETERS
@@ -211,16 +225,17 @@ Accept wildcard characters: False
 ### -Cookie
 The cookie configuration to use.
 If not specified, default cookie settings are applied.
+Can be created with New-KrCookieBuilder and passed via pipeline.
 
 ```yaml
 Type: CookieBuilder
-Parameter Sets: (All)
+Parameter Sets: Items
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 

@@ -1,9 +1,9 @@
-﻿<##
+﻿<#
     Sample: Claims & Policies Authorization
     Purpose: Build claim-based policies and enforce them on routes after Basic auth.
     File:    8.6-Claims-Policies.ps1
     Notes:   Demonstrates issuing claims during authentication.
-##>
+#>
 
 # 1. Logging
 New-KrLogger | Add-KrSinkConsole | Register-KrLogger -Name 'console' -SetAsDefault | Out-Null
@@ -18,18 +18,25 @@ Add-KrListener -Port 5000 -IPAddress ([IPAddress]::Loopback)
 Add-KrPowerShellRuntime
 
 # 5. Build policy set
-$policy = New-KrClaimPolicy |
-  Add-KrClaimPolicy -PolicyName 'CanRead' -ClaimType 'can_read' -AllowedValues 'true' |
-  Add-KrClaimPolicy -PolicyName 'CanWrite' -ClaimType 'can_write' -AllowedValues 'true' |
-  Build-KrClaimPolicy
+$claimConfig = New-KrClaimPolicy |
+    Add-KrClaimPolicy -PolicyName 'CanRead' -ClaimType 'can_read' -AllowedValues 'true' |
+    Add-KrClaimPolicy -PolicyName 'CanWrite' -ClaimType 'can_write' -AllowedValues 'true' |
+    Build-KrClaimPolicy
 
 # 6. Basic auth + issue claims for admin
-Add-KrBasicAuthentication -Name 'PolicyBasic' -Realm 'Claims' -AllowInsecureHttp -ScriptBlock { param($Username,$Password) if($Username -eq 'admin' -and $Password -eq 'password'){ $true } else { $false } } -IssueClaimsScriptBlock {
+Add-KrBasicAuthentication -Name 'PolicyBasic' -Realm 'Claims' -AllowInsecureHttp -ScriptBlock {
+    param($Username, $Password)
+    if ($Username -eq 'admin' -and $Password -eq 'password') {
+        $true
+    } else {
+        $false
+    }
+} -IssueClaimsScriptBlock {
     param($Identity)
-    if($Identity -eq 'admin') {
+    if ($Identity -eq 'admin') {
         Add-KrUserClaim -ClaimType 'can_read' -Value 'true' | Add-KrUserClaim -ClaimType 'can_write' -Value 'true'
     }
-}
+} -ClaimPolicyConfig $claimConfig
 
 # 7. Finalize configuration
 Enable-KrConfiguration
