@@ -29,7 +29,7 @@ The renewed JWT token as a compact string.
 
 ## See Also
 
-* record [KestrunContext](../../Kestrun.Hosting/KestrunContext)
+* record [KestrunContext](../../Kestrun.Models/KestrunContext)
 * class [JwtTokenBuilder](../JwtTokenBuilder)
 * namespace [Kestrun.Jwt](../../Kestrun)
 

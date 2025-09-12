@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: New-KrCertificateRequest
-nav_order: 77
+nav_order: 78
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

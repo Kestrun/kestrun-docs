@@ -22,7 +22,7 @@ A task representing the asynchronous operation.
 
 ## See Also
 
-* record [KestrunContext](./KestrunContext)
+* record [KestrunContext](../Kestrun.Models/KestrunContext)
 * class [KestrunHostMapExtensions](./KestrunHostMapExtensions)
 * namespace [Kestrun.Hosting](../Kestrun)
 

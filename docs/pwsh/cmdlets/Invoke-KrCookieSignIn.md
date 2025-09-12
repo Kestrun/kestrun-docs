@@ -17,30 +17,60 @@ Signs in a user issuing an authentication cookie for the given scheme.
 
 ## SYNTAX
 
-### BuildIdentity (Default)
+### Claims (Default)
 ```
-Invoke-KrCookieSignIn [-Scheme <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### BuildIdentityTable
-```
-Invoke-KrCookieSignIn [-Scheme <String>] [-Name <String>] -ClaimTable <Hashtable> [-ExpiresUtc <Object>]
- [-IssuedUtc <Object>] [-IsPersistent] [-AllowRefresh] [-RedirectUri <String>] [-Items <Hashtable>]
- [-Parameters <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-KrCookieSignIn [-Scheme <String>] [-Claims <Claim[]>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### BuildIdentityArray
+### SimpleIdentity
 ```
-Invoke-KrCookieSignIn [-Scheme <String>] [-Name <String>] -Claim <Claim[]> [-ExpiresUtc <Object>]
+Invoke-KrCookieSignIn [-Scheme <String>] [-Name <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AuthenticationProperties_Claim
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-Claims <Claim[]>]
+ -AuthenticationProperties <AuthenticationProperties> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AuthenticationPropertiesItems_BuildIdentity
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-Claims <Claim[]>] [-ExpiresUtc <Object>] [-IssuedUtc <Object>]
+ [-IsPersistent] [-AllowRefresh] [-RedirectUri <String>] [-Items <Hashtable>] [-Parameters <Hashtable>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### BuildIdentity
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-Claims <Claim[]>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### AuthenticationProperties_Identity
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-Identity <ClaimsIdentity>]
+ [-AuthenticationProperties <AuthenticationProperties>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AuthenticationPropertiesItems_Identity
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-Identity <ClaimsIdentity>] [-ExpiresUtc <Object>]
  [-IssuedUtc <Object>] [-IsPersistent] [-AllowRefresh] [-RedirectUri <String>] [-Items <Hashtable>]
  [-Parameters <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Identity
 ```
-Invoke-KrCookieSignIn [-Scheme <String>] -Identity <ClaimsIdentity> [-ExpiresUtc <Object>]
- [-IssuedUtc <Object>] [-IsPersistent] [-AllowRefresh] [-RedirectUri <String>] [-Items <Hashtable>]
- [-Parameters <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-KrCookieSignIn [-Scheme <String>] -Identity <ClaimsIdentity> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### SimpleIdentity_BuildIdentity
+```
+Invoke-KrCookieSignIn [-Scheme <String>] [-ExpiresUtc <Object>] [-IssuedUtc <Object>] [-IsPersistent]
+ [-AllowRefresh] [-RedirectUri <String>] [-Items <Hashtable>] [-Parameters <Hashtable>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +113,7 @@ Convenience parameter to add a ClaimTypes.Name claim.
 
 ```yaml
 Type: String
-Parameter Sets: BuildIdentityTable, BuildIdentityArray
+Parameter Sets: SimpleIdentity
 Aliases:
 
 Required: False
@@ -93,31 +123,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Claim
+### -Claims
 One or more pre-constructed System.Security.Claims.Claim objects to include.
 
 ```yaml
 Type: Claim[]
-Parameter Sets: BuildIdentityArray
+Parameter Sets: Claims, AuthenticationProperties_Claim, AuthenticationPropertiesItems_BuildIdentity, BuildIdentity
 Aliases:
 
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClaimTable
-Hashtable of claimType =\> value.
-Adds each as a claim.
-
-```yaml
-Type: Hashtable
-Parameter Sets: BuildIdentityTable
-Aliases:
-
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -126,6 +140,18 @@ Accept wildcard characters: False
 
 ### -Identity
 Existing ClaimsIdentity to use instead of constructing a new one.
+
+```yaml
+Type: ClaimsIdentity
+Parameter Sets: AuthenticationProperties_Identity, AuthenticationPropertiesItems_Identity
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ```yaml
 Type: ClaimsIdentity
@@ -139,12 +165,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AuthenticationProperties
+Existing AuthenticationProperties to use instead of constructing a new one.
+
+```yaml
+Type: AuthenticationProperties
+Parameter Sets: AuthenticationProperties_Claim
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: AuthenticationProperties
+Parameter Sets: AuthenticationProperties_Identity
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExpiresUtc
 Explicit expiration timestamp for the authentication ticket.
 
 ```yaml
 Type: Object
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -159,7 +212,7 @@ Explicit issued timestamp for the authentication ticket.
 
 ```yaml
 Type: Object
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -174,7 +227,7 @@ Marks the cookie as persistent (survives browser session) if supported.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -189,7 +242,7 @@ Allows the authentication session to be refreshed (sliding expiration scenarios)
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -204,7 +257,7 @@ Sets the RedirectUri property on AuthenticationProperties.
 
 ```yaml
 Type: String
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -219,7 +272,7 @@ Hashtable of string key-value pairs to add to the Items collection on Authentica
 
 ```yaml
 Type: Hashtable
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False
@@ -234,7 +287,7 @@ Hashtable of string key-value pairs to add to the Parameters collection on Authe
 
 ```yaml
 Type: Hashtable
-Parameter Sets: BuildIdentityTable, BuildIdentityArray, Identity
+Parameter Sets: AuthenticationPropertiesItems_BuildIdentity, AuthenticationPropertiesItems_Identity, SimpleIdentity_BuildIdentity
 Aliases:
 
 Required: False

@@ -59,7 +59,7 @@ public CsGlobals(IReadOnlyDictionary<string, object?> globals, KestrunContext kr
 
 ## See Also
 
-* record [KestrunContext](../../Kestrun.Hosting/KestrunContext)
+* record [KestrunContext](../../Kestrun.Models/KestrunContext)
 * record [CsGlobals](../CsGlobals)
 * namespace [Kestrun.Languages](../../Kestrun)
 
@@ -82,7 +82,7 @@ public CsGlobals(IReadOnlyDictionary<string, object?> globals, KestrunContext kr
 
 ## See Also
 
-* record [KestrunContext](../../Kestrun.Hosting/KestrunContext)
+* record [KestrunContext](../../Kestrun.Models/KestrunContext)
 * record [CsGlobals](../CsGlobals)
 * namespace [Kestrun.Languages](../../Kestrun)
 

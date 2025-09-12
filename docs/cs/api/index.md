@@ -28,6 +28,7 @@ parent: "C#"
 | class [ApiKeyAuthHandler](./Kestrun.Authentication/ApiKeyAuthHandler.md) | Handles API Key authentication for incoming HTTP requests. |
 | enum [ApiKeyChallengeFormat](./Kestrun.Authentication/ApiKeyChallengeFormat.md) | Specifies the format for API key authentication challenges. |
 | record [AuthenticationCodeSettings](./Kestrun.Authentication/AuthenticationCodeSettings.md) | Represents the settings for authentication code, including language, code, extra imports, and references. |
+| static class [AuthOptionsHelper](./Kestrun.Authentication/AuthOptionsHelper.md) | Helper class to retrieve authentication options from the DI container. |
 | class [BasicAuthenticationOptions](./Kestrun.Authentication/BasicAuthenticationOptions.md) | Options for configuring Basic Authentication in Kestrun. |
 | class [BasicAuthHandler](./Kestrun.Authentication/BasicAuthHandler.md) | Handles Basic Authentication for HTTP requests. |
 | interface [IAuthenticationCommonOptions](./Kestrun.Authentication/IAuthenticationCommonOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
@@ -66,7 +67,6 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
-| record [KestrunContext](./Kestrun.Hosting/KestrunContext.md) | Represents the context for a Kestrun request, including the request, response, HTTP context, and host. |
 | class [KestrunHost](./Kestrun.Hosting/KestrunHost.md) | Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management. |
 | static class [KestrunHostAuthExtensions](./Kestrun.Hosting/KestrunHostAuthExtensions.md) | Provides extension methods for adding authentication and authorization schemes to the Kestrun host. |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
@@ -175,6 +175,7 @@ parent: "C#"
 | --- | --- |
 | class [ContentDispositionOptions](./Kestrun.Models/ContentDispositionOptions.md) | Options for Content-Disposition header. |
 | enum [ContentDispositionType](./Kestrun.Models/ContentDispositionType.md) | Specifies the type of Content-Disposition header to use in the HTTP response. |
+| record [KestrunContext](./Kestrun.Models/KestrunContext.md) | Represents the context for a Kestrun request, including the request, response, HTTP context, and host. |
 | class [KestrunRequest](./Kestrun.Models/KestrunRequest.md) | Represents a request model for Kestrun, containing HTTP method, path, query, headers, body, authorization, cookies, and form data. |
 | class [KestrunResponse](./Kestrun.Models/KestrunResponse.md) | Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes. |
 

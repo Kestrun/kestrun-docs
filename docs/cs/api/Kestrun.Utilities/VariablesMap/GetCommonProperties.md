@@ -23,7 +23,7 @@ True if properties were successfully mapped; otherwise, false.
 
 ## See Also
 
-* record [KestrunContext](../../Kestrun.Hosting/KestrunContext)
+* record [KestrunContext](../../Kestrun.Models/KestrunContext)
 * class [VariablesMap](../VariablesMap)
 * namespace [Kestrun.Utilities](../../Kestrun)
 

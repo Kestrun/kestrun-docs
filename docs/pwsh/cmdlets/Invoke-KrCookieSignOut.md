@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Start-KrServer
-nav_order: 103
+title: Invoke-KrCookieSignOut
+nav_order: 74
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,87 +10,95 @@ online version:
 schema: 2.0.0
 ---
 
-# Start-KrServer
+# Invoke-KrCookieSignOut
 
 ## SYNOPSIS
-Starts the Kestrun server and listens for incoming requests.
+Signs out the current user by removing their authentication cookie for the given scheme.
 
 ## SYNTAX
 
 ```
-Start-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [-PassThru] [<CommonParameters>]
+Invoke-KrCookieSignOut [[-Scheme] <String>] [-Redirect] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This function starts the Kestrun server, allowing it to accept incoming HTTP requests.
+Wraps SignOutAsync on the current HTTP context to remove a cookie-based session.
+Designed for use inside Kestrun route script blocks where $Context is available.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Start-KrServer -Server $server
-Starts the specified Kestrun server instance and listens for incoming requests.
+Invoke-KrCookieSignOut  # Signs out the current user from the default 'Cookies' scheme.
+```
+
+### EXAMPLE 2
+```powershell
+Invoke-KrCookieSignOut -Scheme 'MyCookieScheme'  # Signs out the current user from the specified scheme.
 ```
 
 ## PARAMETERS
 
-### -Server
-The Kestrun server instance to start.
-This parameter is mandatory.
+### -Scheme
+Authentication scheme to use (default 'Cookies').
 
 ```yaml
-Type: KestrunHost
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
+Default value: Cookies
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Redirect
+If specified, redirects the user to the login path after signing out.
+If the login path is not configured, redirects to '/'.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the command runs.
+The command is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NoWait
-If specified, the function will not wait for the server to start and will return immediately.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Quiet
-If specified, suppresses output messages during the startup process.
+### -Confirm
+Prompts you for confirmation before running the command.
+The command is not run unless you respond
+affirmatively.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-If specified, the cmdlet will return the modified server instance after starting it.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,8 +110,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### None
 ## NOTES
-This function is designed to be used after the server has been configured and routes have been added.
-It will block the console until the server is stopped or Ctrl+C is pressed.
 
 ## RELATED LINKS

@@ -14,7 +14,7 @@ public KestrunContext? Context { get; }
 
 ## See Also
 
-* record [KestrunContext](../../Kestrun.Hosting/KestrunContext)
+* record [KestrunContext](../../Kestrun.Models/KestrunContext)
 * record [CsGlobals](../CsGlobals)
 * namespace [Kestrun.Languages](../../Kestrun)
 
