@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrBasicAuthentication
-nav_order: 3
+nav_order: 4
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -456,6 +456,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Kestrun.Hosting.KestrunHost
 ## NOTES
 This function is part of the Kestrun.Authentication module and is used to configure basic authentication for Kestrun servers.
-Maps to Kestrun.Hosting.KestrunHostAuthExtensions.AddBasicAuthentication
+Maps to Kestrun.Hosting.KestrunHostAuthnExtensions.AddBasicAuthentication
 
 ## RELATED LINKS

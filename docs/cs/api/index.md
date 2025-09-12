@@ -36,6 +36,14 @@ parent: "C#"
 | interface [IClaimsCommonOptions](./Kestrun.Authentication/IClaimsCommonOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
 | class [JwtAuthenticationOptions](./Kestrun.Authentication/JwtAuthenticationOptions.md) | Provides options for JWT authentication, including claim policies and custom claim issuance. |
 
+## Kestrun.Authorization namespace
+
+| public type | description |
+| --- | --- |
+| static class [KestrunAuthorizationRegistry](./Kestrun.Authorization/KestrunAuthorizationRegistry.md) | Registry for Kestrun authorization policies. |
+| class [KestrunDynamicPolicyProvider](./Kestrun.Authorization/KestrunDynamicPolicyProvider.md) | An authorization policy provider that retrieves policies from the KestrunAuthorizationRegistry. |
+| class [KestrunPolicyConfig](./Kestrun.Authorization/KestrunPolicyConfig.md) | Configuration for a named authorization policy. |
+
 ## Kestrun.Certificates namespace
 
 | public type | description |
@@ -68,7 +76,8 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | class [KestrunHost](./Kestrun.Hosting/KestrunHost.md) | Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management. |
-| static class [KestrunHostAuthExtensions](./Kestrun.Hosting/KestrunHostAuthExtensions.md) | Provides extension methods for adding authentication and authorization schemes to the Kestrun host. |
+| static class [KestrunHostAuthnExtensions](./Kestrun.Hosting/KestrunHostAuthnExtensions.md) | Provides extension methods for adding authentication schemes to the Kestrun host. |
+| static class [KestrunHostAuthorizationExtensions](./Kestrun.Hosting/KestrunHostAuthorizationExtensions.md) | Provides extension methods for adding authorization schemes to the Kestrun host. |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
 | static class [KestrunHostRazorExtensions](./Kestrun.Hosting/KestrunHostRazorExtensions.md) | Provides extension methods for adding PowerShell and Razor Pages to a KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |

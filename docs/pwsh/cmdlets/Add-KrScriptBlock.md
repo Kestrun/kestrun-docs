@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrScriptBlock
-nav_order: 33
+nav_order: 35
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
