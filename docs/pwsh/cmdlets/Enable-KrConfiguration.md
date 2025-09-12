@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Enable-KrConfiguration
-nav_order: 53
+nav_order: 54
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

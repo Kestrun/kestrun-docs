@@ -227,6 +227,7 @@ parent: "C#"
 | --- | --- |
 | static class [AssemblyAutoLoader](./Kestrun.Utilities/AssemblyAutoLoader.md) | Registers one or more folders that contain private assemblies and makes sure every DLL in those folders is available to PowerShell / scripts. Call [`PreloadAll`](./Kestrun.Utilities/AssemblyAutoLoader/PreloadAll.md) **once** at startup (or from PowerShell) and forget about “could not load assembly …” errors. |
 | static class [BuildError](./Kestrun.Utilities/BuildError.md) | Utilities for formatting PowerShell error streams into HTTP responses. |
+| static class [CacheRevalidation](./Kestrun.Utilities/CacheRevalidation.md) | Helper for writing conditional 304 Not Modified responses based on ETag and Last-Modified headers. |
 | static class [CcUtilities](./Kestrun.Utilities/CcUtilities.md) | Provides utility methods for Kestrun. |
 | static class [HostingExtensions](./Kestrun.Utilities/HostingExtensions.md) | Provides extension methods for hosting Kestrun servers. |
 | [Flags] enum [HttpVerb](./Kestrun.Utilities/HttpVerb.md) | Common HTTP verbs recognized by the framework. |
