@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{ Fill PassThru Description }}
+If specified, the cmdlet returns the modified Kestrun host instance.
 
 ```yaml
 Type: SwitchParameter
