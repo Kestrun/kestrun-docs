@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Set-KrLevelSwitch
-nav_order: 98
+title: Set-KrLoggerLevelSwitch
+nav_order: 99
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-KrLevelSwitch
+# Set-KrLoggerLevelSwitch
 
 ## SYNOPSIS
 Sets the minimum logging level for a level switch.
@@ -19,12 +19,12 @@ Sets the minimum logging level for a level switch.
 
 ### LoggerName (Default)
 ```
-Set-KrLevelSwitch [-LoggerName <String>] -MinimumLevel <LogEventLevel> [<CommonParameters>]
+Set-KrLoggerLevelSwitch [-LoggerName <String>] -MinimumLevel <LogEventLevel> [<CommonParameters>]
 ```
 
 ### Logger
 ```
-Set-KrLevelSwitch -Logger <Logger> -MinimumLevel <LogEventLevel> [<CommonParameters>]
+Set-KrLoggerLevelSwitch -Logger <Logger> -MinimumLevel <LogEventLevel> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,13 +36,13 @@ the logging level will be set to the user's preference.
 
 ### EXAMPLE 1
 ```powershell
-Set-KrLevelSwitch -LoggerName "MyLogger" -MinimumLevel Warning
+Set-KrLoggerLevelSwitch -LoggerName "MyLogger" -MinimumLevel Warning
 Sets the minimum logging level of the level switch for the logger named "MyLogger" to Warning.
 ```
 
 ### EXAMPLE 2
 ```powershell
-Set-KrLevelSwitch -Logger $myLogger -MinimumLevel Error
+Set-KrLoggerLevelSwitch -Logger $myLogger -MinimumLevel Error
 Sets the minimum logging level of the level switch for the specified logger instance to Error.
 ```
 

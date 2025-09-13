@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Get-KrLevelSwitch
+title: Get-KrLoggerLevelSwitch
 nav_order: 63
 render_with_liquid: false
 external help file: Kestrun-help.xml
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-KrLevelSwitch
+# Get-KrLoggerLevelSwitch
 
 ## SYNOPSIS
 Gets the current logging level for a level switch.
@@ -19,12 +19,12 @@ Gets the current logging level for a level switch.
 
 ### LoggerName (Default)
 ```
-Get-KrLevelSwitch [-LoggerName <String>] [<CommonParameters>]
+Get-KrLoggerLevelSwitch [-LoggerName <String>] [<CommonParameters>]
 ```
 
 ### Logger
 ```
-Get-KrLevelSwitch -Logger <Logger> [<CommonParameters>]
+Get-KrLoggerLevelSwitch -Logger <Logger> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,13 +36,13 @@ it will be derived from the provided Logger instance.
 
 ### EXAMPLE 1
 ```powershell
-Get-KrLevelSwitch -LoggerName "MyLogger"
+Get-KrLoggerLevelSwitch -LoggerName "MyLogger"
 Retrieves the current logging level of the level switch for the logger named "MyLogger".
 ```
 
 ### EXAMPLE 2
 ```powershell
-Get-KrLevelSwitch -Logger $myLogger
+Get-KrLoggerLevelSwitch -Logger $myLogger
 Retrieves the current logging level of the level switch for the specified logger instance.
 ```
 

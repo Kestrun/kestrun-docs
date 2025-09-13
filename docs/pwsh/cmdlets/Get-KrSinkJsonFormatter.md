@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Get-KrJsonFormatter
-nav_order: 59
+title: Get-KrSinkJsonFormatter
+nav_order: 74
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-KrJsonFormatter
+# Get-KrSinkJsonFormatter
 
 ## SYNOPSIS
 Returns new instance of Serilog.Formatting.Json.JsonFormatter.
@@ -18,7 +18,7 @@ Returns new instance of Serilog.Formatting.Json.JsonFormatter.
 ## SYNTAX
 
 ```
-Get-KrJsonFormatter [<CommonParameters>]
+Get-KrSinkJsonFormatter [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +28,7 @@ Returns new instance of Serilog.Formatting.Json.JsonFormatter that can be used w
 
 ### EXAMPLE 1
 ```powershell
-New-KrLogger | Add-KrSinkFile -Path 'C:\Data\Log\test.log' -Formatter (Get-KrJsonFormatter) | Register-KrLogger
+New-KrLogger | Add-KrSinkFile -Path 'C:\Data\Log\test.log' -Formatter (Get-KrSinkJsonFormatter) | Register-KrLogger
 ```
 
 ## PARAMETERS

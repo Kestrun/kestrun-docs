@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrStaticFilesService
-nav_order: 46
+title: Add-KrStaticFilesMiddleware
+nav_order: 47
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrStaticFilesService
+# Add-KrStaticFilesMiddleware
 
 ## SYNOPSIS
 Registers a static file server to serve files from a specified path.
@@ -19,14 +19,15 @@ Registers a static file server to serve files from a specified path.
 
 ### Items (Default)
 ```
-Add-KrStaticFilesService [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
+Add-KrStaticFilesMiddleware [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
  [-HttpsCompression] [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-RedirectToAppendTrailingSlash]
  [-ContentTypeMap <Hashtable>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrStaticFilesService [-Server <KestrunHost>] -Options <StaticFileOptions> [-PassThru] [<CommonParameters>]
+Add-KrStaticFilesMiddleware [-Server <KestrunHost>] -Options <StaticFileOptions> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,14 +38,14 @@ It can be used to serve files like images, stylesheets, and scripts.
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrStaticFilesService -RequestPath '/static' -HttpsCompression -ServeUnknownFileTypes -DefaultContentType 'application/octet-stream' -RedirectToAppendTrailingSlash
+$server | Add-KrStaticFilesMiddleware -RequestPath '/static' -HttpsCompression -ServeUnknownFileTypes -DefaultContentType 'application/octet-stream' -RedirectToAppendTrailingSlash
 This example adds a static file service to the server for the path '/static', enabling HTTPS compression, allowing serving unknown file types,
 setting the default content type to 'application/octet-stream', and redirecting requests to append a trailing slash.
 ```
 
 ### EXAMPLE 2
 ```powershell
-$server | Add-KrStaticFilesService -Options $options
+$server | Add-KrStaticFilesMiddleware -Options $options
 This example adds a static file service to the server using the specified StaticFileOptions.
 ```
 

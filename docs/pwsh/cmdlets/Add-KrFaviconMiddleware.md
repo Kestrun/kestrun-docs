@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrFavicon
-nav_order: 15
+title: Add-KrFaviconMiddleware
+nav_order: 18
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrFavicon
+# Add-KrFaviconMiddleware
 
 ## SYNOPSIS
 Adds a favicon to the Kestrun server.
@@ -18,7 +18,7 @@ Adds a favicon to the Kestrun server.
 ## SYNTAX
 
 ```
-Add-KrFavicon [[-Server] <KestrunHost>] [[-IconPath] <String>] [-PassThru] [<CommonParameters>]
+Add-KrFaviconMiddleware [[-Server] <KestrunHost>] [[-IconPath] <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,13 +29,13 @@ It can be used to set a custom favicon for the server's web interface.
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrFavicon -IconPath 'C:\path\to\favicon.ico'
+$server | Add-KrFaviconMiddleware -IconPath 'C:\path\to\favicon.ico'
 This example adds a custom favicon to the server from the specified path.
 ```
 
 ### EXAMPLE 2
 ```powershell
-$server | Add-KrFavicon
+$server | Add-KrFaviconMiddleware
 This example adds the default embedded favicon to the server.
 ```
 

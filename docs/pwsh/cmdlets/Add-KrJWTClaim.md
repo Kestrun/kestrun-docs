@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrJWTClaim
-nav_order: 20
+nav_order: 23
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

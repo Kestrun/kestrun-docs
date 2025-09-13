@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrCorsPolicy
-nav_order: 7
+title: Add-KrCorsPolicyMiddleware
+nav_order: 10
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrCorsPolicy
+# Add-KrCorsPolicyMiddleware
 
 ## SYNOPSIS
 Adds a CORS policy to the server.
@@ -19,13 +19,13 @@ Adds a CORS policy to the server.
 
 ### Items (Default)
 ```
-Add-KrCorsPolicy [-Server <KestrunHost>] -Name <String> [-AllowAnyOrigin] [-AllowAnyMethod] [-AllowAnyHeader]
- [-AllowCredentials] [-DisallowCredentials] [-PassThru] [<CommonParameters>]
+Add-KrCorsPolicyMiddleware [-Server <KestrunHost>] -Name <String> [-AllowAnyOrigin] [-AllowAnyMethod]
+ [-AllowAnyHeader] [-AllowCredentials] [-DisallowCredentials] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrCorsPolicy [-Server <KestrunHost>] -Name <String> -Builder <CorsPolicyBuilder> [-PassThru]
+Add-KrCorsPolicyMiddleware [-Server <KestrunHost>] -Name <String> -Builder <CorsPolicyBuilder> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -37,19 +37,19 @@ It can be used to specify allowed origins, methods, headers, and other CORS sett
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrCorsPolicy -Name 'AllowAll' -AllowAnyOrigin -AllowAnyMethod -AllowAnyHeader
+$server | Add-KrCorsPolicyMiddleware -Name 'AllowAll' -AllowAnyOrigin -AllowAnyMethod -AllowAnyHeader
 This example adds a CORS policy named 'AllowAll' to the server, allowing any origin, method, and header.
 ```
 
 ### EXAMPLE 2
 ```powershell
-$server | Add-KrCorsPolicy -Name 'CustomPolicy' -Builder $builder
+$server | Add-KrCorsPolicyMiddleware -Name 'CustomPolicy' -Builder $builder
 This example adds a CORS policy named 'CustomPolicy' to the server using the specified CORS policy builder.
 ```
 
 ### EXAMPLE 3
 ```powershell
-$server | Add-KrCorsPolicy -Server $server -Name 'CustomPolicy' -AllowAnyOrigin -AllowAnyMethod -AllowAnyHeader
+$server | Add-KrCorsPolicyMiddleware -Server $server -Name 'CustomPolicy' -AllowAnyOrigin -AllowAnyMethod -AllowAnyHeader
 This example adds a CORS policy named 'CustomPolicy' to the server, allowing any origin, method, and header.
 ```
 

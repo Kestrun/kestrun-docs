@@ -33,6 +33,7 @@ public class KestrunResponse
 | [RedirectUrl](KestrunResponse/RedirectUrl) { get; set; } | Gets or sets the URL to redirect the response to, if an HTTP redirect is required. |
 | [Request](KestrunResponse/Request) { get; } | Gets the associated KestrunRequest for this response. |
 | [StatusCode](KestrunResponse/StatusCode) { get; set; } | Gets or sets the HTTP status code for the response. |
+| [AddCachingHeaders](KestrunResponse/AddCachingHeaders)(…) | Adds caching headers to the response based on the provided CacheControlHeaderValue options. |
 | [ApplyTo](KestrunResponse/ApplyTo)(…) | Applies the current KestrunResponse to the specified HttpResponse, setting status, headers, cookies, and writing the body. |
 | [GetHeader](KestrunResponse/GetHeader)(…) | Retrieves the value of the specified header from the response headers. |
 | [WriteBinaryResponse](KestrunResponse/WriteBinaryResponse)(…) | Writes a binary response with the specified data, status code, and content type. |

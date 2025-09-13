@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrFileServer
-nav_order: 16
+title: Add-KrFileServerMiddleware
+nav_order: 19
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrFileServer
+# Add-KrFileServerMiddleware
 
 ## SYNOPSIS
 Registers a file server to serve static files from a specified path.
@@ -19,14 +19,15 @@ Registers a file server to serve static files from a specified path.
 
 ### Items (Default)
 ```
-Add-KrFileServer [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>] [-HttpsCompression]
- [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-EnableDirectoryBrowsing]
+Add-KrFileServerMiddleware [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
+ [-HttpsCompression] [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-EnableDirectoryBrowsing]
  [-RedirectToAppendTrailingSlash] [-ContentTypeMap <Hashtable>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrFileServer [-Server <KestrunHost>] -Options <FileServerOptions> [-PassThru] [<CommonParameters>]
+Add-KrFileServerMiddleware [-Server <KestrunHost>] -Options <FileServerOptions> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,14 +38,14 @@ It can be used to serve files like images, stylesheets, and scripts.
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrFileServer -RequestPath '/files' -EnableDirectoryBrowsing
+$server | Add-KrFileServerMiddleware -RequestPath '/files' -EnableDirectoryBrowsing
 This example adds a file server to the server for the path '/files', enabling directory browsing.
 The file server will use the default options for serving static files.
 ```
 
 ### EXAMPLE 2
 ```powershell
-$server | Add-KrFileServer -Options $options
+$server | Add-KrFileServerMiddleware -Options $options
 This example adds a file server to the server using the specified FileServerOptions.
 ```
 

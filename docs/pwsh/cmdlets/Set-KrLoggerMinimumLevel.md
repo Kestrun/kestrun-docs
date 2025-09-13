@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Set-KrMinimumLevel
-nav_order: 99
+title: Set-KrLoggerMinimumLevel
+nav_order: 100
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-KrMinimumLevel
+# Set-KrLoggerMinimumLevel
 
 ## SYNOPSIS
 Sets the minimum log level for the logger configuration.
@@ -19,12 +19,12 @@ Sets the minimum log level for the logger configuration.
 
 ### Static (Default)
 ```
-Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -Value <LogEventLevel> [<CommonParameters>]
+Set-KrLoggerMinimumLevel -LoggerConfig <LoggerConfiguration> -Value <LogEventLevel> [<CommonParameters>]
 ```
 
 ### Dynamic
 ```
-Set-KrMinimumLevel -LoggerConfig <LoggerConfiguration> -Dynamic <LogEventLevel> [<CommonParameters>]
+Set-KrLoggerMinimumLevel -LoggerConfig <LoggerConfiguration> -Dynamic <LogEventLevel> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,19 +36,19 @@ set the minimum log level to a specific level or to the user's preference.
 
 ### EXAMPLE 1
 ```powershell
-Set-KrMinimumLevel -LoggerConfig $myLoggerConfig -Value Warning
+Set-KrLoggerMinimumLevel -LoggerConfig $myLoggerConfig -Value Warning
 Sets the minimum log level of the specified logger configuration to Warning.
 ```
 
 ### EXAMPLE 2
 ```powershell
-Set-KrMinimumLevel -LoggerConfig $myLoggerConfig -ControlledBy $myLevelSwitch
+Set-KrLoggerMinimumLevel -LoggerConfig $myLoggerConfig -ControlledBy $myLevelSwitch
 Sets the minimum log level of the specified logger configuration to be controlled by the specified level switch.
 ```
 
 ### EXAMPLE 3
 ```powershell
-$myLoggerConfig | Set-KrMinimumLevel -Value Information -PassThru
+$myLoggerConfig | Set-KrLoggerMinimumLevel -Value Information -PassThru
 Sets the minimum log level of the specified logger configuration to Information and outputs the LoggerConfiguration object into the pipeline.
 ```
 

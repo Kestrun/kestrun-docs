@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrSignalRHub
-nav_order: 37
+title: Add-KrSignalRHubMiddleware
+nav_order: 38
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,7 +10,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrSignalRHub
+# Add-KrSignalRHubMiddleware
 
 ## SYNOPSIS
 Maps a SignalR hub class to the given URL path.
@@ -18,7 +18,8 @@ Maps a SignalR hub class to the given URL path.
 ## SYNTAX
 
 ```
-Add-KrSignalRHub [-Server] <KestrunHost> [-HubType] <Type> [-Path] <String> [-PassThru] [<CommonParameters>]
+Add-KrSignalRHubMiddleware [-Server] <KestrunHost> [-HubType] <Type> [-Path] <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,13 +29,13 @@ This function allows you to map a SignalR hub class to a specific URL path on th
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrSignalRHub -HubType ([ChatHub]) -Path "/chat"
+$server | Add-KrSignalRHubMiddleware -HubType ([ChatHub]) -Path "/chat"
 This example maps the ChatHub class to the "/chat" URL path on the specified Kestrun server.
 ```
 
 ### EXAMPLE 2
 ```powershell
-Get-KrServer | Add-KrSignalRHub -HubType ([ChatHub]) -Path "/chat"
+Get-KrServer | Add-KrSignalRHubMiddleware -HubType ([ChatHub]) -Path "/chat"
 This example retrieves the current Kestrun server and maps the ChatHub class to the "/chat" URL path.
 ```
 

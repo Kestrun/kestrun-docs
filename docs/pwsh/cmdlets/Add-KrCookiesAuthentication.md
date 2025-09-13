@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrCookiesAuthentication
-nav_order: 6
+nav_order: 9
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

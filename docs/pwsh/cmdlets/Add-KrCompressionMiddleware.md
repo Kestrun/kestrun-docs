@@ -1,8 +1,8 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-title: Add-KrAntiforgery
-nav_order: 1
+title: Add-KrCompressionMiddleware
+nav_order: 8
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -10,46 +10,47 @@ online version:
 schema: 2.0.0
 ---
 
-# Add-KrAntiforgery
+# Add-KrCompressionMiddleware
 
 ## SYNOPSIS
-Adds an Antiforgery service to the server.
+Adds response compression to the server.
 
 ## SYNTAX
 
 ### Items (Default)
 ```
-Add-KrAntiforgery [-Server <KestrunHost>] [-Cookie <CookieBuilder>] [-FormFieldName <String>]
- [-HeaderName <String>] [-SuppressXFrameOptionsHeader] [-PassThru] [<CommonParameters>]
+Add-KrCompressionMiddleware [-Server <KestrunHost>] [-EnableForHttps] [-MimeTypes <String[]>]
+ [-ExcludedMimeTypes <String[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrAntiforgery [-Server <KestrunHost>] -Options <AntiforgeryOptions> [-PassThru] [<CommonParameters>]
+Add-KrCompressionMiddleware [-Server <KestrunHost>] -Options <ResponseCompressionOptions> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This cmdlet allows you to configure the Antiforgery service for the Kestrun server.
-It can be used to protect against Cross-Site Request Forgery (CSRF) attacks by generating and validating antiforgery tokens.
+This cmdlet allows you to configure response compression for the Kestrun server.
+It can be used to compress responses using various algorithms like Gzip, Brotli, etc.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrAntiforgery -Cookie $cookieBuilder -FormField '__RequestVerificationToken' -HeaderName 'X-CSRF-Token' -SuppressXFrameOptionsHeader
-This example adds an Antiforgery service to the server with a custom cookie builder, form field name, and header name.
+$server | Add-KrCompressionMiddleware -EnableForHttps -MimeTypes 'text/plain', 'application/json' -ExcludedMimeTypes 'image/*' -Providers $gzipProvider, $brotliProvider
+This example adds response compression to the server, enabling it for HTTPS requests, and specifying the MIME types to compress and exclude, as well as the compression providers to use.
 ```
 
 ### EXAMPLE 2
 ```powershell
-$server | Add-KrAntiforgery -Options $options
-This example adds an Antiforgery service to the server using the specified Antiforgery options.
+$server | Add-KrCompressionMiddleware -Options $options
+This example adds response compression to the server using the specified ResponseCompressionOptions.
 ```
 
 ## PARAMETERS
 
 ### -Server
-The Kestrun server instance to which the Antiforgery service will be added.
+The Kestrun server instance to which the response compression will be added.
 
 ```yaml
 Type: KestrunHost
@@ -64,10 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -Options
-The Antiforgery options to configure the service.
+The ResponseCompressionOptions to configure the response compression.
 
 ```yaml
-Type: AntiforgeryOptions
+Type: ResponseCompressionOptions
 Parameter Sets: Options
 Aliases:
 
@@ -78,53 +79,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cookie
-The cookie builder to use for the Antiforgery service.
-
-```yaml
-Type: CookieBuilder
-Parameter Sets: Items
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FormFieldName
-The name of the form field to use for the Antiforgery token.
-
-```yaml
-Type: String
-Parameter Sets: Items
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HeaderName
-The name of the header to use for the Antiforgery token.
-
-```yaml
-Type: String
-Parameter Sets: Items
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SuppressXFrameOptionsHeader
-If specified, the X-Frame-Options header will not be added to responses.
+### -EnableForHttps
+If specified, enables response compression for HTTPS requests.
 
 ```yaml
 Type: SwitchParameter
@@ -138,8 +94,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MimeTypes
+An array of MIME types to compress.
+If not specified, defaults to common text-based MIME types.
+
+```yaml
+Type: String[]
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludedMimeTypes
+An array of MIME types to exclude from compression.
+
+```yaml
+Type: String[]
+Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
-If specified, the cmdlet will return the modified server instance after adding the Antiforgery service.
+If specified, the cmdlet will return the modified server instance.
 
 ```yaml
 Type: SwitchParameter
@@ -162,5 +149,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Kestrun.Hosting.KestrunHost
 ## NOTES
+This cmdlet is used to configure response compression for the Kestrun server, allowing you to specify which MIME types should be compressed and which should be excluded.
+Providers is not supported yet.
 
 ## RELATED LINKS
