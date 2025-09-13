@@ -19,28 +19,50 @@ Creates a new Kestrun server instance with specified options and listeners.
 
 ### NoCert (Default)
 ```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-UseConnectionLogging]
- [-PassThru] [<CommonParameters>]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
 ```
 
 ### CertFile
 ```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] -CertPath <String>
- [-CertPassword <SecureString>] [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
- [<CommonParameters>]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -CertPath <String> [-CertPassword <SecureString>]
+ [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
 ```
 
 ### SelfSignedCert
 ```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-SelfSignedCert]
- [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] [-SelfSignedCert] [-Protocols <HttpProtocols>]
+ [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
+```
+
+### x509Certificate_Uri
+```
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
+ [-PassThru] [<CommonParameters>]
+```
+
+### x509Certificate_HostName
+```
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
+ [-PassThru] [<CommonParameters>]
+```
+
+### x509Certificate_Default
+```
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### x509Certificate
 ```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>]
- -X509Certificate <X509Certificate2> [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru]
- [<CommonParameters>]
+Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] [-Protocols <HttpProtocols>] [-UseConnectionLogging]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +80,7 @@ Creates a new Kestrun server instance with the specified name.
 
 ### -Server
 The Kestrun server instance to configure.
-This parameter is mandatory and must be a valid server object.
+This parameter is Mandatory and must be a valid server object.
 
 ```yaml
 Type: KestrunHost
@@ -99,14 +121,63 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: [System.Net.IPAddress]::Loopback
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostName
+The hostname for the listener.
+This parameter is Mandatory if using the 'HostName' parameter set.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Uri
+The full URI for the listener.
+This parameter is Mandatory if using the 'Uri' parameter set.
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressFamily
+An array of address families to filter resolved addresses (e.g., IPv4-only).
+This parameter is optional.
+
+```yaml
+Type: AddressFamily[]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Unspecified, Unix, InterNetwork, ImpLink, Pup, Chaos, NS, Ipx, Iso, Osi, Ecma, DataKit, Ccitt, Sna, DecNet, DataLink, Lat, HyperChannel, AppleTalk, NetBios, VoiceView, FireFox, Banyan, Atm, InterNetworkV6, Cluster, Ieee12844, Irda, NetworkDesigners, Max, Packet, ControllerAreaNetwork, Unknown
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CertPath
 The path to the SSL certificate file.
-This parameter is mandatory if using HTTPS.
+This parameter is Mandatory if using HTTPS.
 
 ```yaml
 Type: String
@@ -154,11 +225,11 @@ Accept wildcard characters: False
 
 ### -X509Certificate
 An X509Certificate2 object representing the SSL certificate.
-This parameter is mandatory if using HTTPS
+This parameter is Mandatory if using HTTPS
 
 ```yaml
 Type: X509Certificate2
-Parameter Sets: x509Certificate
+Parameter Sets: x509Certificate_Uri, x509Certificate_HostName, x509Certificate_Default
 Aliases:
 
 Required: True

@@ -18,7 +18,7 @@ Writes an object to the HTTP response body as JSON.
 ## SYNTAX
 
 ```
-Write-KrJsonResponse [-InputObject] <Object> [[-StatusCode] <Int32>] [[-Depth] <Int32>] [[-Compress] <Boolean>]
+Write-KrJsonResponse [-InputObject] <Object> [[-StatusCode] <Int32>] [[-Depth] <Int32>] [-Compress]
  [[-ContentType] <String>] [<CommonParameters>]
 ```
 
@@ -99,12 +99,12 @@ Accept wildcard characters: False
 Whether to compress the JSON output.
 
 ```yaml
-Type: Boolean
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: Named
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,7 +119,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

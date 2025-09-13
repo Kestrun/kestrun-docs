@@ -105,12 +105,14 @@ Accept wildcard characters: False
 ```
 
 ### -Verbs
+Alias: Method
 The HTTP verbs (GET, POST, etc.) that the route should respond to.
+Defaults to GET.
 
 ```yaml
 Type: HttpVerb[]
 Parameter Sets: ScriptBlock, CodeFilePath, Code
-Aliases:
+Aliases: Method
 Accepted values: Get, Head, Post, Put, Patch, Delete, Options, Trace, PropFind, PropPatch, MkCol, Copy, Move, Lock, Unlock, Report, Acl, Search, Merge, Bind, Unbind, Rebind, Update, VersionControl, Checkin, Checkout, Uncheckout, MkWorkspace, Label, OrderPatch
 
 Required: False
@@ -121,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pattern
+Alias: Path
 The URL path for the new route.
 
 ```yaml
@@ -156,7 +159,7 @@ The code to be executed when the route is accessed, used in conjunction with the
 ```yaml
 Type: String
 Parameter Sets: Code
-Aliases:
+Aliases: CodeBlock
 
 Required: True
 Position: Named

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "KestrunHost.ConfigureListener method (1 of 3)"
+title: "KestrunHost.ConfigureListener method (1 of 5)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHost.ConfigureListener method (1 of 3)
+# KestrunHost.ConfigureListener method (1 of 5)
 
 Configures a listener for the Kestrun host with the specified port and connection logging option.
 
@@ -24,7 +24,7 @@ public void ConfigureListener(int port, bool useConnectionLogging = false)
 
 ---
 
-# KestrunHost.ConfigureListener method (2 of 3)
+# KestrunHost.ConfigureListener method (2 of 5)
 
 Configures a listener for the Kestrun host with the specified port, optional IP address, and connection logging.
 
@@ -46,7 +46,7 @@ public void ConfigureListener(int port, IPAddress? ipAddress = null,
 
 ---
 
-# KestrunHost.ConfigureListener method (3 of 3)
+# KestrunHost.ConfigureListener method (3 of 5)
 
 Configures a listener for the Kestrun host with the specified port, optional IP address, certificate, protocols, and connection logging.
 
@@ -67,6 +67,79 @@ public KestrunHost ConfigureListener(int port, IPAddress? ipAddress = null,
 ## Return Value
 
 The current KestrunHost instance.
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHost.ConfigureListener method (4 of 5)
+
+Configures listeners for the Kestrun host based on the provided absolute URI, resolving the host to IP addresses and binding to each address.
+
+```csharp
+public KestrunHost ConfigureListener(Uri uri, X509Certificate2? x509Certificate = null, 
+    HttpProtocols? protocols = default, bool useConnectionLogging = false, 
+    AddressFamily[]? families = null)
+```
+
+| parameter | description |
+| --- | --- |
+| uri | The absolute URI to configure the listener for. |
+| x509Certificate | The X509 certificate for HTTPS. If null, HTTPS is not used. |
+| protocols | The HTTP protocols to use. |
+| useConnectionLogging | Specifies whether to enable connection logging. |
+| families | Optional array of address families to filter resolved addresses (e.g., IPv4-only). |
+
+## Return Value
+
+The current KestrunHost instance.
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentException | Thrown when the provided URI is not absolute. |
+| InvalidOperationException | Thrown when no valid IP addresses are resolved. |
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHost.ConfigureListener method (5 of 5)
+
+Configures listeners for the Kestrun host by resolving the specified host name to IP addresses and binding to each address.
+
+```csharp
+public KestrunHost ConfigureListener(string hostName, int port, 
+    X509Certificate2? x509Certificate = null, HttpProtocols protocols = HttpProtocols.Http1, 
+    bool useConnectionLogging = false, AddressFamily[]? families = null)
+```
+
+| parameter | description |
+| --- | --- |
+| hostName | The host name to resolve and bind to. |
+| port | The port number to listen on. |
+| x509Certificate | The X509 certificate for HTTPS. If null, HTTPS is not used. |
+| protocols | The HTTP protocols to use. |
+| useConnectionLogging | Specifies whether to enable connection logging. |
+| families | Optional array of address families to filter resolved addresses (e.g., IPv4-only). |
+
+## Return Value
+
+The current KestrunHost instance.
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentException | Thrown when the host name is null or whitespace. |
+| InvalidOperationException | Thrown when no valid IP addresses are resolved. |
 
 ## See Also
 
