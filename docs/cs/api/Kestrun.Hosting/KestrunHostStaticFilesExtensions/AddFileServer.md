@@ -35,13 +35,15 @@ The current KestrunHost instance.
 Adds a file server middleware to the application.
 
 ```csharp
-public static KestrunHost AddFileServer(this KestrunHost host, FileServerOptions? cfg)
+public static KestrunHost AddFileServer(this KestrunHost host, FileServerOptions? cfg, 
+    CacheControlHeaderValue? cacheControl = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The KestrunHost instance to configure. |
 | cfg | Configuration options for the file server middleware. |
+| cacheControl | Optional cache control headers to apply to static file responses. |
 
 ## Return Value
 

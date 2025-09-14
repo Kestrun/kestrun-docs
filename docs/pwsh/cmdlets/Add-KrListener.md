@@ -37,32 +37,11 @@ Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] 
  [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
 ```
 
-### x509Certificate_Uri
-```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
- [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
- [-PassThru] [<CommonParameters>]
-```
-
-### x509Certificate_HostName
-```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
- [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
- [-PassThru] [<CommonParameters>]
-```
-
-### x509Certificate_Default
-```
-Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
- [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2> [-UseConnectionLogging]
- [-PassThru] [<CommonParameters>]
-```
-
 ### x509Certificate
 ```
 Add-KrListener [-Server <KestrunHost>] [-Port <Int32>] [-IPAddress <IPAddress>] [-HostName <String>]
- [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] [-Protocols <HttpProtocols>] [-UseConnectionLogging]
- [-PassThru] [<CommonParameters>]
+ [-Uri <Uri>] [-AddressFamily <AddressFamily[]>] -X509Certificate <X509Certificate2>
+ [-Protocols <HttpProtocols>] [-UseConnectionLogging] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -229,7 +208,7 @@ This parameter is Mandatory if using HTTPS
 
 ```yaml
 Type: X509Certificate2
-Parameter Sets: x509Certificate_Uri, x509Certificate_HostName, x509Certificate_Default
+Parameter Sets: x509Certificate
 Aliases:
 
 Required: True

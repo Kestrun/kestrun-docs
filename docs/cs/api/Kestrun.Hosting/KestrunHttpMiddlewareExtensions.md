@@ -21,7 +21,6 @@ public static class KestrunHttpMiddlewareExtensions
 | static [AddCorsAllowAll](KestrunHttpMiddlewareExtensions/AddCorsAllowAll)(…) | Adds a CORS policy named "AllowAll" that allows any origin, method, and header. |
 | static [AddRateLimiter](KestrunHttpMiddlewareExtensions/AddRateLimiter)(…) | Adds rate limiting to the application using the specified RateLimiterOptions. (2 methods) |
 | static [AddResponseCaching](KestrunHttpMiddlewareExtensions/AddResponseCaching)(…) | Adds response caching to the application. This overload allows you to specify configuration options. (2 methods) |
-| static [AddResponseCaching2](KestrunHttpMiddlewareExtensions/AddResponseCaching2)(…) | Adds response caching to the application. This overload allows you to specify a configuration delegate. |
 | static [AddResponseCompression](KestrunHttpMiddlewareExtensions/AddResponseCompression)(…) | Adds response compression to the application. This overload allows you to specify configuration options. (2 methods) |
 
 ## See Also

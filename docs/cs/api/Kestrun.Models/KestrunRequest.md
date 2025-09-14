@@ -21,6 +21,7 @@ public class KestrunRequest
 | [Body](KestrunRequest/Body) { get; set; } | Gets the body content of the request as a string. |
 | [ContentLength](KestrunRequest/ContentLength) { get; } | Gets the content length of the request, if available. |
 | [ContentType](KestrunRequest/ContentType) { get; } | Gets the content type of the request (e.g., "application/json"). |
+| [Context](KestrunRequest/Context) { get; set; } | Gets the HttpContext associated with the request. |
 | [Cookies](KestrunRequest/Cookies) { get; set; } | Gets the cookies for the request as an IRequestCookieCollection, if present. |
 | [Form](KestrunRequest/Form) { get; set; } | Gets the form data for the request as a dictionary of key-value pairs, if present. |
 | [HasFormContentType](KestrunRequest/HasFormContentType) { get; } | Gets a value indicating whether the request has a form content type. |
@@ -33,6 +34,7 @@ public class KestrunRequest
 | [Protocol](KestrunRequest/Protocol) { get; } | Gets the protocol used for the request (e.g., "HTTP/1.1"). |
 | [Query](KestrunRequest/Query) { get; set; } | Gets the query parameters for the request as a dictionary of key-value pairs. |
 | [QueryString](KestrunRequest/QueryString) { get; } | Gets the query string for the request (e.g., "?id=123"). |
+| [Request](KestrunRequest/Request) { get; set; } | Gets the HttpRequest associated with the request. |
 | [RouteValues](KestrunRequest/RouteValues) { get; set; } | Gets the route values for the request as a RouteValueDictionary, if present. |
 | [Scheme](KestrunRequest/Scheme) { get; } | Gets the request scheme (e.g., "http", "https"). |
 | static [NewRequest](KestrunRequest/NewRequest)(…) | Creates a new [`KestrunRequest`](./KestrunRequest) instance from the specified HttpContext. |

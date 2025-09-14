@@ -21,12 +21,16 @@ Registers a static file server to serve files from a specified path.
 ```
 Add-KrStaticFilesMiddleware [-Server <KestrunHost>] [-RootPath <String>] [-RequestPath <String>]
  [-HttpsCompression] [-ServeUnknownFileTypes] [-DefaultContentType <String>] [-RedirectToAppendTrailingSlash]
- [-ContentTypeMap <Hashtable>] [-PassThru] [<CommonParameters>]
+ [-ContentTypeMap <Hashtable>] [-NoCache] [-NoStore] [-MaxAge <Int32>] [-SharedMaxAge <Int32>] [-MaxStale]
+ [-MaxStaleLimit <Int32>] [-MinFresh <Int32>] [-NoTransform] [-OnlyIfCached] [-Public] [-Private]
+ [-MustRevalidate] [-ProxyRevalidate] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
 ```
-Add-KrStaticFilesMiddleware [-Server <KestrunHost>] -Options <StaticFileOptions> [-PassThru]
+Add-KrStaticFilesMiddleware [-Server <KestrunHost>] -Options <StaticFileOptions> [-NoCache] [-NoStore]
+ [-MaxAge <Int32>] [-SharedMaxAge <Int32>] [-MaxStale] [-MaxStaleLimit <Int32>] [-MinFresh <Int32>]
+ [-NoTransform] [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate] [-ProxyRevalidate] [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -47,6 +51,13 @@ setting the default content type to 'application/octet-stream', and redirecting 
 ```powershell
 $server | Add-KrStaticFilesMiddleware -Options $options
 This example adds a static file service to the server using the specified StaticFileOptions.
+```
+
+### EXAMPLE 3
+```powershell
+$server | Add-KrStaticFilesMiddleware -RequestPath '/static' -MaxAge 600 -Public -MustRevalidate
+This example adds a static file service to the server for the path '/static', setting caching headers with a max-age of 600 seconds,
+marking the response as public, and adding the must-revalidate directive.
 ```
 
 ## PARAMETERS
@@ -182,6 +193,202 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoCache
+If specified, adds a 'no-cache' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoStore
+If specified, adds a 'no-store' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxAge
+If specified, sets the 'max-age' directive in seconds for the Cache-Control header.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SharedMaxAge
+If specified, sets the 's-maxage' directive in seconds for the Cache-Control header
+(used by shared caches).
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxStale
+If specified, adds a 'max-stale' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxStaleLimit
+If specified, sets the limit in seconds for the 'max-stale' directive in the Cache-Control header.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinFresh
+If specified, sets the 'min-fresh' directive in seconds for the Cache-Control header.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoTransform
+If specified, adds a 'no-transform' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OnlyIfCached
+If specified, adds an 'only-if-cached' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Public
+If specified, adds a 'public' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Private
+If specified, adds a 'private' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MustRevalidate
+If specified, adds a 'must-revalidate' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyRevalidate
+If specified, adds a 'proxy-revalidate' directive to the Cache-Control header.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

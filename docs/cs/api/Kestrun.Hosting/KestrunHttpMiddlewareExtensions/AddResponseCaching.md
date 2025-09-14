@@ -36,8 +36,8 @@ The updated KestrunHost instance.
 Adds response caching to the application. This overload allows you to specify configuration options.
 
 ```csharp
-public static KestrunHost AddResponseCaching(this KestrunHost host, 
-    ResponseCachingOptions? options, CacheControlHeaderValue? cacheControl = null)
+public static KestrunHost AddResponseCaching(this KestrunHost host, ResponseCachingOptions options, 
+    CacheControlHeaderValue? cacheControl = null)
 ```
 
 | parameter | description |

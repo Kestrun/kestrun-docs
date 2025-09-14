@@ -35,13 +35,15 @@ The current KestrunHost instance.
 Adds static files to the application. This overload allows you to specify configuration options.
 
 ```csharp
-public static KestrunHost AddStaticFiles(this KestrunHost host, StaticFileOptions options)
+public static KestrunHost AddStaticFiles(this KestrunHost host, StaticFileOptions options, 
+    CacheControlHeaderValue? cacheControl = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The KestrunHost instance to configure. |
 | options | The static file options to configure. |
+| cacheControl | Optional cache control headers to apply to static file responses. |
 
 ## Return Value
 

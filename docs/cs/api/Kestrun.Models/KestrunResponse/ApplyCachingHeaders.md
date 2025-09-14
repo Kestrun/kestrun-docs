@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "KestrunResponse.AddCachingHeaders method"
+title: "KestrunResponse.ApplyCachingHeaders method"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunResponse.AddCachingHeaders method
+# KestrunResponse.ApplyCachingHeaders method
 
 Adds caching headers to the response based on the provided CacheControlHeaderValue options.
 
 ```csharp
-public void AddCachingHeaders(CacheControlHeaderValue options)
+public void ApplyCachingHeaders(HttpResponse response)
 ```
 
 | parameter | description |
 | --- | --- |
-| options | The caching options to apply. |
+| response | The HTTP response to apply caching headers to. |
 
 ## Exceptions
 
