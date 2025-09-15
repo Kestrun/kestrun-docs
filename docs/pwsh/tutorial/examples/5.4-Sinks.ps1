@@ -6,14 +6,14 @@
 #>
 
 $text = New-KrLogger |
-    Set-KrMinimumLevel -Value Information |
+    Set-KrLoggerMinimumLevel -Value Information |
     Add-KrSinkConsole |
     Add-KrSinkFile -Path '.\logs\sinks-text.log' -RollingInterval Hour |
     Register-KrLogger -Name 'text' -PassThru
 
 $json = New-KrLogger |
-    Set-KrMinimumLevel -Value Debug |
-    Add-KrSinkFile -Path '.\logs\sinks-json.log' -Formatter (Get-KrJsonFormatter) -RollingInterval Hour |
+    Set-KrLoggerMinimumLevel -Value Debug |
+    Add-KrSinkFile -Path '.\logs\sinks-json.log' -Formatter (Get-KrSinkJsonFormatter) -RollingInterval Hour |
     Register-KrLogger -Name 'json' -PassThru
 
 New-KrServer -Name "Sinks Demo"
@@ -32,8 +32,6 @@ Add-KrMapRoute -Verbs Get -Path "/json" -ScriptBlock {
     Write-KrTextResponse -InputObject "json" -StatusCode 200
 }
 
-# Start the server
-Start-KrServer
-
-# Clean up and close all the loggers when the server stops
-Close-KrLogger
+# Start the server and close all the loggers when the server stops
+# This is equivalent to calling Close-KrLogger after Start-KrServer
+Start-KrServer -CloseLogsOnExit

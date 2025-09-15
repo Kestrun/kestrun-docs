@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Start-KrServer
-nav_order: 107
+nav_order: 105
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -18,7 +18,7 @@ Starts the Kestrun server and listens for incoming requests.
 ## SYNTAX
 
 ```
-Start-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [-PassThru] [<CommonParameters>]
+Start-KrServer [[-Server] <KestrunHost>] [-NoWait] [-Quiet] [-PassThru] [-CloseLogsOnExit] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,6 +82,21 @@ Accept wildcard characters: False
 
 ### -PassThru
 If specified, the cmdlet will return the modified server instance after starting it.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CloseLogsOnExit
+If specified, closes all loggers when the server stops.
 
 ```yaml
 Type: SwitchParameter

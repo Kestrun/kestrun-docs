@@ -17,11 +17,13 @@ public static class KestrunHostAuthnExtensions
 | name | description |
 | --- | --- |
 | static [AddApiKeyAuthentication](KestrunHostAuthnExtensions/AddApiKeyAuthentication)(…) | Adds API Key Authentication to the Kestrun host. (2 methods) |
+| static [AddAuthorization](KestrunHostAuthnExtensions/AddAuthorization)(…) | Adds authorization services to the Kestrun host. |
 | static [AddBasicAuthentication](KestrunHostAuthnExtensions/AddBasicAuthentication)(…) | Adds Basic Authentication to the Kestrun host. (2 methods) |
 | static [AddCookieAuthentication](KestrunHostAuthnExtensions/AddCookieAuthentication)(…) | Adds Cookie Authentication to the Kestrun host. (2 methods) |
 | static [AddJwtBearerAuthentication](KestrunHostAuthnExtensions/AddJwtBearerAuthentication)(…) | Adds JWT Bearer authentication to the Kestrun host. |
 | static [AddOpenIdConnectAuthentication](KestrunHostAuthnExtensions/AddOpenIdConnectAuthentication)(…) | Adds OpenID Connect authentication to the Kestrun host. |
 | static [AddWindowsAuthentication](KestrunHostAuthnExtensions/AddWindowsAuthentication)(…) | Adds Windows Authentication to the Kestrun host. |
+| static [HasAuthPolicy](KestrunHostAuthnExtensions/HasAuthPolicy)(…) | Checks if the specified authorization policy is registered in the Kestrun host. |
 | static [HasAuthScheme](KestrunHostAuthnExtensions/HasAuthScheme)(…) | Checks if the specified authentication scheme is registered in the Kestrun host. |
 
 ## See Also

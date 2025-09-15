@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Set-KrLoggerLevelSwitch
-nav_order: 99
+nav_order: 97
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

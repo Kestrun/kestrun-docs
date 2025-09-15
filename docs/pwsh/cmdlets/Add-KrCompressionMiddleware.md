@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrCompressionMiddleware
-nav_order: 8
+nav_order: 7
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

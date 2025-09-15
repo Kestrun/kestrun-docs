@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrBasicAuthentication
-nav_order: 4
+nav_order: 3
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
