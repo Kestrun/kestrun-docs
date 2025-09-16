@@ -19,7 +19,8 @@ Writes CSV data to the HTTP response body.
 
 ```
 Write-KrCsvResponse [-InputObject] <Object> [[-StatusCode] <Int32>] [[-ContentType] <String>]
- [[-CsvConfiguration] <CsvConfiguration>] [<CommonParameters>]
+ [[-Delimiter] <Char>] [-IncludeTypeInformation] [[-QuoteFields] <String[]>] [[-UseQuotes] <QuoteKind>]
+ [-NoHeader] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +50,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -85,17 +86,81 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CsvConfiguration
-An optional CsvHelper configuration object to customize CSV serialization.
+### -Delimiter
+The character to use as the delimiter in the CSV output.
+Defaults to a comma (\`,\`).
 
 ```yaml
-Type: CsvConfiguration
+Type: Char
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeTypeInformation
+Switch to include type information in the CSV output.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QuoteFields
+An array of field names to always quote in the CSV output.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseQuotes
+Specifies how to quote fields in the CSV output.
+Accepts values from the
+\`Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind\` enum.
+
+```yaml
+Type: QuoteKind
+Parameter Sets: (All)
+Aliases:
+Accepted values: Never, Always, AsNeeded
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoHeader
+Switch to omit the header row from the CSV output.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

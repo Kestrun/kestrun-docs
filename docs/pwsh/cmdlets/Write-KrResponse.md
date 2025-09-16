@@ -13,33 +13,35 @@ schema: 2.0.0
 # Write-KrResponse
 
 ## SYNOPSIS
-Writes a response to the HTTP client.
+Writes a response with the specified input object and HTTP status code.
 
 ## SYNTAX
 
 ```
-Write-KrResponse [-InputObject] <Stream> [[-StatusCode] <Int32>] [<CommonParameters>]
+Write-KrResponse [-InputObject] <Object> [[-StatusCode] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 This function is a wrapper around the Kestrun server response methods.
+The response format based on the Accept header or defaults to text/plain.
+Content type is determined automatically.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Write-KrResponse -InputObject $myStream -StatusCode 200 -ContentType "application/octet-stream"
-Writes the $myStream to the response body with a 200 OK status code and content type "application/octet-stream".
+Write-KrResponse -InputObject $myObject -StatusCode 200
+Writes the $myObject to the response with a 200 status code. The content type
+is determined automatically based on the Accept header or defaults to text/plain.
 ```
 
 ## PARAMETERS
 
 ### -InputObject
 The input object to write to the response body.
-This can be a stream, byte array, or other types.
 
 ```yaml
-Type: Stream
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
