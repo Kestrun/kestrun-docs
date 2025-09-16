@@ -9,8 +9,7 @@ grand_parent: "C# API"
 Gets the registered routes in the Kestrun host.
 
 ```csharp
-public IReadOnlyDictionary<(string Pattern, string Method), MapRouteOptions> 
-    RegisteredRoutes { get; }
+public Dictionary<(string, string), MapRouteOptions> RegisteredRoutes { get; }
 ```
 
 ## See Also

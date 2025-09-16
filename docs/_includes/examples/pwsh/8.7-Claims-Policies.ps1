@@ -1,4 +1,4 @@
-﻿<#
+<#
     Sample: Claims & Policies Authorization
     Purpose: Build claim-based policies and enforce them on routes after Basic auth.
     File:    8.7-Claims-Policies.ps1
@@ -54,5 +54,5 @@ Add-KrRouteGroup -Prefix '/policy' -AuthorizationSchema 'PolicyBasic' {
 }
 
 # 9. Start server
-Start-KrServer
+Start-KrServer -CloseLogsOnExit
 

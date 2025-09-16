@@ -28,6 +28,7 @@ parent: "C#"
 | class [ApiKeyAuthHandler](./Kestrun.Authentication/ApiKeyAuthHandler.md) | Handles API Key authentication for incoming HTTP requests. |
 | enum [ApiKeyChallengeFormat](./Kestrun.Authentication/ApiKeyChallengeFormat.md) | Specifies the format for API key authentication challenges. |
 | record [AuthenticationCodeSettings](./Kestrun.Authentication/AuthenticationCodeSettings.md) | Represents the settings for authentication code, including language, code, extra imports, and references. |
+| class [AuthenticationRegistry](./Kestrun.Authentication/AuthenticationRegistry.md) | Registry of authentication options keyed by (schema, type). Stores as base AuthenticationSchemeOptions, with typed helpers. |
 | static class [AuthOptionsHelper](./Kestrun.Authentication/AuthOptionsHelper.md) | Helper class to retrieve authentication options from the DI container. |
 | class [BasicAuthenticationOptions](./Kestrun.Authentication/BasicAuthenticationOptions.md) | Options for configuring Basic Authentication in Kestrun. |
 | class [BasicAuthHandler](./Kestrun.Authentication/BasicAuthHandler.md) | Handles Basic Authentication for HTTP requests. |
