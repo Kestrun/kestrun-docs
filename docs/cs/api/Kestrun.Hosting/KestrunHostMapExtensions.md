@@ -16,6 +16,7 @@ public static class KestrunHostMapExtensions
 
 | name | description |
 | --- | --- |
+| static [AddAntiforgeryTokenRoute](KestrunHostMapExtensions/AddAntiforgeryTokenRoute)(…) | Adds a GET endpoint that issues the antiforgery cookie and returns a JSON payload: { token: "...", headerName: "X-CSRF-TOKEN" }. The endpoint itself is exempt from antiforgery validation. |
 | static [AddHtmlTemplateRoute](KestrunHostMapExtensions/AddHtmlTemplateRoute)(…) | Adds an HTML template route to the KestrunHost for the specified pattern and HTML file path. (2 methods) |
 | static [AddMapRoute](KestrunHostMapExtensions/AddMapRoute)(…) | Adds a native route to the KestrunHost for the specified pattern and HTTP verb. (6 methods) |
 | static [AddStaticMapOverride](KestrunHostMapExtensions/AddStaticMapOverride)(…) | Adds a static override route to the KestrunHost for the specified pattern and handler. This allows you to override static file serving with dynamic content. Call this method before adding static file components to ensure it takes precedence. (4 methods) |

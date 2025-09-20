@@ -19,6 +19,7 @@ parent: "C#"
 | --- | --- |
 | static class [FixedTimeEquals](./Kestrun/FixedTimeEquals.md) | Provides constant-time comparison methods to prevent timing attacks. |
 | static class [KestrunHostManager](./Kestrun/KestrunHostManager.md) | Provides management functionality for KestrunHost instances, including creation, retrieval, starting, stopping, and destruction. |
+| static class [KestrunRuntimeInfo](./Kestrun/KestrunRuntimeInfo.md) | Utility class to expose information about the runtime environment that Kestrun was built for, and to gate features by TFM and runtime. |
 
 ## Kestrun.Authentication namespace
 
