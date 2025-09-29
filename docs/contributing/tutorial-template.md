@@ -2,6 +2,7 @@
 title: Tutorial Page Authoring Template
 parent: Contributing
 nav_order: 99
+render_with_liquid: false
 ---
 
 # Tutorial Documentation Authoring Guide
@@ -59,7 +60,7 @@ Format:
 File: [`pwsh/tutorial/examples/9.6-Redirects.ps1`][9.6-Redirects.ps1]
 
 ```powershell
-{% raw %}{% include examples/pwsh/SECTION.NUMBER-slug.ps1 %}{% endraw %}
+{% include examples/pwsh/SECTION.NUMBER-slug.ps1 %}
 ```
 
 ```markdown
