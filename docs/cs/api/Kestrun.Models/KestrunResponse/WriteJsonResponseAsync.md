@@ -9,13 +9,15 @@ grand_parent: "C# API"
 Asynchronously writes a JSON response with the specified input object and HTTP status code.
 
 ```csharp
-public Task WriteJsonResponseAsync(object? inputObject, int statusCode = 200)
+public Task WriteJsonResponseAsync(object? inputObject, int statusCode = 200, 
+    string? contentType = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | inputObject | The object to be converted to JSON. |
 | statusCode | The HTTP status code for the response. |
+| contentType | The MIME type of the response content. |
 
 ## See Also
 

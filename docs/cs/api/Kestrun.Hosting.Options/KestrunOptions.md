@@ -18,6 +18,7 @@ public class KestrunOptions
 | --- | --- |
 | [KestrunOptions](KestrunOptions/KestrunOptions)() | Initializes a new instance of the [`KestrunOptions`](./KestrunOptions) class with default values. |
 | [ApplicationName](KestrunOptions/ApplicationName) { get; set; } | Application name (optional, for diagnostics). |
+| [Health](KestrunOptions/Health) { get; set; } | Gets or sets the health endpoint configuration. |
 | [HttpsConnectionAdapter](KestrunOptions/HttpsConnectionAdapter) { get; set; } | Gets the HTTPS connection adapter options. |
 | [Listeners](KestrunOptions/Listeners) { get; } | List of configured listeners for the Kestrel server. Each listener can be configured with its own IP address, port, protocols, and other options. |
 | [ListenUnixSockets](KestrunOptions/ListenUnixSockets) { get; } | Optional path to a Unix domain socket for Kestrel to listen on. |

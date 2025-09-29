@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Writes an XML response with the specified input object, status code, and content type.
 
 ```csharp
-public void WriteXmlResponse(object? inputObject, int statusCode = 200, string? contentType = null)
+public void WriteXmlResponse(object? inputObject, int statusCode = 200, string? contentType = null, 
+    string? rootElementName = null, bool compress = false)
 ```
 
 | parameter | description |
@@ -17,6 +18,8 @@ public void WriteXmlResponse(object? inputObject, int statusCode = 200, string? 
 | inputObject | The object to be converted to XML. |
 | statusCode | The HTTP status code for the response. |
 | contentType | The MIME type of the response content. |
+| rootElementName | Optional custom XML root element name. Defaults to `Response`. |
+| compress | If true, emits compact XML (no indentation); if false (default) output is human readable. |
 
 ## See Also
 

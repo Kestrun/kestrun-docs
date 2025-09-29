@@ -65,12 +65,31 @@ parent: "C#"
 | class [KrHttpClientOptions](./Kestrun.Client/KrHttpClientOptions.md) | Extra options to shape HttpClient behavior. |
 | static class [KrHttpDownloads](./Kestrun.Client/KrHttpDownloads.md) | Helper methods for common HTTP download scenarios. |
 
+## Kestrun.Health namespace
+
+| public type | description |
+| --- | --- |
+| class [DiskSpaceProbe](./Kestrun.Health/DiskSpaceProbe.md) | Probe that reports free disk space for a target drive / mount point. |
+| enum [HealthEndpointContentType](./Kestrun.Health/HealthEndpointContentType.md) | Supported response content types for the built-in health endpoint. |
+| class [HealthEndpointOptions](./Kestrun.Health/HealthEndpointOptions.md) | Options controlling the built-in health endpoint exposed by [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
+| record [HealthProbeEntry](./Kestrun.Health/HealthProbeEntry.md) | Represents the result of a single probe execution. |
+| record [HealthReport](./Kestrun.Health/HealthReport.md) | Represents an aggregated health report produced by HealthProbeRunner. |
+| static class [HealthReportTextFormatter](./Kestrun.Health/HealthReportTextFormatter.md) | Produces a concise, human-readable text representation of a [`HealthReport`](./Kestrun.Health/HealthReport.md). Intended for terminals, logs, or lightweight probes where structured formats (JSON/YAML/XML) are unnecessary. |
+| record [HealthSummary](./Kestrun.Health/HealthSummary.md) | Summary counts of probe results grouped by [`ProbeStatus`](./Kestrun.Health/ProbeStatus.md). |
+| class [HttpProbe](./Kestrun.Health/HttpProbe.md) | A health probe that performs an HTTP GET request to a specified URL and interprets the JSON response according to the health probe contract. |
+| interface [IProbe](./Kestrun.Health/IProbe.md) | Defines a health probe that can be checked asynchronously. |
+| record [ProbeResult](./Kestrun.Health/ProbeResult.md) | Result of a health probe check. |
+| enum [ProbeStatus](./Kestrun.Health/ProbeStatus.md) | Health probe status enumeration. |
+| static class [ProbeStatusLabels](./Kestrun.Health/ProbeStatusLabels.md) | Provides string constants for well-known probe statuses that dynamic scripts may return. These values are used when converting script outputs into ProbeResult statuses. |
+| class [ProcessProbe](./Kestrun.Health/ProcessProbe.md) | A health probe that runs an external process and interprets its output. |
+
 ## Kestrun.Hosting namespace
 
 | public type | description |
 | --- | --- |
 | class [KestrunHost](./Kestrun.Hosting/KestrunHost.md) | Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management. |
 | static class [KestrunHostAuthnExtensions](./Kestrun.Hosting/KestrunHostAuthnExtensions.md) | Provides extension methods for adding authentication schemes to the Kestrun host. |
+| static class [KestrunHostHealthExtensions](./Kestrun.Hosting/KestrunHostHealthExtensions.md) | Adds health-check specific helpers to [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
 | static class [KestrunHostRazorExtensions](./Kestrun.Hosting/KestrunHostRazorExtensions.md) | Provides extension methods for adding PowerShell and Razor Pages to a KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
@@ -230,6 +249,23 @@ parent: "C#"
 | static class [SecureStringUtils](./Kestrun.Utilities/SecureStringUtils.md) | Provides utility methods for working with SecureString and ReadOnlySpan&lt;char&gt;. |
 | static class [VariablesMap](./Kestrun.Utilities/VariablesMap.md) | Provides utility methods for mapping and flattening variables from various sources. |
 | static class [XmlHelper](./Kestrun.Utilities/XmlHelper.md) | Helpers for converting arbitrary objects into XElement instances. |
-| static class [YamlHelper](./Kestrun.Utilities/YamlHelper.md) | Provides helper methods for serializing and deserializing YAML content, with special handling for PowerShell objects. |
+
+## Kestrun.Utilities.Yaml namespace
+
+| public type | description |
+| --- | --- |
+| class [BigIntegerTypeConverter](./Kestrun.Utilities.Yaml/BigIntegerTypeConverter.md) | YAML type converter for BigInteger |
+| class [BuilderUtils](./Kestrun.Utilities.Yaml/BuilderUtils.md) | Utility class for building YAML serializers with common settings |
+| class [FlowStyleAllEmitter](./Kestrun.Utilities.Yaml/FlowStyleAllEmitter.md) | YAML emitter that forces all mappings and sequences to use flow style |
+| class [FlowStyleSequenceEmitter](./Kestrun.Utilities.Yaml/FlowStyleSequenceEmitter.md) | YAML emitter that forces sequences to use flow style |
+| class [IDictionaryTypeConverter](./Kestrun.Utilities.Yaml/IDictionaryTypeConverter.md) | YAML type converter for IDictionary types |
+| class [NullValueGraphVisitor](./Kestrun.Utilities.Yaml/NullValueGraphVisitor.md) | YAML object graph visitor that omits null values |
+| class [PSObjectTypeConverter](./Kestrun.Utilities.Yaml/PSObjectTypeConverter.md) | YAML type converter for PSObject types |
+| [Flags] enum [SerializationOptions](./Kestrun.Utilities.Yaml/SerializationOptions.md) | Options for YAML serialization |
+| class [StringQuotingEmitter](./Kestrun.Utilities.Yaml/StringQuotingEmitter.md) | YAML emitter that quotes strings that might be misinterpreted as other types |
+| static class [YamlHelper](./Kestrun.Utilities.Yaml/YamlHelper.md) | Provides helper methods for serializing and deserializing YAML content, with special handling for PowerShell objects. |
+| static class [YamlLoader](./Kestrun.Utilities.Yaml/YamlLoader.md) | Utility class for loading and parsing YAML documents |
+| static class [YamlSerializerFactory](./Kestrun.Utilities.Yaml/YamlSerializerFactory.md) | Factory for creating YamlDotNet serializers with specified options |
+| static class [YamlTypeConverter](./Kestrun.Utilities.Yaml/YamlTypeConverter.md) | Utility class for converting YAML nodes to appropriate .NET types |
 
 <!-- DO NOT EDIT: generated by xmldocmd for Kestrun.dll -->

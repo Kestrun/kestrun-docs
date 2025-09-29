@@ -10,7 +10,7 @@ Asynchronously writes an XML response with the specified input object, status co
 
 ```csharp
 public Task WriteXmlResponseAsync(object? inputObject, int statusCode = 200, 
-    string? contentType = null)
+    string? contentType = null, string? rootElementName = null, bool compress = false)
 ```
 
 | parameter | description |
@@ -18,6 +18,8 @@ public Task WriteXmlResponseAsync(object? inputObject, int statusCode = 200,
 | inputObject | The object to be converted to XML. |
 | statusCode | The HTTP status code for the response. |
 | contentType | The MIME type of the response content. |
+| rootElementName | Optional custom XML root element name. Defaults to `Response`. |
+| compress | If true, emits compact XML (no indentation); if false (default) output is human readable. |
 
 ## See Also
 

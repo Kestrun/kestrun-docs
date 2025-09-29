@@ -31,6 +31,7 @@ public class KestrunHost : IDisposable
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
+| [AddProbe](KestrunHost/AddProbe)(…) | Registers the provided [`IProbe`](../Kestrun.Health/IProbe) instance with the host. (3 methods) |
 | [AddScheduling](KestrunHost/AddScheduling)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
 | [AddService](KestrunHost/AddService)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
 | [AddSignalR&lt;T&gt;](KestrunHost/AddSignalR)(…) | Adds a SignalR hub to the application at the specified path. |
