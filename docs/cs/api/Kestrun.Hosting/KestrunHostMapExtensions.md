@@ -23,6 +23,8 @@ public static class KestrunHostMapExtensions
 | static [ApplyKestrunConventions](KestrunHostMapExtensions/ApplyKestrunConventions)(…) | Applies the same route conventions used by the AddMapRoute helpers to an arbitrary endpoint. |
 | static [GetMapRouteOptions](KestrunHostMapExtensions/GetMapRouteOptions)(…) | Retrieves the [`MapRouteOptions`](../Kestrun.Hosting.Options/MapRouteOptions) associated with a given route pattern and HTTP verb, if registered. |
 | static [MapExists](KestrunHostMapExtensions/MapExists)(…) | Checks if a route with the specified pattern and optional HTTP method exists in the KestrunHost. (2 methods) |
+| static [TryParseEndpointSpec](KestrunHostMapExtensions/TryParseEndpointSpec)(…) | Tries to parse an endpoint specification string into its components: host, port, and HTTPS flag. |
+| static class [EndpointSpecParser](KestrunHostMapExtensions.EndpointSpecParser) | Public utility facade for endpoint specification parsing. This provides a stable API surface over the internal helper logic used by host route constraint processing. |
 | delegate [KestrunHandler](KestrunHostMapExtensions.KestrunHandler) | Represents a delegate that handles a Kestrun request with the provided context. |
 
 ## See Also

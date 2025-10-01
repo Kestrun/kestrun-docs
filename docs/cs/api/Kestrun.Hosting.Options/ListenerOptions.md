@@ -24,6 +24,7 @@ public class ListenerOptions
 | [UseConnectionLogging](ListenerOptions/UseConnectionLogging) { get; set; } | Enable verbose connection logging. |
 | [UseHttps](ListenerOptions/UseHttps) { get; set; } | Whether HTTPS should be used. |
 | [X509Certificate](ListenerOptions/X509Certificate) { get; } | Optional TLS certificate. |
+| override [ToString](ListenerOptions/ToString)() | Returns a string representation of the listener in the format "http(s)://{IPAddress}:{Port}". |
 
 ## See Also
 

@@ -22,10 +22,12 @@ public static class LoggerManager
 | static [CloseAndFlush](LoggerManager/CloseAndFlush)(…) | CloseAndFlush a logger by name. (2 methods) |
 | static [Contains](LoggerManager/Contains)(…) | Check if a logger, configuration, or name exists. (3 methods) |
 | static [Get](LoggerManager/Get)(…) | Get a logger by name, or null if not found. |
+| static [GetDefault](LoggerManager/GetDefault)() | Returns the current Serilog default logger (Log.Logger). |
 | static [GetLevelSwitch](LoggerManager/GetLevelSwitch)(…) | Get the current minimum level for a named logger’s switch. |
 | static [GetName](LoggerManager/GetName)(…) | Get the name of a registered logger instance. |
 | static [List](LoggerManager/List)() | List all registered logger names. |
 | static [ListLevels](LoggerManager/ListLevels)() | List all switches and their current levels. |
+| static [ListLoggers](LoggerManager/ListLoggers)() | List all registered logger instances. |
 | static [New](LoggerManager/New)(…) | Create a new LoggerConfiguration associated with a name. |
 | static [Register](LoggerManager/Register)(…) | Register an existing Serilog logger instance under a name. |
 | static [SetLevelSwitch](LoggerManager/SetLevelSwitch)(…) | Set the minimum level for a named logger’s switch. |

@@ -186,6 +186,8 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| class [CommonAccessLogMiddleware](./Kestrun.Middleware/CommonAccessLogMiddleware.md) | ASP.NET Core middleware that emits Apache style common access log entries using Serilog. |
+| class [CommonAccessLogOptions](./Kestrun.Middleware/CommonAccessLogOptions.md) | Options controlling the behaviour of the [`CommonAccessLogMiddleware`](./Kestrun.Middleware/CommonAccessLogMiddleware.md). |
 | static class [FaviconMiddlewareExtensions](./Kestrun.Middleware/FaviconMiddlewareExtensions.md) | Provides extension methods for serving a favicon in ASP.NET Core applications. |
 | class [PowerShellRunspaceMiddleware](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) | Initializes a new instance of the [`PowerShellRunspaceMiddleware`](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) class. |
 | static class [PowerShellRunspaceMiddlewareExtensions](./Kestrun.Middleware/PowerShellRunspaceMiddlewareExtensions.md) | Extension methods for adding PowerShell runspace middleware. |

@@ -60,7 +60,7 @@ Format:
 File: [`pwsh/tutorial/examples/9.6-Redirects.ps1`][9.6-Redirects.ps1]
 
 ```powershell
-{% include examples/pwsh/SECTION.NUMBER-slug.ps1 %}
+{% include examples/pwsh/9.6-Redirects.ps1 %}
 ```
 
 ```markdown

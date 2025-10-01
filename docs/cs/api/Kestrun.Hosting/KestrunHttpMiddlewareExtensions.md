@@ -17,6 +17,7 @@ public static class KestrunHttpMiddlewareExtensions
 | name | description |
 | --- | --- |
 | static [AddAntiforgery](KestrunHttpMiddlewareExtensions/AddAntiforgery)(…) | Adds antiforgery protection to the application. This overload allows you to specify configuration options. (2 methods) |
+| static [AddCommonAccessLog](KestrunHttpMiddlewareExtensions/AddCommonAccessLog)(…) | Adds Apache-style common access logging using a configured [`CommonAccessLogOptions`](../Kestrun.Middleware/CommonAccessLogOptions) instance. (2 methods) |
 | static [AddCors](KestrunHttpMiddlewareExtensions/AddCors)(…) | Registers a named CORS policy that was already composed with a CorsPolicyBuilder and applies that policy in the pipeline. (2 methods) |
 | static [AddCorsAllowAll](KestrunHttpMiddlewareExtensions/AddCorsAllowAll)(…) | Adds a CORS policy named "AllowAll" that allows any origin, method, and header. |
 | static [AddRateLimiter](KestrunHttpMiddlewareExtensions/AddRateLimiter)(…) | Adds rate limiting to the application using the specified RateLimiterOptions. (2 methods) |
