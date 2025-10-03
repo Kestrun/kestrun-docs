@@ -10,14 +10,13 @@ A response compression provider that respects endpoint metadata to disable compr
 
 ```csharp
 public KestrunResponseCompressionProvider(IServiceProvider services, 
-    IOptions<ResponseCompressionOptions> options, ILogger<KestrunResponseCompressionProvider> log)
+    IOptions<ResponseCompressionOptions> options)
 ```
 
 | parameter | description |
 | --- | --- |
 | services | The service provider. |
 | options | The response compression options. |
-| log | The logger. |
 
 ## Remarks
 

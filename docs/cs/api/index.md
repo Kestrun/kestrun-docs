@@ -78,6 +78,7 @@ parent: "C#"
 | record [HealthSummary](./Kestrun.Health/HealthSummary.md) | Summary counts of probe results grouped by [`ProbeStatus`](./Kestrun.Health/ProbeStatus.md). |
 | class [HttpProbe](./Kestrun.Health/HttpProbe.md) | A health probe that performs an HTTP GET request to a specified URL and interprets the JSON response according to the health probe contract. |
 | interface [IProbe](./Kestrun.Health/IProbe.md) | Defines a health probe that can be checked asynchronously. |
+| abstract class [Probe](./Kestrun.Health/Probe.md) | Base class for health probes. |
 | record [ProbeResult](./Kestrun.Health/ProbeResult.md) | Result of a health probe check. |
 | enum [ProbeStatus](./Kestrun.Health/ProbeStatus.md) | Health probe status enumeration. |
 | static class [ProbeStatusLabels](./Kestrun.Health/ProbeStatusLabels.md) | Provides string constants for well-known probe statuses that dynamic scripts may return. These values are used when converting script outputs into ProbeResult statuses. |

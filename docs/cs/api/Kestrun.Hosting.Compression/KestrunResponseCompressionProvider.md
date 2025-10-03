@@ -16,7 +16,6 @@ public sealed class KestrunResponseCompressionProvider : IResponseCompressionPro
 | --- | --- |
 | services | The service provider. |
 | options | The response compression options. |
-| log | The logger. |
 
 ## Public Members
 
