@@ -97,6 +97,13 @@ parent: "C#"
 | static class [KestrunHttpMiddlewareExtensions](./Kestrun.Hosting/KestrunHttpMiddlewareExtensions.md) | Provides extension methods for configuring common HTTP middleware in Kestrun. |
 | class [NoopHostLifetime](./Kestrun.Hosting/NoopHostLifetime.md) | Minimal IHostLifetime that performs no blocking operations. Useful for scenarios like testing where the host lifecycle is externally managed. |
 
+## Kestrun.Hosting.Compression namespace
+
+| public type | description |
+| --- | --- |
+| static class [KestrunCompressionServiceCollectionExtensions](./Kestrun.Hosting.Compression/KestrunCompressionServiceCollectionExtensions.md) | Extension methods to add Kestrun compression services. |
+| class [KestrunResponseCompressionProvider](./Kestrun.Hosting.Compression/KestrunResponseCompressionProvider.md) | A response compression provider that respects endpoint metadata to disable compression. Wraps the built-in ResponseCompressionProvider. |
+
 ## Kestrun.Hosting.Options namespace
 
 | public type | description |
@@ -222,7 +229,6 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | class [CompilationErrorException](./Kestrun.Scripting/CompilationErrorException.md) | Exception thrown when C# script compilation fails. Contains detailed diagnostic information about compilation errors. |
-| static class [EndpointConventionBuilderLanguageExtensions](./Kestrun.Scripting/EndpointConventionBuilderLanguageExtensions.md) | Extension methods for IEndpointConventionBuilder to support script language metadata. |
 | class [KestrunRunspacePoolManager](./Kestrun.Scripting/KestrunRunspacePoolManager.md) | Manages a pool of PowerShell runspaces for efficient reuse and resource control. |
 | static class [LanguageRuntimeExtensions](./Kestrun.Scripting/LanguageRuntimeExtensions.md) | Extension methods for IApplicationBuilder to support language-based runtime configuration. |
 | static class [RouteHandlerBuilderLanguageExtensions](./Kestrun.Scripting/RouteHandlerBuilderLanguageExtensions.md) | Extension methods for RouteHandlerBuilder to support script language metadata. |
@@ -234,6 +240,13 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | static class [SharedStateStore](./Kestrun.SharedState/SharedStateStore.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
+
+## Kestrun.TBuilder namespace
+
+| public type | description |
+| --- | --- |
+| static class [EndpointConventionBuilderLanguageExtensions](./Kestrun.TBuilder/EndpointConventionBuilderLanguageExtensions.md) | Extension methods for IEndpointConventionBuilder to support script language metadata. |
+| static class [EndpointDisablingCompressionExtensions](./Kestrun.TBuilder/EndpointDisablingCompressionExtensions.md) | Extension methods for IEndpointConventionBuilder to support disabling compression metadata. |
 
 ## Kestrun.Utilities namespace
 

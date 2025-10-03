@@ -22,6 +22,7 @@ public record MapRouteOptions
 | [Code](MapRouteOptions/Code) { get; set; } | The script code to execute for this route. |
 | [CorsPolicyName](MapRouteOptions/CorsPolicyName) { get; set; } | Name of the CORS policy to apply, if any. |
 | [DisableAntiforgery](MapRouteOptions/DisableAntiforgery) { get; set; } | If true, disables antiforgery protection for this route. |
+| [DisableResponseCompression](MapRouteOptions/DisableResponseCompression) { get; set; } | If true, disables response compression for this route. |
 | [Endpoints](MapRouteOptions/Endpoints) { get; set; } | Endpoints to bind the route to, if any. |
 | [ExtraImports](MapRouteOptions/ExtraImports) { get; set; } | Additional import namespaces required for the script code. |
 | [ExtraRefs](MapRouteOptions/ExtraRefs) { get; set; } | Additional assembly references required for the script code. |
