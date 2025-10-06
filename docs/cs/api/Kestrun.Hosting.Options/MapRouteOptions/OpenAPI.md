@@ -14,7 +14,7 @@ public OpenAPIMetadata OpenAPI { get; set; }
 
 ## See Also
 
-* record [OpenAPIMetadata](../MapRouteOptions.OpenAPIMetadata)
+* record [OpenAPIMetadata](../OpenAPIMetadata)
 * record [MapRouteOptions](../MapRouteOptions)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

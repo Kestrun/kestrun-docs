@@ -58,6 +58,7 @@ public class KestrunResponse
 | [WriteRedirectResponse](KestrunResponse/WriteRedirectResponse)(…) | Writes an HTTP redirect response with the specified URL and optional message. |
 | [WriteResponse](KestrunResponse/WriteResponse)(…) | Writes a response with the specified input object and HTTP status code. Chooses the response format based on the Accept header or defaults to text/plain. |
 | [WriteResponseAsync](KestrunResponse/WriteResponseAsync)(…) | Asynchronously writes a response with the specified input object and HTTP status code. Chooses the response format based on the Accept header or defaults to text/plain. |
+| [WriteStatusOnly](KestrunResponse/WriteStatusOnly)(…) | Writes only the specified HTTP status code, clearing any body or content type. |
 | [WriteStreamResponse](KestrunResponse/WriteStreamResponse)(…) | Writes a stream response with the specified stream, status code, and content type. |
 | [WriteTextResponse](KestrunResponse/WriteTextResponse)(…) | Writes a text response with the specified input object, status code, and content type. |
 | [WriteTextResponseAsync](KestrunResponse/WriteTextResponseAsync)(…) | Asynchronously writes a text response with the specified input object, status code, and content type. |

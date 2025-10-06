@@ -111,8 +111,11 @@ parent: "C#"
 | --- | --- |
 | static class [KestrelOptionsExtensions](./Kestrun.Hosting.Options/KestrelOptionsExtensions.md) | Provides extension methods for copying configuration between KestrelServerOptions instances. |
 | class [KestrunOptions](./Kestrun.Hosting.Options/KestrunOptions.md) | Simple options class for configuring Kestrel server settings. |
+| record [LanguageOptions](./Kestrun.Hosting.Options/LanguageOptions.md) | Base options for specifying script code and language settings. |
 | class [ListenerOptions](./Kestrun.Hosting.Options/ListenerOptions.md) | Configuration for an individual Kestrel listener. |
 | record [MapRouteOptions](./Kestrun.Hosting.Options/MapRouteOptions.md) | Options for mapping a route, including pattern, HTTP verbs, script code, authorization, and metadata. |
+| record [OpenAPIMetadata](./Kestrun.Hosting.Options/OpenAPIMetadata.md) | Metadata for OpenAPI documentation related to the route. |
+| class [StatusCodeOptions](./Kestrun.Hosting.Options/StatusCodeOptions.md) | Options for configuring status code pages middleware. |
 
 ## Kestrun.Jwt namespace
 
@@ -199,6 +202,7 @@ parent: "C#"
 | static class [FaviconMiddlewareExtensions](./Kestrun.Middleware/FaviconMiddlewareExtensions.md) | Provides extension methods for serving a favicon in ASP.NET Core applications. |
 | class [PowerShellRunspaceMiddleware](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) | Initializes a new instance of the [`PowerShellRunspaceMiddleware`](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) class. |
 | static class [PowerShellRunspaceMiddlewareExtensions](./Kestrun.Middleware/PowerShellRunspaceMiddlewareExtensions.md) | Extension methods for adding PowerShell runspace middleware. |
+| static class [StatusCodePageExtensions](./Kestrun.Middleware/StatusCodePageExtensions.md) | Extension methods for adding status code pages middleware. |
 
 ## Kestrun.Models namespace
 

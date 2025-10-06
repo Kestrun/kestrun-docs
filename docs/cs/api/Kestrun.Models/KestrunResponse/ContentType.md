@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets or sets the MIME content type of the response.
 
 ```csharp
-public string ContentType { get; set; }
+public string? ContentType { get; set; }
 ```
 
 ## See Also

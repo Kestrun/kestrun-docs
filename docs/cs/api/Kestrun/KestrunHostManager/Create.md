@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Creates a new KestrunHost instance using the provided factory function.
 
 ```csharp
-public static KestrunHost Create(string name, Func<KestrunHost> factory, bool setAsDefault = false)
+public static KestrunHost Create(string name, Func<KestrunHost> factory, bool setAsDefault = false, 
+    bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
@@ -17,6 +18,7 @@ public static KestrunHost Create(string name, Func<KestrunHost> factory, bool se
 | name | The name of the KestrunHost instance to create. |
 | factory | A factory function that returns a new KestrunHost instance. |
 | setAsDefault | Whether to set this instance as the default. |
+| enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |
 
 ## Return Value
 
@@ -36,7 +38,7 @@ Creates a new KestrunHost instance with the specified name and optional module p
 
 ```csharp
 public static KestrunHost Create(string name, string[]? modulePathsObj = null, 
-    bool setAsDefault = false)
+    bool setAsDefault = false, bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
@@ -44,6 +46,7 @@ public static KestrunHost Create(string name, string[]? modulePathsObj = null,
 | name | The name of the KestrunHost instance to create. |
 | modulePathsObj | Optional array of module paths to load. |
 | setAsDefault | Whether to set this instance as the default. |
+| enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |
 
 ## Return Value
 
@@ -63,7 +66,7 @@ Creates a new KestrunHost instance with the specified name, logger, root path, a
 
 ```csharp
 public static KestrunHost Create(string name, ILogger logger, string[]? modulePathsObj = null, 
-    bool setAsDefault = false)
+    bool setAsDefault = false, bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
@@ -72,6 +75,7 @@ public static KestrunHost Create(string name, ILogger logger, string[]? modulePa
 | logger | The Serilog logger to use for the host. |
 | modulePathsObj | Optional array of module paths to load. |
 | setAsDefault | Whether to set this instance as the default. |
+| enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |
 
 ## Return Value
 

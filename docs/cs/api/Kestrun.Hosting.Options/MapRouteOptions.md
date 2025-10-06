@@ -18,25 +18,20 @@ public record MapRouteOptions
 | --- | --- |
 | [MapRouteOptions](MapRouteOptions/MapRouteOptions)() | The default constructor. |
 | [AllowAnonymous](MapRouteOptions/AllowAnonymous) { get; set; } | If true, allows anonymous access to this route. |
-| [Arguments](MapRouteOptions/Arguments) { get; set; } | Additional metadata for the route, represented as key-value pairs. |
-| [Code](MapRouteOptions/Code) { get; set; } | The script code to execute for this route. |
 | [CorsPolicyName](MapRouteOptions/CorsPolicyName) { get; set; } | Name of the CORS policy to apply, if any. |
 | [DisableAntiforgery](MapRouteOptions/DisableAntiforgery) { get; set; } | If true, disables antiforgery protection for this route. |
 | [DisableResponseCompression](MapRouteOptions/DisableResponseCompression) { get; set; } | If true, disables response compression for this route. |
 | [Endpoints](MapRouteOptions/Endpoints) { get; set; } | Endpoints to bind the route to, if any. |
-| [ExtraImports](MapRouteOptions/ExtraImports) { get; set; } | Additional import namespaces required for the script code. |
-| [ExtraRefs](MapRouteOptions/ExtraRefs) { get; set; } | Additional assembly references required for the script code. |
 | [HttpVerbs](MapRouteOptions/HttpVerbs) { get; set; } | The HTTP verbs (methods) that this route responds to. |
-| [Language](MapRouteOptions/Language) { get; set; } | The scripting language used for the route's code. |
 | [OpenAPI](MapRouteOptions/OpenAPI) { get; set; } | OpenAPI metadata for this route. |
 | [Pattern](MapRouteOptions/Pattern) { get; set; } | The route pattern to match for this option. |
 | [RateLimitPolicyName](MapRouteOptions/RateLimitPolicyName) { get; set; } | The name of the rate limit policy to apply to this route, if any. |
 | [RequirePolicies](MapRouteOptions/RequirePolicies) { get; set; } | Authorization policy names required for this route. |
 | [RequireSchemes](MapRouteOptions/RequireSchemes) { get; set; } | Authorization Scheme names required for this route. |
+| [ScriptCode](MapRouteOptions/ScriptCode) { get; set; } | Script code and language options for this route. |
 | [ShortCircuit](MapRouteOptions/ShortCircuit) { get; set; } | If true, short-circuits the pipeline after this route. |
 | [ShortCircuitStatusCode](MapRouteOptions/ShortCircuitStatusCode) { get; set; } | Status code to return if short-circuiting the pipeline after this route. |
 | [ThrowOnDuplicate](MapRouteOptions/ThrowOnDuplicate) { get; set; } | If true, throws an exception on duplicate routes. |
-| record [OpenAPIMetadata](MapRouteOptions.OpenAPIMetadata) | Metadata for OpenAPI documentation related to the route. |
 
 ## See Also
 

@@ -13,6 +13,15 @@ public static IApplicationBuilder UsePowerShellRunspace(this IApplicationBuilder
     KestrunRunspacePoolManager pool)
 ```
 
+| parameter | description |
+| --- | --- |
+| app | The application builder. |
+| pool | The runspace pool manager. |
+
+## Return Value
+
+The application builder.
+
 ## See Also
 
 * class [KestrunRunspacePoolManager](../../Kestrun.Scripting/KestrunRunspacePoolManager)
