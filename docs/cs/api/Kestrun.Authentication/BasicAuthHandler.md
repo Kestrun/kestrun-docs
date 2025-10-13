@@ -17,6 +17,7 @@ public class BasicAuthHandler : AuthenticationHandler<BasicAuthenticationOptions
 | name | description |
 | --- | --- |
 | [BasicAuthHandler](BasicAuthHandler/BasicAuthHandler)(…) | Initializes a new instance of the [`BasicAuthHandler`](./BasicAuthHandler) class. |
+| [Host](BasicAuthHandler/Host) { get; } | The Kestrun host instance. |
 | static [BuildCsValidator](BasicAuthHandler/BuildCsValidator)(…) | Builds a C#-based validator function for authenticating users. |
 | static [BuildPsValidator](BasicAuthHandler/BuildPsValidator)(…) | Builds a PowerShell-based validator function for authenticating users. |
 | static [BuildVBNetValidator](BasicAuthHandler/BuildVBNetValidator)(…) | Builds a VB.NET-based validator function for authenticating users. |

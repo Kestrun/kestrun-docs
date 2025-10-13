@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Builds a C#-based validator function for authenticating users.
 
 ```csharp
-public static Func<HttpContext, string, string, Task<bool>> BuildCsValidator(
-    AuthenticationCodeSettings settings, ILogger logger)
+public static Func<HttpContext, string, string, Task<bool>> BuildCsValidator(KestrunHost host, 
+    AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The authentication code settings containing the C# script. |
-| logger | The logger instance. |
 
 ## Return Value
 
@@ -24,6 +24,7 @@ A function that validates credentials using the provided C# script.
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * class [BasicAuthHandler](../BasicAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

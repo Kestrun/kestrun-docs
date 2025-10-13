@@ -17,6 +17,7 @@ public class ApiKeyAuthHandler : AuthenticationHandler<ApiKeyAuthenticationOptio
 | name | description |
 | --- | --- |
 | [ApiKeyAuthHandler](ApiKeyAuthHandler/ApiKeyAuthHandler)(…) | Initializes a new instance of the [`ApiKeyAuthHandler`](./ApiKeyAuthHandler) class. |
+| [Host](ApiKeyAuthHandler/Host) { get; } | The Kestrun host instance. |
 | static [BuildCsValidator](ApiKeyAuthHandler/BuildCsValidator)(…) | Builds a C#-based API key validator delegate using the provided authentication code settings. |
 | static [BuildPsValidator](ApiKeyAuthHandler/BuildPsValidator)(…) | Builds a PowerShell-based API key validator delegate using the provided authentication code settings. |
 | static [BuildVBNetValidator](ApiKeyAuthHandler/BuildVBNetValidator)(…) | Builds a VB.NET-based API key validator delegate using the provided authentication code settings. |

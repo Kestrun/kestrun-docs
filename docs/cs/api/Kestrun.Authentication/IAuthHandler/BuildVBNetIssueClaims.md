@@ -10,13 +10,13 @@ Builds a VB.NET-based function for issuing claims for a user.
 
 ```csharp
 public static Func<HttpContext, string, Task<IEnumerable<Claim>>> BuildVBNetIssueClaims(
-    AuthenticationCodeSettings settings, ILogger logger)
+    KestrunHost host, AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The authentication code settings containing the VB.NET script. |
-| logger | The logger instance for logging. |
 
 ## Return Value
 
@@ -24,6 +24,7 @@ A function that issues claims using the provided VB.NET script.
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * interface [IAuthHandler](../IAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

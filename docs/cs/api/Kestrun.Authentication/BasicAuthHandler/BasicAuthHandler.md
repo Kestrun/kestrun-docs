@@ -9,12 +9,13 @@ grand_parent: "C# API"
 Initializes a new instance of the [`BasicAuthHandler`](../BasicAuthHandler) class.
 
 ```csharp
-public BasicAuthHandler(IOptionsMonitor<BasicAuthenticationOptions> options, 
+public BasicAuthHandler(KestrunHost host, IOptionsMonitor<BasicAuthenticationOptions> options, 
     ILoggerFactory loggerFactory, UrlEncoder encoder)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | options | The options for Basic Authentication. |
 | loggerFactory | The logger factory. |
 | encoder | The URL encoder. |
@@ -25,6 +26,7 @@ This constructor is used to set up the Basic Authentication handler with the pro
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * class [BasicAuthenticationOptions](../BasicAuthenticationOptions)
 * class [BasicAuthHandler](../BasicAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

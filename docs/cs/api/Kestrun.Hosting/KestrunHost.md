@@ -20,10 +20,11 @@ public class KestrunHost : IDisposable
 | [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
 | [DefaultCacheControl](KestrunHost/DefaultCacheControl) { get; } | Gets or sets the default cache control settings for HTTP responses. |
 | [DefaultHost](KestrunHost/DefaultHost) { get; } | Gets or sets a value indicating whether this instance is the default Kestrun host. |
-| [HostLogger](KestrunHost/HostLogger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
+| [ExceptionOptions](KestrunHost/ExceptionOptions) { get; set; } | Gets or sets the exception options for configuring exception handling. |
 | [IsConfigured](KestrunHost/IsConfigured) { get; } | Indicates whether the Kestrun host configuration has been applied. |
 | [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
 | [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |
+| [Logger](KestrunHost/Logger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
 | [Options](KestrunHost/Options) { get; } | Gets the configuration options for the Kestrun host. |
 | [PowershellMiddlewareEnabled](KestrunHost/PowershellMiddlewareEnabled) { get; set; } | Gets the shared state manager for managing shared data across requests and sessions. |
 | [RegisteredAuthentications](KestrunHost/RegisteredAuthentications) { get; } | Gets the registered authentication schemes in the Kestrun host. |
@@ -43,6 +44,8 @@ public class KestrunHost : IDisposable
 | [CreateRunspacePool](KestrunHost/CreateRunspacePool)(…) | Creates and returns a new [`KestrunRunspacePoolManager`](../Kestrun.Scripting/KestrunRunspacePoolManager) instance with the specified maximum number of runspaces. |
 | [Dispose](KestrunHost/Dispose)() | Releases all resources used by the [`KestrunHost`](./KestrunHost) instance. |
 | [EnableConfiguration](KestrunHost/EnableConfiguration)(…) | Applies the configured options to the Kestrel server and initializes the runspace pool. |
+| [IsServiceRegistered](KestrunHost/IsServiceRegistered)(…) | Returns true if the specified service type has already been registered in the IServiceCollection. |
+| [IsServiceRegistered&lt;TService&gt;](KestrunHost/IsServiceRegistered)() | Generic convenience overload. |
 | [Run](KestrunHost/Run)() | Runs the Kestrun web application, applying configuration and starting the server. |
 | [StartAsync](KestrunHost/StartAsync)(…) | Starts the Kestrun web application asynchronously. |
 | [Stop](KestrunHost/Stop)() | Initiates a graceful shutdown of the Kestrun web application. |

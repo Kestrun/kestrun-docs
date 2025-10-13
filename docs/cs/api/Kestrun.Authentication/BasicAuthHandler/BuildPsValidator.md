@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Builds a PowerShell-based validator function for authenticating users.
 
 ```csharp
-public static Func<HttpContext, string, string, Task<bool>> BuildPsValidator(
-    AuthenticationCodeSettings settings, ILogger logger)
+public static Func<HttpContext, string, string, Task<bool>> BuildPsValidator(KestrunHost host, 
+    AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The authentication code settings containing the PowerShell script. |
-| logger | The logger instance. |
 
 ## Return Value
 
@@ -28,6 +28,7 @@ This method compiles the PowerShell script and returns a delegate that can be us
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * class [BasicAuthHandler](../BasicAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

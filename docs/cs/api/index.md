@@ -94,6 +94,7 @@ parent: "C#"
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
 | static class [KestrunHostRazorExtensions](./Kestrun.Hosting/KestrunHostRazorExtensions.md) | Provides extension methods for adding PowerShell and Razor Pages to a KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
+| static class [KestrunHostSessionExtensions](./Kestrun.Hosting/KestrunHostSessionExtensions.md) | Provides extension methods for configuring session state and distributed cache in Kestrun. |
 | static class [KestrunHostStaticFilesExtensions](./Kestrun.Hosting/KestrunHostStaticFilesExtensions.md) | Provides extension methods for configuring static file, default file, favicon, and file server middleware in KestrunHost. |
 | static class [KestrunHttpMiddlewareExtensions](./Kestrun.Hosting/KestrunHttpMiddlewareExtensions.md) | Provides extension methods for configuring common HTTP middleware in Kestrun. |
 | class [NoopHostLifetime](./Kestrun.Hosting/NoopHostLifetime.md) | Minimal IHostLifetime that performs no blocking operations. Useful for scenarios like testing where the host lifecycle is externally managed. |
@@ -109,6 +110,7 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| class [ExceptionOptions](./Kestrun.Hosting.Options/ExceptionOptions.md) | Options for configuring Kestrun-style exception handling middleware. |
 | static class [KestrelOptionsExtensions](./Kestrun.Hosting.Options/KestrelOptionsExtensions.md) | Provides extension methods for copying configuration between KestrelServerOptions instances. |
 | class [KestrunOptions](./Kestrun.Hosting.Options/KestrunOptions.md) | Simple options class for configuring Kestrel server settings. |
 | record [LanguageOptions](./Kestrun.Hosting.Options/LanguageOptions.md) | Base options for specifying script code and language settings. |
@@ -221,6 +223,13 @@ parent: "C#"
 | static class [PowerShellRazorPage](./Kestrun.Razor/PowerShellRazorPage.md) | Provides middleware for enabling PowerShell-backed Razor Pages, allowing execution of a sibling PowerShell script (*.cshtml.ps1) for each Razor view (*.cshtml). |
 | class [PwshKestrunModel](./Kestrun.Razor/PwshKestrunModel.md) | Base PageModel that exposes whatever the sibling PowerShell script placed in `HttpContext.Items["PageModel"]`. |
 
+## Kestrun.Runtime namespace
+
+| public type | description |
+| --- | --- |
+| static class [EnvironmentHelper](./Kestrun.Runtime/EnvironmentHelper.md) | Helpers for determining the current environment name. |
+| static class [VariablesMap](./Kestrun.Runtime/VariablesMap.md) | Helper class to map common request and server properties, as well as shared state variables, into a dictionary. |
+
 ## Kestrun.Scheduling namespace
 
 | public type | description |
@@ -267,7 +276,6 @@ parent: "C#"
 | static class [RateLimiterOptionsExtensions](./Kestrun.Utilities/RateLimiterOptionsExtensions.md) | Provides extension methods for copying rate limiter options and policies. |
 | class [ReadOnlyDictionaryAdapter](./Kestrun.Utilities/ReadOnlyDictionaryAdapter.md) | Adapts a non-generic IDictionary to a read-only dictionary with string keys and nullable object values. |
 | static class [SecureStringUtils](./Kestrun.Utilities/SecureStringUtils.md) | Provides utility methods for working with SecureString and ReadOnlySpan&lt;char&gt;. |
-| static class [VariablesMap](./Kestrun.Utilities/VariablesMap.md) | Provides utility methods for mapping and flattening variables from various sources. |
 | static class [XmlHelper](./Kestrun.Utilities/XmlHelper.md) | Helpers for converting arbitrary objects into XElement instances. |
 
 ## Kestrun.Utilities.Yaml namespace

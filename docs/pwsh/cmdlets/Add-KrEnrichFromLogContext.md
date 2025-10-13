@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrEnrichFromLogContext
-nav_order: 16
+nav_order: 18
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunContext.HttpContext property
 
-The associated HTTP context.
+The ASP.NET Core HTTP context associated with this Kestrun context.
 
 ```csharp
 public HttpContext HttpContext { get; set; }

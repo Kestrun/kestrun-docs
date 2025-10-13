@@ -9,13 +9,14 @@ grand_parent: "C# API"
 Initializes a new instance of the [`KestrunRunspacePoolManager`](../KestrunRunspacePoolManager) class with the specified minimum and maximum runspaces, initial session state, and thread options.
 
 ```csharp
-public KestrunRunspacePoolManager(int minRunspaces, int maxRunspaces, 
+public KestrunRunspacePoolManager(KestrunHost host, int minRunspaces, int maxRunspaces, 
     InitialSessionState? initialSessionState = null, 
     PSThreadOptions threadOptions = PSThreadOptions.ReuseThread)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | minRunspaces | The minimum number of runspaces to maintain in the pool. |
 | maxRunspaces | The maximum number of runspaces allowed in the pool. |
 | initialSessionState | The initial session state for each runspace (optional). |
@@ -23,6 +24,7 @@ public KestrunRunspacePoolManager(int minRunspaces, int maxRunspaces,
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * class [KestrunRunspacePoolManager](../KestrunRunspacePoolManager)
 * namespace [Kestrun.Scripting](../../Kestrun)
 

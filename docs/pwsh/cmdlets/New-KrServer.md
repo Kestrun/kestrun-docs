@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: New-KrServer
-nav_order: 100
+nav_order: 110
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -19,14 +19,14 @@ Creates a new Kestrun server instance.
 
 ### Logger (Default)
 ```
-New-KrServer -Name <String> [-Logger <ILogger>] [-PassThru] [-DisablePowershellMiddleware] [-Default] [-Force]
- [<CommonParameters>]
+New-KrServer -Name <String> [-Logger <ILogger>] [-PassThru] [-DisablePowershellMiddleware] [-Default]
+ [-Environment <String>] [-Force] [<CommonParameters>]
 ```
 
 ### LoggerName
 ```
-New-KrServer -Name <String> -LoggerName <String> [-PassThru] [-DisablePowershellMiddleware] [-Default] [-Force]
- [<CommonParameters>]
+New-KrServer -Name <String> -LoggerName <String> [-PassThru] [-DisablePowershellMiddleware] [-Default]
+ [-Environment <String>] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -132,6 +132,29 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Environment
+The environment to set for the Kestrun server instance.
+Valid values are 'Auto', 'Development', 'Staging', and 'Production'.
+- 'Auto' (default): Automatically sets the environment to 'Development' if a debugger is attached or
+    if the -Debug switch is used; otherwise, it uses the environment specified by the KESTRUN_ENVIRONMENT environment variable
+    or defaults to 'Production'.
+- 'Development': Forces the environment to 'Development'.
+- 'Staging': Forces the environment to 'Staging'.
+- 'Production': Forces the environment to 'Production'.
+The environment setting affects middleware behavior, such as detailed error pages in 'Development'.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Auto
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

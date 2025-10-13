@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Builds a VB.NET-based API key validator delegate using the provided authentication code settings.
 
 ```csharp
-public static Func<HttpContext, string, byte[], Task<bool>> BuildVBNetValidator(
-    AuthenticationCodeSettings settings, ILogger logger)
+public static Func<HttpContext, string, byte[], Task<bool>> BuildVBNetValidator(KestrunHost host, 
+    AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The settings containing the VB.NET authentication code. |
-| logger | The logger to use for debug output. |
 
 ## Return Value
 
@@ -24,6 +24,7 @@ A delegate that validates an API key using VB.NET code.
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * class [ApiKeyAuthHandler](../ApiKeyAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

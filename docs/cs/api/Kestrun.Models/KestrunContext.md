@@ -16,13 +16,14 @@ public record KestrunContext
 
 | name | description |
 | --- | --- |
-| [KestrunContext](KestrunContext/KestrunContext)(…) | Represents the context for a Kestrun request, including the request, response, HTTP context, and host. |
+| [KestrunContext](KestrunContext/KestrunContext)(…) | Initializes a new instance of the [`KestrunContext`](./KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext (2 constructors) |
 | [Ct](KestrunContext/Ct) { get; } | Gets the cancellation token that is triggered when the HTTP request is aborted. |
 | [HasSession](KestrunContext/HasSession) { get; } | True if Session middleware is active for this request. |
-| [HttpContext](KestrunContext/HttpContext) { get; set; } | The associated HTTP context. |
+| [Host](KestrunContext/Host) { get; set; } | The Kestrun host associated with this context. |
+| [HttpContext](KestrunContext/HttpContext) { get; set; } | The ASP.NET Core HTTP context associated with this Kestrun context. |
 | [Items](KestrunContext/Items) { get; } | Gets the collection of key/value pairs associated with the current HTTP context. |
-| [Request](KestrunContext/Request) { get; set; } | The Kestrun request. |
-| [Response](KestrunContext/Response) { get; set; } | The Kestrun response. |
+| [Request](KestrunContext/Request) { get; set; } | The Kestrun request associated with this context. |
+| [Response](KestrunContext/Response) { get; set; } | The Kestrun response associated with this context. |
 | [Session](KestrunContext/Session) { get; } | Returns the ASP.NET Core session if the Session middleware is active; otherwise null. |
 | [User](KestrunContext/User) { get; } | Gets the user associated with the current HTTP context. |
 | [TryGetSession](KestrunContext/TryGetSession)(…) | Try pattern to get session without exceptions. |

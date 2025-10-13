@@ -17,6 +17,7 @@ public sealed class KestrunRunspacePoolManager : IDisposable
 | name | description |
 | --- | --- |
 | [KestrunRunspacePoolManager](KestrunRunspacePoolManager/KestrunRunspacePoolManager)(…) | Initializes a new instance of the [`KestrunRunspacePoolManager`](./KestrunRunspacePoolManager) class with the specified minimum and maximum runspaces, initial session state, and thread options. |
+| [Host](KestrunRunspacePoolManager/Host) { get; } | KestrunHost is needed for logging, config, etc. |
 | [MaxRunspaces](KestrunRunspacePoolManager/MaxRunspaces) { get; } | Gets the maximum number of runspaces allowed in the pool. |
 | [MinRunspaces](KestrunRunspacePoolManager/MinRunspaces) { get; } | Gets the minimum number of runspaces maintained in the pool. |
 | [ThreadOptions](KestrunRunspacePoolManager/ThreadOptions) { get; set; } | Thread‑affinity strategy for *future* runspaces. Default is ReuseThread. |

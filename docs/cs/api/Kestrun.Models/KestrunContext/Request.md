@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunContext.Request property
 
-The Kestrun request.
+The Kestrun request associated with this context.
 
 ```csharp
 public KestrunRequest Request { get; set; }

@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Get-KrFeatureSupport
-nav_order: 69
+nav_order: 76
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

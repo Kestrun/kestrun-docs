@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Builds a PowerShell-based API key validator delegate using the provided authentication code settings.
 
 ```csharp
-public static Func<HttpContext, string, byte[], Task<bool>> BuildPsValidator(
-    AuthenticationCodeSettings settings, ILogger logger)
+public static Func<HttpContext, string, byte[], Task<bool>> BuildPsValidator(KestrunHost host, 
+    AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The settings containing the PowerShell authentication code. |
-| logger | The logger to use for debug output. |
 
 ## Return Value
 
@@ -28,6 +28,7 @@ This method compiles the PowerShell script and returns a delegate that can be us
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * class [ApiKeyAuthHandler](../ApiKeyAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

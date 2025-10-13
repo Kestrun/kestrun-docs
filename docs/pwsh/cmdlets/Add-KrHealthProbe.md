@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrHealthProbe
-nav_order: 24
+nav_order: 26
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

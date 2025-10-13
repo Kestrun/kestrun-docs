@@ -9,18 +9,20 @@ grand_parent: "C# API"
 Initializes a new instance of the [`ApiKeyAuthHandler`](../ApiKeyAuthHandler) class.
 
 ```csharp
-public ApiKeyAuthHandler(IOptionsMonitor<ApiKeyAuthenticationOptions> options, 
+public ApiKeyAuthHandler(KestrunHost host, IOptionsMonitor<ApiKeyAuthenticationOptions> options, 
     ILoggerFactory logger, UrlEncoder encoder)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | options | The options monitor for API key authentication options. |
 | logger | The logger factory. |
 | encoder | The URL encoder. |
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * class [ApiKeyAuthenticationOptions](../ApiKeyAuthenticationOptions)
 * class [ApiKeyAuthHandler](../ApiKeyAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)

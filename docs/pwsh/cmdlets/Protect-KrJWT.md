@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Protect-KrJWT
-nav_order: 101
+nav_order: 111
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Builds a VB.NET-based validator function for authenticating users.
 
 ```csharp
-public static Func<HttpContext, string, string, Task<bool>> BuildVBNetValidator(
-    AuthenticationCodeSettings settings, ILogger logger)
+public static Func<HttpContext, string, string, Task<bool>> BuildVBNetValidator(KestrunHost host, 
+    AuthenticationCodeSettings settings)
 ```
 
 | parameter | description |
 | --- | --- |
+| host | The Kestrun host instance. |
 | settings | The authentication code settings containing the VB.NET script. |
-| logger | The logger instance. |
 
 ## Return Value
 
@@ -24,6 +24,7 @@ A function that validates credentials using the provided VB.NET script.
 
 ## See Also
 
+* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
 * record [AuthenticationCodeSettings](../AuthenticationCodeSettings)
 * class [BasicAuthHandler](../BasicAuthHandler)
 * namespace [Kestrun.Authentication](../../Kestrun)
