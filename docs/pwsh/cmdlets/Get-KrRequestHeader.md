@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Get-KrRequestHeader
-nav_order: 84
+nav_order: 85
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun
@@ -17,8 +17,29 @@ Retrieves a request header value from the HTTP request.
 
 ## SYNTAX
 
+### default (Default)
 ```
-Get-KrRequestHeader [-Name] <String> [<CommonParameters>]
+Get-KrRequestHeader -Name <String> [-ThrowIfMissing] [<CommonParameters>]
+```
+
+### Int
+```
+Get-KrRequestHeader -Name <String> [-AsInt] [-ThrowIfMissing] [<CommonParameters>]
+```
+
+### Bool
+```
+Get-KrRequestHeader -Name <String> [-AsBool] [-ThrowIfMissing] [<CommonParameters>]
+```
+
+### Double
+```
+Get-KrRequestHeader -Name <String> [-AsDouble] [-ThrowIfMissing] [<CommonParameters>]
+```
+
+### String
+```
+Get-KrRequestHeader -Name <String> [-AsString] [-ThrowIfMissing] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,6 +54,24 @@ $value = Get-KrRequestHeader -Name "param1"
 Retrieves the value of the request header "param1" from the HTTP request.
 ```
 
+### EXAMPLE 2
+```powershell
+$id = Get-KrRequestHeader -Name "id" -AsInt -ThrowIfMissing
+Retrieves the value of the header "id" as an integer, throwing an error if it's missing.
+```
+
+### EXAMPLE 3
+```powershell
+$flag = Get-KrRequestHeader -Name "flag" -AsBool
+Retrieves the value of the header "flag" as a boolean.
+```
+
+### EXAMPLE 4
+```powershell
+$auth = Get-KrRequestHeader -Name "Authorization" -AsString -ThrowIfMissing
+Retrieves the value of the "Authorization" header as a string, throwing an error if it's missing.
+```
+
 ## PARAMETERS
 
 ### -Name
@@ -44,8 +83,84 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsInt
+If specified, converts the header value to an integer.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Int
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsBool
+If specified, converts the header value to a boolean.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Bool
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsDouble
+If specified, converts the header value to a double.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Double
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsString
+If specified, converts the header value to a string.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: String
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThrowIfMissing
+If specified, throws an error if the header is not found.
+By default, it returns $null if not found.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

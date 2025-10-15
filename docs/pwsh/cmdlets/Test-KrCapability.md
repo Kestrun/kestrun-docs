@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Test-KrCapability
-nav_order: 137
+nav_order: 146
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

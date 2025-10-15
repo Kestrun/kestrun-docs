@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Register-KrSchedule
-nav_order: 115
+nav_order: 120
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

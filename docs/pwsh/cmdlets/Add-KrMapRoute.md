@@ -20,9 +20,8 @@ Adds a new map route to the Kestrun server.
 ### ScriptBlock (Default)
 ```
 Add-KrMapRoute [-Server <KestrunHost>] [-Verbs <HttpVerb[]>] [-Pattern <String>] [-ScriptBlock] <ScriptBlock>
- [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-ExtraImports <String[]>]
- [-ExtraRefs <Assembly[]>] [-Arguments <Hashtable>] [-Endpoints <String[]>] [-AllowDuplicate]
- [-DuplicateAction <String>] [-PassThru] [<CommonParameters>]
+ [-AuthorizationSchema <String[]>] [-AuthorizationPolicy <String[]>] [-Arguments <Hashtable>]
+ [-Endpoints <String[]>] [-AllowDuplicate] [-DuplicateAction <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
@@ -234,7 +233,7 @@ An optional array of additional namespaces to import for the route.
 
 ```yaml
 Type: String[]
-Parameter Sets: ScriptBlock, CodeFilePath, Code
+Parameter Sets: CodeFilePath, Code
 Aliases:
 
 Required: False
@@ -249,7 +248,7 @@ An optional array of additional assemblies to reference for the route.
 
 ```yaml
 Type: Assembly[]
-Parameter Sets: ScriptBlock, CodeFilePath, Code
+Parameter Sets: CodeFilePath, Code
 Aliases:
 
 Required: False

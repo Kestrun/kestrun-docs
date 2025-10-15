@@ -255,6 +255,16 @@ parent: "C#"
 | --- | --- |
 | static class [SharedStateStore](./Kestrun.SharedState/SharedStateStore.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
 
+## Kestrun.Tasks namespace
+
+| public type | description |
+| --- | --- |
+| class [KestrunTask](./Kestrun.Tasks/KestrunTask.md) | Represents a single-shot task execution with its current state and telemetry. |
+| class [KestrunTaskService](./Kestrun.Tasks/KestrunTaskService.md) | Service to run ad-hoc Kestrun tasks in PowerShell, C#, or VB.NET, with status, result, and cancellation. |
+| record [KrTask](./Kestrun.Tasks/KrTask.md) | Basic information about a task for listing purposes. |
+| class [ProgressiveKestrunTaskState](./Kestrun.Tasks/ProgressiveKestrunTaskState.md) | Represents the progress state of a task. |
+| enum [TaskState](./Kestrun.Tasks/TaskState.md) | Represents the lifecycle state of a KestrunTask. |
+
 ## Kestrun.TBuilder namespace
 
 | public type | description |

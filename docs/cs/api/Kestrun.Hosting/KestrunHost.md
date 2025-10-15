@@ -32,6 +32,7 @@ public class KestrunHost : IDisposable
 | [RouteGroupStack](KestrunHost/RouteGroupStack) { get; } | Gets the stack used for managing route groups in the Kestrun host. |
 | [Scheduler](KestrunHost/Scheduler) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. |
 | [StatusCodeOptions](KestrunHost/StatusCodeOptions) { get; set; } | Gets or sets the status code options for configuring status code pages. |
+| [Tasks](KestrunHost/Tasks) { get; } | Gets the ad-hoc task service used for running one-off tasks (PowerShell, C#, VB.NET). |
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
@@ -39,6 +40,7 @@ public class KestrunHost : IDisposable
 | [AddScheduling](KestrunHost/AddScheduling)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
 | [AddService](KestrunHost/AddService)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
 | [AddSignalR&lt;T&gt;](KestrunHost/AddSignalR)(…) | Adds a SignalR hub to the application at the specified path. |
+| [AddTasks](KestrunHost/AddTasks)(…) | Adds the Tasks feature to run ad-hoc scripts with status/result/cancellation. |
 | [Build](KestrunHost/Build)() | Builds the WebApplication. This method applies all queued services and middleware stages, and returns the built WebApplication instance. |
 | [ConfigureListener](KestrunHost/ConfigureListener)(…) | Configures a listener for the Kestrun host with the specified port, optional IP address, certificate, protocols, and connection logging. (5 methods) |
 | [CreateRunspacePool](KestrunHost/CreateRunspacePool)(…) | Creates and returns a new [`KestrunRunspacePoolManager`](../Kestrun.Scripting/KestrunRunspacePoolManager) instance with the specified maximum number of runspaces. |

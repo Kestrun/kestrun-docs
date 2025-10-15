@@ -22,6 +22,7 @@ public record LanguageOptions
 | [ExtraImports](LanguageOptions/ExtraImports) { get; set; } | Additional import namespaces required for the script code. |
 | [ExtraRefs](LanguageOptions/ExtraRefs) { get; set; } | Additional assembly references required for the script code. |
 | [Language](LanguageOptions/Language) { get; set; } | The scripting language used for the route's code. |
+| [LanguageVersion](LanguageOptions/LanguageVersion) { get; set; } | Version of the C# language to use when [`Language`](./LanguageOptions/Language) is CSharp. |
 | [ScriptBlock](LanguageOptions/ScriptBlock) { get; set; } | The script block created from the [`Code`](./LanguageOptions/Code) property, or null if no code is set. |
 
 ## See Also
