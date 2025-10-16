@@ -31,14 +31,18 @@ public class KestrunHost : IDisposable
 | [RegisteredRoutes](KestrunHost/RegisteredRoutes) { get; } | Gets the registered routes in the Kestrun host. |
 | [RouteGroupStack](KestrunHost/RouteGroupStack) { get; } | Gets the stack used for managing route groups in the Kestrun host. |
 | [Scheduler](KestrunHost/Scheduler) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. |
+| [StartTime](KestrunHost/StartTime) { get; } | Gets the timestamp when the Kestrun host was started. |
 | [StatusCodeOptions](KestrunHost/StatusCodeOptions) { get; set; } | Gets or sets the status code options for configuring status code pages. |
+| [StopTime](KestrunHost/StopTime) { get; } | Gets the timestamp when the Kestrun host was stopped. |
 | [Tasks](KestrunHost/Tasks) { get; } | Gets the ad-hoc task service used for running one-off tasks (PowerShell, C#, VB.NET). |
+| [Uptime](KestrunHost/Uptime) { get; } | Gets the uptime duration of the Kestrun host. While running (no StopTime yet), this returns DateTime.UtcNow - StartTime. After stopping, it returns StopTime - StartTime. If StartTime is not set, returns null. |
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
 | [AddProbe](KestrunHost/AddProbe)(…) | Registers the provided [`IProbe`](../Kestrun.Health/IProbe) instance with the host. (3 methods) |
 | [AddScheduling](KestrunHost/AddScheduling)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
 | [AddService](KestrunHost/AddService)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
+| [AddSignalR](KestrunHost/AddSignalR)(…) | Adds the default SignalR hub (KestrunHub) to the application at the specified path. |
 | [AddSignalR&lt;T&gt;](KestrunHost/AddSignalR)(…) | Adds a SignalR hub to the application at the specified path. |
 | [AddTasks](KestrunHost/AddTasks)(…) | Adds the Tasks feature to run ad-hoc scripts with status/result/cancellation. |
 | [Build](KestrunHost/Build)() | Builds the WebApplication. This method applies all queued services and middleware stages, and returns the built WebApplication instance. |

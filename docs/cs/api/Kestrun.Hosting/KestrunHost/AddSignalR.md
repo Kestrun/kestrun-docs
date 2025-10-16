@@ -1,10 +1,29 @@
 ---
 layout: default
-title: "KestrunHost.AddSignalR&lt;T&gt; method"
+title: "KestrunHost.AddSignalR method (1 of 2)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHost.AddSignalR&lt;T&gt; method
+# KestrunHost.AddSignalR method (1 of 2)
+
+Adds the default SignalR hub (KestrunHub) to the application at the specified path.
+
+```csharp
+public KestrunHost AddSignalR(string path)
+```
+
+| parameter | description |
+| --- | --- |
+| path | The path at which to map the SignalR hub. |
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHost.AddSignalR&lt;T&gt; method (2 of 2)
 
 Adds a SignalR hub to the application at the specified path.
 

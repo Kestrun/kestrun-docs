@@ -23,6 +23,7 @@ public sealed class SchedulerService : IDisposable
 | name | description |
 | --- | --- |
 | [SchedulerService](SchedulerService/SchedulerService)(…) | Represents a service for managing scheduled tasks. Provides methods to schedule, cancel, pause, resume, and report on tasks. This service is designed to run within a Kestrun application context. It supports both C# and PowerShell jobs, allowing for flexible scheduling options. |
+| [Host](SchedulerService/Host) { get; } | Gets the Kestrun host associated with the runspace pool. |
 | [Cancel](SchedulerService/Cancel)(…) | Cancels a scheduled job by its name. |
 | [CancelAll](SchedulerService/CancelAll)() | Cancels all scheduled jobs. |
 | [CancelAsync](SchedulerService/CancelAsync)(…) | Asynchronously cancels a scheduled job and optionally waits for its runner to complete. |

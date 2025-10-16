@@ -18,8 +18,7 @@ Maps a SignalR hub class to the given URL path.
 ## SYNTAX
 
 ```
-Add-KrSignalRHubMiddleware [-Server] <KestrunHost> [-HubType] <Type> [-Path] <String> [-PassThru]
- [<CommonParameters>]
+Add-KrSignalRHubMiddleware [[-Server] <KestrunHost>] [[-Path] <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,14 +28,8 @@ This function allows you to map a SignalR hub class to a specific URL path on th
 
 ### EXAMPLE 1
 ```powershell
-$server | Add-KrSignalRHubMiddleware -HubType ([ChatHub]) -Path "/chat"
-This example maps the ChatHub class to the "/chat" URL path on the specified Kestrun server.
-```
-
-### EXAMPLE 2
-```powershell
-Get-KrServer | Add-KrSignalRHubMiddleware -HubType ([ChatHub]) -Path "/chat"
-This example retrieves the current Kestrun server and maps the ChatHub class to the "/chat" URL path.
+Add-KrSignalRHubMiddleware -Path '/hubs/notifications' -PassThru
+Adds a SignalR hub at the path '/hubs/notifications' and returns the modified server instance.
 ```
 
 ## PARAMETERS
@@ -49,39 +42,25 @@ Type: KestrunHost
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -HubType
-The type of the SignalR hub class to be mapped.
-
-```yaml
-Type: Type
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Path
 The URL path where the SignalR hub will be accessible.
+Defaults to '/hubs/kestrun'.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 3
-Default value: None
+Required: False
+Position: 2
+Default value: /hubs/kestrun
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -110,18 +89,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 This function is part of the Kestrun PowerShell module and is used to manage SignalR hubs on the Kestrun server.
-The HubType parameter must be a valid SignalR hub class type.
+The Server parameter accepts a KestrunHost instance; if not provided, the default server is used.
 The Path parameter specifies the URL path where the SignalR hub will be accessible.
-The function uses reflection to find and invoke the generic AddSignalR\<T\>(string) method on the KestrunHost instance.
-This allows for dynamic mapping of SignalR hubs to specific URL paths at runtime.
-The function returns the modified server instance for further chaining if needed.
-The function ensures that the server instance is resolved before proceeding with the mapping.
-The function is designed to be used in a pipeline, allowing for easy integration with other Kestrun commands.
-The function is part of the Kestrun.Hosting namespace and is used to extend the functionality of the Kestrun server.
-The function is designed to be used in a modular way, allowing for easy addition of SignalR hubs to the Kestrun server.
-The function is intended for use in scenarios where SignalR hubs need to be dynamically mapped to specific URL paths at runtime.
-The function is part of the Kestrun.Hosting library and is used to manage SignalR hubs on the Kestrun server.
-The function is designed to be used in a modular way, allowing for easy addition of SignalR hubs to the Kestrun server.
-The function is intended for use in scenarios where SignalR hubs need to be dynamically mapped to specific URL paths at runtime.
+The PassThru switch allows the function to return the modified server instance for further use.
 
 ## RELATED LINKS

@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Get-KrBuiltTargetFrameworkVersion
-nav_order: 73
+nav_order: 72
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

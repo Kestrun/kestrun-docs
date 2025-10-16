@@ -60,4 +60,15 @@ Start-KrServer
 
 ```
 
+## External Documentation
+
+- [Kestrel documentation]
+
+- [Powershell documentation]
+
+- [OpenAPI documentation]
+
 [Kestrun repo]: https://github.com/kestrun/kestrun
+[Kestrel documentation]: https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
+[Powershell documentation]: https://learn.microsoft.com/en-us/powershell/
+[OpenAPI documentation]:https://spec.openapis.org/oas/

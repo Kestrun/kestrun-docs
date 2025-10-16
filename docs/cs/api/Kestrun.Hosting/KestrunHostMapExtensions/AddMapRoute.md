@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Adds a route to the KestrunHost using the specified MapRouteOptions.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, MapRouteOptions options)
+public static KestrunHost AddMapRoute(this KestrunHost host, MapRouteOptions options)
 ```
 
 | parameter | description |
@@ -19,7 +19,7 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, MapR
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 
@@ -35,8 +35,8 @@ An IEndpointConventionBuilder for further configuration.
 Adds a native route to the KestrunHost using the specified MapRouteOptions and handler.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, 
-    MapRouteOptions options, KestrunHandler handler)
+public static KestrunHost AddMapRoute(this KestrunHost host, MapRouteOptions options, 
+    KestrunHandler handler, out IEndpointConventionBuilder? map)
 ```
 
 | parameter | description |
@@ -44,10 +44,11 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host,
 | host | The KestrunHost instance. |
 | options | The MapRouteOptions containing route configuration. |
 | handler | The handler to execute for the route. |
+| map | The endpoint convention builder for further configuration. |
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 
@@ -64,8 +65,8 @@ An IEndpointConventionBuilder for further configuration.
 Adds a native route to the KestrunHost for the specified pattern and HTTP verb.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, string pattern, 
-    HttpVerb httpVerb, KestrunHandler handler, string[]? requireSchemes = null)
+public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, HttpVerb httpVerb, 
+    KestrunHandler handler, out IEndpointConventionBuilder? map, string[]? requireSchemes = null)
 ```
 
 | parameter | description |
@@ -75,10 +76,11 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, stri
 | httpVerb | The HTTP verb for the route. |
 | handler | The handler to execute for the route. |
 | requireSchemes | Optional array of authorization schemes required for the route. |
+| map | The endpoint convention builder for further configuration. |
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 
@@ -95,8 +97,9 @@ An IEndpointConventionBuilder for further configuration.
 Adds a native route to the KestrunHost for the specified pattern and HTTP verbs.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, string pattern, 
-    IEnumerable<HttpVerb> httpVerbs, KestrunHandler handler, string[]? requireSchemes = null)
+public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, 
+    IEnumerable<HttpVerb> httpVerbs, KestrunHandler handler, out IEndpointConventionBuilder? map, 
+    string[]? requireSchemes = null)
 ```
 
 | parameter | description |
@@ -106,10 +109,11 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, stri
 | httpVerbs | The HTTP verbs for the route. |
 | handler | The handler to execute for the route. |
 | requireSchemes | Optional array of authorization schemes required for the route. |
+| map | The endpoint convention builder for further configuration. |
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 
@@ -126,8 +130,8 @@ An IEndpointConventionBuilder for further configuration.
 Adds a route to the KestrunHost that executes a script block for the specified HTTP verb and pattern.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, string pattern, 
-    HttpVerb httpVerbs, string scriptBlock, ScriptLanguage language = ScriptLanguage.PowerShell, 
+public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, HttpVerb httpVerbs, 
+    string scriptBlock, ScriptLanguage language = ScriptLanguage.PowerShell, 
     string[]? requireSchemes = null, Dictionary<string, object?>? arguments = null)
 ```
 
@@ -143,7 +147,7 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, stri
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 
@@ -160,7 +164,7 @@ An IEndpointConventionBuilder for further configuration.
 Adds a route to the KestrunHost that executes a script block for the specified HTTP verbs and pattern.
 
 ```csharp
-public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, string pattern, 
+public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, 
     IEnumerable<HttpVerb> httpVerbs, string scriptBlock, 
     ScriptLanguage language = ScriptLanguage.PowerShell, string[]? requireSchemes = null, 
     Dictionary<string, object?>? arguments = null)
@@ -178,7 +182,7 @@ public static IEndpointConventionBuilder AddMapRoute(this KestrunHost host, stri
 
 ## Return Value
 
-An IEndpointConventionBuilder for further configuration.
+The KestrunHost instance for chaining.
 
 ## See Also
 

@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Suspend-KrSchedule
-nav_order: 144
+nav_order: 148
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

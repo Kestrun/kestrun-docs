@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Set-KrSessionString
-nav_order: 137
+nav_order: 141
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

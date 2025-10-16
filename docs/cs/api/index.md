@@ -95,6 +95,7 @@ parent: "C#"
 | static class [KestrunHostRazorExtensions](./Kestrun.Hosting/KestrunHostRazorExtensions.md) | Provides extension methods for adding PowerShell and Razor Pages to a KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
 | static class [KestrunHostSessionExtensions](./Kestrun.Hosting/KestrunHostSessionExtensions.md) | Provides extension methods for configuring session state and distributed cache in Kestrun. |
+| static class [KestrunHostSignalRExtensions](./Kestrun.Hosting/KestrunHostSignalRExtensions.md) | Extension methods for KestrunHost to support SignalR real-time broadcasting. |
 | static class [KestrunHostStaticFilesExtensions](./Kestrun.Hosting/KestrunHostStaticFilesExtensions.md) | Provides extension methods for configuring static file, default file, favicon, and file server middleware in KestrunHost. |
 | static class [KestrunHttpMiddlewareExtensions](./Kestrun.Hosting/KestrunHttpMiddlewareExtensions.md) | Provides extension methods for configuring common HTTP middleware in Kestrun. |
 | class [NoopHostLifetime](./Kestrun.Hosting/NoopHostLifetime.md) | Minimal IHostLifetime that performs no blocking operations. Useful for scenarios like testing where the host lifecycle is externally managed. |
@@ -255,6 +256,16 @@ parent: "C#"
 | --- | --- |
 | static class [SharedStateStore](./Kestrun.SharedState/SharedStateStore.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
 
+## Kestrun.SignalR namespace
+
+| public type | description |
+| --- | --- |
+| interface [IConnectionTracker](./Kestrun.SignalR/IConnectionTracker.md) | Tracks connected SignalR clients for the Kestrun hub. |
+| class [InMemoryConnectionTracker](./Kestrun.SignalR/InMemoryConnectionTracker.md) | In-memory thread-safe implementation of [`IConnectionTracker`](./Kestrun.SignalR/IConnectionTracker.md). |
+| interface [IRealtimeBroadcaster](./Kestrun.SignalR/IRealtimeBroadcaster.md) | Provides an interface for broadcasting real-time messages to connected SignalR clients. |
+| class [KestrunHub](./Kestrun.SignalR/KestrunHub.md) | Default SignalR hub for Kestrun providing real-time communication capabilities. Clients can connect to this hub to receive log messages, events, and other real-time updates. |
+| class [RealtimeBroadcaster](./Kestrun.SignalR/RealtimeBroadcaster.md) | Default implementation of [`IRealtimeBroadcaster`](./Kestrun.SignalR/IRealtimeBroadcaster.md) that broadcasts messages via SignalR. |
+
 ## Kestrun.Tasks namespace
 
 | public type | description |
@@ -287,6 +298,12 @@ parent: "C#"
 | class [ReadOnlyDictionaryAdapter](./Kestrun.Utilities/ReadOnlyDictionaryAdapter.md) | Adapts a non-generic IDictionary to a read-only dictionary with string keys and nullable object values. |
 | static class [SecureStringUtils](./Kestrun.Utilities/SecureStringUtils.md) | Provides utility methods for working with SecureString and ReadOnlySpan&lt;char&gt;. |
 | static class [XmlHelper](./Kestrun.Utilities/XmlHelper.md) | Helpers for converting arbitrary objects into XElement instances. |
+
+## Kestrun.Utilities.Json namespace
+
+| public type | description |
+| --- | --- |
+| static class [PayloadSanitizer](./Kestrun.Utilities.Json/PayloadSanitizer.md) | Utilities to sanitize arbitrary payloads (especially PowerShell objects) into JSON-friendly shapes for System.Text.Json/SignalR serialization without reference cycles. |
 
 ## Kestrun.Utilities.Yaml namespace
 

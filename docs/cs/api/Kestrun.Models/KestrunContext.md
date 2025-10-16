@@ -26,6 +26,12 @@ public record KestrunContext
 | [Response](KestrunContext/Response) { get; set; } | The Kestrun response associated with this context. |
 | [Session](KestrunContext/Session) { get; } | Returns the ASP.NET Core session if the Session middleware is active; otherwise null. |
 | [User](KestrunContext/User) { get; } | Gets the user associated with the current HTTP context. |
+| [BroadcastEvent](KestrunContext/BroadcastEvent)(…) | Synchronous wrapper for BroadcastEventAsync. |
+| [BroadcastEventAsync](KestrunContext/BroadcastEventAsync)(…) | Asynchronously broadcasts a custom event to all connected SignalR clients using the IRealtimeBroadcaster service. |
+| [BroadcastLog](KestrunContext/BroadcastLog)(…) | Synchronous wrapper for BroadcastLogAsync. |
+| [BroadcastLogAsync](KestrunContext/BroadcastLogAsync)(…) | Asynchronously broadcasts a log message to all connected SignalR clients using the IRealtimeBroadcaster service. |
+| [BroadcastToGroup](KestrunContext/BroadcastToGroup)(…) | Synchronous wrapper for BroadcastToGroupAsync. |
+| [BroadcastToGroupAsync](KestrunContext/BroadcastToGroupAsync)(…) | Asynchronously broadcasts a message to a specific group of SignalR clients using the IRealtimeBroadcaster service. |
 | [TryGetSession](KestrunContext/TryGetSession)(…) | Try pattern to get session without exceptions. |
 
 ## See Also

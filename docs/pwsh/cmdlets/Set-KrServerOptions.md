@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Set-KrServerOptions
-nav_order: 134
+nav_order: 138
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

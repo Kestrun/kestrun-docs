@@ -19,7 +19,7 @@ Adds a new HTML template route to the Kestrun server.
 
 ```
 Add-KrHtmlTemplateRoute [[-Server] <KestrunHost>] [-Pattern] <String> [-HtmlTemplatePath] <String>
- [[-Authorization] <String[]>] [-PassThru] [<CommonParameters>]
+ [[-AuthorizationSchema] <String[]>] [[-AuthorizationPolicy] <String[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Authorization
-An optional array of authorization strings for the route.
+### -AuthorizationSchema
+An optional array of authorization schemes for the route.
 
 ```yaml
 Type: String[]
@@ -97,6 +97,21 @@ Aliases:
 
 Required: False
 Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthorizationPolicy
+An optional array of authorization policies for the route.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
