@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Add-KrTasksService
-nav_order: 56
+nav_order: 58
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

@@ -31,7 +31,7 @@ Initializes a new instance of the [`KestrunHost`](../KestrunHost) class with the
 
 ```csharp
 public KestrunHost(string? appName, ILogger logger, string? kestrunRoot = null, 
-    string[]? modulePathsObj = null)
+    string[]? modulePathsObj = null, string[]? args = null)
 ```
 
 | parameter | description |
@@ -40,6 +40,7 @@ public KestrunHost(string? appName, ILogger logger, string? kestrunRoot = null,
 | logger | The Serilog logger instance to use. |
 | kestrunRoot | The root directory for the Kestrun application. |
 | modulePathsObj | An array of module paths to be loaded. |
+| args | Command line arguments to pass to the application. |
 
 ## See Also
 

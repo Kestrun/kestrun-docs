@@ -9,13 +9,13 @@ grand_parent: "C# API"
 Adds HSTS to the application using the specified HstsOptions.
 
 ```csharp
-public static KestrunHost AddHsts(this KestrunHost host, Action<HstsOptions>? cfg = null)
+public static KestrunHost AddHsts(this KestrunHost host, Action<HstsOptions>? opts = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The KestrunHost instance to configure. |
-| cfg | The delegate for configuring HSTS options. |
+| opts | The delegate for configuring HSTS options. |
 
 ## Return Value
 
@@ -34,13 +34,13 @@ The updated KestrunHost instance.
 Adds HSTS to the application using the specified HstsOptions.
 
 ```csharp
-public static KestrunHost AddHsts(this KestrunHost host, HstsOptions cfg)
+public static KestrunHost AddHsts(this KestrunHost host, HstsOptions opts)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The KestrunHost instance to configure. |
-| cfg | The HSTS options. |
+| opts | The HSTS options. |
 
 ## Return Value
 

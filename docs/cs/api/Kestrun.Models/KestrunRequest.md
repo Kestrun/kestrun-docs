@@ -21,12 +21,12 @@ public class KestrunRequest
 | [Body](KestrunRequest/Body) { get; set; } | Gets the body content of the request as a string. |
 | [ContentLength](KestrunRequest/ContentLength) { get; } | Gets the content length of the request, if available. |
 | [ContentType](KestrunRequest/ContentType) { get; } | Gets the content type of the request (e.g., "application/json"). |
-| [Context](KestrunRequest/Context) { get; set; } | Gets the HttpContext associated with the request. |
 | [Cookies](KestrunRequest/Cookies) { get; set; } | Gets the cookies for the request as an IRequestCookieCollection, if present. |
 | [Form](KestrunRequest/Form) { get; set; } | Gets the form data for the request as a dictionary of key-value pairs, if present. |
 | [HasFormContentType](KestrunRequest/HasFormContentType) { get; } | Gets a value indicating whether the request has a form content type. |
 | [Headers](KestrunRequest/Headers) { get; set; } | Gets the headers for the request as a dictionary of key-value pairs. |
 | [Host](KestrunRequest/Host) { get; } | Gets the host header value for the request. |
+| [HttpContext](KestrunRequest/HttpContext) { get; set; } | Gets the HttpContext associated with the request. |
 | [IsHttps](KestrunRequest/IsHttps) { get; } | Gets a value indicating whether the request is made over HTTPS. |
 | [Method](KestrunRequest/Method) { get; } | Gets the HTTP method for the request (e.g., GET, POST). |
 | [Path](KestrunRequest/Path) { get; } | Gets the request path (e.g., "/api/resource"). |

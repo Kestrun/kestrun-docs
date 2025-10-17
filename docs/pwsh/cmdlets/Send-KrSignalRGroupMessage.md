@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Send-KrSignalRGroupMessage
-nav_order: 128
+nav_order: 130
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

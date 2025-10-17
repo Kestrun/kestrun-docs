@@ -29,6 +29,11 @@ Add-KrCorsPolicyMiddleware [-Server <KestrunHost>] -Name <String> -Builder <Cors
  [<CommonParameters>]
 ```
 
+### AllowAll
+```
+Add-KrCorsPolicyMiddleware [-Server <KestrunHost>] -Name <String> [-AllowAll] [-PassThru] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 This cmdlet allows you to configure a CORS policy for the Kestrun server.
 It can be used to specify allowed origins, methods, headers, and other CORS settings.
@@ -168,6 +173,22 @@ If not specified, credentials will be allowed.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Items
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowAll
+If specified, allows any origin, method, and header to access the resources.
+This is a shorthand for specifying AllowAnyOrigin, AllowAnyMethod, and AllowAnyHeader
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AllowAll
 Aliases:
 
 Required: False

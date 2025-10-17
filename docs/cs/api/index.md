@@ -98,6 +98,7 @@ parent: "C#"
 | static class [KestrunHostSignalRExtensions](./Kestrun.Hosting/KestrunHostSignalRExtensions.md) | Extension methods for KestrunHost to support SignalR real-time broadcasting. |
 | static class [KestrunHostStaticFilesExtensions](./Kestrun.Hosting/KestrunHostStaticFilesExtensions.md) | Provides extension methods for configuring static file, default file, favicon, and file server middleware in KestrunHost. |
 | static class [KestrunHttpMiddlewareExtensions](./Kestrun.Hosting/KestrunHttpMiddlewareExtensions.md) | Provides extension methods for configuring common HTTP middleware in Kestrun. |
+| static class [KestrunSecurityMiddlewareExtensions](./Kestrun.Hosting/KestrunSecurityMiddlewareExtensions.md) | Extension methods for adding security-related middleware to a [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
 | class [NoopHostLifetime](./Kestrun.Hosting/NoopHostLifetime.md) | Minimal IHostLifetime that performs no blocking operations. Useful for scenarios like testing where the host lifecycle is externally managed. |
 
 ## Kestrun.Hosting.Compression namespace

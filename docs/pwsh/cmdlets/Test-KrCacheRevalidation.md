@@ -2,7 +2,7 @@
 layout: default
 parent: PowerShell Cmdlets
 title: Test-KrCacheRevalidation
-nav_order: 149
+nav_order: 151
 render_with_liquid: false
 external help file: Kestrun-help.xml
 Module Name: Kestrun

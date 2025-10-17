@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the host header value for the request.
 
 ```csharp
-public string Host { get; }
+public HostString Host { get; }
 ```
 
 ## See Also

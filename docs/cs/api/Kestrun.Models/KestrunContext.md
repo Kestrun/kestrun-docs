@@ -17,6 +17,7 @@ public record KestrunContext
 | name | description |
 | --- | --- |
 | [KestrunContext](KestrunContext/KestrunContext)(…) | Initializes a new instance of the [`KestrunContext`](./KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext (2 constructors) |
+| [Connection](KestrunContext/Connection) { get; } | Gets the connection information for the current HTTP context. |
 | [Ct](KestrunContext/Ct) { get; } | Gets the cancellation token that is triggered when the HTTP request is aborted. |
 | [HasSession](KestrunContext/HasSession) { get; } | True if Session middleware is active for this request. |
 | [Host](KestrunContext/Host) { get; set; } | The Kestrun host associated with this context. |

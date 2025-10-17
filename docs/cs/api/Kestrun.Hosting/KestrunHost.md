@@ -21,6 +21,7 @@ public class KestrunHost : IDisposable
 | [DefaultCacheControl](KestrunHost/DefaultCacheControl) { get; } | Gets or sets the default cache control settings for HTTP responses. |
 | [DefaultHost](KestrunHost/DefaultHost) { get; } | Gets or sets a value indicating whether this instance is the default Kestrun host. |
 | [ExceptionOptions](KestrunHost/ExceptionOptions) { get; set; } | Gets or sets the exception options for configuring exception handling. |
+| [ForwardedHeaderOptions](KestrunHost/ForwardedHeaderOptions) { get; set; } | Gets or sets the forwarded headers options for configuring forwarded headers handling. |
 | [IsConfigured](KestrunHost/IsConfigured) { get; } | Indicates whether the Kestrun host configuration has been applied. |
 | [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
 | [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |

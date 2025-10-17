@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "KestrunRequest.Context property"
+title: "KestrunRequest.HttpContext property"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunRequest.Context property
+# KestrunRequest.HttpContext property
 
 Gets the HttpContext associated with the request.
 
 ```csharp
-public HttpContext Context { get; set; }
+public HttpContext HttpContext { get; set; }
 ```
 
 ## See Also
