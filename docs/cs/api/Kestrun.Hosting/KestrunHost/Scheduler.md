@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunHost.Scheduler property
 
-Gets the scheduler service used for managing scheduled tasks in the Kestrun host.
+Gets the scheduler service used for managing scheduled tasks in the Kestrun host. Initialized in ConfigureServices via AddScheduler()
 
 ```csharp
 public SchedulerService Scheduler { get; }

@@ -26,7 +26,7 @@ An IEndpointConventionBuilder for further configuration.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * class [KestrunHostMapExtensions](../KestrunHostMapExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 
@@ -38,7 +38,7 @@ Adds an HTML template route to the KestrunHost for the specified pattern and HTM
 
 ```csharp
 public static IEndpointConventionBuilder AddHtmlTemplateRoute(this KestrunHost host, 
-    string pattern, string htmlFilePath, string[]? requireSchemes = null)
+    string pattern, string htmlFilePath, List<string>? requireSchemes = null)
 ```
 
 | parameter | description |

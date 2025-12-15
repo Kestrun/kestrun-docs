@@ -31,7 +31,7 @@ A [`CsrResult`](../CsrResult) containing the CSR and private key information.
 ## See Also
 
 * record [CsrResult](../CsrResult)
-* record [CsrOptions](../CertificateManager.CsrOptions)
+* record [CsrOptions](../CsrOptions)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)
 

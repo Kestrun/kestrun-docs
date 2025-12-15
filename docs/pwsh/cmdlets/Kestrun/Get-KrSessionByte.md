@@ -1,0 +1,93 @@
+---
+layout: default
+parent: PowerShell Cmdlets
+nav_order: 112
+render_with_liquid: false
+ocument type: cmdlet
+external help file: Kestrun-Help.xml
+HelpUri: ''
+Locale: en-US
+Module Name: Kestrun
+ms.date: 12/15/2025
+PlatyPS schema version: 2024-05-01
+title: Get-KrSessionByte
+---
+
+# Get-KrSessionByte
+
+## SYNOPSIS
+
+Retrieves a byte array value from the session by key.
+
+## SYNTAX
+
+### __AllParameterSets
+
+```powershell
+Get-KrSessionByte [-Key] <string> [<CommonParameters>]
+```
+
+## ALIASES
+
+This cmdlet has the following aliases,
+  {{Insert list of aliases}}
+
+## DESCRIPTION
+
+This function accesses the current HTTP context's session and retrieves the byte array value
+associated with the specified key.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+$value = Get-KrSessionByte -Key "profileImage"
+Retrieves the byte array value associated with the key "profileImage" from the session.
+
+## PARAMETERS
+
+### -Key
+
+The key of the session item to retrieve.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### Returns the byte array value associated with the specified key
+
+{{ Fill in the Description }}
+
+### System.Byte
+
+{{ Fill in the Description }}
+
+## NOTES
+
+## RELATED LINKS
+
+{{ Fill in the related links here }}

@@ -24,7 +24,7 @@ The KestrunHost instance for chaining.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * class [KestrunHostMapExtensions](../KestrunHostMapExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 
@@ -53,7 +53,7 @@ The KestrunHost instance for chaining.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * delegate [KestrunHandler](../KestrunHostMapExtensions.KestrunHandler)
 * class [KestrunHostMapExtensions](../KestrunHostMapExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
@@ -66,7 +66,8 @@ Adds a native route to the KestrunHost for the specified pattern and HTTP verb.
 
 ```csharp
 public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, HttpVerb httpVerb, 
-    KestrunHandler handler, out IEndpointConventionBuilder? map, string[]? requireSchemes = null)
+    KestrunHandler handler, out IEndpointConventionBuilder? map, 
+    List<string>? requireSchemes = null)
 ```
 
 | parameter | description |
@@ -99,7 +100,7 @@ Adds a native route to the KestrunHost for the specified pattern and HTTP verbs.
 ```csharp
 public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, 
     IEnumerable<HttpVerb> httpVerbs, KestrunHandler handler, out IEndpointConventionBuilder? map, 
-    string[]? requireSchemes = null)
+    List<string>? requireSchemes = null)
 ```
 
 | parameter | description |
@@ -132,7 +133,7 @@ Adds a route to the KestrunHost that executes a script block for the specified H
 ```csharp
 public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, HttpVerb httpVerbs, 
     string scriptBlock, ScriptLanguage language = ScriptLanguage.PowerShell, 
-    string[]? requireSchemes = null, Dictionary<string, object?>? arguments = null)
+    List<string>? requireSchemes = null, Dictionary<string, object?>? arguments = null)
 ```
 
 | parameter | description |
@@ -166,7 +167,7 @@ Adds a route to the KestrunHost that executes a script block for the specified H
 ```csharp
 public static KestrunHost AddMapRoute(this KestrunHost host, string pattern, 
     IEnumerable<HttpVerb> httpVerbs, string scriptBlock, 
-    ScriptLanguage language = ScriptLanguage.PowerShell, string[]? requireSchemes = null, 
+    ScriptLanguage language = ScriptLanguage.PowerShell, List<string>? requireSchemes = null, 
     Dictionary<string, object?>? arguments = null)
 ```
 

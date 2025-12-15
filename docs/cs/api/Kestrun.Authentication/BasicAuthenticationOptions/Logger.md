@@ -6,8 +6,6 @@ grand_parent: "C# API"
 ---
 # BasicAuthenticationOptions.Logger property
 
-Gets or sets the Serilog logger used for authentication events.
-
 ```csharp
 public ILogger Logger { get; set; }
 ```

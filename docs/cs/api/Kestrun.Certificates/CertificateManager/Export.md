@@ -23,7 +23,7 @@ public static void Export(X509Certificate2 cert, string filePath, ExportFormat f
 
 ## See Also
 
-* enum [ExportFormat](../CertificateManager.ExportFormat)
+* enum [ExportFormat](../ExportFormat)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)
 
@@ -48,7 +48,7 @@ public static void Export(X509Certificate2 cert, string filePath, ExportFormat f
 
 ## See Also
 
-* enum [ExportFormat](../CertificateManager.ExportFormat)
+* enum [ExportFormat](../ExportFormat)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)
 

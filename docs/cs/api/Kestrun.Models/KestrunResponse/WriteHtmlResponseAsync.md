@@ -1,10 +1,36 @@
 ---
 layout: default
-title: "KestrunResponse.WriteHtmlResponseAsync method"
+title: "KestrunResponse.WriteHtmlResponseAsync method (1 of 2)"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunResponse.WriteHtmlResponseAsync method
+# KestrunResponse.WriteHtmlResponseAsync method (1 of 2)
+
+Asynchronously writes an HTML response, rendering the provided template byte array and replacing placeholders with values from the given dictionary.
+
+```csharp
+public Task WriteHtmlResponseAsync(byte[] template, IReadOnlyDictionary<string, object?>? vars, 
+    int statusCode = 200)
+```
+
+| parameter | description |
+| --- | --- |
+| template | The HTML template byte array. |
+| vars | A dictionary of variables to replace in the template. |
+| statusCode | The HTTP status code for the response. |
+
+## Return Value
+
+A task representing the asynchronous operation.
+
+## See Also
+
+* class [KestrunResponse](../KestrunResponse)
+* namespace [Kestrun.Models](../../Kestrun)
+
+---
+
+# KestrunResponse.WriteHtmlResponseAsync method (2 of 2)
 
 Asynchronously writes an HTML response, rendering the provided template string and replacing placeholders with values from the given dictionary.
 

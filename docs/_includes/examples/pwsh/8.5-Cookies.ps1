@@ -25,7 +25,7 @@ Add-KrEndpoint -Port $Port -IPAddress $IPAddress -SelfSignedCert
 
 # 6. Register cookie auth scheme
 New-KrCookieBuilder -Name 'KestrunAuth' -HttpOnly -SecurePolicy Always -SameSite Strict |
-    Add-KrCookiesAuthentication -Name 'Cookies' -LoginPath '/cookies/login' -LogoutPath '/cookies/logout' -AccessDeniedPath '/cookies/denied' `
+    Add-KrCookiesAuthentication -AuthenticationScheme 'Cookies' -LoginPath '/cookies/login' -LogoutPath '/cookies/logout' -AccessDeniedPath '/cookies/denied' `
         -SlidingExpiration -ExpireTimeSpan (New-TimeSpan -Minutes 30)
 
 # 7. Finalize configuration
@@ -61,9 +61,16 @@ Add-KrMapRoute -Verbs Get -Pattern '/cookies/login' -ScriptBlock {
 # 9. Login route (issues cookie)
 Add-KrMapRoute -Verbs Post -Pattern '/cookies/login' -ScriptBlock {
     $form = $Context.Request.Form
-    if ($form['username'] -eq 'admin' -and $form['password'] -eq 'secret') {
-        $principal = Invoke-KrCookieSignIn -Scheme 'Cookies' -Name $form['username'] -PassThru
-        Write-KrLog -Level Information -Message 'User {user} signed {principal} in with Cookies authentication.' -Values $form['username'], $principal
+    if ($null -eq $form) {
+        Write-KrJsonResponse -InputObject @{ success = $false; error = 'Form data missing' } -ContentType 'application/json'
+        return
+    }
+    $username = $form['username']
+    $password = $form['password']
+
+    if ($username -eq 'admin' -and $password -eq 'secret') {
+        $principal = Invoke-KrCookieSignIn -Scheme 'Cookies' -Name $username -PassThru
+        Write-KrLog -Level Information -Message 'User {user} signed {principal} in with Cookies authentication.' -Values $username, $principal
         Write-KrJsonResponse @{ success = $true }
     } else {
         Write-KrJsonResponse @{ success = $false } -StatusCode 401
@@ -71,7 +78,7 @@ Add-KrMapRoute -Verbs Post -Pattern '/cookies/login' -ScriptBlock {
 }
 
 # 10. Protected route group requiring cookie auth
-Add-KrRouteGroup -Prefix '/cookies' -AuthorizationSchema 'Cookies' {
+Add-KrRouteGroup -Prefix '/cookies' -AuthorizationScheme 'Cookies' {
     Add-KrMapRoute -Verbs Get -Pattern '/logout' -ScriptBlock {
         Invoke-KrCookieSignOut -Scheme 'Cookies' -Redirect
     }

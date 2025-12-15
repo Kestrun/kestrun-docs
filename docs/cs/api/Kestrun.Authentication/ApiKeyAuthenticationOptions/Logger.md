@@ -6,10 +6,6 @@ grand_parent: "C# API"
 ---
 # ApiKeyAuthenticationOptions.Logger property
 
-Logger for this authentication scheme.
-
-Defaults to Serilog's global logger.
-
 ```csharp
 public ILogger Logger { get; set; }
 ```

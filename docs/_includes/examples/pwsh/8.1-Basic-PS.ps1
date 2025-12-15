@@ -20,7 +20,7 @@ New-KrServer -Name 'Auth Basic PS'
 Add-KrEndpoint -Port $Port -IPAddress $IPAddress
 
 # 4. Define Basic auth scheme with inline validation script
-Add-KrBasicAuthentication -Name 'PowershellBasic' -Realm 'Demo' -AllowInsecureHttp -ScriptBlock {
+Add-KrBasicAuthentication -AuthenticationScheme 'PowershellBasic' -Realm 'Demo' -AllowInsecureHttp -ScriptBlock {
     param($Username, $Password)
     $Username -eq 'admin' -and $Password -eq 'password'
 }
@@ -29,7 +29,7 @@ Add-KrBasicAuthentication -Name 'PowershellBasic' -Realm 'Demo' -AllowInsecureHt
 Enable-KrConfiguration
 
 # 6. Map secured route group using the scheme
-Add-KrRouteGroup -Prefix '/secure/ps' -AuthorizationSchema 'PowershellBasic' {
+Add-KrRouteGroup -Prefix '/secure/ps' -AuthorizationScheme 'PowershellBasic' {
     Add-KrMapRoute -Verbs Get -Pattern '/hello' -ScriptBlock {
         Write-KrTextResponse -InputObject "Hello, $( $Context.User.Identity.Name )!" -ContentType 'text/plain'
     }

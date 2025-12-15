@@ -1,16 +1,21 @@
 ---
 layout: default
-title: "ClaimRule constructor (1 of 2)"
+title: "ClaimRule constructor (1 of 3)"
 parent: "Kestrun.Claims"
 grand_parent: "C# API"
 ---
-# ClaimRule constructor (1 of 2)
+# ClaimRule constructor (1 of 3)
 
-Constructs a rule from a claim type and an explicit read-only list of values.
+Constructs a rule from a claim type and one or more allowed values without description.
 
 ```csharp
 public ClaimRule(string claimType, IReadOnlyList<string> allowedValues)
 ```
+
+| parameter | description |
+| --- | --- |
+| claimType | The claim type required by this rule. |
+| allowedValues | Allowed values for the claim. |
 
 ## See Also
 
@@ -19,13 +24,40 @@ public ClaimRule(string claimType, IReadOnlyList<string> allowedValues)
 
 ---
 
-# ClaimRule constructor (2 of 2)
+# ClaimRule constructor (2 of 3)
+
+Constructs a rule from a claim type and an explicit read-only list of values.
+
+```csharp
+public ClaimRule(string claimType, string? description, IReadOnlyList<string> allowedValues)
+```
+
+| parameter | description |
+| --- | --- |
+| claimType | The claim type required by this rule. |
+| description | Description of the claim rule. |
+| allowedValues | Allowed values for the claim. |
+
+## See Also
+
+* record [ClaimRule](../ClaimRule)
+* namespace [Kestrun.Claims](../../Kestrun)
+
+---
+
+# ClaimRule constructor (3 of 3)
 
 Constructs a rule from a claim type and one or more allowed values.
 
 ```csharp
-public ClaimRule(string claimType, params string[] allowedValues)
+public ClaimRule(string claimType, string? description, params string[] allowedValues)
 ```
+
+| parameter | description |
+| --- | --- |
+| claimType | The claim type required by this rule. |
+| description | Description of the claim rule. |
+| allowedValues | Allowed values for the claim. |
 
 ## See Also
 

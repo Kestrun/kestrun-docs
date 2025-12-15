@@ -1,0 +1,303 @@
+---
+layout: default
+parent: PowerShell Cmdlets
+nav_order: 171
+render_with_liquid: false
+ocument type: cmdlet
+external help file: Kestrun-Help.xml
+HelpUri: ''
+Locale: en-US
+Module Name: Kestrun
+ms.date: 12/15/2025
+PlatyPS schema version: 2024-05-01
+title: Set-KrServerHttpsOptions
+---
+
+# Set-KrServerHttpsOptions
+
+## SYNOPSIS
+
+Configures HTTPS options for a Kestrun server instance.
+
+## SYNTAX
+
+### Items (Default)
+
+```powershell
+Set-KrServerHttpsOptions [-Server <KestrunHost>] [-SslProtocols <SslProtocols>]
+ [-ClientCertificateMode <ClientCertificateMode>] [-CheckCertificateRevocation]
+ [-ServerCertificate <X509Certificate2>] [-ServerCertificateChain <X509Certificate2Collection>]
+ [-HandshakeTimeout <int>] [-PassThru] [<CommonParameters>]
+```
+
+### Options
+
+```powershell
+Set-KrServerHttpsOptions -Options <HttpsConnectionAdapterOptions> [-Server <KestrunHost>]
+ [-PassThru] [<CommonParameters>]
+```
+
+## ALIASES
+
+This cmdlet has the following aliases,
+  {{Insert list of aliases}}
+
+## DESCRIPTION
+
+This function allows administrators to set or modify the HTTPS connection adapter options for a Kestrun
+server instance, including SSL protocols, client certificate modes, and server certificates.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+Set-KrServerHttpsOptions -Server $server -SslProtocols Tls12
+This command sets the SSL protocols for the specified Kestrun server instance to use TLS 1.2.
+
+### EXAMPLE 2
+
+Set-KrServerHttpsOptions -Server $server -ClientCertificateMode RequireCertificate
+This command sets the client certificate mode for the specified Kestrun server instance to require a client certificate.
+
+### EXAMPLE 3
+
+Set-KrServerHttpsOptions -Server $server -CheckCertificateRevocation
+This command enables certificate revocation checking for the specified Kestrun server instance.
+
+### EXAMPLE 4
+
+Set-KrServerHttpsOptions -Server $server -ServerCertificate $cert
+This command sets the server certificate for the specified Kestrun server instance.
+
+### EXAMPLE 5
+
+Set-KrServerHttpsOptions -Server $server -HandshakeTimeout 30
+This command sets the handshake timeout for the specified Kestrun server instance to 30 seconds.
+
+## PARAMETERS
+
+### -CheckCertificateRevocation
+
+If specified, enables certificate revocation checking for HTTPS connections.
+This parameter is optional and can be left unset to use defaults.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClientCertificateMode
+
+Specifies the client certificate mode for HTTPS connections.
+This parameter is optional and can be set to a specific mode or left unset to use defaults.
+
+```yaml
+Type: Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -HandshakeTimeout
+
+Specifies the handshake timeout duration in seconds for HTTPS connections.
+This parameter is optional and can be left unset to use defaults.
+
+```yaml
+Type: System.Int32
+DefaultValue: 0
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Options
+
+The HttpsConnectionAdapterOptions object containing the desired HTTPS configuration settings.
+
+```yaml
+Type: Microsoft.AspNetCore.Server.Kestrel.Https.HttpsConnectionAdapterOptions
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Options
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -PassThru
+
+If specified, the cmdlet will return the modified server instance after applying the HTTPS options.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Server
+
+The Kestrun server instance to configure.
+This parameter is mandatory and must be a valid server object.
+
+```yaml
+Type: Kestrun.Hosting.KestrunHost
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: true
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ServerCertificate
+
+Specifies the server certificate to be used for HTTPS connections.
+This parameter is optional and can be left unset to use defaults.
+
+```yaml
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ServerCertificateChain
+
+Specifies the server certificate chain to be used for HTTPS connections.
+This parameter is optional and can be left unset to use defaults.
+
+```yaml
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -SslProtocols
+
+Specifies the SSL protocols to be used for HTTPS connections.
+This parameter is optional and can be set to a specific protocol or left unset to use defaults.
+
+```yaml
+Type: System.Security.Authentication.SslProtocols
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Kestrun.Hosting.KestrunHost
+
+{{ Fill in the Description }}
+
+## OUTPUTS
+
+### [Kestrun.Hosting.KestrunHost]
+The modified Kestrun server instance with the applied HTTPS options.
+
+{{ Fill in the Description }}
+
+## NOTES
+
+This function is designed to be used in the context of a Kestrun server setup and allows for flexible configuration of HTTPS options.
+$ClientCertificateValidation, $ServerCertificateSelector, and $OnAuthenticate are currently not implemented in this cmdlet but can be added in future versions for more advanced scenarios.
+
+
+## RELATED LINKS
+
+{{ Fill in the related links here }}

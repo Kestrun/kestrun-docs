@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets or sets the OpenAPI tag list applied to the endpoint metadata.
 
 ```csharp
-public string[] OpenApiTags { get; set; }
+public List<string> OpenApiTags { get; set; }
 ```
 
 ## See Also

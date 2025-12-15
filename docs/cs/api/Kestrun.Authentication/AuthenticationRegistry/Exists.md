@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Checks if an authentication scheme exists for the specified schema and type.
 
 ```csharp
-public bool Exists(string schema, string type)
+public bool Exists(string schema, AuthenticationType type)
 ```
 
 | parameter | description |
@@ -23,6 +23,7 @@ True if an authentication scheme exists; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

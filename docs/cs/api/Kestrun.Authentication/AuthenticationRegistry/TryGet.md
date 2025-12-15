@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Tries to get the authentication options for the specified schema and type.
 
 ```csharp
-public bool TryGet(string schema, string type, out AuthenticationSchemeOptions? options)
+public bool TryGet(string schema, AuthenticationType type, out AuthenticationSchemeOptions? options)
 ```
 
 | parameter | description |
@@ -24,6 +24,7 @@ True if the authentication options were found; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 
@@ -34,7 +35,7 @@ True if the authentication options were found; otherwise, false.
 Tries to get the authentication options of the specified type for the given schema and type.
 
 ```csharp
-public bool TryGet<TOptions>(string schema, string type, out TOptions? options)
+public bool TryGet<TOptions>(string schema, AuthenticationType type, out TOptions? options)
     where TOptions : AuthenticationSchemeOptions
 ```
 
@@ -51,6 +52,7 @@ True if the authentication options were found; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

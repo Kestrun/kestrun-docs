@@ -6,26 +6,22 @@ grand_parent: "C# API"
 ---
 # KestrunHostAuthnExtensions.AddOpenIdConnectAuthentication method
 
-Adds OpenID Connect authentication to the Kestrun host.
+Adds OpenID Connect authentication to the Kestrun host with private key JWT client assertion.
 
-Use this for applications that require OpenID Connect authentication.
+Use this for applications that require OpenID Connect authentication with client credentials using JWT assertion.
 
 ```csharp
-public static KestrunHost AddOpenIdConnectAuthentication(this KestrunHost host, string scheme, 
-    string clientId, string clientSecret, string authority, 
-    Action<OpenIdConnectOptions>? configure = null, 
-    Action<AuthorizationOptions>? configureAuthz = null)
+public static KestrunHost AddOpenIdConnectAuthentication(this KestrunHost host, 
+    string authenticationScheme = "OpenIDConnect", 
+    string? displayName = "OpenID Connect Authentication", OidcOptions? configureOptions = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name. |
-| clientId | The client ID for the OpenID Connect application. |
-| clientSecret | The client secret for the OpenID Connect application. |
-| authority | The authority URL for the OpenID Connect provider. |
-| configure | An optional action to configure the OpenID Connect options. |
-| configureAuthz | An optional action to configure the authorization options. |
+| authenticationScheme | The authentication scheme name. |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | The OpenIdConnectOptions to configure the authentication. |
 
 ## Return Value
 
@@ -34,6 +30,7 @@ The configured KestrunHost instance.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
+* class [OidcOptions](../../Kestrun.Authentication/OidcOptions)
 * class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

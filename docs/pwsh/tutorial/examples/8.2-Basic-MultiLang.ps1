@@ -21,12 +21,12 @@ Add-KrEndpoint -Port $Port -IPAddress $IPAddress
 
 
 # 5. C# validation logic
-Add-KrBasicAuthentication -Name 'CSharpBasic' -Realm 'CS' -AllowInsecureHttp -Code @'
+Add-KrBasicAuthentication -AuthenticationScheme 'CSharpBasic' -Realm 'CS' -AllowInsecureHttp -Code @'
     return username == "admin" && password == "password";
 '@ -CodeLanguage CSharp
 
 # 6. VB.NET validation logic
-Add-KrBasicAuthentication -Name 'VBNetBasic' -Realm 'VB' -AllowInsecureHttp -Code @'
+Add-KrBasicAuthentication -AuthenticationScheme 'VBNetBasic' -Realm 'VB' -AllowInsecureHttp -Code @'
     Return username = "admin" AndAlso password = "password"
 '@ -CodeLanguage VBNet
 
@@ -34,11 +34,11 @@ Add-KrBasicAuthentication -Name 'VBNetBasic' -Realm 'VB' -AllowInsecureHttp -Cod
 Enable-KrConfiguration
 
 # 8. Map language-specific routes
-Add-KrMapRoute -Verbs Get -Pattern '/secure/cs/hello' -AuthorizationSchema 'CSharpBasic' -ScriptBlock {
+Add-KrMapRoute -Verbs Get -Pattern '/secure/cs/hello' -AuthorizationScheme 'CSharpBasic' -ScriptBlock {
     Write-KrTextResponse -InputObject "CS Hello, $( $Context.User.Identity.Name )!" -ContentType 'text/plain'
 }
 
-Add-KrMapRoute -Verbs Get -Pattern '/secure/vb/hello' -AuthorizationSchema 'VBNetBasic' -ScriptBlock {
+Add-KrMapRoute -Verbs Get -Pattern '/secure/vb/hello' -AuthorizationScheme 'VBNetBasic' -ScriptBlock {
     Write-KrTextResponse -InputObject "VB Hello, $( $Context.User.Identity.Name )!" -ContentType 'text/plain'
 }
 

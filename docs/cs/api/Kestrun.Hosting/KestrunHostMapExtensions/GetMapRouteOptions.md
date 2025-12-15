@@ -39,7 +39,7 @@ if (options != null)
 
 ## See Also
 
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * class [KestrunHost](../KestrunHost)
 * enum [HttpVerb](../../Kestrun.Utilities/HttpVerb)
 * class [KestrunHostMapExtensions](../KestrunHostMapExtensions)

@@ -6,13 +6,6 @@ parent: "C#"
 ---
 # Kestrun assembly
 
-## global namespace
-
-| public type | description |
-| --- | --- |
-| [Flags] enum [KestrunApiContext](./global/KestrunApiContext.md) | Specifies the API context in which a Kestrun route or schedule can be executed. |
-| class [KestrunRuntimeApiAttribute](./global/KestrunRuntimeApiAttribute.md) | Attribute to specify runtime API context and notes for Kestrun routes or schedules. |
-
 ## Kestrun namespace
 
 | public type | description |
@@ -28,22 +21,39 @@ parent: "C#"
 | class [ApiKeyAuthenticationOptions](./Kestrun.Authentication/ApiKeyAuthenticationOptions.md) | Options for API key authentication, including header names, validation, and claims issuance. |
 | class [ApiKeyAuthHandler](./Kestrun.Authentication/ApiKeyAuthHandler.md) | Handles API Key authentication for incoming HTTP requests. |
 | enum [ApiKeyChallengeFormat](./Kestrun.Authentication/ApiKeyChallengeFormat.md) | Specifies the format for API key authentication challenges. |
+| class [AssertionService](./Kestrun.Authentication/AssertionService.md) | Service to create OpenID Connect client assertions. |
 | record [AuthenticationCodeSettings](./Kestrun.Authentication/AuthenticationCodeSettings.md) | Represents the settings for authentication code, including language, code, extra imports, and references. |
+| static class [AuthenticationDefaults](./Kestrun.Authentication/AuthenticationDefaults.md) | Default values for authentication schemes. |
 | class [AuthenticationRegistry](./Kestrun.Authentication/AuthenticationRegistry.md) | Registry of authentication options keyed by (schema, type). Stores as base AuthenticationSchemeOptions, with typed helpers. |
+| enum [AuthenticationType](./Kestrun.Authentication/AuthenticationType.md) | Types of authentication supported. |
 | static class [AuthOptionsHelper](./Kestrun.Authentication/AuthOptionsHelper.md) | Helper class to retrieve authentication options from the DI container. |
 | class [BasicAuthenticationOptions](./Kestrun.Authentication/BasicAuthenticationOptions.md) | Options for configuring Basic Authentication in Kestrun. |
 | class [BasicAuthHandler](./Kestrun.Authentication/BasicAuthHandler.md) | Handles Basic Authentication for HTTP requests. |
+| class [CookieAuthOptions](./Kestrun.Authentication/CookieAuthOptions.md) | Options for cookie-based authentication. |
 | interface [IAuthenticationCommonOptions](./Kestrun.Authentication/IAuthenticationCommonOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
+| interface [IAuthenticationHostOptions](./Kestrun.Authentication/IAuthenticationHostOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
 | interface [IAuthHandler](./Kestrun.Authentication/IAuthHandler.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
 | interface [IClaimsCommonOptions](./Kestrun.Authentication/IClaimsCommonOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
-| class [JwtAuthenticationOptions](./Kestrun.Authentication/JwtAuthenticationOptions.md) | Provides options for JWT authentication, including claim policies and custom claim issuance. |
+| interface [IOpenApiAuthenticationOptions](./Kestrun.Authentication/IOpenApiAuthenticationOptions.md) | Defines options for OpenAPI authentication schemes. |
+| class [JwtAuthOptions](./Kestrun.Authentication/JwtAuthOptions.md) | Options for JWT-based authentication. |
+| class [OAuth2Options](./Kestrun.Authentication/OAuth2Options.md) | Options for OAuth2 authentication. |
+| class [OidcEvents](./Kestrun.Authentication/OidcEvents.md) | OpenID Connect events to handle client assertion injection. |
+| class [OidcOptions](./Kestrun.Authentication/OidcOptions.md) | Options for OpenID Connect authentication. |
+| class [WindowsAuthOptions](./Kestrun.Authentication/WindowsAuthOptions.md) | Options for Windows Authentication. |
+| enum [WindowsAuthProtocol](./Kestrun.Authentication/WindowsAuthProtocol.md) | Defines the protocol used for Windows Authentication. |
 
 ## Kestrun.Certificates namespace
 
 | public type | description |
 | --- | --- |
 | static class [CertificateManager](./Kestrun.Certificates/CertificateManager.md) | Drop-in replacement for Pode’s certificate helpers, powered by Bouncy Castle. |
+| record [CsrOptions](./Kestrun.Certificates/CsrOptions.md) | Options for creating a Certificate Signing Request (CSR). |
 | record [CsrResult](./Kestrun.Certificates/CsrResult.md) | Represents the result of creating a Certificate Signing Request (CSR), including the PEM-encoded CSR and the private key. |
+| enum [ExportFormat](./Kestrun.Certificates/ExportFormat.md) | Specifies the format to use when exporting certificates. |
+| static class [JwkJson](./Kestrun.Certificates/JwkJson.md) | JSON serializer options for JWK serialization. |
+| enum [KeyType](./Kestrun.Certificates/KeyType.md) | Specifies the type of cryptographic key to use for certificate operations. |
+| class [RsaJwk](./Kestrun.Certificates/RsaJwk.md) | Represents an RSA JSON Web Key (JWK). |
+| record [SelfSignedOptions](./Kestrun.Certificates/SelfSignedOptions.md) | Options for creating a self-signed certificate. |
 
 ## Kestrun.Claims namespace
 
@@ -64,6 +74,12 @@ parent: "C#"
 | static class [KrHttpClientFactory](./Kestrun.Client/KrHttpClientFactory.md) | Factory methods to create HttpClient instances for different transport types. |
 | class [KrHttpClientOptions](./Kestrun.Client/KrHttpClientOptions.md) | Extra options to shape HttpClient behavior. |
 | static class [KrHttpDownloads](./Kestrun.Client/KrHttpDownloads.md) | Helper methods for common HTTP download scenarios. |
+
+## Kestrun.Extensions namespace
+
+| public type | description |
+| --- | --- |
+| static class [FunctionInfoExtensions](./Kestrun.Extensions/FunctionInfoExtensions.md) | Extension methods for FunctionInfo. |
 
 ## Kestrun.Health namespace
 
@@ -112,12 +128,15 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| record [DefaultResponseContentType](./Kestrun.Hosting.Options/DefaultResponseContentType.md) | Default response content type for routes. |
 | class [ExceptionOptions](./Kestrun.Hosting.Options/ExceptionOptions.md) | Options for configuring Kestrun-style exception handling middleware. |
 | static class [KestrelOptionsExtensions](./Kestrun.Hosting.Options/KestrelOptionsExtensions.md) | Provides extension methods for copying configuration between KestrelServerOptions instances. |
 | class [KestrunOptions](./Kestrun.Hosting.Options/KestrunOptions.md) | Simple options class for configuring Kestrel server settings. |
 | record [LanguageOptions](./Kestrun.Hosting.Options/LanguageOptions.md) | Base options for specifying script code and language settings. |
 | class [ListenerOptions](./Kestrun.Hosting.Options/ListenerOptions.md) | Configuration for an individual Kestrel listener. |
-| record [MapRouteOptions](./Kestrun.Hosting.Options/MapRouteOptions.md) | Options for mapping a route, including pattern, HTTP verbs, script code, authorization, and metadata. |
+| class [MapRouteOptions](./Kestrun.Hosting.Options/MapRouteOptions.md) | Options for mapping a route, including pattern, HTTP verbs, script code, authorization, and metadata. |
+| record [OpenAPICommonMetadata](./Kestrun.Hosting.Options/OpenAPICommonMetadata.md) | Metadata for OpenAPI documentation related to the route. |
+| record [OpenApiMapRouteOptions](./Kestrun.Hosting.Options/OpenApiMapRouteOptions.md) | Options for OpenAPI map route. |
 | record [OpenAPIMetadata](./Kestrun.Hosting.Options/OpenAPIMetadata.md) | Metadata for OpenAPI documentation related to the route. |
 | class [StatusCodeOptions](./Kestrun.Hosting.Options/StatusCodeOptions.md) | Options for configuring status code pages middleware. |
 
@@ -125,6 +144,7 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| static class [JwkUtilities](./Kestrun.Jwt/JwkUtilities.md) | Utilities for working with JSON Web Keys (JWK), including RFC 7638 thumbprints. |
 | enum [JwtAlgorithm](./Kestrun.Jwt/JwtAlgorithm.md) | Specifies supported JWT signing algorithms. |
 | static class [JwtAlgorithmExtensions](./Kestrun.Jwt/JwtAlgorithmExtensions.md) | Provides extension methods for the JwtAlgorithm enum. |
 | class [JwtBuilderResult](./Kestrun.Jwt/JwtBuilderResult.md) | Represents the result of building a JWT, including the token, key, builder, issue time, and expiration. |
@@ -137,6 +157,7 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | record [CsGlobals](./Kestrun.Languages/CsGlobals.md) | Provides global and local variable dictionaries and context for C# delegate execution. |
+| record [ParameterForInjectionInfo](./Kestrun.Languages/ParameterForInjectionInfo.md) | Information about a parameter to be injected into a script. |
 
 ## Kestrun.Logging namespace
 
@@ -218,6 +239,21 @@ parent: "C#"
 | class [KestrunRequest](./Kestrun.Models/KestrunRequest.md) | Represents a request model for Kestrun, containing HTTP method, path, query, headers, body, authorization, cookies, and form data. |
 | class [KestrunResponse](./Kestrun.Models/KestrunResponse.md) | Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes. |
 
+## Kestrun.OpenApi namespace
+
+| public type | description |
+| --- | --- |
+| static class [HelpExtractor](./Kestrun.OpenApi/HelpExtractor.md) | Helper to extract help information from PowerShell functions. |
+| static class [OaParameterExtensions](./Kestrun.OpenApi/OaParameterExtensions.md) | Extensions for OaParameterLocation. |
+| static class [OaSchemaTypeExtensions](./Kestrun.OpenApi/OaSchemaTypeExtensions.md) | Extension methods for OaSchemaType enum. |
+| static class [OpenApiComponentClone](./Kestrun.OpenApi/OpenApiComponentClone.md) | Helper methods for cloning OpenAPI components. |
+| class [OpenApiComponentSet](./Kestrun.OpenApi/OpenApiComponentSet.md) | Set of discovered OpenAPI component types. |
+| class [OpenApiDocDescriptor](./Kestrun.OpenApi/OpenApiDocDescriptor.md) | Generates OpenAPI v2 (Swagger) documents from C# types decorated with OpenApiSchema attributes. |
+| static class [OpenApiHelper](./Kestrun.OpenApi/OpenApiHelper.md) | Helper methods for OpenAPI integration. |
+| static class [OpenApiJsonNodeFactory](./Kestrun.OpenApi/OpenApiJsonNodeFactory.md) | Helpers to create System.Text.Json.Nodes from .NET objects for OpenAPI representation. |
+| static class [OpenApiSchemaDiscovery](./Kestrun.OpenApi/OpenApiSchemaDiscovery.md) | Helper to discover OpenAPI schema types in loaded assemblies. |
+| static class [OpenApiSpecVersionExtensions](./Kestrun.OpenApi/OpenApiSpecVersionExtensions.md) | Extension methods for OpenApiSpecVersion enum. |
+
 ## Kestrun.Razor namespace
 
 | public type | description |
@@ -230,6 +266,7 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | static class [EnvironmentHelper](./Kestrun.Runtime/EnvironmentHelper.md) | Helpers for determining the current environment name. |
+| static class [PowerShellOpenApiClassExporter](./Kestrun.Runtime/PowerShellOpenApiClassExporter.md) | Exports OpenAPI component classes as PowerShell class definitions. |
 | static class [VariablesMap](./Kestrun.Runtime/VariablesMap.md) | Helper class to map common request and server properties, as well as shared state variables, into a dictionary. |
 
 ## Kestrun.Scheduling namespace
@@ -255,7 +292,8 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
-| static class [SharedStateStore](./Kestrun.SharedState/SharedStateStore.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
+| static class [GlobalStore](./Kestrun.SharedState/GlobalStore.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
+| class [SharedState](./Kestrun.SharedState/SharedState.md) | Thread‑safe, case‑insensitive global key/value store for reference‑type objects. |
 
 ## Kestrun.SignalR namespace
 
@@ -294,6 +332,7 @@ parent: "C#"
 | static class [HostingExtensions](./Kestrun.Utilities/HostingExtensions.md) | Provides extension methods for hosting Kestrun servers. |
 | [Flags] enum [HttpVerb](./Kestrun.Utilities/HttpVerb.md) | Common HTTP verbs recognized by the framework. |
 | static class [HttpVerbExtensions](./Kestrun.Utilities/HttpVerbExtensions.md) | Extension methods for the [`HttpVerb`](./Kestrun.Utilities/HttpVerb.md) enum. |
+| static class [ObjectToDictionaryConverter](./Kestrun.Utilities/ObjectToDictionaryConverter.md) | Utility for converting arbitrary .NET objects to a Dictionary with string keys and values. Handles dictionaries, enumerables, and objects with public properties. |
 | static class [PowerShellModuleLocator](./Kestrun.Utilities/PowerShellModuleLocator.md) | Utility class to locate the Kestrun PowerShell module. It searches for the module in both development and production environments. |
 | static class [RateLimiterOptionsExtensions](./Kestrun.Utilities/RateLimiterOptionsExtensions.md) | Provides extension methods for copying rate limiter options and policies. |
 | class [ReadOnlyDictionaryAdapter](./Kestrun.Utilities/ReadOnlyDictionaryAdapter.md) | Adapts a non-generic IDictionary to a read-only dictionary with string keys and nullable object values. |
@@ -304,6 +343,7 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| static class [JsonSerializerHelper](./Kestrun.Utilities.Json/JsonSerializerHelper.md) | Helper class for JSON serialization and deserialization using System.Text.Json. |
 | static class [PayloadSanitizer](./Kestrun.Utilities.Json/PayloadSanitizer.md) | Utilities to sanitize arbitrary payloads (especially PowerShell objects) into JSON-friendly shapes for System.Text.Json/SignalR serialization without reference cycles. |
 
 ## Kestrun.Utilities.Yaml namespace

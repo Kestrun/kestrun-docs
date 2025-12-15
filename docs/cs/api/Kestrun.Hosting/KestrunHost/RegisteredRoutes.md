@@ -9,12 +9,13 @@ grand_parent: "C# API"
 Gets the registered routes in the Kestrun host.
 
 ```csharp
-public Dictionary<(string, string), MapRouteOptions> RegisteredRoutes { get; }
+public Dictionary<(string, HttpVerb), MapRouteOptions> RegisteredRoutes { get; }
 ```
 
 ## See Also
 
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* enum [HttpVerb](../../Kestrun.Utilities/HttpVerb)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * class [KestrunHost](../KestrunHost)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

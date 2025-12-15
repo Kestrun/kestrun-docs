@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Upserts (adds or replaces) an entry.
 
 ```csharp
-public void Upsert(string schema, string type, AuthenticationSchemeOptions options)
+public void Upsert(string schema, AuthenticationType type, AuthenticationSchemeOptions options)
 ```
 
 | parameter | description |
@@ -26,6 +26,7 @@ public void Upsert(string schema, string type, AuthenticationSchemeOptions optio
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 
@@ -36,7 +37,8 @@ public void Upsert(string schema, string type, AuthenticationSchemeOptions optio
 Upserts (adds or replaces) an entry.
 
 ```csharp
-public void Upsert<TOptions>(string schema, string type, Action<TOptions>? configure = null)
+public void Upsert<TOptions>(string schema, AuthenticationType type, 
+    Action<TOptions>? configure = null)
     where TOptions : AuthenticationSchemeOptions, new()
 ```
 
@@ -49,6 +51,7 @@ public void Upsert<TOptions>(string schema, string type, Action<TOptions>? confi
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

@@ -1,28 +1,27 @@
 ---
 layout: default
-title: "KestrunHostAuthnExtensions.AddJwtBearerAuthentication method"
+title: "KestrunHostAuthnExtensions.AddJwtBearerAuthentication method (1 of 2)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHostAuthnExtensions.AddJwtBearerAuthentication method
+# KestrunHostAuthnExtensions.AddJwtBearerAuthentication method (1 of 2)
 
 Adds JWT Bearer authentication to the Kestrun host.
 
 Use this for APIs that require token-based authentication.
 
 ```csharp
-public static KestrunHost AddJwtBearerAuthentication(this KestrunHost host, string scheme, 
-    TokenValidationParameters validationParameters, Action<JwtBearerOptions>? configureJwt = null, 
-    ClaimPolicyConfig? claimPolicy = null)
+public static KestrunHost AddJwtBearerAuthentication(this KestrunHost host, 
+    string authenticationScheme = "JwtBearer", string? displayName = "JWT Bearer Authentication", 
+    Action<JwtAuthOptions>? configureOptions = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name (e.g. "Bearer"). |
-| validationParameters | Parameters used to validate JWT tokens. |
-| configureJwt | Optional hook to customize JwtBearerOptions. |
-| claimPolicy | Optional authorization policy configuration. |
+| authenticationScheme | The authentication scheme name (e.g. "Bearer"). |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | Optional configuration for JwtAuthOptions. |
 
 ## Examples
 
@@ -60,7 +59,37 @@ host.AddJwtBearerAuthentication(
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
-* class [ClaimPolicyConfig](../../Kestrun.Claims/ClaimPolicyConfig)
+* class [JwtAuthOptions](../../Kestrun.Authentication/JwtAuthOptions)
+* class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHostAuthnExtensions.AddJwtBearerAuthentication method (2 of 2)
+
+Adds JWT Bearer authentication to the Kestrun host using the provided options object.
+
+```csharp
+public static KestrunHost AddJwtBearerAuthentication(this KestrunHost host, 
+    string authenticationScheme = "JwtBearer", string? displayName = "JWT Bearer Authentication", 
+    JwtAuthOptions? configureOptions = null)
+```
+
+| parameter | description |
+| --- | --- |
+| host | The Kestrun host instance. |
+| authenticationScheme | The authentication scheme name. |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | Optional configuration for JwtAuthOptions. |
+
+## Return Value
+
+The configured KestrunHost instance.
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* class [JwtAuthOptions](../../Kestrun.Authentication/JwtAuthOptions)
 * class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

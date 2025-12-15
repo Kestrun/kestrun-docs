@@ -26,7 +26,7 @@ $claimConfig = New-KrClaimPolicy |
     Build-KrClaimPolicy
 
 # 6. Basic auth + issue claims for admin
-Add-KrBasicAuthentication -Name 'PolicyBasic' -Realm 'Claims' -AllowInsecureHttp -ScriptBlock {
+Add-KrBasicAuthentication -AuthenticationScheme 'PolicyBasic' -Realm 'Claims' -AllowInsecureHttp -ScriptBlock {
     param($Username, $Password)
     Write-KrLog -Level Information -Message 'Basic Authentication: User {user} is trying to authenticate.' -Values $Username
     if ($Username -eq 'admin' -and $Password -eq 'password') {
@@ -48,7 +48,7 @@ Add-KrBasicAuthentication -Name 'PolicyBasic' -Realm 'Claims' -AllowInsecureHttp
 Enable-KrConfiguration
 
 # 8. Map policy-protected routes
-Add-KrRouteGroup -Prefix '/policy' -AuthorizationSchema 'PolicyBasic' {
+Add-KrRouteGroup -Prefix '/policy' -AuthorizationScheme 'PolicyBasic' {
     Add-KrMapRoute -Verbs Get -Pattern '/read' -AuthorizationPolicy 'CanRead' -ScriptBlock { Write-KrTextResponse 'Read OK' }
     Add-KrMapRoute -Verbs Get -Pattern '/write' -AuthorizationPolicy 'CanWrite' -ScriptBlock { Write-KrTextResponse 'Write OK' }
     Add-KrMapRoute -Verbs Get -Pattern '/delete' -AuthorizationPolicy 'CanDelete' -ScriptBlock { Write-KrTextResponse 'Delete OK' }

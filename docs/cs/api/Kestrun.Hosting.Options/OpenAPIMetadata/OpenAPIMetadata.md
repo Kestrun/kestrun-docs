@@ -1,16 +1,35 @@
 ---
 layout: default
-title: "OpenAPIMetadata constructor"
+title: "OpenAPIMetadata constructor (1 of 2)"
 parent: "Kestrun.Hosting.Options"
 grand_parent: "C# API"
 ---
-# OpenAPIMetadata constructor
+# OpenAPIMetadata constructor (1 of 2)
 
-The default constructor.
+Initializes a new instance of the [`OpenAPIMetadata`](../OpenAPIMetadata) class.
 
 ```csharp
 public OpenAPIMetadata()
 ```
+
+## See Also
+
+* record [OpenAPIMetadata](../OpenAPIMetadata)
+* namespace [Kestrun.Hosting.Options](../../Kestrun)
+
+---
+
+# OpenAPIMetadata constructor (2 of 2)
+
+Initializes a new instance of the [`OpenAPIMetadata`](../OpenAPIMetadata) class with the specified pattern.
+
+```csharp
+public OpenAPIMetadata(string pattern)
+```
+
+| parameter | description |
+| --- | --- |
+| pattern | The route pattern. |
 
 ## See Also
 

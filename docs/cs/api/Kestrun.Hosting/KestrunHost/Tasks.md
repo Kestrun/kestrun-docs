@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunHost.Tasks property
 
-Gets the ad-hoc task service used for running one-off tasks (PowerShell, C#, VB.NET).
+Gets the ad-hoc task service used for running one-off tasks (PowerShell, C#, VB.NET). Initialized via AddTasks()
 
 ```csharp
 public KestrunTaskService Tasks { get; }

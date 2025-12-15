@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Removes the authentication scheme for the specified schema and type.
 
 ```csharp
-public bool Remove(string schema, string type)
+public bool Remove(string schema, AuthenticationType type)
 ```
 
 | parameter | description |
@@ -29,6 +29,7 @@ True if the authentication scheme was removed; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

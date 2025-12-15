@@ -1,10 +1,32 @@
 ---
 layout: default
-title: "KestrunResponse.WriteHtmlResponse method"
+title: "KestrunResponse.WriteHtmlResponse method (1 of 2)"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunResponse.WriteHtmlResponse method
+# KestrunResponse.WriteHtmlResponse method (1 of 2)
+
+Writes an HTML response, rendering the provided template byte array and replacing placeholders with values from the given dictionary.
+
+```csharp
+public void WriteHtmlResponse(byte[] template, IReadOnlyDictionary<string, object?>? vars, 
+    int statusCode = 200)
+```
+
+| parameter | description |
+| --- | --- |
+| template | The HTML template byte array. |
+| vars | A dictionary of variables to replace in the template. |
+| statusCode | The HTTP status code for the response. |
+
+## See Also
+
+* class [KestrunResponse](../KestrunResponse)
+* namespace [Kestrun.Models](../../Kestrun)
+
+---
+
+# KestrunResponse.WriteHtmlResponse method (2 of 2)
 
 Renders the given HTML string with placeholders and writes it as a response.
 

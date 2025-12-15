@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # ApiKeyAuthenticationOptions constructor
 
-The default constructor.
+Options for API key authentication, including header names, validation, and claims issuance.
 
 ```csharp
 public ApiKeyAuthenticationOptions()

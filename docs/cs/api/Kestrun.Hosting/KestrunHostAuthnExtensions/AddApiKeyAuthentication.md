@@ -11,15 +11,17 @@ Adds API Key Authentication to the Kestrun host.
 Use this for endpoints that require an API key for access.
 
 ```csharp
-public static KestrunHost AddApiKeyAuthentication(this KestrunHost host, string scheme = "ApiKey", 
-    Action<ApiKeyAuthenticationOptions>? configure = null)
+public static KestrunHost AddApiKeyAuthentication(this KestrunHost host, 
+    string authenticationScheme = "ApiKey", string? displayName = "API Key Authentication", 
+    Action<ApiKeyAuthenticationOptions>? configureOptions = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name (default is "ApiKey"). |
-| configure | Optional configuration for ApiKeyAuthenticationOptions. |
+| authenticationScheme | The authentication scheme name (default is "ApiKey"). |
+| displayName | The display name for the authentication scheme (default is "API Key"). |
+| configureOptions | Optional configuration for ApiKeyAuthenticationOptions. |
 
 ## Return Value
 
@@ -39,15 +41,17 @@ The configured KestrunHost instance.
 Adds API Key Authentication to the Kestrun host using the provided options object.
 
 ```csharp
-public static KestrunHost AddApiKeyAuthentication(this KestrunHost host, string scheme, 
-    ApiKeyAuthenticationOptions configure)
+public static KestrunHost AddApiKeyAuthentication(this KestrunHost host, 
+    string authenticationScheme = "ApiKey", string? displayName = "API Key Authentication", 
+    ApiKeyAuthenticationOptions? configureOptions = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name. |
-| configure | The ApiKeyAuthenticationOptions object to configure the authentication. |
+| authenticationScheme | The authentication scheme name. |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | The ApiKeyAuthenticationOptions object to configure the authentication. |
 
 ## Return Value
 

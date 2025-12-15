@@ -11,15 +11,17 @@ Adds Cookie Authentication to the Kestrun host.
 Use this for browser-based authentication using cookies.
 
 ```csharp
-public static KestrunHost AddCookieAuthentication(this KestrunHost host, string scheme = "Cookies", 
-    Action<CookieAuthenticationOptions>? configure = null, ClaimPolicyConfig? claimPolicy = null)
+public static KestrunHost AddCookieAuthentication(this KestrunHost host, 
+    string authenticationScheme = "Cookies", string? displayName = "Cookies Authentication", 
+    Action<CookieAuthOptions>? configureOptions = null, ClaimPolicyConfig? claimPolicy = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name (default is CookieAuthenticationDefaults.AuthenticationScheme). |
-| configure | Optional configuration for CookieAuthenticationOptions. |
+| authenticationScheme | The authentication scheme name (default is CookieAuthenticationDefaults.AuthenticationScheme). |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | Optional configuration for CookieAuthenticationOptions. |
 | claimPolicy | Optional authorization policy configuration. |
 
 ## Return Value
@@ -29,6 +31,7 @@ The configured KestrunHost instance.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
+* class [CookieAuthOptions](../../Kestrun.Authentication/CookieAuthOptions)
 * class [ClaimPolicyConfig](../../Kestrun.Claims/ClaimPolicyConfig)
 * class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
@@ -40,15 +43,17 @@ The configured KestrunHost instance.
 Adds Cookie Authentication to the Kestrun host using the provided options object.
 
 ```csharp
-public static KestrunHost AddCookieAuthentication(this KestrunHost host, string scheme = "Cookies", 
-    CookieAuthenticationOptions? configure = null, ClaimPolicyConfig? claimPolicy = null)
+public static KestrunHost AddCookieAuthentication(this KestrunHost host, 
+    string authenticationScheme = "Cookies", string? displayName = "Cookies Authentication", 
+    CookieAuthOptions? configureOptions = null, ClaimPolicyConfig? claimPolicy = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
-| scheme | The authentication scheme name (default is CookieAuthenticationDefaults.AuthenticationScheme). |
-| configure | The CookieAuthenticationOptions object to configure the authentication. |
+| authenticationScheme | The authentication scheme name (default is CookieAuthenticationDefaults.AuthenticationScheme). |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | The CookieAuthenticationOptions object to configure the authentication. |
 | claimPolicy | Optional authorization policy configuration. |
 
 ## Return Value
@@ -58,6 +63,7 @@ The configured KestrunHost instance.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
+* class [CookieAuthOptions](../../Kestrun.Authentication/CookieAuthOptions)
 * class [ClaimPolicyConfig](../../Kestrun.Claims/ClaimPolicyConfig)
 * class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)

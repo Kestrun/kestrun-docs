@@ -22,7 +22,7 @@ A new self-signed X509Certificate2 instance.
 
 ## See Also
 
-* record [SelfSignedOptions](../CertificateManager.SelfSignedOptions)
+* record [SelfSignedOptions](../SelfSignedOptions)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)
 

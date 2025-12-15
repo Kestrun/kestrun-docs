@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the authentication options for the specified schema and type.
 
 ```csharp
-public AuthenticationSchemeOptions Get(string schema, string type)
+public AuthenticationSchemeOptions Get(string schema, AuthenticationType type)
 ```
 
 | parameter | description |
@@ -29,6 +29,7 @@ The authentication options for the specified schema and type.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 
@@ -39,7 +40,7 @@ The authentication options for the specified schema and type.
 Gets the authentication options of the specified type for the given schema and type.
 
 ```csharp
-public TOptions Get<TOptions>(string schema, string type)
+public TOptions Get<TOptions>(string schema, AuthenticationType type)
     where TOptions : AuthenticationSchemeOptions
 ```
 
@@ -61,6 +62,7 @@ The authentication options of the specified type for the given schema and type.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

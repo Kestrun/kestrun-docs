@@ -1,10 +1,31 @@
 ---
 layout: default
-title: "KestrunHost constructor (1 of 2)"
+title: "KestrunHost constructor (1 of 3)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHost constructor (1 of 2)
+# KestrunHost constructor (1 of 3)
+
+Initializes a new instance of the [`KestrunHost`](../KestrunHost) class with the specified application name and logger.
+
+```csharp
+public KestrunHost(string? appName, ILogger logger, bool ordinalIgnoreCase)
+```
+
+| parameter | description |
+| --- | --- |
+| appName | The name of the application. |
+| logger | The Serilog logger instance to use. |
+| ordinalIgnoreCase | Indicates whether the shared state should be case-insensitive. |
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHost constructor (2 of 3)
 
 Initializes a new instance of the [`KestrunHost`](../KestrunHost) class with the specified application name, root directory, and optional module paths.
 
@@ -25,13 +46,13 @@ public KestrunHost(string? appName, string? kestrunRoot = null, string[]? module
 
 ---
 
-# KestrunHost constructor (2 of 2)
+# KestrunHost constructor (3 of 3)
 
 Initializes a new instance of the [`KestrunHost`](../KestrunHost) class with the specified application name, logger, root directory, and optional module paths.
 
 ```csharp
 public KestrunHost(string? appName, ILogger logger, string? kestrunRoot = null, 
-    string[]? modulePathsObj = null, string[]? args = null)
+    string[]? modulePathsObj = null, string[]? args = null, bool ordinalIgnoreCase = true)
 ```
 
 | parameter | description |
@@ -41,6 +62,7 @@ public KestrunHost(string? appName, ILogger logger, string? kestrunRoot = null,
 | kestrunRoot | The root directory for the Kestrun application. |
 | modulePathsObj | An array of module paths to be loaded. |
 | args | Command line arguments to pass to the application. |
+| ordinalIgnoreCase | Indicates whether the shared state should be case-insensitive. |
 
 ## See Also
 

@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Comma-separated tags for OpenAPI documentation.
 
 ```csharp
-public string[] Tags { get; set; }
+public List<string> Tags { get; set; }
 ```
 
 ## See Also

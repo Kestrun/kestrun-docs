@@ -12,6 +12,7 @@ Use this for simple username/password authentication.
 
 ```csharp
 public static KestrunHost AddBasicAuthentication(this KestrunHost host, string scheme = "Basic", 
+    string? displayName = "Basic Authentication", 
     Action<BasicAuthenticationOptions>? configure = null)
 ```
 
@@ -19,6 +20,7 @@ public static KestrunHost AddBasicAuthentication(this KestrunHost host, string s
 | --- | --- |
 | host | The Kestrun host instance. |
 | scheme | The authentication scheme name (e.g. "Basic"). |
+| displayName | The display name for the authentication scheme. |
 | configure | Optional configuration for BasicAuthenticationOptions. |
 
 ## Return Value
@@ -40,13 +42,14 @@ Adds Basic Authentication to the Kestrun host using the provided options object.
 
 ```csharp
 public static KestrunHost AddBasicAuthentication(this KestrunHost host, string scheme, 
-    BasicAuthenticationOptions configure)
+    string? displayName, BasicAuthenticationOptions configure)
 ```
 
 | parameter | description |
 | --- | --- |
 | host | The Kestrun host instance. |
 | scheme | The authentication scheme name (e.g. "Basic"). |
+| displayName | The display name for the authentication scheme. |
 | configure | The BasicAuthenticationOptions object to configure the authentication. |
 
 ## Return Value

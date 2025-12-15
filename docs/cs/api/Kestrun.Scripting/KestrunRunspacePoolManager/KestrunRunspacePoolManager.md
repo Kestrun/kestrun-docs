@@ -11,7 +11,7 @@ Initializes a new instance of the [`KestrunRunspacePoolManager`](../KestrunRunsp
 ```csharp
 public KestrunRunspacePoolManager(KestrunHost host, int minRunspaces, int maxRunspaces, 
     InitialSessionState? initialSessionState = null, 
-    PSThreadOptions threadOptions = PSThreadOptions.ReuseThread)
+    PSThreadOptions threadOptions = PSThreadOptions.ReuseThread, string? openApiClassesPath = null)
 ```
 
 | parameter | description |
@@ -21,6 +21,7 @@ public KestrunRunspacePoolManager(KestrunHost host, int minRunspaces, int maxRun
 | maxRunspaces | The maximum number of runspaces allowed in the pool. |
 | initialSessionState | The initial session state for each runspace (optional). |
 | threadOptions | The thread affinity strategy for runspaces (optional). |
+| openApiClassesPath | The file path to the OpenAPI class definitions to be injected into each runspace (optional). |
 
 ## See Also
 

@@ -30,7 +30,7 @@ This is useful when you map endpoints manually via `app.MapGet`/`MapPost` and st
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
-* record [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
+* class [MapRouteOptions](../../Kestrun.Hosting.Options/MapRouteOptions)
 * class [KestrunHostMapExtensions](../KestrunHostMapExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

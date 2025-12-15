@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Registers an authentication scheme with the specified options.
 
 ```csharp
-public bool Register(string schema, string type, AuthenticationSchemeOptions options)
+public bool Register(string schema, AuthenticationType type, AuthenticationSchemeOptions options)
 ```
 
 | parameter | description |
@@ -24,6 +24,7 @@ True if the registration was successful; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 
@@ -34,7 +35,8 @@ True if the registration was successful; otherwise, false.
 Registers an authentication scheme with the specified options and configuration.
 
 ```csharp
-public bool Register<TOptions>(string schema, string type, Action<TOptions>? configure = null)
+public bool Register<TOptions>(string schema, AuthenticationType type, 
+    Action<TOptions>? configure = null)
     where TOptions : AuthenticationSchemeOptions, new()
 ```
 
@@ -51,6 +53,7 @@ True if the registration was successful; otherwise, false.
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 

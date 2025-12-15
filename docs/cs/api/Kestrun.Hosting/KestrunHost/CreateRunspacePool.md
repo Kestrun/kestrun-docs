@@ -11,7 +11,7 @@ Creates and returns a new [`KestrunRunspacePoolManager`](../../Kestrun.Scripting
 ```csharp
 public KestrunRunspacePoolManager CreateRunspacePool(int? maxRunspaces = 0, 
     Dictionary<string, object>? userVariables = null, 
-    Dictionary<string, string>? userFunctions = null)
+    Dictionary<string, string>? userFunctions = null, string? openApiClassesPath = null)
 ```
 
 | parameter | description |
@@ -19,6 +19,7 @@ public KestrunRunspacePoolManager CreateRunspacePool(int? maxRunspaces = 0,
 | maxRunspaces | The maximum number of runspaces to create. If not specified or zero, defaults to twice the processor count. |
 | userVariables | A dictionary of user-defined variables to inject into the runspace pool. |
 | userFunctions | A dictionary of user-defined functions to inject into the runspace pool. |
+| openApiClassesPath | The file path to the OpenAPI class definitions to inject into the runspace pool. |
 
 ## Return Value
 

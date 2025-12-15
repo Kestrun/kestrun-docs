@@ -9,8 +9,18 @@ grand_parent: "C# API"
 Adds a prebuilt claim rule under a policy name.
 
 ```csharp
-public ClaimPolicyBuilder AddPolicy(string policyName, ClaimRule rule)
+public ClaimPolicyBuilder AddPolicy(string policyName, ClaimRule rule, string? description = null)
 ```
+
+| parameter | description |
+| --- | --- |
+| policyName | The name of the policy. |
+| rule | The claim rule to associate with the policy. |
+| description | Description of the claim rule. |
+
+## Return Value
+
+The current builder instance.
 
 ## See Also
 
@@ -25,7 +35,7 @@ public ClaimPolicyBuilder AddPolicy(string policyName, ClaimRule rule)
 Adds a new policy with a required claim rule.
 
 ```csharp
-public ClaimPolicyBuilder AddPolicy(string policyName, string claimType, 
+public ClaimPolicyBuilder AddPolicy(string policyName, string claimType, string description, 
     params string[] allowedValues)
 ```
 
@@ -33,6 +43,7 @@ public ClaimPolicyBuilder AddPolicy(string policyName, string claimType,
 | --- | --- |
 | policyName | The name of the policy. |
 | claimType | The required claim type. |
+| description | Description of the claim rule. |
 | allowedValues | Allowed values for the claim. |
 
 ## Return Value
@@ -52,13 +63,14 @@ Adds a new policy with a required claim rule using a [`UserIdentityClaim`](../Us
 
 ```csharp
 public ClaimPolicyBuilder AddPolicy(string policyName, UserIdentityClaim claimType, 
-    params string[] allowedValues)
+    string? description, params string[] allowedValues)
 ```
 
 | parameter | description |
 | --- | --- |
 | policyName | The name of the policy. |
 | claimType | The required [`UserIdentityClaim`](../UserIdentityClaim) type. |
+| description | Description of the claim rule. |
 | allowedValues | Allowed values for the claim. |
 
 ## Return Value

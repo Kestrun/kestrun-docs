@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "KestrunHostAuthnExtensions.AddWindowsAuthentication method"
+title: "KestrunHostAuthnExtensions.AddWindowsAuthentication method (1 of 3)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHostAuthnExtensions.AddWindowsAuthentication method
+# KestrunHostAuthnExtensions.AddWindowsAuthentication method (1 of 3)
 
 Adds Windows Authentication to the Kestrun host.
 
@@ -25,6 +25,70 @@ The configured KestrunHost instance.
 ## See Also
 
 * class [KestrunHost](../KestrunHost)
+* class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHostAuthnExtensions.AddWindowsAuthentication method (2 of 3)
+
+Adds Windows Authentication to the Kestrun host.
+
+The authentication scheme name is AuthenticationScheme. This enables Kerberos and NTLM authentication.
+
+```csharp
+public static KestrunHost AddWindowsAuthentication(this KestrunHost host, 
+    string authenticationScheme = "Negotiate", string? displayName = "Windows Authentication", 
+    Action<WindowsAuthOptions>? configureOptions = null)
+```
+
+| parameter | description |
+| --- | --- |
+| host | The Kestrun host instance. |
+| authenticationScheme | The authentication scheme name (default is NegotiateDefaults.AuthenticationScheme). |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | The WindowsAuthOptions object to configure the authentication. |
+
+## Return Value
+
+The configured KestrunHost instance.
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* class [WindowsAuthOptions](../../Kestrun.Authentication/WindowsAuthOptions)
+* class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHostAuthnExtensions.AddWindowsAuthentication method (3 of 3)
+
+Adds Windows Authentication to the Kestrun host.
+
+The authentication scheme name is AuthenticationScheme. This enables Kerberos and NTLM authentication.
+
+```csharp
+public static KestrunHost AddWindowsAuthentication(this KestrunHost host, 
+    string authenticationScheme = "Negotiate", string? displayName = "Windows Authentication", 
+    WindowsAuthOptions? configureOptions = null)
+```
+
+| parameter | description |
+| --- | --- |
+| host | The Kestrun host instance. |
+| authenticationScheme | The authentication scheme name (default is NegotiateDefaults.AuthenticationScheme). |
+| displayName | The display name for the authentication scheme. |
+| configureOptions | The WindowsAuthOptions object to configure the authentication. |
+
+## Return Value
+
+The configured KestrunHost instance.
+
+## See Also
+
+* class [KestrunHost](../KestrunHost)
+* class [WindowsAuthOptions](../../Kestrun.Authentication/WindowsAuthOptions)
 * class [KestrunHostAuthnExtensions](../KestrunHostAuthnExtensions)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

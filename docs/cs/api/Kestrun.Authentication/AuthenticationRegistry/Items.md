@@ -9,7 +9,8 @@ grand_parent: "C# API"
 Enumerates all registered authentication schemes.
 
 ```csharp
-public IEnumerable<KeyValuePair<(string schema, string type), AuthenticationSchemeOptions>> Items()
+public IEnumerable<KeyValuePair<(string schema, AuthenticationType type), AuthenticationSchemeOptions>> 
+    Items()
 ```
 
 ## Return Value
@@ -18,6 +19,7 @@ A collection of key-value pairs representing the registered authentication schem
 
 ## See Also
 
+* enum [AuthenticationType](../AuthenticationType)
 * class [AuthenticationRegistry](../AuthenticationRegistry)
 * namespace [Kestrun.Authentication](../../Kestrun)
 
