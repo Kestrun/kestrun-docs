@@ -75,12 +75,6 @@ parent: "C#"
 | class [KrHttpClientOptions](./Kestrun.Client/KrHttpClientOptions.md) | Extra options to shape HttpClient behavior. |
 | static class [KrHttpDownloads](./Kestrun.Client/KrHttpDownloads.md) | Helper methods for common HTTP download scenarios. |
 
-## Kestrun.Extensions namespace
-
-| public type | description |
-| --- | --- |
-| static class [FunctionInfoExtensions](./Kestrun.Extensions/FunctionInfoExtensions.md) | Extension methods for FunctionInfo. |
-
 ## Kestrun.Health namespace
 
 | public type | description |
@@ -243,6 +237,7 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| static class [FunctionInfoExtensions](./Kestrun.OpenApi/FunctionInfoExtensions.md) | Extension methods for FunctionInfo. |
 | static class [HelpExtractor](./Kestrun.OpenApi/HelpExtractor.md) | Helper to extract help information from PowerShell functions. |
 | static class [OaParameterExtensions](./Kestrun.OpenApi/OaParameterExtensions.md) | Extensions for OaParameterLocation. |
 | static class [OaSchemaTypeExtensions](./Kestrun.OpenApi/OaSchemaTypeExtensions.md) | Extension methods for OaSchemaType enum. |
