@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 54
+nav_order: 53
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Add-KrPowerShellRazorPagesRuntime
 ---
@@ -24,8 +24,8 @@ Adds PowerShell support for Razor Pages.
 ### __AllParameterSets
 
 ```powershell
-Add-KrPowerShellRazorPagesRuntime [[-Server] <KestrunHost>] [[-PathPrefix] <string>] [-PassThru]
- [<CommonParameters>]
+Add-KrPowerShellRazorPagesRuntime [[-Server] <KestrunHost>] [[-RootPath] <string>]
+ [[-PathPrefix] <string>] [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -77,6 +77,28 @@ HelpMessage: ''
 
 An optional path prefix for the Razor Pages.
 If specified, the Razor Pages will be served under this path.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 2
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -RootPath
+
+The root directory for the Razor Pages.
+If not specified, the default 'Pages' directory under the content root will be used.
 
 ```yaml
 Type: System.String

@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.responsecompression.responsecompressionoptions?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Add-KrCompressionMiddleware
 ---

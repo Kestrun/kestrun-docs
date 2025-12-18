@@ -17,6 +17,7 @@ public static class LoggerExtensions
 | name | description |
 | --- | --- |
 | static [DebugSanitized](LoggerExtensions/DebugSanitized)(…) | Writes a sanitized debug log event, removing control characters from string property values. (2 methods) |
+| static [ErrorSanitized](LoggerExtensions/ErrorSanitized)(…) | Writes a sanitized error log event, removing control characters from string property values. |
 
 ## See Also
 

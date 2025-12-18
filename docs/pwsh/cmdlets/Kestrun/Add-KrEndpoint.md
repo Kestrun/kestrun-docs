@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 16
+nav_order: 15
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Add-KrEndpoint
 ---
@@ -267,7 +267,9 @@ This parameter is optional.
 Type: System.Management.Automation.SwitchParameter
 DefaultValue: False
 SupportsWildcards: false
-Aliases: []
+Aliases:
+- SelfSignedCertificate
+- SelfSigned
 ParameterSets:
 - Name: SelfSignedCert
   Position: Named

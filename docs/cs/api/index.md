@@ -102,7 +102,6 @@ parent: "C#"
 | static class [KestrunHostAuthnExtensions](./Kestrun.Hosting/KestrunHostAuthnExtensions.md) | Provides extension methods for adding authentication schemes to the Kestrun host. |
 | static class [KestrunHostHealthExtensions](./Kestrun.Hosting/KestrunHostHealthExtensions.md) | Adds health-check specific helpers to [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
-| static class [KestrunHostRazorExtensions](./Kestrun.Hosting/KestrunHostRazorExtensions.md) | Provides extension methods for adding PowerShell and Razor Pages to a KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
 | static class [KestrunHostSessionExtensions](./Kestrun.Hosting/KestrunHostSessionExtensions.md) | Provides extension methods for configuring session state and distributed cache in Kestrun. |
 | static class [KestrunHostSignalRExtensions](./Kestrun.Hosting/KestrunHostSignalRExtensions.md) | Extension methods for KestrunHost to support SignalR real-time broadcasting. |

@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 88
+nav_order: 87
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Expand-KrObject
 ---
@@ -21,11 +21,17 @@ Expands an object into a formatted string for display.
 
 ## SYNTAX
 
-### __AllParameterSets
+### Console (Default)
 
 ```powershell
 Expand-KrObject [[-InputObject] <Object>] [-ForegroundColor <ConsoleColor>] [-Label <string>]
  [<CommonParameters>]
+```
+
+### PassThru
+
+```powershell
+Expand-KrObject [[-InputObject] <Object>] [-Label <string>] [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -59,7 +65,7 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
+- Name: Console
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -114,6 +120,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -PassThru
+
+If specified, the function will return the formatted string instead of writing it to the console.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: PassThru
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -128,6 +155,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 {{ Fill in the Description }}
 
 ## OUTPUTS
+
+### System.String
+
+{{ Fill in the Description }}
 
 ## NOTES
 

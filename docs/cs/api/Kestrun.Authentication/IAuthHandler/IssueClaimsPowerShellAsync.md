@@ -9,14 +9,14 @@ grand_parent: "C# API"
 Issues claims for a user by executing a PowerShell script.
 
 ```csharp
-public static Task<IEnumerable<Claim>> IssueClaimsPowerShellAsync(string? code, HttpContext ctx, 
-    string identity, ILogger logger)
+public static Task<IEnumerable<Claim>> IssueClaimsPowerShellAsync(string? code, 
+    HttpContext context, string identity, ILogger logger)
 ```
 
 | parameter | description |
 | --- | --- |
 | code | The PowerShell script code used to issue claims. |
-| ctx | The HTTP context containing the PowerShell runspace. |
+| context | The HTTP context containing the PowerShell runspace. |
 | identity | The username for which to issue claims. |
 | logger | The logger instance for logging. |
 

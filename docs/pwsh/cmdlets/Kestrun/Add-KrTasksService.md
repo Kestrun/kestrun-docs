@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 70
+nav_order: 69
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Add-KrTasksService
 ---

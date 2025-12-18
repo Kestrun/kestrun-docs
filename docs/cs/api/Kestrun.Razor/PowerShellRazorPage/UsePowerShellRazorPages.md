@@ -16,13 +16,14 @@ Razor pages (or a generic [`PwshKestrunModel`](../PwshKestrunModel)) can then re
 
 ```csharp
 public static IApplicationBuilder UsePowerShellRazorPages(this IApplicationBuilder app, 
-    KestrunRunspacePoolManager pool)
+    KestrunRunspacePoolManager pool, string? rootPath = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | app | The WebApplication pipeline. |
 | pool | Kestrun’s shared [`KestrunRunspacePoolManager`](../../Kestrun.Scripting/KestrunRunspacePoolManager). |
+| rootPath | Optional root path for Razor Pages. Defaults to 'Pages'. |
 
 ## Return Value
 

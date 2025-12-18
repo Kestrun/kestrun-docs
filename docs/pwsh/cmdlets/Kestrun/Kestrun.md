@@ -9,7 +9,7 @@ HelpInfoUri:
 Locale: ''
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Kestrun
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 PlatyPS schema version: 2024-05-01
 title: Kestrun Module
 ---
@@ -69,10 +69,6 @@ Adds cookie authentication to the Kestrun server.
 ### [Add-KrCorsPolicy](Add-KrCorsPolicy.md)
 
 Adds a CORS policy to the Kestrun server.
-
-### [Add-KrCorsPolicyMiddleware](Add-KrCorsPolicyMiddleware.md)
-
-Adds a CORS policy to the server.
 
 ### [Add-KrDistributedRedisCache](Add-KrDistributedRedisCache.md)
 
@@ -505,6 +501,10 @@ Gets the detailed result of a task by id.
 ### [Get-KrTaskState](Get-KrTaskState.md)
 
 Gets the state of a task by id.
+
+### [Get-KrVersion](Get-KrVersion.md)
+
+Retrieves the Kestrun module version information.
 
 ### [Import-KrCertificate](Import-KrCertificate.md)
 

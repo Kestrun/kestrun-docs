@@ -8,6 +8,8 @@ grand_parent: "C# API"
 
 Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management.
 
+Provides extension methods for adding PowerShell and Razor Pages to a Kestrun
+
 ```csharp
 public class KestrunHost : IDisposable
 ```
@@ -17,6 +19,7 @@ public class KestrunHost : IDisposable
 | name | description |
 | --- | --- |
 | [KestrunHost](KestrunHost/KestrunHost)(…) | Initializes a new instance of the [`KestrunHost`](./KestrunHost) class with the specified application name, root directory, and optional module paths. (3 constructors) |
+| [AntiforgeryOptions](KestrunHost/AntiforgeryOptions) { get; set; } | Gets the antiforgery options for configuring antiforgery token generation and validation. |
 | [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
 | [CorsPolicyDefined](KestrunHost/CorsPolicyDefined) { get; } | Gets or sets a value indicating whether CORS (Cross-Origin Resource Sharing) is enabled. |
 | [DefaultCacheControl](KestrunHost/DefaultCacheControl) { get; } | Gets or sets the default cache control settings for HTTP responses. |
@@ -44,8 +47,11 @@ public class KestrunHost : IDisposable
 | [Uptime](KestrunHost/Uptime) { get; } | Gets the uptime duration of the Kestrun host. While running (no StopTime yet), this returns DateTime.UtcNow - StartTime. After stopping, it returns StopTime - StartTime. If StartTime is not set, returns null. |
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
+| [AddPowerShellRazorPages](KestrunHost/AddPowerShellRazorPages)() | Adds PowerShell Razor Pages to the application with default configuration and no route prefix. |
+| [AddPowerShellRazorPages](KestrunHost/AddPowerShellRazorPages)(…) | Adds PowerShell Razor Pages to the application. This middleware allows you to serve Razor Pages using PowerShell scripts. (5 methods) |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
 | [AddProbe](KestrunHost/AddProbe)(…) | Registers the provided [`IProbe`](../Kestrun.Health/IProbe) instance with the host. (3 methods) |
+| [AddRazorPages](KestrunHost/AddRazorPages)(…) | Adds Razor Pages to the application. (2 methods) |
 | [AddScheduling](KestrunHost/AddScheduling)(…) | Adds a scheduling feature to the Kestrun host, optionally specifying the maximum number of runspaces for the scheduler. |
 | [AddService](KestrunHost/AddService)(…) | Adds a service configuration action to the service queue. This action will be executed when the services are built. |
 | [AddSignalR](KestrunHost/AddSignalR)(…) | Adds the default SignalR hub (KestrunHub) to the application at the specified path. |
