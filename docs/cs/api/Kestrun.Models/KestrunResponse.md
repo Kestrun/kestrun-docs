@@ -12,29 +12,28 @@ Represents an HTTP response in the Kestrun framework, providing methods to write
 public class KestrunResponse
 ```
 
-| parameter | description |
-| --- | --- |
-| request | The associated [`KestrunRequest`](./KestrunRequest) for this response. |
-| bodyAsyncThreshold | The threshold in bytes for using async body write operations. Defaults to 8192. |
-
 ## Public Members
 
 | name | description |
 | --- | --- |
-| [KestrunResponse](KestrunResponse/KestrunResponse)(…) | Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes. |
-| [AcceptCharset](KestrunResponse/AcceptCharset) { get; } | Global text encoding for all responses. Defaults to UTF-8. |
+| [KestrunResponse](KestrunResponse/KestrunResponse)(…) | Initializes a new instance of the [`KestrunResponse`](./KestrunResponse) class. |
+| [AcceptCharset](KestrunResponse/AcceptCharset) { get; set; } | Global text encoding for all responses. Defaults to UTF-8. |
 | [Body](KestrunResponse/Body) { get; set; } | Gets or sets the body of the response, which can be a string, byte array, stream, or file info. |
 | [BodyAsyncThreshold](KestrunResponse/BodyAsyncThreshold) { get; set; } | If the response body is larger than this threshold (in bytes), async write will be used. |
 | [CacheControl](KestrunResponse/CacheControl) { get; set; } | Cache-Control header value for the response. |
+| [CallbackPlan](KestrunResponse/CallbackPlan) { get; } | Gets the list of callback requests associated with this response. |
 | [ContentDisposition](KestrunResponse/ContentDisposition) { get; set; } | Content-Disposition header value. |
 | [ContentType](KestrunResponse/ContentType) { get; set; } | Gets or sets the MIME content type of the response. |
 | [Context](KestrunResponse/Context) { get; } | Gets the HttpContext associated with the response. |
 | [Cookies](KestrunResponse/Cookies) { get; set; } | Gets or sets the list of Set-Cookie header values for the response. |
 | [Encoding](KestrunResponse/Encoding) { get; set; } | Text encoding for textual MIME types. |
 | [Headers](KestrunResponse/Headers) { get; set; } | Gets or sets the collection of HTTP headers for the response. |
+| [KrContext](KestrunResponse/KrContext) { get; set; } | Gets the associated KestrunContext for this response. |
+| [MapRouteOptions](KestrunResponse/MapRouteOptions) { get; } | Gets the route options associated with this response. |
 | [RedirectUrl](KestrunResponse/RedirectUrl) { get; set; } | Gets or sets the URL to redirect the response to, if an HTTP redirect is required. |
-| [Request](KestrunResponse/Request) { get; } | Gets the associated KestrunRequest for this response. |
+| [Request](KestrunResponse/Request) { get; set; } | Gets the associated KestrunRequest for this response. |
 | [StatusCode](KestrunResponse/StatusCode) { get; set; } | Gets or sets the HTTP status code for the response. |
+| [AddCallbackParameters](KestrunResponse/AddCallbackParameters)(…) | Adds callback parameters for the specified callback ID, body, and parameters. |
 | [ApplyCachingHeaders](KestrunResponse/ApplyCachingHeaders)(…) | Adds caching headers to the response based on the provided CacheControlHeaderValue options. |
 | [ApplyTo](KestrunResponse/ApplyTo)(…) | Applies the current KestrunResponse to the specified HttpResponse, setting status, headers, cookies, and writing the body. |
 | [GetHeader](KestrunResponse/GetHeader)(…) | Retrieves the value of the specified header from the response headers. |

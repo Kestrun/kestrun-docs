@@ -16,16 +16,20 @@ public record KestrunContext
 
 | name | description |
 | --- | --- |
-| [KestrunContext](KestrunContext/KestrunContext)(…) | Initializes a new instance of the [`KestrunContext`](./KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext (2 constructors) |
+| [KestrunContext](KestrunContext/KestrunContext)(…) | Initializes a new instance of the [`KestrunContext`](./KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext |
 | [Connection](KestrunContext/Connection) { get; } | Gets the connection information for the current HTTP context. |
 | [Ct](KestrunContext/Ct) { get; } | Gets the cancellation token that is triggered when the HTTP request is aborted. |
 | [HasSession](KestrunContext/HasSession) { get; } | True if Session middleware is active for this request. |
 | [Host](KestrunContext/Host) { get; set; } | The Kestrun host associated with this context. |
 | [HttpContext](KestrunContext/HttpContext) { get; set; } | The ASP.NET Core HTTP context associated with this Kestrun context. |
 | [Items](KestrunContext/Items) { get; } | Gets the collection of key/value pairs associated with the current HTTP context. |
+| [Logger](KestrunContext/Logger) { get; } | The logger associated with the Kestrun host. |
+| [MapRouteOptions](KestrunContext/MapRouteOptions) { get; set; } | Gets the route options associated with this response. |
+| [Parameters](KestrunContext/Parameters) { get; } | A dictionary to hold parameters passed by user for use within the KestrunContext. |
 | [Request](KestrunContext/Request) { get; set; } | The Kestrun request associated with this context. |
-| [Response](KestrunContext/Response) { get; set; } | The Kestrun response associated with this context. |
+| [Response](KestrunContext/Response) { get; } | The Kestrun response associated with this context. |
 | [Session](KestrunContext/Session) { get; } | Returns the ASP.NET Core session if the Session middleware is active; otherwise null. |
+| [TraceIdentifier](KestrunContext/TraceIdentifier) { get; set; } | Gets the trace identifier for the current HTTP context. |
 | [User](KestrunContext/User) { get; } | Gets the user associated with the current HTTP context. |
 | [BroadcastEvent](KestrunContext/BroadcastEvent)(…) | Synchronous wrapper for BroadcastEventAsync. |
 | [BroadcastEventAsync](KestrunContext/BroadcastEventAsync)(…) | Asynchronously broadcasts a custom event to all connected SignalR clients using the IRealtimeBroadcaster service. |
@@ -36,7 +40,10 @@ public record KestrunContext
 | [Challenge](KestrunContext/Challenge)(…) | Synchronous wrapper for HttpContext.ChallengeAsync. (3 methods) |
 | [ChallengeAsync](KestrunContext/ChallengeAsync)(…) | Asynchronous wrapper for HttpContext.ChallengeAsync using a Hashtable for properties. |
 | [SignOut](KestrunContext/SignOut)(…) | Synchronous wrapper for HttpContext.SignOutAsync. (3 methods) |
+| [StartSse](KestrunContext/StartSse)() | Starts a Server-Sent Events (SSE) response by setting the appropriate headers. |
 | [TryGetSession](KestrunContext/TryGetSession)(…) | Try pattern to get session without exceptions. |
+| [WriteSseEvent](KestrunContext/WriteSseEvent)(…) | Synchronous wrapper for WriteSseEventAsync. |
+| [WriteSseEventAsync](KestrunContext/WriteSseEventAsync)(…) | Writes a Server-Sent Event (SSE) to the response stream. |
 
 ## See Also
 

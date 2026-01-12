@@ -19,6 +19,7 @@ public class CookieAuthOptions : CookieAuthenticationOptions, IAuthenticationHos
 | --- | --- |
 | [CookieAuthOptions](CookieAuthOptions/CookieAuthOptions)() | The default constructor. |
 | [AllowInsecureHttp](CookieAuthOptions/AllowInsecureHttp) { get; set; } | If true, allows cookie authentication over insecure HTTP connections. |
+| [Deprecated](CookieAuthOptions/Deprecated) { get; set; } |  |
 | [Description](CookieAuthOptions/Description) { get; set; } |  |
 | [DisplayName](CookieAuthOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](CookieAuthOptions/DocumentationId) { get; set; } |  |

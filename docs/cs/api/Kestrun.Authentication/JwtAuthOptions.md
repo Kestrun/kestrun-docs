@@ -21,6 +21,7 @@ public class JwtAuthOptions : JwtBearerOptions, IAuthenticationHostOptions, ICla
 | [AllowInsecureHttp](JwtAuthOptions/AllowInsecureHttp) { get; set; } | If true, allows cookie authentication over insecure HTTP connections. |
 | [ClaimPolicy](JwtAuthOptions/ClaimPolicy) { get; set; } | Configuration for claim policy enforcement. |
 | [ClaimPolicyConfig](JwtAuthOptions/ClaimPolicyConfig) { get; set; } | Gets or sets the claim policy configuration. |
+| [Deprecated](JwtAuthOptions/Deprecated) { get; set; } |  |
 | [Description](JwtAuthOptions/Description) { get; set; } |  |
 | [DisplayName](JwtAuthOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](JwtAuthOptions/DocumentationId) { get; set; } |  |

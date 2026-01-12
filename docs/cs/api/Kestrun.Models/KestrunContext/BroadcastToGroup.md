@@ -9,8 +9,7 @@ grand_parent: "C# API"
 Synchronous wrapper for BroadcastToGroupAsync.
 
 ```csharp
-public bool BroadcastToGroup(string groupName, string method, object? message, 
-    CancellationToken cancellationToken = default)
+public bool BroadcastToGroup(string groupName, string method, object? message)
 ```
 
 | parameter | description |
@@ -18,7 +17,10 @@ public bool BroadcastToGroup(string groupName, string method, object? message,
 | groupName | The name of the group to broadcast the message to. |
 | method | The name of the method to invoke on the client. |
 | message | The message to broadcast. |
-| cancellationToken | Optional: Cancellation token. |
+
+## Return Value
+
+True if the message was broadcast successfully; otherwise, false.
 
 ## See Also
 

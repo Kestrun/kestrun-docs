@@ -20,6 +20,10 @@ public Task<bool> BroadcastToGroupAsync(string groupName, string method, object?
 | message | The message to broadcast. |
 | cancellationToken | Optional: Cancellation token. |
 
+## Return Value
+
+True if the message was broadcast successfully; otherwise, false.
+
 ## See Also
 
 * record [KestrunContext](../KestrunContext)

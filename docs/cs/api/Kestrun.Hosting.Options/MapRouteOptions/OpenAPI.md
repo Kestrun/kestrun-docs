@@ -9,13 +9,13 @@ grand_parent: "C# API"
 OpenAPI metadata for this route.
 
 ```csharp
-public Dictionary<HttpVerb, OpenAPIMetadata> OpenAPI { get; set; }
+public Dictionary<HttpVerb, OpenAPIPathMetadata> OpenAPI { get; set; }
 ```
 
 ## See Also
 
 * enum [HttpVerb](../../Kestrun.Utilities/HttpVerb)
-* record [OpenAPIMetadata](../OpenAPIMetadata)
+* record [OpenAPIPathMetadata](../OpenAPIPathMetadata)
 * class [MapRouteOptions](../MapRouteOptions)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

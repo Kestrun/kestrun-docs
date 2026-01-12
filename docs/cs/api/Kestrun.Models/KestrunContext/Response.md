@@ -9,7 +9,7 @@ grand_parent: "C# API"
 The Kestrun response associated with this context.
 
 ```csharp
-public KestrunResponse Response { get; set; }
+public KestrunResponse Response { get; }
 ```
 
 ## See Also

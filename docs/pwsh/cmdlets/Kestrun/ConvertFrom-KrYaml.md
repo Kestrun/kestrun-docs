@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 79
+nav_order: 83
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: ConvertFrom-KrYaml
 ---
@@ -21,10 +21,16 @@ Converts a YAML string to a PowerShell object or hashtable.
 
 ## SYNTAX
 
-### __AllParameterSets
+### String (Default)
 
 ```powershell
 ConvertFrom-KrYaml [[-Yaml] <string>] [-AllDocuments] [-UseMergingParser] [<CommonParameters>]
+```
+
+### Bytes
+
+```powershell
+ConvertFrom-KrYaml [-YamlBytes <byte[]>] [-AllDocuments] [-UseMergingParser] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -84,6 +90,15 @@ $obj = $yaml | ConvertFrom-KrYaml -UseMergingParser
 # using the 'defaults' anchor.
 $obj | Format-List
 
+### EXAMPLE 4
+
+$yamlBytes = [System.Text.Encoding]::UTF8.GetBytes(@"
+name: John
+age: 30
+"@)
+$obj = ConvertFrom-KrYaml -YamlBytes $yamlBytes
+# Outputs a PSCustomObject with properties Name and Age.
+
 ## PARAMETERS
 
 ### -AllDocuments
@@ -141,10 +156,32 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
+- Name: String
   Position: 0
   IsRequired: false
   ValueFromPipeline: true
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -YamlBytes
+
+The YAML content as a byte array to convert.
+This parameter is mandatory when using the 'Bytes' parameter set.
+
+```yaml
+Type: System.Byte[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Bytes
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false

@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 46
+nav_order: 48
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenApiExternalDoc
 ---
@@ -17,15 +17,15 @@ title: Add-KrOpenApiExternalDoc
 
 ## SYNOPSIS
 
-Adds external documentation to the OpenAPI document.
+Adds an OpenAPI External Documentation object to specified OpenAPI documents.
 
 ## SYNTAX
 
 ### __AllParameterSets
 
 ```powershell
-Add-KrOpenApiExternalDoc [[-Server] <KestrunHost>] [[-DocId] <string[]>] [-Description] <string>
- [-Url] <uri> [<CommonParameters>]
+Add-KrOpenApiExternalDoc [[-Server] <KestrunHost>] [[-DocId] <string[]>] [-Url] <uri>
+ [[-Description] <string>] [[-Extensions] <ordered>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -35,7 +35,7 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-This function adds external documentation to the OpenAPI document using the provided parameters in the specified OpenAPI documents in the Kestrun server.
+This function adds an OpenAPI External Documentation object to the specified OpenAPI documents in the Kestrun server.
 
 ## EXAMPLES
 
@@ -43,6 +43,23 @@ This function adds external documentation to the OpenAPI document using the prov
 
 # Add external documentation to the default document
 Add-KrOpenApiExternalDoc -Description 'Find out more about our API here.' -Url 'https://example.com/api-docs'
+Adds external documentation with the specified description and URL to the default OpenAPI document.
+
+### EXAMPLE 2
+
+# Add external documentation to multiple documents
+Add-KrOpenApiExternalDoc -DocId @('Default', 'v2') -Description 'API Docs' -Url 'https://example.com/docs'
+Adds external documentation with the specified description and URL to both the 'Default' and 'v2' OpenAPI documents.
+
+### EXAMPLE 3
+
+# Add external documentation with extensions
+$extensions = [ordered]@{
+    'x-doc-type' = 'comprehensive'
+    'x-contact' = 'Admin Team'
+}
+Add-KrOpenApiExternalDoc -Description 'Comprehensive API docs' -Url 'https://example.com/full-api-docs' -Extensions $extensions
+Adds external documentation with the specified description, URL, and extensions to the default OpenAPI document.
 
 ## PARAMETERS
 
@@ -57,8 +74,8 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
-  IsRequired: true
+  Position: 3
+  IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -74,12 +91,33 @@ Default is 'default'.
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 1
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Extensions
+
+A collection of OpenAPI extensions to add to the external documentation.
+
+```yaml
+Type: System.Collections.Specialized.OrderedDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 4
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -122,7 +160,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 3
+  Position: 2
   IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

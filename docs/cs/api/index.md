@@ -42,6 +42,38 @@ parent: "C#"
 | class [WindowsAuthOptions](./Kestrun.Authentication/WindowsAuthOptions.md) | Options for Windows Authentication. |
 | enum [WindowsAuthProtocol](./Kestrun.Authentication/WindowsAuthProtocol.md) | Defines the protocol used for Windows Authentication. |
 
+## Kestrun.Callback namespace
+
+| public type | description |
+| --- | --- |
+| record [CallbackBodyPlan](./Kestrun.Callback/CallbackBodyPlan.md) | Represents a plan for the body of a callback operation. |
+| record [CallbackDispatchOptions](./Kestrun.Callback/CallbackDispatchOptions.md) | Options for dispatching callback requests. |
+| record [CallBackExecutionPlan](./Kestrun.Callback/CallBackExecutionPlan.md) | Represents an execution plan for a callback, including resolved parameters. |
+| record [CallbackParamPlan](./Kestrun.Callback/CallbackParamPlan.md) | Represents a plan for a callback parameter. |
+| record [CallbackPlan](./Kestrun.Callback/CallbackPlan.md) | Represents a plan for executing a callback operation. |
+| class [CallbackRequest](./Kestrun.Callback/CallbackRequest.md) | Represents a request to perform a callback operation. |
+| static class [CallbackRequestFactory](./Kestrun.Callback/CallbackRequestFactory.md) | Factory for creating [`CallbackRequest`](./Kestrun.Callback/CallbackRequest.md) instances from callback plans and runtime context. |
+| record [CallbackResult](./Kestrun.Callback/CallbackResult.md) | Represents the result of a callback operation. |
+| record [CallbackRuntimeContext](./Kestrun.Callback/CallbackRuntimeContext.md) | Represents the runtime context for executing a callback operation. |
+| static class [CallbackRuntimeContextFactory](./Kestrun.Callback/CallbackRuntimeContextFactory.md) | Factory for creating [`CallbackRuntimeContext`](./Kestrun.Callback/CallbackRuntimeContext.md) instances from HTTP context. |
+| class [CallbackWorker](./Kestrun.Callback/CallbackWorker.md) | Background worker that processes callback requests from the queue. |
+| class [DefaultCallbackRetryPolicy](./Kestrun.Callback/DefaultCallbackRetryPolicy.md) | Default implementation of [`ICallbackRetryPolicy`](./Kestrun.Callback/ICallbackRetryPolicy.md) using exponential backoff with jitter. |
+| class [DefaultCallbackUrlResolver](./Kestrun.Callback/DefaultCallbackUrlResolver.md) | Default implementation of [`ICallbackUrlResolver`](./Kestrun.Callback/ICallbackUrlResolver.md) that resolves callback URLs using JSON Pointer expressions and variable tokens. |
+| class [HttpCallbackSender](./Kestrun.Callback/HttpCallbackSender.md) | Sender for performing callback requests. |
+| interface [ICallbackBodySerializer](./Kestrun.Callback/ICallbackBodySerializer.md) | Serializes the body of a callback request based on the callback plan and runtime context. |
+| interface [ICallbackDispatcher](./Kestrun.Callback/ICallbackDispatcher.md) | Dispatcher for enqueuing callback requests. |
+| interface [ICallbackRetryPolicy](./Kestrun.Callback/ICallbackRetryPolicy.md) | Defines a policy for retrying callback requests based on their results. |
+| interface [ICallbackSender](./Kestrun.Callback/ICallbackSender.md) | Sender for performing callback requests. |
+| interface [ICallbackSigner](./Kestrun.Callback/ICallbackSigner.md) | Signer for signing callback requests. |
+| interface [ICallbackStore](./Kestrun.Callback/ICallbackStore.md) | Store for persisting callback requests and their states. |
+| interface [ICallbackUrlResolver](./Kestrun.Callback/ICallbackUrlResolver.md) | Resolves callback URLs based on templates and runtime context. |
+| class [InMemoryCallbackDispatcher](./Kestrun.Callback/InMemoryCallbackDispatcher.md) | In-memory dispatcher for enqueuing callback requests. |
+| class [InMemoryCallbackDispatchWorker](./Kestrun.Callback/InMemoryCallbackDispatchWorker.md) | In-memory implementation of [`ICallbackDispatcher`](./Kestrun.Callback/ICallbackDispatcher.md). Enqueues callback requests into an in-memory queue for processing. |
+| class [InMemoryCallbackQueue](./Kestrun.Callback/InMemoryCallbackQueue.md) | In-memory queue for callback requests. |
+| class [JsonCallbackBodySerializer](./Kestrun.Callback/JsonCallbackBodySerializer.md) | JSON implementation of [`ICallbackBodySerializer`](./Kestrun.Callback/ICallbackBodySerializer.md). |
+| record [RetryDecision](./Kestrun.Callback/RetryDecision.md) | Represents a decision made by a callback retry policy. |
+| enum [RetryDecisionKind](./Kestrun.Callback/RetryDecisionKind.md) | Enumerates the kinds of retry decisions. |
+
 ## Kestrun.Certificates namespace
 
 | public type | description |
@@ -100,12 +132,10 @@ parent: "C#"
 | --- | --- |
 | class [KestrunHost](./Kestrun.Hosting/KestrunHost.md) | Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management. |
 | static class [KestrunHostAuthnExtensions](./Kestrun.Hosting/KestrunHostAuthnExtensions.md) | Provides extension methods for adding authentication schemes to the Kestrun host. |
-| static class [KestrunHostHealthExtensions](./Kestrun.Hosting/KestrunHostHealthExtensions.md) | Adds health-check specific helpers to [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
 | static class [KestrunHostSessionExtensions](./Kestrun.Hosting/KestrunHostSessionExtensions.md) | Provides extension methods for configuring session state and distributed cache in Kestrun. |
 | static class [KestrunHostSignalRExtensions](./Kestrun.Hosting/KestrunHostSignalRExtensions.md) | Extension methods for KestrunHost to support SignalR real-time broadcasting. |
-| static class [KestrunHostStaticFilesExtensions](./Kestrun.Hosting/KestrunHostStaticFilesExtensions.md) | Provides extension methods for configuring static file, default file, favicon, and file server middleware in KestrunHost. |
 | static class [KestrunHttpMiddlewareExtensions](./Kestrun.Hosting/KestrunHttpMiddlewareExtensions.md) | Provides extension methods for configuring common HTTP middleware in Kestrun. |
 | static class [KestrunSecurityMiddlewareExtensions](./Kestrun.Hosting/KestrunSecurityMiddlewareExtensions.md) | Extension methods for adding security-related middleware to a [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
 | class [NoopHostLifetime](./Kestrun.Hosting/NoopHostLifetime.md) | Minimal IHostLifetime that performs no blocking operations. Useful for scenarios like testing where the host lifecycle is externally managed. |
@@ -130,7 +160,9 @@ parent: "C#"
 | class [MapRouteOptions](./Kestrun.Hosting.Options/MapRouteOptions.md) | Options for mapping a route, including pattern, HTTP verbs, script code, authorization, and metadata. |
 | record [OpenAPICommonMetadata](./Kestrun.Hosting.Options/OpenAPICommonMetadata.md) | Metadata for OpenAPI documentation related to the route. |
 | record [OpenApiMapRouteOptions](./Kestrun.Hosting.Options/OpenApiMapRouteOptions.md) | Options for OpenAPI map route. |
-| record [OpenAPIMetadata](./Kestrun.Hosting.Options/OpenAPIMetadata.md) | Metadata for OpenAPI documentation related to the route. |
+| record [OpenAPIPathMetadata](./Kestrun.Hosting.Options/OpenAPIPathMetadata.md) | Metadata for OpenAPI documentation related to the route. |
+| record [SignalROptions](./Kestrun.Hosting.Options/SignalROptions.md) | Customization options for the OpenAPI metadata generated for the SignalR hub endpoint. |
+| record [SseBroadcastOptions](./Kestrun.Hosting.Options/SseBroadcastOptions.md) | Customization options for the OpenAPI metadata generated for the SSE broadcast endpoint. |
 | class [StatusCodeOptions](./Kestrun.Hosting.Options/StatusCodeOptions.md) | Options for configuring status code pages middleware. |
 
 ## Kestrun.Jwt namespace
@@ -150,7 +182,9 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | record [CsGlobals](./Kestrun.Languages/CsGlobals.md) | Provides global and local variable dictionaries and context for C# delegate execution. |
-| record [ParameterForInjectionInfo](./Kestrun.Languages/ParameterForInjectionInfo.md) | Information about a parameter to be injected into a script. |
+| class [ParameterForInjectionInfo](./Kestrun.Languages/ParameterForInjectionInfo.md) | Information about a parameter to be injected into a script. |
+| abstract class [ParameterForInjectionInfoBase](./Kestrun.Languages/ParameterForInjectionInfoBase.md) | Base class for parameter information to be injected into a script. |
+| class [ParameterForInjectionResolved](./Kestrun.Languages/ParameterForInjectionResolved.md) | Resolved parameter information for injection into a script. |
 
 ## Kestrun.Logging namespace
 
@@ -231,6 +265,7 @@ parent: "C#"
 | record [KestrunContext](./Kestrun.Models/KestrunContext.md) | Represents the context for a Kestrun request, including the request, response, HTTP context, and host. |
 | class [KestrunRequest](./Kestrun.Models/KestrunRequest.md) | Represents a request model for Kestrun, containing HTTP method, path, query, headers, body, authorization, cookies, and form data. |
 | class [KestrunResponse](./Kestrun.Models/KestrunResponse.md) | Represents an HTTP response in the Kestrun framework, providing methods to write various content types and manage headers, cookies, and status codes. |
+| record [ResolvedRequestParameters](./Kestrun.Models/ResolvedRequestParameters.md) | Resolved parameters for a request. |
 
 ## Kestrun.OpenApi namespace
 
@@ -240,11 +275,16 @@ parent: "C#"
 | static class [HelpExtractor](./Kestrun.OpenApi/HelpExtractor.md) | Helper to extract help information from PowerShell functions. |
 | static class [OaParameterExtensions](./Kestrun.OpenApi/OaParameterExtensions.md) | Extensions for OaParameterLocation. |
 | static class [OaSchemaTypeExtensions](./Kestrun.OpenApi/OaSchemaTypeExtensions.md) | Extension methods for OaSchemaType enum. |
+| static class [OpenApiComponentAnnotationScanner](./Kestrun.OpenApi/OpenApiComponentAnnotationScanner.md) | Scans PowerShell script files for OpenAPI component annotations defined via attributes. |
 | static class [OpenApiComponentClone](./Kestrun.OpenApi/OpenApiComponentClone.md) | Helper methods for cloning OpenAPI components. |
+| enum [OpenApiComponentConflictResolution](./Kestrun.OpenApi/OpenApiComponentConflictResolution.md) | Defines conflict resolution strategies when adding OpenAPI components. |
+| enum [OpenApiComponentKind](./Kestrun.OpenApi/OpenApiComponentKind.md) | Represents the fixed component buckets defined by the OpenAPI 3.2 specification under the `components` object. |
+| static class [OpenApiComponentKindExtensions](./Kestrun.OpenApi/OpenApiComponentKindExtensions.md) | Extension methods for [`OpenApiComponentKind`](./Kestrun.OpenApi/OpenApiComponentKind.md). |
 | class [OpenApiComponentSet](./Kestrun.OpenApi/OpenApiComponentSet.md) | Set of discovered OpenAPI component types. |
 | class [OpenApiDocDescriptor](./Kestrun.OpenApi/OpenApiDocDescriptor.md) | Generates OpenAPI v2 (Swagger) documents from C# types decorated with OpenApiSchema attributes. |
 | static class [OpenApiHelper](./Kestrun.OpenApi/OpenApiHelper.md) | Helper methods for OpenAPI integration. |
 | static class [OpenApiJsonNodeFactory](./Kestrun.OpenApi/OpenApiJsonNodeFactory.md) | Helpers to create System.Text.Json.Nodes from .NET objects for OpenAPI representation. |
+| enum [OpenApiPathLikeKind](./Kestrun.OpenApi/OpenApiPathLikeKind.md) | Defines the kinds of OpenAPI path-like objects. |
 | static class [OpenApiSchemaDiscovery](./Kestrun.OpenApi/OpenApiSchemaDiscovery.md) | Helper to discover OpenAPI schema types in loaded assemblies. |
 | static class [OpenApiSpecVersionExtensions](./Kestrun.OpenApi/OpenApiSpecVersionExtensions.md) | Extension methods for OpenApiSpecVersion enum. |
 
@@ -298,6 +338,15 @@ parent: "C#"
 | interface [IRealtimeBroadcaster](./Kestrun.SignalR/IRealtimeBroadcaster.md) | Provides an interface for broadcasting real-time messages to connected SignalR clients. |
 | class [KestrunHub](./Kestrun.SignalR/KestrunHub.md) | Default SignalR hub for Kestrun providing real-time communication capabilities. Clients can connect to this hub to receive log messages, events, and other real-time updates. |
 | class [RealtimeBroadcaster](./Kestrun.SignalR/RealtimeBroadcaster.md) | Default implementation of [`IRealtimeBroadcaster`](./Kestrun.SignalR/IRealtimeBroadcaster.md) that broadcasts messages via SignalR. |
+
+## Kestrun.Sse namespace
+
+| public type | description |
+| --- | --- |
+| class [InMemorySseBroadcaster](./Kestrun.Sse/InMemorySseBroadcaster.md) | In-memory implementation of [`ISseBroadcaster`](./Kestrun.Sse/ISseBroadcaster.md). Tracks connected clients and broadcasts formatted SSE payloads via per-client channels. |
+| interface [ISseBroadcaster](./Kestrun.Sse/ISseBroadcaster.md) | Provides a broadcast-style Server-Sent Events (SSE) publisher. |
+| struct [SseClientSubscription](./Kestrun.Sse/SseClientSubscription.md) | Represents a connected SSE client subscription. |
+| static class [SseEventFormatter](./Kestrun.Sse/SseEventFormatter.md) | Formats Server-Sent Events (SSE) payloads according to the SSE wire format. |
 
 ## Kestrun.Tasks namespace
 

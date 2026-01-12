@@ -9,11 +9,16 @@ grand_parent: "C# API"
 Initializes a new instance of the [`OpenAPICommonMetadata`](../OpenAPICommonMetadata) class.
 
 ```csharp
-public OpenAPICommonMetadata()
+public OpenAPICommonMetadata(MapRouteOptions mapOptions)
 ```
+
+| parameter | description |
+| --- | --- |
+| mapOptions | The route mapping options. |
 
 ## See Also
 
+* class [MapRouteOptions](../MapRouteOptions)
 * record [OpenAPICommonMetadata](../OpenAPICommonMetadata)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 
@@ -24,15 +29,17 @@ public OpenAPICommonMetadata()
 Initializes a new instance of the [`OpenAPICommonMetadata`](../OpenAPICommonMetadata) class with the specified pattern.
 
 ```csharp
-public OpenAPICommonMetadata(string pattern)
+public OpenAPICommonMetadata(string pattern, MapRouteOptions mapOptions)
 ```
 
 | parameter | description |
 | --- | --- |
 | pattern | The route pattern. |
+| mapOptions | The route mapping options. |
 
 ## See Also
 
+* class [MapRouteOptions](../MapRouteOptions)
 * record [OpenAPICommonMetadata](../OpenAPICommonMetadata)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

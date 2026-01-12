@@ -21,6 +21,7 @@ public class BasicAuthenticationOptions : AuthenticationSchemeOptions,
 | [AllowInsecureHttp](BasicAuthenticationOptions/AllowInsecureHttp) { get; set; } | Gets or sets a value indicating whether to allow insecure HTTP connections. |
 | [Base64Encoded](BasicAuthenticationOptions/Base64Encoded) { get; set; } | Gets or sets a value indicating whether the credentials are Base64 encoded. |
 | [ClaimPolicyConfig](BasicAuthenticationOptions/ClaimPolicyConfig) { get; set; } | Gets or sets the claim policy configuration. |
+| [Deprecated](BasicAuthenticationOptions/Deprecated) { get; set; } |  |
 | [Description](BasicAuthenticationOptions/Description) { get; set; } |  |
 | [DisplayName](BasicAuthenticationOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](BasicAuthenticationOptions/DocumentationId) { get; set; } |  |

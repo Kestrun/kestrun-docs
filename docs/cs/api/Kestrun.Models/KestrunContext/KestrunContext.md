@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "KestrunContext constructor (1 of 2)"
+title: "KestrunContext constructor"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunContext constructor (1 of 2)
+# KestrunContext constructor
 
 Initializes a new instance of the [`KestrunContext`](../KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext
 
@@ -20,32 +20,6 @@ public KestrunContext(KestrunHost host, HttpContext httpContext)
 ## See Also
 
 * class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
-* record [KestrunContext](../KestrunContext)
-* namespace [Kestrun.Models](../../Kestrun)
-
----
-
-# KestrunContext constructor (2 of 2)
-
-Initializes a new instance of the [`KestrunContext`](../KestrunContext) class. This constructor is used when creating a new KestrunContext from an existing HTTP context. It initializes the KestrunRequest and KestrunResponse based on the provided HttpContext
-
-```csharp
-public KestrunContext(KestrunHost host, KestrunRequest request, KestrunResponse response, 
-    HttpContext httpContext)
-```
-
-| parameter | description |
-| --- | --- |
-| host | The Kestrun host. |
-| request | The Kestrun request. |
-| response | The Kestrun response. |
-| httpContext | The associated HTTP context. |
-
-## See Also
-
-* class [KestrunHost](../../Kestrun.Hosting/KestrunHost)
-* class [KestrunRequest](../KestrunRequest)
-* class [KestrunResponse](../KestrunResponse)
 * record [KestrunContext](../KestrunContext)
 * namespace [Kestrun.Models](../../Kestrun)
 

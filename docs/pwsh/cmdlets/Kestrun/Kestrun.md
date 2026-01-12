@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 127
+nav_order: 132
 render_with_liquid: false
 ocument type: module
 Help Version: 1.0.0.0
@@ -9,7 +9,7 @@ HelpInfoUri:
 Locale: ''
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Kestrun Module
 ---
@@ -21,6 +21,10 @@ title: Kestrun Module
 {{ Fill in the Description }}
 
 ## Kestrun
+
+### [Add-KrAddCallbacksAutomation](Add-KrAddCallbacksAutomation.md)
+
+Adds callback automation middleware to the Kestrun host.
 
 ### [Add-KrAntiforgeryMiddleware](Add-KrAntiforgeryMiddleware.md)
 
@@ -198,17 +202,25 @@ Adds a named pipe listener to a Kestrun server instance.
 
 Adds OAuth 2.0 (Authorization Code) authentication to the Kestrun server.
 
+### [Add-KrOpenApiComponent](Add-KrOpenApiComponent.md)
+
+Adds an OpenAPI component (Example or Link) to the specified OpenAPI document(s).
+
 ### [Add-KrOpenApiContact](Add-KrOpenApiContact.md)
 
 Adds contact information to the OpenAPI document.
 
 ### [Add-KrOpenApiExternalDoc](Add-KrOpenApiExternalDoc.md)
 
-Adds external documentation to the OpenAPI document.
+Adds an OpenAPI External Documentation object to specified OpenAPI documents.
 
 ### [Add-KrOpenApiInfo](Add-KrOpenApiInfo.md)
 
 Adds or updates the OpenAPI Info section in the specified OpenAPI documents.
+
+### [Add-KrOpenApiInline](Add-KrOpenApiInline.md)
+
+Adds an inline OpenAPI element (Example or Link) to the specified OpenAPI document(s).
 
 ### [Add-KrOpenApiLicense](Add-KrOpenApiLicense.md)
 
@@ -289,6 +301,10 @@ Adds a Syslog TCP sink to the logging system.
 ### [Add-KrSinkSyslogUdp](Add-KrSinkSyslogUdp.md)
 
 Adds a Syslog UDP sink to the Serilog logger configuration.
+
+### [Add-KrSseBroadcastMiddleware](Add-KrSseBroadcastMiddleware.md)
+
+Adds an SSE broadcast endpoint to the server.
 
 ### [Add-KrStaticFilesMiddleware](Add-KrStaticFilesMiddleware.md)
 
@@ -490,6 +506,10 @@ Gets the number of connected SignalR clients.
 
 Returns new instance of Serilog.Formatting.Json.JsonFormatter.
 
+### [Get-KrSseConnectedClientCount](Get-KrSseConnectedClientCount.md)
+
+Gets the number of connected SSE broadcast clients.
+
 ### [Get-KrTask](Get-KrTask.md)
 
 Gets the status or result of a task by id.
@@ -566,9 +586,17 @@ Creates a new instance of Serilog.LoggerConfiguration.
 
 Creates a new instance of the Kestrun.Hosting.Options.MapRouteOptions class.
 
+### [New-KrOpenApiExample](New-KrOpenApiExample.md)
+
+Creates a new OpenAPI Component Example object.
+
 ### [New-KrOpenApiExternalDoc](New-KrOpenApiExternalDoc.md)
 
-Creates a new OpenAPI external documentation object.
+Creates a new OpenAPI External Documentation object.
+
+### [New-KrOpenApiHeader](New-KrOpenApiHeader.md)
+
+Creates a new OpenAPI Header object.
 
 ### [New-KrOpenApiLink](New-KrOpenApiLink.md)
 
@@ -601,6 +629,10 @@ Creates a new Kestrun server instance.
 ### [New-KrTask](New-KrTask.md)
 
 Creates a task without starting it.
+
+### [NoDefault](NoDefault.md)
+
+Placeholder function to indicate no default value.
 
 ### [Protect-KrJWT](Protect-KrJWT.md)
 
@@ -657,6 +689,10 @@ Broadcasts a message to a specific SignalR group.
 ### [Send-KrSignalRLog](Send-KrSignalRLog.md)
 
 Broadcasts a log message to all connected SignalR clients.
+
+### [Send-KrSseBroadcastEvent](Send-KrSseBroadcastEvent.md)
+
+Broadcasts an SSE event to all connected SSE broadcast clients.
 
 ### [Set-KrCorsCredential](Set-KrCorsCredential.md)
 
@@ -741,6 +777,10 @@ Sets the name and/or description of a task.
 ### [Start-KrServer](Start-KrServer.md)
 
 Starts the Kestrun server and listens for incoming requests.
+
+### [Start-KrSseResponse](Start-KrSseResponse.md)
+
+Starts a Server-Sent Events (SSE) response to the client.
 
 ### [Start-KrTask](Start-KrTask.md)
 
@@ -845,6 +885,10 @@ Writes a redirect response to the HTTP client.
 ### [Write-KrResponse](Write-KrResponse.md)
 
 Writes a response with the specified input object and HTTP status code.
+
+### [Write-KrSseEvent](Write-KrSseEvent.md)
+
+Sends a Server-Sent Event (SSE) to connected clients.
 
 ### [Write-KrStatusResponse](Write-KrStatusResponse.md)
 

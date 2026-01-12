@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 4
+nav_order: 5
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.apikey.apikeyauthenticationoptions?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrApiKeyAuthentication
 ---
@@ -25,7 +25,7 @@ Adds API key authentication to the Kestrun server.
 
 ```powershell
 Add-KrApiKeyAuthentication -ScriptBlock <scriptblock> [-Server <KestrunHost>]
- [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>]
+ [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>] [-Deprecated]
  [-DocId <string[]>] [-In <ParameterLocation>] [-ApiKeyName <string>]
  [-AdditionalHeaderNames <string[]>] [-AllowQueryStringFallback] [-AllowInsecureHttp]
  [-EmitChallengeHeader] [-ChallengeHeaderFormat <ApiKeyChallengeFormat>]
@@ -38,7 +38,7 @@ Add-KrApiKeyAuthentication -ScriptBlock <scriptblock> [-Server <KestrunHost>]
 
 ```powershell
 Add-KrApiKeyAuthentication -CodeFilePath <string> [-Server <KestrunHost>]
- [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>]
+ [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>] [-Deprecated]
  [-DocId <string[]>] [-In <ParameterLocation>] [-ApiKeyName <string>]
  [-AdditionalHeaderNames <string[]>] [-AllowQueryStringFallback] [-AllowInsecureHttp]
  [-EmitChallengeHeader] [-ChallengeHeaderFormat <ApiKeyChallengeFormat>]
@@ -51,7 +51,7 @@ Add-KrApiKeyAuthentication -CodeFilePath <string> [-Server <KestrunHost>]
 
 ```powershell
 Add-KrApiKeyAuthentication -StaticApiKey <string> [-Server <KestrunHost>]
- [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>]
+ [-AuthenticationScheme <string>] [-DisplayName <string>] [-Description <string>] [-Deprecated]
  [-DocId <string[]>] [-In <ParameterLocation>] [-ApiKeyName <string>]
  [-AdditionalHeaderNames <string[]>] [-AllowQueryStringFallback] [-AllowInsecureHttp]
  [-EmitChallengeHeader] [-ChallengeHeaderFormat <ApiKeyChallengeFormat>]
@@ -64,7 +64,7 @@ Add-KrApiKeyAuthentication -StaticApiKey <string> [-Server <KestrunHost>]
 
 ```powershell
 Add-KrApiKeyAuthentication -Code <string> [-Server <KestrunHost>] [-AuthenticationScheme <string>]
- [-DisplayName <string>] [-Description <string>] [-DocId <string[]>]
+ [-DisplayName <string>] [-Description <string>] [-Deprecated] [-DocId <string[]>]
  [-CodeLanguage <ScriptLanguage>] [-In <ParameterLocation>] [-ApiKeyName <string>]
  [-AdditionalHeaderNames <string[]>] [-AllowQueryStringFallback] [-AllowInsecureHttp]
  [-EmitChallengeHeader] [-ChallengeHeaderFormat <ApiKeyChallengeFormat>]
@@ -334,6 +334,45 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CodeFile
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: StaticKey
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: CodeInline
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: ScriptBlock
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Description
 
 A description of the API key authentication scheme.
@@ -400,7 +439,7 @@ The documentation IDs to associate with this authentication scheme in OpenAPI do
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:

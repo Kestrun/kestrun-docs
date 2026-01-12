@@ -17,6 +17,7 @@ public static class KestrunHostManager
 | name | description |
 | --- | --- |
 | static [Default](KestrunHostManager/Default) { get; } | Gets the default KestrunHost instance, if one has been set. |
+| static [EntryScriptPath](KestrunHostManager/EntryScriptPath) { get; } | Gets the path of the entry script that invoked the KestrunHostManager. |
 | static [InstanceNames](KestrunHostManager/InstanceNames) { get; } | Gets the collection of names for all KestrunHost instances. |
 | static [KestrunRoot](KestrunHostManager/KestrunRoot) { get; set; } | Gets or sets the root path for Kestrun operations. |
 | static [Contains](KestrunHostManager/Contains)(…) | Determines whether a KestrunHost instance with the specified name exists. |

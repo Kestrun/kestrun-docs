@@ -9,13 +9,14 @@ grand_parent: "C# API"
 Creates a new KestrunHost instance using the provided factory function.
 
 ```csharp
-public static KestrunHost Create(string name, Func<KestrunHost> factory, bool setAsDefault = false, 
-    bool enablePowershellMiddleware = false)
+public static KestrunHost Create(string name, string entryScriptPath, Func<KestrunHost> factory, 
+    bool setAsDefault = false, bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
 | --- | --- |
 | name | The name of the KestrunHost instance to create. |
+| entryScriptPath | The path of the entry script that invoked this creation. |
 | factory | A factory function that returns a new KestrunHost instance. |
 | setAsDefault | Whether to set this instance as the default. |
 | enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |
@@ -37,13 +38,15 @@ The created KestrunHost instance.
 Creates a new KestrunHost instance with the specified name and optional module paths, using the default logger.
 
 ```csharp
-public static KestrunHost Create(string name, string[]? modulePathsObj = null, 
-    bool setAsDefault = false, bool enablePowershellMiddleware = false)
+public static KestrunHost Create(string name, string entryScriptPath, 
+    string[]? modulePathsObj = null, bool setAsDefault = false, 
+    bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
 | --- | --- |
 | name | The name of the KestrunHost instance to create. |
+| entryScriptPath | The path of the entry script that invoked this creation. |
 | modulePathsObj | Optional array of module paths to load. |
 | setAsDefault | Whether to set this instance as the default. |
 | enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |
@@ -65,14 +68,16 @@ The created KestrunHost instance.
 Creates a new KestrunHost instance with the specified name, logger, root path, and optional module paths.
 
 ```csharp
-public static KestrunHost Create(string name, ILogger logger, string[]? modulePathsObj = null, 
-    bool setAsDefault = false, bool enablePowershellMiddleware = false)
+public static KestrunHost Create(string name, ILogger logger, string entryScriptPath, 
+    string[]? modulePathsObj = null, bool setAsDefault = false, 
+    bool enablePowershellMiddleware = false)
 ```
 
 | parameter | description |
 | --- | --- |
 | name | The name of the KestrunHost instance to create. |
 | logger | The Serilog logger to use for the host. |
+| entryScriptPath | The path of the entry script that invoked this creation. |
 | modulePathsObj | Optional array of module paths to load. |
 | setAsDefault | Whether to set this instance as the default. |
 | enablePowershellMiddleware | Whether to enable PowerShell middleware for this instance. |

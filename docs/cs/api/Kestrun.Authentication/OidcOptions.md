@@ -22,6 +22,7 @@ public class OidcOptions : OpenIdConnectOptions, IAuthenticationHostOptions,
 | [ClaimPolicy](OidcOptions/ClaimPolicy) { get; set; } | Configuration for claim policy enforcement. |
 | [CookieOptions](OidcOptions/CookieOptions) { get; } | Options for cookie authentication. |
 | [CookieScheme](OidcOptions/CookieScheme) { get; } | Gets the cookie authentication scheme name. |
+| [Deprecated](OidcOptions/Deprecated) { get; set; } |  |
 | [Description](OidcOptions/Description) { get; set; } |  |
 | [DisplayName](OidcOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](OidcOptions/DocumentationId) { get; set; } |  |

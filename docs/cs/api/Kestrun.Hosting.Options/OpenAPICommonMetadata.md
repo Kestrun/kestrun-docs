@@ -16,11 +16,11 @@ public record OpenAPICommonMetadata
 
 | name | description |
 | --- | --- |
-| [OpenAPICommonMetadata](OpenAPICommonMetadata/OpenAPICommonMetadata)() | Initializes a new instance of the [`OpenAPICommonMetadata`](./OpenAPICommonMetadata) class. |
-| [OpenAPICommonMetadata](OpenAPICommonMetadata/OpenAPICommonMetadata)(…) | Initializes a new instance of the [`OpenAPICommonMetadata`](./OpenAPICommonMetadata) class with the specified pattern. |
+| [OpenAPICommonMetadata](OpenAPICommonMetadata/OpenAPICommonMetadata)(…) | Initializes a new instance of the [`OpenAPICommonMetadata`](./OpenAPICommonMetadata) class with the specified pattern. (2 constructors) |
 | [CorsPolicy](OpenAPICommonMetadata/CorsPolicy) { get; set; } | The name of the CORS policy to apply to this route. |
 | [Description](OpenAPICommonMetadata/Description) { get; set; } | A detailed description of the route for OpenAPI documentation. |
 | [Enabled](OpenAPICommonMetadata/Enabled) { get; set; } | Indicates whether OpenAPI documentation is enabled for this route. |
+| [MapOptions](OpenAPICommonMetadata/MapOptions) { get; set; } | The route mapping options associated with this metadata. |
 | [Parameters](OpenAPICommonMetadata/Parameters) { get; set; } | A list of parameters that are applicable for this operation. If a parameter is already defined at the Path Item, the new definition will override it but can never remove it. The list MUST NOT include duplicated parameters. A unique parameter is defined by a combination of a name and location. The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object's components/parameters. |
 | [Pattern](OpenAPICommonMetadata/Pattern) { get; set; } | The relative path for the route in OpenAPI documentation. |
 | [Servers](OpenAPICommonMetadata/Servers) { get; set; } | An alternative server array to service this operation. If an alternative server object is specified at the Path Item Object or Root level, it will be overridden by this value. |

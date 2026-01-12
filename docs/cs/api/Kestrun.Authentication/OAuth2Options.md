@@ -21,6 +21,7 @@ public class OAuth2Options : OAuthOptions, IAuthenticationHostOptions, IOpenApiA
 | [ClaimPolicy](OAuth2Options/ClaimPolicy) { get; set; } | Configuration for claim policy enforcement. |
 | [CookieOptions](OAuth2Options/CookieOptions) { get; } | Options for cookie authentication. |
 | [CookieScheme](OAuth2Options/CookieScheme) { get; } | Gets the cookie authentication scheme name. |
+| [Deprecated](OAuth2Options/Deprecated) { get; set; } |  |
 | [Description](OAuth2Options/Description) { get; set; } |  |
 | [DisplayName](OAuth2Options/DisplayName) { get; set; } |  |
 | [DocumentationId](OAuth2Options/DocumentationId) { get; set; } |  |

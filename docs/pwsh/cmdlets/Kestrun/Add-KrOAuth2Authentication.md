@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 44
+nav_order: 45
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOAuth2Authentication
 ---
@@ -28,7 +28,7 @@ Add-KrOAuth2Authentication [[-Server] <KestrunHost>] [[-AuthenticationScheme] <s
  [[-DisplayName] <string>] [[-Description] <string>] [[-ClientId] <string>]
  [[-ClientSecret] <string>] [[-AuthorizationEndpoint] <string>] [[-TokenEndpoint] <string>]
  [[-CallbackPath] <string>] [[-ClaimPolicy] <ClaimPolicyConfig>] [[-Options] <OAuth2Options>]
- [-SaveTokens] [-UsePkce] [-PassThru] [<CommonParameters>]
+ [-Deprecated] [-SaveTokens] [-UsePkce] [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -167,6 +167,27 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 5
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

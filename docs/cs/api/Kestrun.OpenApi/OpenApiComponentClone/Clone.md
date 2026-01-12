@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "OpenApiComponentClone.Clone method (1 of 32)"
+title: "OpenApiComponentClone.Clone method (1 of 37)"
 parent: "Kestrun.OpenApi"
 grand_parent: "C# API"
 ---
-# OpenApiComponentClone.Clone method (1 of 32)
+# OpenApiComponentClone.Clone method (1 of 37)
 
 Clones a dictionary of OpenApiExample instances.
 
@@ -28,7 +28,7 @@ A new dictionary with cloned OpenApiExample instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (2 of 32)
+# OpenApiComponentClone.Clone method (2 of 37)
 
 Clones a dictionary of OpenApiExtension instances.
 
@@ -52,7 +52,7 @@ A new dictionary with cloned OpenApiExtension instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (3 of 32)
+# OpenApiComponentClone.Clone method (3 of 37)
 
 Clones a dictionary of IOpenApiHeader instances.
 
@@ -76,7 +76,7 @@ A new dictionary with cloned IOpenApiHeader instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (4 of 32)
+# OpenApiComponentClone.Clone method (4 of 37)
 
 Clones a dictionary of IOpenApiLink instances.
 
@@ -100,7 +100,31 @@ A new dictionary containing cloned IOpenApiLink instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (5 of 32)
+# OpenApiComponentClone.Clone method (5 of 37)
+
+Clones a dictionary of OpenApiMediaType instances.
+
+```csharp
+public static IDictionary<string, IOpenApiMediaType>? Clone(
+    this IDictionary<string, IOpenApiMediaType>? content)
+```
+
+| parameter | description |
+| --- | --- |
+| content | The dictionary to clone. |
+
+## Return Value
+
+A new dictionary with cloned OpenApiMediaType instances.
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (6 of 37)
 
 Clones a dictionary of OpenApiSchema instances.
 
@@ -124,31 +148,7 @@ A new dictionary containing cloned OpenApiSchema instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (6 of 32)
-
-Clones a dictionary of OpenApiMediaType instances.
-
-```csharp
-public static IDictionary<string, OpenApiMediaType>? Clone(
-    this IDictionary<string, OpenApiMediaType>? content)
-```
-
-| parameter | description |
-| --- | --- |
-| content | The dictionary to clone. |
-
-## Return Value
-
-A new dictionary with cloned OpenApiMediaType instances.
-
-## See Also
-
-* class [OpenApiComponentClone](../OpenApiComponentClone)
-* namespace [Kestrun.OpenApi](../../Kestrun)
-
----
-
-# OpenApiComponentClone.Clone method (7 of 32)
+# OpenApiComponentClone.Clone method (7 of 37)
 
 Clones a dictionary of RuntimeExpressionAnyWrapper instances.
 
@@ -172,7 +172,7 @@ A new dictionary that is a deep clone of the input dictionary.
 
 ---
 
-# OpenApiComponentClone.Clone method (8 of 32)
+# OpenApiComponentClone.Clone method (8 of 37)
 
 Clones a list of OpenApiSchema instances.
 
@@ -195,7 +195,36 @@ A new list containing cloned OpenApiSchema instances.
 
 ---
 
-# OpenApiComponentClone.Clone method (9 of 32)
+# OpenApiComponentClone.Clone method (9 of 37)
+
+Clones an IOpenApiCallback instance.
+
+```csharp
+public static IOpenApiCallback Clone(this IOpenApiCallback callback)
+```
+
+| parameter | description |
+| --- | --- |
+| callback | The IOpenApiCallback to clone. |
+
+## Return Value
+
+A new IOpenApiCallback instance with the same properties as the input callback.
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| InvalidOperationException | Thrown when the callback is of an unsupported type. |
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (10 of 37)
 
 Clones an OpenApiExtension instance.
 
@@ -224,7 +253,7 @@ A new OpenApiExtension instance with the same properties as the input extension.
 
 ---
 
-# OpenApiComponentClone.Clone method (10 of 32)
+# OpenApiComponentClone.Clone method (11 of 37)
 
 Clones an IOpenApiHeader instance.
 
@@ -253,7 +282,7 @@ A new IOpenApiHeader instance with the same properties as the input header.
 
 ---
 
-# OpenApiComponentClone.Clone method (11 of 32)
+# OpenApiComponentClone.Clone method (12 of 37)
 
 Clones an IOpenApiLink instance.
 
@@ -276,7 +305,36 @@ A new IOpenApiLink instance with the same properties as the input link.
 
 ---
 
-# OpenApiComponentClone.Clone method (12 of 32)
+# OpenApiComponentClone.Clone method (13 of 37)
+
+Clones an IOpenApiMediaType instance.
+
+```csharp
+public static IOpenApiMediaType Clone(this IOpenApiMediaType mediaType)
+```
+
+| parameter | description |
+| --- | --- |
+| mediaType | The IOpenApiMediaType instance to clone. |
+
+## Return Value
+
+A cloned IOpenApiMediaType instance.
+
+## Exceptions
+
+| exception | condition |
+| --- | --- |
+| InvalidOperationException | Thrown when the IOpenApiMediaType implementation is unsupported. |
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (14 of 37)
 
 Clones an IOpenApiParameter instance.
 
@@ -305,7 +363,7 @@ A cloned instance of IOpenApiParameter.
 
 ---
 
-# OpenApiComponentClone.Clone method (13 of 32)
+# OpenApiComponentClone.Clone method (15 of 37)
 
 Clones an IOpenApiRequestBody instance.
 
@@ -334,7 +392,7 @@ A cloned instance of IOpenApiRequestBody.
 
 ---
 
-# OpenApiComponentClone.Clone method (14 of 32)
+# OpenApiComponentClone.Clone method (16 of 37)
 
 Clones an IOpenApiResponse instance.
 
@@ -363,7 +421,7 @@ A cloned IOpenApiResponse instance.
 
 ---
 
-# OpenApiComponentClone.Clone method (15 of 32)
+# OpenApiComponentClone.Clone method (17 of 37)
 
 Clones an IOpenApiSchema instance.
 
@@ -386,7 +444,53 @@ A new IOpenApiSchema instance with the same properties as the input schema.
 
 ---
 
-# OpenApiComponentClone.Clone method (16 of 32)
+# OpenApiComponentClone.Clone method (18 of 37)
+
+Clones an OpenApiCallback instance.
+
+```csharp
+public static OpenApiCallback Clone(this OpenApiCallback callback)
+```
+
+| parameter | description |
+| --- | --- |
+| callback | The OpenApiCallback to clone. |
+
+## Return Value
+
+A new OpenApiCallback instance with the same properties as the input callback.
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (19 of 37)
+
+Clones an OpenApiCallbackReference instance.
+
+```csharp
+public static OpenApiCallbackReference Clone(this OpenApiCallbackReference callback)
+```
+
+| parameter | description |
+| --- | --- |
+| callback | The OpenApiCallbackReference to clone. |
+
+## Return Value
+
+A new OpenApiCallbackReference instance with the same properties as the input callback.
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (20 of 37)
 
 Clones an OpenApiExample instance.
 
@@ -409,7 +513,7 @@ A new OpenApiExample instance with the same properties as the input example.
 
 ---
 
-# OpenApiComponentClone.Clone method (17 of 32)
+# OpenApiComponentClone.Clone method (21 of 37)
 
 Clones an OpenApiExampleReference instance.
 
@@ -432,7 +536,7 @@ A new OpenApiExampleReference instance with the same properties as the input ins
 
 ---
 
-# OpenApiComponentClone.Clone method (18 of 32)
+# OpenApiComponentClone.Clone method (22 of 37)
 
 Clones an OpenApiHeader instance.
 
@@ -455,7 +559,7 @@ A new OpenApiHeader instance with the same properties as the input header.
 
 ---
 
-# OpenApiComponentClone.Clone method (19 of 32)
+# OpenApiComponentClone.Clone method (23 of 37)
 
 Clones an OpenApiHeaderReference instance.
 
@@ -478,7 +582,7 @@ A new OpenApiHeaderReference instance with the same properties as the input head
 
 ---
 
-# OpenApiComponentClone.Clone method (20 of 32)
+# OpenApiComponentClone.Clone method (24 of 37)
 
 Clones an OpenApiLink instance.
 
@@ -501,7 +605,7 @@ A new OpenApiLink instance with the same properties as the input instance.
 
 ---
 
-# OpenApiComponentClone.Clone method (21 of 32)
+# OpenApiComponentClone.Clone method (25 of 37)
 
 Clones an OpenApiLinkReference instance.
 
@@ -524,7 +628,7 @@ A new OpenApiLinkReference instance with the same properties as the input instan
 
 ---
 
-# OpenApiComponentClone.Clone method (22 of 32)
+# OpenApiComponentClone.Clone method (26 of 37)
 
 Clones an OpenApiMediaType instance.
 
@@ -534,11 +638,11 @@ public static OpenApiMediaType Clone(this OpenApiMediaType mediaType)
 
 | parameter | description |
 | --- | --- |
-| mediaType | The OpenApiMediaType to clone. |
+| mediaType | The OpenApiMediaType instance to clone. |
 
 ## Return Value
 
-A new OpenApiMediaType instance with the same properties as the input mediaType.
+A cloned OpenApiMediaType instance.
 
 ## See Also
 
@@ -547,7 +651,30 @@ A new OpenApiMediaType instance with the same properties as the input mediaType.
 
 ---
 
-# OpenApiComponentClone.Clone method (23 of 32)
+# OpenApiComponentClone.Clone method (27 of 37)
+
+Clones an OpenApiMediaTypeReference instance.
+
+```csharp
+public static OpenApiMediaTypeReference Clone(this OpenApiMediaTypeReference mediaType)
+```
+
+| parameter | description |
+| --- | --- |
+| mediaType | The OpenApiMediaTypeReference instance to clone. |
+
+## Return Value
+
+A cloned OpenApiMediaTypeReference instance.
+
+## See Also
+
+* class [OpenApiComponentClone](../OpenApiComponentClone)
+* namespace [Kestrun.OpenApi](../../Kestrun)
+
+---
+
+# OpenApiComponentClone.Clone method (28 of 37)
 
 Clones an OpenApiParameter instance.
 
@@ -570,7 +697,7 @@ A new OpenApiParameter instance with the same properties as the input parameter.
 
 ---
 
-# OpenApiComponentClone.Clone method (24 of 32)
+# OpenApiComponentClone.Clone method (29 of 37)
 
 Clones an OpenApiParameterReference instance.
 
@@ -593,7 +720,7 @@ A new OpenApiParameterReference instance with the same properties as the input p
 
 ---
 
-# OpenApiComponentClone.Clone method (25 of 32)
+# OpenApiComponentClone.Clone method (30 of 37)
 
 Clones an OpenApiRequestBody instance.
 
@@ -616,7 +743,7 @@ A new OpenApiRequestBody instance with the same properties as the input requestB
 
 ---
 
-# OpenApiComponentClone.Clone method (26 of 32)
+# OpenApiComponentClone.Clone method (31 of 37)
 
 Clones an OpenApiRequestBodyReference instance.
 
@@ -639,7 +766,7 @@ A new OpenApiRequestBodyReference instance with the same properties as the input
 
 ---
 
-# OpenApiComponentClone.Clone method (27 of 32)
+# OpenApiComponentClone.Clone method (32 of 37)
 
 Clones an OpenApiResponse instance.
 
@@ -662,7 +789,7 @@ A new OpenApiResponse instance with the same properties as the input response.
 
 ---
 
-# OpenApiComponentClone.Clone method (28 of 32)
+# OpenApiComponentClone.Clone method (33 of 37)
 
 Clones an OpenApiResponseReference instance.
 
@@ -685,7 +812,7 @@ A new OpenApiResponseReference instance with the same properties as the input re
 
 ---
 
-# OpenApiComponentClone.Clone method (29 of 32)
+# OpenApiComponentClone.Clone method (34 of 37)
 
 Clones an OpenApiSchema instance.
 
@@ -708,7 +835,7 @@ A new OpenApiSchema instance with the same properties as the input schema.
 
 ---
 
-# OpenApiComponentClone.Clone method (30 of 32)
+# OpenApiComponentClone.Clone method (35 of 37)
 
 Clones an OpenApiSchemaReference instance.
 
@@ -731,7 +858,7 @@ A new OpenApiSchemaReference instance with the same properties as the input inst
 
 ---
 
-# OpenApiComponentClone.Clone method (31 of 32)
+# OpenApiComponentClone.Clone method (36 of 37)
 
 Clones an OpenApiServer instance.
 
@@ -754,7 +881,7 @@ A new OpenApiServer instance with the same properties as the input instance.
 
 ---
 
-# OpenApiComponentClone.Clone method (32 of 32)
+# OpenApiComponentClone.Clone method (37 of 37)
 
 Clones a RuntimeExpressionAnyWrapper instance.
 

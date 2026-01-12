@@ -18,6 +18,7 @@ public class MapRouteOptions
 | --- | --- |
 | [MapRouteOptions](MapRouteOptions/MapRouteOptions)() | The default constructor. |
 | [AllowAnonymous](MapRouteOptions/AllowAnonymous) { get; set; } | If true, allows anonymous access to this route. |
+| [CallbackPlan](MapRouteOptions/CallbackPlan) { get; set; } | Callback requests associated with this route. |
 | [CorsPolicy](MapRouteOptions/CorsPolicy) { get; set; } | Name of the CORS policy to apply, if any. |
 | [DefaultResponseContentType](MapRouteOptions/DefaultResponseContentType) { get; set; } | Default response content type for this route. |
 | [DisableAntiforgery](MapRouteOptions/DisableAntiforgery) { get; set; } | If true, disables antiforgery protection for this route. |

@@ -17,8 +17,7 @@ public static class PowerShellOpenApiClassExporter
 | name | description |
 | --- | --- |
 | static [ValidClassNames](PowerShellOpenApiClassExporter/ValidClassNames) { get; } | Holds valid class names to be used as type in the OpenAPI function definitions. |
-| static [ExportOpenApiClasses](PowerShellOpenApiClassExporter/ExportOpenApiClasses)() | Exports OpenAPI component classes found in loaded assemblies as PowerShell class definitions. |
-| static [ExportOpenApiClasses](PowerShellOpenApiClassExporter/ExportOpenApiClasses)(…) | Exports OpenAPI component classes found in the specified assemblies as PowerShell class definitions |
+| static [ExportOpenApiClasses](PowerShellOpenApiClassExporter/ExportOpenApiClasses)(…) | Exports OpenAPI component classes found in loaded assemblies as PowerShell class definitions. (2 methods) |
 | static [WriteOpenApiTempScript](PowerShellOpenApiClassExporter/WriteOpenApiTempScript)(…) | Writes the OpenAPI class definitions to a temporary PowerShell script file. |
 
 ## See Also

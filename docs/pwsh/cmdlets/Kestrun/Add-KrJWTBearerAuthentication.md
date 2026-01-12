@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 36
+nav_order: 37
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbearerauthenticationextensions.addjwtbearerauthentication?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrJWTBearerAuthentication
 ---
@@ -25,7 +25,7 @@ Adds JWT Bearer authentication to the Kestrun server.
 
 ```powershell
 Add-KrJWTBearerAuthentication [-Server <KestrunHost>] [-AuthenticationScheme <string>]
- [-DisplayName <string>] [-DocId <string[]>] [-Description <string>]
+ [-DisplayName <string>] [-DocId <string[]>] [-Description <string>] [-Deprecated]
  [-ClaimPolicy <ClaimPolicyConfig>] [-ValidIssuer <string>] [-ValidIssuers <string[]>]
  [-ValidAudience <string>] [-ValidAudiences <string[]>] [-ValidAlgorithms <string[]>]
  [-SkipValidateIssuer] [-SkipValidateAudience] [-SkipValidateLifetime] [-ValidateIssuerSigningKey]
@@ -148,6 +148,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Description
 
 A description of the JWT Bearer authentication scheme.
@@ -197,7 +218,7 @@ The documentation IDs to associate with this authentication scheme in OpenAPI do
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:

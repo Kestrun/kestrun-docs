@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 138
+nav_order: 145
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiLink
 ---
@@ -21,11 +21,18 @@ Creates a new OpenAPI Link object.
 
 ## SYNTAX
 
-### __AllParameterSets
+### ByOperationId (Default)
 
 ```powershell
-New-KrOpenApiLink [[-OperationRef] <string>] [[-OperationId] <string>] [[-Description] <string>]
- [[-Server] <OpenApiServer>] [[-Parameters] <hashtable>] [[-RequestBody] <Object>]
+New-KrOpenApiLink -OperationId <string> [-Description <string>] [-Server <OpenApiServer>]
+ [-Parameters <hashtable>] [-RequestBody <Object>] [<CommonParameters>]
+```
+
+### ByOperationRef
+
+```powershell
+New-KrOpenApiLink -OperationRef <string> [-Description <string>] [-Server <OpenApiServer>]
+ [-Parameters <hashtable>] [-RequestBody <Object>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -44,7 +51,7 @@ Links allow you to specify how the output of one operation can be used as input 
 ### EXAMPLE 1
 
 $link = New-KrOpenApiLink -OperationId "getUser" -Description "Link to get user details" -Parameters @{ "userId" = "$response.body#/id" }
-This example creates a new OpenAPI Link object that links to the "getUser" operation, with a description and parameters.
+This link creates a new OpenAPI Link object that links to the "getUser" operation, with a description and parameters.
 
 ## PARAMETERS
 
@@ -59,7 +66,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -79,9 +86,9 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
-  Position: 1
-  IsRequired: false
+- Name: ByOperationId
+  Position: Named
+  IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -100,9 +107,9 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
-  Position: 0
-  IsRequired: false
+- Name: ByOperationRef
+  Position: Named
+  IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -122,7 +129,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 4
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -143,7 +150,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 5
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -164,7 +171,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 3
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -173,6 +180,13 @@ DontShow: false
 AcceptedValues: []
 HelpMessage: ''
 ```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

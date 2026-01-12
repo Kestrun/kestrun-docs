@@ -31,7 +31,7 @@ Add-KrOpenApiInfo -Title 'RequestBody Component API' `
 #                      COMPONENT SCHEMAS
 # =========================================================
 
-[OpenApiSchemaComponent(Required = ('productName', 'price'))]
+[OpenApiSchemaComponent(RequiredProperties = ('productName', 'price'))]
 class Product {
     [OpenApiPropertyAttribute(Description = 'Unique product identifier', Format = 'int64', Example = 1)]
     [long]$id
@@ -62,19 +62,18 @@ class Product {
 # CreateProductRequest: RequestBody component that wraps Product schema
 [OpenApiRequestBodyComponent(
     Description = 'Product creation payload. Supports JSON and form data.',
-    IsRequired = $true,
+    Required = $true,
     ContentType = ('application/json', 'application/x-www-form-urlencoded')
 )]
 class CreateProductRequest:Product {
-
 }
 
 # UpdateProductRequest: RequestBody component that wraps UpdateProduct schema
 [OpenApiRequestBodyComponent(
     Description = 'Product update payload.',
-    IsRequired = $true,
+    Required = $true,
     ContentType = 'application/json',
-    Required = ('productName', 'price')
+    RequiredProperties = ('productName', 'price')
 )]
 class UpdateProductRequest {
     [OpenApiPropertyAttribute(Description = 'Product name', Example = 'Laptop Pro')]
@@ -99,7 +98,6 @@ Enable-KrConfiguration
 Add-KrApiDocumentationRoute -DocumentType Swagger
 Add-KrApiDocumentationRoute -DocumentType Redoc
 
-# POST endpoint: Create product using CreateProductRequest component
 <#
 .SYNOPSIS
     Create a new product.
@@ -134,7 +132,6 @@ function createProduct {
     Write-KrResponse $response -StatusCode 201
 }
 
-# PUT endpoint: Update product using UpdateProductRequest component
 <#
 .SYNOPSIS
     Update an existing product.

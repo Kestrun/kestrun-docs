@@ -10,8 +10,15 @@ Applies the configured options to the Kestrel server and initializes the runspac
 
 ```csharp
 public void EnableConfiguration(Dictionary<string, object>? userVariables = null, 
-    Dictionary<string, string>? userFunctions = null)
+    Dictionary<string, string>? userFunctions = null, 
+    Dictionary<string, string>? userCallbacks = null)
 ```
+
+| parameter | description |
+| --- | --- |
+| userVariables | User-defined variables to inject into the runspace pool. |
+| userFunctions | User-defined functions to inject into the runspace pool. |
+| userCallbacks | User-defined callback functions for OpenAPI classes. |
 
 ## See Also
 

@@ -21,6 +21,7 @@ public sealed class OpenApiComponentSet
 | [ExampleTypes](OpenApiComponentSet/ExampleTypes) { get; set; } | Example types available for reuse in the specification. |
 | [HeaderTypes](OpenApiComponentSet/HeaderTypes) { get; set; } | Header types available for reuse in the specification. |
 | [LinkTypes](OpenApiComponentSet/LinkTypes) { get; set; } | Link types available for reuse in the specification. |
+| [MediaType](OpenApiComponentSet/MediaType) { get; set; } | Media type types available for reuse in the specification. |
 | [ParameterTypes](OpenApiComponentSet/ParameterTypes) { get; set; } | Parameter types available for reuse in the specification. |
 | [PathItemTypes](OpenApiComponentSet/PathItemTypes) { get; set; } | Path item types available for reuse in the specification. |
 | [RequestBodyTypes](OpenApiComponentSet/RequestBodyTypes) { get; set; } | Request body types available for reuse in the specification. |

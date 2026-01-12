@@ -16,7 +16,7 @@ public static class OpenApiComponentClone
 
 | name | description |
 | --- | --- |
-| static [Clone](OpenApiComponentClone/Clone)(…) | Clones an OpenApiParameterReference instance. (32 methods) |
+| static [Clone](OpenApiComponentClone/Clone)(…) | Clones an OpenApiParameterReference instance. (37 methods) |
 | static [ConvertToSchema](OpenApiComponentClone/ConvertToSchema)(…) | Converts an OpenApiRequestBody to an OpenApiSchema. |
 | static [JsonNodeClone](OpenApiComponentClone/JsonNodeClone)(…) | Clones a JsonNode instance. |
 

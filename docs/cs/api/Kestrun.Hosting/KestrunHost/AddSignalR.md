@@ -9,15 +9,16 @@ grand_parent: "C# API"
 Adds the default SignalR hub (KestrunHub) to the application at the specified path.
 
 ```csharp
-public KestrunHost AddSignalR(string path)
+public KestrunHost AddSignalR(SignalROptions options)
 ```
 
 | parameter | description |
 | --- | --- |
-| path | The path at which to map the SignalR hub. |
+| options | The options for configuring the SignalR hub. |
 
 ## See Also
 
+* record [SignalROptions](../../Kestrun.Hosting.Options/SignalROptions)
 * class [KestrunHost](../KestrunHost)
 * namespace [Kestrun.Hosting](../../Kestrun)
 
@@ -28,14 +29,14 @@ public KestrunHost AddSignalR(string path)
 Adds a SignalR hub to the application at the specified path.
 
 ```csharp
-public KestrunHost AddSignalR<T>(string path)
+public KestrunHost AddSignalR<T>(SignalROptions options)
     where T : Hub
 ```
 
 | parameter | description |
 | --- | --- |
 | T | The type of the SignalR hub. |
-| path | The path at which to map the SignalR hub. |
+| options | The options for configuring the SignalR hub. |
 
 ## Return Value
 
@@ -43,6 +44,7 @@ The current KestrunHost instance.
 
 ## See Also
 
+* record [SignalROptions](../../Kestrun.Hosting.Options/SignalROptions)
 * class [KestrunHost](../KestrunHost)
 * namespace [Kestrun.Hosting](../../Kestrun)
 

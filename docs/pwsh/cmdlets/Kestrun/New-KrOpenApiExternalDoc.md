@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 137
+nav_order: 143
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiExternalDoc
 ---
@@ -17,14 +17,15 @@ title: New-KrOpenApiExternalDoc
 
 ## SYNOPSIS
 
-Creates a new OpenAPI external documentation object.
+Creates a new OpenAPI External Documentation object.
 
 ## SYNTAX
 
 ### __AllParameterSets
 
 ```powershell
-New-KrOpenApiExternalDoc [[-Description] <string>] [-Url] <uri> [<CommonParameters>]
+New-KrOpenApiExternalDoc [-Url] <uri> [[-Description] <string>] [[-Extensions] <ordered>]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -34,13 +35,25 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-This function creates a new OpenAPI external documentation object using the provided parameters.
+This function creates a new OpenAPI External Documentation object using the provided parameters.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-$externalDocs = New-KrOpenApiExternalDoc -Description 'Find out more about our API here.' -Url 'https://example.com/api-docs'
+# Create external documentation
+$externalDoc = New-KrOpenApiExternalDoc -Description 'Find out more about our API here.' -Url 'https://example.com/api-docs'
+Creates an external documentation object with the specified description and URL.
+
+### EXAMPLE 2
+
+# Create external documentation with extensions
+$extensions = [ordered]@{
+    'x-doc-type' = 'comprehensive'
+    'x-contact' = 'Admin Team'
+}
+$externalDoc = New-KrOpenApiExternalDoc -Description 'Comprehensive API docs' -Url 'https://example.com/full-api-docs' -Extensions $extensions
+Creates an external documentation object with the specified description, URL, and extensions.
 
 ## PARAMETERS
 
@@ -55,7 +68,28 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 0
+  Position: 1
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Extensions
+
+A collection of OpenAPI extensions to add to the external documentation.
+
+```yaml
+Type: System.Collections.Specialized.OrderedDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 2
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -76,7 +110,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: 0
   IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -96,10 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
-
-### Microsoft.OpenApi.OpenApiExternalDocs
-
-{{ Fill in the Description }}
 
 ## NOTES
 

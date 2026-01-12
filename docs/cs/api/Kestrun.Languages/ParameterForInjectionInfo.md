@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "ParameterForInjectionInfo record"
+title: "ParameterForInjectionInfo class"
 parent: "Kestrun.Languages"
 grand_parent: "C# API"
 ---
-# ParameterForInjectionInfo record
+# ParameterForInjectionInfo class
 
 Information about a parameter to be injected into a script.
 
 ```csharp
-public record ParameterForInjectionInfo
+public class ParameterForInjectionInfo : ParameterForInjectionInfoBase
 ```
 
 ## Public Members
@@ -17,15 +17,10 @@ public record ParameterForInjectionInfo
 | name | description |
 | --- | --- |
 | [ParameterForInjectionInfo](ParameterForInjectionInfo/ParameterForInjectionInfo)(…) | Constructs a ParameterForInjectionInfo from an OpenApiParameter. (2 constructors) |
-| [DefaultValue](ParameterForInjectionInfo/DefaultValue) { get; } | The default value of the parameter. |
-| [In](ParameterForInjectionInfo/In) { get; set; } | The location of the parameter. |
-| [IsRequestBody](ParameterForInjectionInfo/IsRequestBody) { get; } | Indicates whether the parameter is from the request body. |
-| [Name](ParameterForInjectionInfo/Name) { get; set; } | The name of the parameter. |
-| [ParameterType](ParameterForInjectionInfo/ParameterType) { get; } | The .NET type of the parameter. |
-| [Type](ParameterForInjectionInfo/Type) { get; set; } | The JSON schema type of the parameter. |
 
 ## See Also
 
+* class [ParameterForInjectionInfoBase](./ParameterForInjectionInfoBase)
 * namespace [Kestrun.Languages](../Kestrun)
 * [ParameterForInjectionInfo.cs](https://github.com/Kestrun/Kestrun/tree/main/src/CSharp/Kestrun/Languages/ParameterForInjectionInfo.cs)
 

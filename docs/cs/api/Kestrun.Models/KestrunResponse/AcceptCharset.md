@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Global text encoding for all responses. Defaults to UTF-8.
 
 ```csharp
-public Encoding AcceptCharset { get; }
+public Encoding AcceptCharset { get; set; }
 ```
 
 ## See Also

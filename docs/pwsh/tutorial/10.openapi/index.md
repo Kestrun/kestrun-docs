@@ -21,12 +21,18 @@ Browse the step-by-step guides below to learn OpenAPI features in Kestrun:
 6. **[Complete Components](./6.Complete-Components.md)** — Combine all component types in a full API
 7. **[Tags and External Docs](./7.Tags-and-Docs.md)** — Group operations and attach documentation links
 8. **[Document Information](./8.Document-Info.md)** — Populate title, contact, license, and server metadata
-9. **[Component Headers](./9.Component-Headers.md)** — Define reusable response headers (Planned)
-10. **[Component Links](./10.Component-Links.md)** — Define operation links (Planned)
-11. **[Component Callbacks](./11.Component-Callbacks.md)** — Define asynchronous callbacks (Planned)
+9. **[Component Headers](./9.Component-Headers.md)** — Define reusable response headers
+10. **[Component Links](./10.Component-Links.md)** — Define operation links
+11. **[Component Callbacks](./11.Component-Callbacks.md)** — Define asynchronous callbacks
 12. **[WebHooks](./12.WebHooks.md)** — Define top-level webhooks (Planned)
-13. **[Redocly Museum API](./13.Museum-API.md)** — Full implementation of the Redocly Museum API
+13. **[Examples](./13.Examples.md)** — Component and inline examples for requests, responses, and parameters
 14. **[Swagger Petstore](./14.Petstore-API.md)** — Full implementation of the Swagger Petstore API
+15. **[Redocly Museum API](./15.Museum-API.md)** — Full implementation of the Redocly Museum API
+16. **[Multiple OpenAPI Documents](./18.Multi-Document-OpenAPI.md)** — Serve multiple OpenAPI documents (default + webhook) from one server
+17. **[Product Search with HTTP QUERY](./19.Product-Search-Query.md)** — OpenAPI 3.2 QUERY method with request body search filters
+18. **[SSE (OpenAPI)](./20.Sse.md)** — Document a `text/event-stream` SSE endpoint
+19. **[SSE Broadcast (OpenAPI)](./21.Sse-Broadcast.md)** — Document broadcast SSE + a trigger API
+20. **[SignalR (OpenAPI)](./22.SignalR.md)** — Document SignalR-adjacent HTTP routes with OpenAPI
 
 ## Quick start: run the samples
 
@@ -56,11 +62,20 @@ pwsh .\docs\_includes\examples\pwsh\10.7-OpenAPI-Tags.ps1
 
 # 8) Document info - contact, license, servers
 pwsh .\docs\_includes\examples\pwsh\10.8-OpenAPI-Document-Info.ps1
+
+# 9) Component headers - reusable response headers
+pwsh .\docs\_includes\examples\pwsh\10.9-OpenAPI-Component-Header.ps1
+
+# 10) Component links - operation relationships
+pwsh .\docs\_includes\examples\pwsh\10.10-OpenAPI-Component-Link.ps1
+
+# 13) Examples - component + inline examples
+pwsh .\docs\_includes\examples\pwsh\10.13-OpenAPI-Examples.ps1
 ```
 
 ## Key Concepts
 
-- **OpenAPI 3.1 Specification**: Industry-standard API documentation format
+- **OpenAPI 3.0+ Specifications (including 3.2)**: Industry-standard API documentation format
 - **Component Schemas**: Reusable data structures defined once and referenced multiple times
 - **RequestBody Components**: Standardized request payloads across endpoints
 - **Parameter Components**: Consistent query string, path, header, and cookie parameters

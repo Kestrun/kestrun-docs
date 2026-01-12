@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 11
+nav_order: 12
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: https://docs.kestrun.dev/docs/powershell/kestrun/authentication
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrCookiesAuthentication
 ---
@@ -25,7 +25,7 @@ Adds cookie authentication to the Kestrun server.
 
 ```powershell
 Add-KrCookiesAuthentication [-Server <KestrunHost>] [-AuthenticationScheme <string>]
- [-DisplayName <string>] [-DocId <string[]>] [-Description <string>]
+ [-DisplayName <string>] [-DocId <string[]>] [-Description <string>] [-Deprecated <string>]
  [-ClaimPolicy <ClaimPolicyConfig>] [-SlidingExpiration] [-LoginPath <string>]
  [-LogoutPath <string>] [-AccessDeniedPath <string>] [-ReturnUrlParameter <string>]
  [-ExpireTimeSpan <timespan>] [-Cookie <CookieBuilder>] [-PassThru] [<CommonParameters>]
@@ -161,6 +161,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Description
 
 A description of the cookie authentication scheme.
@@ -209,7 +230,7 @@ Documentation IDs for the authentication scheme.
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:

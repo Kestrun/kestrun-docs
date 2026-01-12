@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 71
+nav_order: 75
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.windowsauthentication?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrWindowsAuthentication
 ---
@@ -25,8 +25,8 @@ Adds Windows authentication to the Kestrun server.
 
 ```powershell
 Add-KrWindowsAuthentication [[-Server] <KestrunHost>] [[-AuthenticationScheme] <string>]
- [[-DisplayName] <string>] [[-Description] <string>] [[-Options] <WindowsAuthOptions>] [-PassThru]
- [<CommonParameters>]
+ [[-DisplayName] <string>] [[-Description] <string>] [[-Options] <WindowsAuthOptions>] [-Deprecated]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -61,6 +61,27 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 1
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

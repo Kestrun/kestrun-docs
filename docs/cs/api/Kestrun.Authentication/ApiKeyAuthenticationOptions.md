@@ -24,6 +24,7 @@ public class ApiKeyAuthenticationOptions : AuthenticationSchemeOptions,
 | [ApiKeyName](ApiKeyAuthenticationOptions/ApiKeyName) { get; set; } | Name of to look for the API key. |
 | [ChallengeHeaderFormat](ApiKeyAuthenticationOptions/ChallengeHeaderFormat) { get; set; } | Format for the `WWW-Authenticate` header in 401 responses. |
 | [ClaimPolicyConfig](ApiKeyAuthenticationOptions/ClaimPolicyConfig) { get; set; } | Gets or sets the claim policy configuration. |
+| [Deprecated](ApiKeyAuthenticationOptions/Deprecated) { get; set; } |  |
 | [Description](ApiKeyAuthenticationOptions/Description) { get; set; } |  |
 | [DisplayName](ApiKeyAuthenticationOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](ApiKeyAuthenticationOptions/DocumentationId) { get; set; } |  |

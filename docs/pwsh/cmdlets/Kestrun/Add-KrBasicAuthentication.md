@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 5
+nav_order: 6
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrBasicAuthentication
 ---
@@ -26,9 +26,9 @@ Adds basic authentication to the Kestrun server.
 ```powershell
 Add-KrBasicAuthentication -ScriptBlock <scriptblock> [-Server <KestrunHost>]
  [-AuthenticationScheme <string>] [-DisplayName <string>] [-DocId <string[]>]
- [-Description <string>] [-HeaderName <string>] [-Base64Encoded] [-SuppressWwwAuthenticate]
- [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp] [-Logger <ILogger>] [-PassThru]
- [<CommonParameters>]
+ [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
+ [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
+ [-Logger <ILogger>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Options
@@ -44,7 +44,7 @@ Add-KrBasicAuthentication -Options <BasicAuthenticationOptions> [-Server <Kestru
 ```powershell
 Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsCodeFilePath <string>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-HeaderName <string>] [-Base64Encoded]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
  [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
  [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
 ```
@@ -54,10 +54,10 @@ Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsCodeFilePath <strin
 ```powershell
 Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsCode <string> [-Server <KestrunHost>]
  [-AuthenticationScheme <string>] [-DisplayName <string>] [-DocId <string[]>]
- [-Description <string>] [-HeaderName <string>] [-Base64Encoded] [-SuppressWwwAuthenticate]
- [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp] [-Logger <ILogger>]
- [-ClaimPolicyConfig <ClaimPolicyConfig>] [-IssueClaimsCodeLanguage <ScriptLanguage>] [-PassThru]
- [<CommonParameters>]
+ [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
+ [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
+ [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>]
+ [-IssueClaimsCodeLanguage <ScriptLanguage>] [-PassThru] [<CommonParameters>]
 ```
 
 ### v3_i1
@@ -65,7 +65,7 @@ Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsCode <string> [-Ser
 ```powershell
 Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsScriptBlock <scriptblock>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-HeaderName <string>] [-Base64Encoded]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
  [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
  [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
 ```
@@ -75,9 +75,9 @@ Add-KrBasicAuthentication -CodeFilePath <string> -IssueClaimsScriptBlock <script
 ```powershell
 Add-KrBasicAuthentication -CodeFilePath <string> [-Server <KestrunHost>]
  [-AuthenticationScheme <string>] [-DisplayName <string>] [-DocId <string[]>]
- [-Description <string>] [-HeaderName <string>] [-Base64Encoded] [-SuppressWwwAuthenticate]
- [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp] [-Logger <ILogger>] [-PassThru]
- [<CommonParameters>]
+ [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
+ [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
+ [-Logger <ILogger>] [-PassThru] [<CommonParameters>]
 ```
 
 ### v2_i3
@@ -85,9 +85,10 @@ Add-KrBasicAuthentication -CodeFilePath <string> [-Server <KestrunHost>]
 ```powershell
 Add-KrBasicAuthentication -Code <string> -IssueClaimsCodeFilePath <string> [-Server <KestrunHost>]
  [-AuthenticationScheme <string>] [-DisplayName <string>] [-DocId <string[]>]
- [-Description <string>] [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>] [-Base64Encoded]
- [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
- [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
+ [-Description <string>] [-Deprecated] [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>]
+ [-Base64Encoded] [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>]
+ [-AllowInsecureHttp] [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### v2_i2
@@ -95,9 +96,9 @@ Add-KrBasicAuthentication -Code <string> -IssueClaimsCodeFilePath <string> [-Ser
 ```powershell
 Add-KrBasicAuthentication -Code <string> -IssueClaimsCode <string> [-Server <KestrunHost>]
  [-AuthenticationScheme <string>] [-DisplayName <string>] [-DocId <string[]>]
- [-Description <string>] [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>] [-Base64Encoded]
- [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
- [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>]
+ [-Description <string>] [-Deprecated] [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>]
+ [-Base64Encoded] [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>]
+ [-AllowInsecureHttp] [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>]
  [-IssueClaimsCodeLanguage <ScriptLanguage>] [-PassThru] [<CommonParameters>]
 ```
 
@@ -106,17 +107,17 @@ Add-KrBasicAuthentication -Code <string> -IssueClaimsCode <string> [-Server <Kes
 ```powershell
 Add-KrBasicAuthentication -Code <string> -IssueClaimsScriptBlock <scriptblock>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>]
- [-Base64Encoded] [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>]
- [-AllowInsecureHttp] [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru]
- [<CommonParameters>]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-CodeLanguage <ScriptLanguage>]
+ [-HeaderName <string>] [-Base64Encoded] [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>]
+ [-Realm <string>] [-AllowInsecureHttp] [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### v2
 
 ```powershell
 Add-KrBasicAuthentication -Code <string> [-Server <KestrunHost>] [-AuthenticationScheme <string>]
- [-DisplayName <string>] [-DocId <string[]>] [-Description <string>]
+ [-DisplayName <string>] [-DocId <string[]>] [-Description <string>] [-Deprecated]
  [-CodeLanguage <ScriptLanguage>] [-HeaderName <string>] [-Base64Encoded] [-SuppressWwwAuthenticate]
  [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp] [-Logger <ILogger>] [-PassThru]
  [<CommonParameters>]
@@ -127,7 +128,7 @@ Add-KrBasicAuthentication -Code <string> [-Server <KestrunHost>] [-Authenticatio
 ```powershell
 Add-KrBasicAuthentication -ScriptBlock <scriptblock> -IssueClaimsCodeFilePath <string>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-HeaderName <string>] [-Base64Encoded]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
  [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
  [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
 ```
@@ -137,7 +138,7 @@ Add-KrBasicAuthentication -ScriptBlock <scriptblock> -IssueClaimsCodeFilePath <s
 ```powershell
 Add-KrBasicAuthentication -ScriptBlock <scriptblock> -IssueClaimsCode <string>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-HeaderName <string>] [-Base64Encoded]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
  [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
  [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>]
  [-IssueClaimsCodeLanguage <ScriptLanguage>] [-PassThru] [<CommonParameters>]
@@ -148,7 +149,7 @@ Add-KrBasicAuthentication -ScriptBlock <scriptblock> -IssueClaimsCode <string>
 ```powershell
 Add-KrBasicAuthentication -ScriptBlock <scriptblock> -IssueClaimsScriptBlock <scriptblock>
  [-Server <KestrunHost>] [-AuthenticationScheme <string>] [-DisplayName <string>]
- [-DocId <string[]>] [-Description <string>] [-HeaderName <string>] [-Base64Encoded]
+ [-DocId <string[]>] [-Description <string>] [-Deprecated] [-HeaderName <string>] [-Base64Encoded]
  [-SuppressWwwAuthenticate] [-SeparatorRegex <regex>] [-Realm <string>] [-AllowInsecureHttp]
  [-Logger <ILogger>] [-ClaimPolicyConfig <ClaimPolicyConfig>] [-PassThru] [<CommonParameters>]
 ```
@@ -562,6 +563,93 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: v3_i3
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v3_i2
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v3_i1
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v3
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v2_i3
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v2_i2
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v2_i1
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v2
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v1_i3
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v1_i2
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v1_i1
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: v1
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Description
 
 A description of the basic authentication scheme.
@@ -676,7 +764,7 @@ The documentation IDs to associate with this authentication scheme.
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:

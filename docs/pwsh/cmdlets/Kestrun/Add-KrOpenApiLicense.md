@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 48
+nav_order: 51
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenApiLicense
 ---
@@ -21,11 +21,24 @@ Adds license information to the OpenAPI document.
 
 ## SYNTAX
 
-### __AllParameterSets
+### Default (Default)
 
 ```powershell
-Add-KrOpenApiLicense [[-Server] <KestrunHost>] [[-DocId] <string[]>] [-Name] <string> [[-Url] <uri>]
- [[-Identifier] <string>] [<CommonParameters>]
+Add-KrOpenApiLicense -Name <string> [-Server <KestrunHost>] [-DocId <string[]>] [<CommonParameters>]
+```
+
+### WithUrl
+
+```powershell
+Add-KrOpenApiLicense -Name <string> -Url <uri> [-Server <KestrunHost>] [-DocId <string[]>]
+ [<CommonParameters>]
+```
+
+### WithIdentifier
+
+```powershell
+Add-KrOpenApiLicense -Name <string> -Identifier <string> [-Server <KestrunHost>] [-DocId <string[]>]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -42,7 +55,17 @@ This function adds license information to the OpenAPI Info section using the pro
 ### EXAMPLE 1
 
 # Add license information to the default document
-Add-KrOpenApiLicense -Name 'MIT License' -Url 'https://opensource.org/licenses/MIT' -Identifier 'MIT'
+Add-KrOpenApiLicense -Name 'MIT License' -Url 'https://opensource.org/licenses/MIT'
+
+### EXAMPLE 2
+
+# Add license information using SPDX identifier to the default document
+Add-KrOpenApiLicense -Name 'Apache 2.0' -Identifier 'Apache-2.0'
+
+### EXAMPLE 3
+
+# Add license information using URL to the default document
+Add-KrOpenApiLicense -Name 'GPLv3' -Url 'https://www.gnu.org/licenses/gpl-3.0.en.html' -DocId 'customDoc1','customDoc2'
 
 ## PARAMETERS
 
@@ -53,12 +76,12 @@ Default is 'default'.
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -71,6 +94,7 @@ HelpMessage: ''
 ### -Identifier
 
 The SPDX identifier of the license.
+This parameter is used in the 'WithIdentifier' parameter set and is mutually exclusive with the 'Url' parameter.
 
 ```yaml
 Type: System.String
@@ -78,9 +102,9 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
-  Position: 4
-  IsRequired: false
+- Name: WithIdentifier
+  Position: Named
+  IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -100,7 +124,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
+  Position: Named
   IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -122,7 +146,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 0
+  Position: Named
   IsRequired: false
   ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
@@ -135,6 +159,7 @@ HelpMessage: ''
 ### -Url
 
 The URL of the license.
+This parameter is used in the 'WithUrl' parameter set and is mutually exclusive with the 'Identifier' parameter.
 
 ```yaml
 Type: System.Uri
@@ -142,9 +167,9 @@ DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
-  Position: 3
-  IsRequired: false
+- Name: WithUrl
+  Position: Named
+  IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false

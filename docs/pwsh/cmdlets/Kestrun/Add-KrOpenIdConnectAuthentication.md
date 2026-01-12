@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 52
+nav_order: 55
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenIdConnectAuthentication
 ---
@@ -29,8 +29,8 @@ Add-KrOpenIdConnectAuthentication [[-Server] <KestrunHost>] [[-AuthenticationSch
  [[-ClientSecret] <string>] [[-AuthorizationEndpoint] <string>] [[-TokenEndpoint] <string>]
  [[-CallbackPath] <string>] [[-SignedOutCallbackPath] <string>]
  [[-ResponseType] <OpenIdConnectResponseType>] [[-ClaimPolicy] <ClaimPolicyConfig>]
- [[-Options] <OidcOptions>] [-SaveTokens] [-UsePkce] [-GetClaimsFromUserInfoEndpoint] [-PassThru]
- [<CommonParameters>]
+ [[-Options] <OidcOptions>] [-Deprecated] [-SaveTokens] [-UsePkce] [-GetClaimsFromUserInfoEndpoint]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -195,6 +195,27 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 6
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

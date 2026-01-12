@@ -14,7 +14,7 @@ public List<ParameterForInjectionInfo> Parameters { get; }
 
 ## See Also
 
-* record [ParameterForInjectionInfo](../../Kestrun.Languages/ParameterForInjectionInfo)
+* class [ParameterForInjectionInfo](../../Kestrun.Languages/ParameterForInjectionInfo)
 * record [LanguageOptions](../LanguageOptions)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

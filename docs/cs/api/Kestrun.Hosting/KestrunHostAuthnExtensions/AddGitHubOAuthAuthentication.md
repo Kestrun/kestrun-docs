@@ -10,8 +10,8 @@ Adds GitHub OAuth (Authorization Code) authentication with optional email enrich
 
 ```csharp
 public static KestrunHost AddGitHubOAuthAuthentication(this KestrunHost host, string scheme, 
-    string? displayName, string[]? documentationId, string? description, string clientId, 
-    string clientSecret, string callbackPath)
+    string? displayName, string[]? documentationId, string? description, bool deprecated, 
+    string clientId, string clientSecret, string callbackPath)
 ```
 
 | parameter | description |
@@ -21,6 +21,7 @@ public static KestrunHost AddGitHubOAuthAuthentication(this KestrunHost host, st
 | displayName | The display name for the authentication scheme. |
 | documentationId | Documentation IDs for the authentication scheme. |
 | description | A description of the authentication scheme. |
+| deprecated | If true, marks the authentication scheme as deprecated in OpenAPI documentation. |
 | clientId | GitHub OAuth App Client ID. |
 | clientSecret | GitHub OAuth App Client Secret. |
 | callbackPath | The callback path for OAuth redirection (e.g. "/signin-github"). |

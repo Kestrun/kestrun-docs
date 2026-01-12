@@ -6,11 +6,17 @@ grand_parent: "C# API"
 ---
 # OpenApiDocDescriptor.GenerateDoc method
 
-Generates the OpenAPI document by processing components and registered routes.
+Generates the OpenAPI document by processing components and building paths and webhooks.
 
 ```csharp
 public void GenerateDoc()
 ```
+
+## Remarks
+
+BuildCallbacks is already handled elsewhere.
+
+This method sets HasBeenGenerated to true after generation.
 
 ## See Also
 

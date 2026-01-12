@@ -18,6 +18,7 @@ public class WindowsAuthOptions : NegotiateOptions, IAuthenticationHostOptions,
 | name | description |
 | --- | --- |
 | [WindowsAuthOptions](WindowsAuthOptions/WindowsAuthOptions)() | The default constructor. |
+| [Deprecated](WindowsAuthOptions/Deprecated) { get; set; } |  |
 | [Description](WindowsAuthOptions/Description) { get; set; } |  |
 | [DisplayName](WindowsAuthOptions/DisplayName) { get; set; } |  |
 | [DocumentationId](WindowsAuthOptions/DocumentationId) { get; set; } |  |

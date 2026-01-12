@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Gets the associated KestrunRequest for this response.
 
 ```csharp
-public KestrunRequest Request { get; }
+public KestrunRequest Request { get; set; }
 ```
 
 ## See Also

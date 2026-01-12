@@ -1,24 +1,48 @@
 ---
 layout: default
-title: "KestrunHost.GetOrCreateOpenApiDocument method"
+title: "KestrunHost.GetOrCreateOpenApiDocument method (1 of 2)"
 parent: "Kestrun.Hosting"
 grand_parent: "C# API"
 ---
-# KestrunHost.GetOrCreateOpenApiDocument method
+# KestrunHost.GetOrCreateOpenApiDocument method (1 of 2)
 
 Gets the OpenAPI document descriptor for the specified document ID.
 
 ```csharp
-public OpenApiDocDescriptor GetOrCreateOpenApiDocument(string docId)
+public OpenApiDocDescriptor GetOrCreateOpenApiDocument(string apiDocId)
 ```
 
 | parameter | description |
 | --- | --- |
-| docId | The ID of the OpenAPI document. |
+| apiDocId | The ID of the OpenAPI document. |
 
 ## Return Value
 
 The OpenAPI document descriptor.
+
+## See Also
+
+* class [OpenApiDocDescriptor](../../Kestrun.OpenApi/OpenApiDocDescriptor)
+* class [KestrunHost](../KestrunHost)
+* namespace [Kestrun.Hosting](../../Kestrun)
+
+---
+
+# KestrunHost.GetOrCreateOpenApiDocument method (2 of 2)
+
+Gets the list of OpenAPI document descriptors for the specified document IDs.
+
+```csharp
+public List<OpenApiDocDescriptor> GetOrCreateOpenApiDocument(string[] openApiDocIds)
+```
+
+| parameter | description |
+| --- | --- |
+| openApiDocIds | The array of OpenAPI document IDs. |
+
+## Return Value
+
+A list of OpenApiDocDescriptor objects corresponding to the provided document IDs.
 
 ## See Also
 

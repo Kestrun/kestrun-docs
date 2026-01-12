@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 26
+nav_order: 27
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrGitHubAuthentication
 ---
@@ -26,7 +26,7 @@ Adds GitHub OAuth (Authorization Code) authentication to the Kestrun server.
 ```powershell
 Add-KrGitHubAuthentication [[-Server] <KestrunHost>] [[-AuthenticationScheme] <string>]
  [[-DisplayName] <string>] [[-DocId] <string[]>] [[-Description] <string>] [-ClientId] <string>
- [-ClientSecret] <string> [[-CallbackPath] <string>] [-PassThru] [<CommonParameters>]
+ [-ClientSecret] <string> [[-CallbackPath] <string>] [-Deprecated] [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -138,6 +138,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Deprecated
+
+If specified, marks the authentication scheme as deprecated in OpenAPI documentation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Description
 
 A description of the GitHub authentication scheme.
@@ -186,7 +207,7 @@ Documentation IDs for the authentication scheme.
 
 ```yaml
 Type: System.String[]
-DefaultValue: '[Kestrun.Authentication.IOpenApiAuthenticationOptions]::DefaultDocumentationIds'
+DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
 SupportsWildcards: false
 Aliases: []
 ParameterSets:

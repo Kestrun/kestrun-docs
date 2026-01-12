@@ -16,10 +16,10 @@ public interface IOpenApiAuthenticationOptions
 
 | name | description |
 | --- | --- |
+| [Deprecated](IOpenApiAuthenticationOptions/Deprecated) { get; set; } | Specifies that a security scheme is deprecated and SHOULD be transitioned out of usage. Note: This field is supported in OpenAPI 3.2.0+. For earlier versions, it will be serialized as x-oai-deprecated extension. |
 | [Description](IOpenApiAuthenticationOptions/Description) { get; set; } | Optional description for the security scheme in OpenAPI documentation. |
 | [DocumentationId](IOpenApiAuthenticationOptions/DocumentationId) { get; set; } | Optional documentation identifiers associated with this authentication scheme. |
 | [GlobalScheme](IOpenApiAuthenticationOptions/GlobalScheme) { get; set; } | If true, this security scheme is applied globally in OpenAPI documentation. |
-| static readonly [DefaultDocumentationIds](IOpenApiAuthenticationOptions/DefaultDocumentationIds) | Default documentation identifiers for OpenAPI authentication schemes. |
 | const [DefaultSchemeName](IOpenApiAuthenticationOptions/DefaultSchemeName) | Default authentication scheme name. |
 
 ## See Also

@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 49
+nav_order: 52
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 12/18/2025
+ms.date: 01/12/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenApiRoute
 ---
@@ -25,9 +25,9 @@ Adds a new OpenAPI map route to the Kestrun server.
 
 ```powershell
 Add-KrOpenApiRoute [[-Server] <KestrunHost>] [[-Options] <MapRouteOptions>] [[-Pattern] <string>]
- [[-SpecVersion] <OpenApiSpecVersion[]>] [[-VersionVarName] <string>] [[-FormatVarName] <string>]
- [[-RefreshVarName] <string>] [[-DefaultFormat] <string>] [[-DefaultVersion] <string>] [-PassThru]
- [<CommonParameters>]
+ [[-DocId] <string>] [[-SpecVersion] <OpenApiSpecVersion[]>] [[-VersionVarName] <string>]
+ [[-FormatVarName] <string>] [[-RefreshVarName] <string>] [[-DefaultFormat] <string>]
+ [[-DefaultVersion] <string>] [-PassThru] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -66,7 +66,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 7
+  Position: 8
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -87,7 +87,29 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 8
+  Position: 9
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -DocId
+
+The OpenAPI document ID to be served by this route.
+
+```yaml
+Type: System.String
+DefaultValue: Default
+SupportsWildcards: false
+Aliases:
+- DocumentId
+ParameterSets:
+- Name: (All)
+  Position: 3
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -108,7 +130,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 5
+  Position: 6
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -194,7 +216,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 6
+  Position: 7
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -237,7 +259,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 3
+  Position: 4
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -258,7 +280,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 4
+  Position: 5
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

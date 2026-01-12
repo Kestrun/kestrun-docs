@@ -9,8 +9,12 @@ grand_parent: "C# API"
 Exports OpenAPI component classes found in loaded assemblies as PowerShell class definitions.
 
 ```csharp
-public static string ExportOpenApiClasses()
+public static string ExportOpenApiClasses(Dictionary<string, string>? userCallbacks)
 ```
+
+| parameter | description |
+| --- | --- |
+| userCallbacks | Optional user-defined functions to include in the export. |
 
 ## Return Value
 
@@ -28,12 +32,14 @@ The path to the temporary PowerShell script containing the class definitions.
 Exports OpenAPI component classes found in the specified assemblies as PowerShell class definitions
 
 ```csharp
-public static string ExportOpenApiClasses(Assembly[] assemblies)
+public static string ExportOpenApiClasses(Assembly[] assemblies, 
+    Dictionary<string, string>? userCallbacks)
 ```
 
 | parameter | description |
 | --- | --- |
 | assemblies | The assemblies to scan for OpenAPI component classes. |
+| userCallbacks | Optional user-defined functions to include in the export. |
 
 ## Return Value
 
