@@ -1,6 +1,7 @@
 # Kestrun Website
 
-This repository contains the source code, documentation, and assets for the **Kestrun** official website, including feature overviews, tutorials, and API references.
+This repository contains the source code, documentation, and assets for the **Kestrun** official website,
+including feature overviews, tutorials, and API references.
 
 ## 📖 About Kestrun
 
