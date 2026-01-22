@@ -17,6 +17,10 @@ public Task WriteResponseAsync(object? inputObject, int statusCode = 200)
 | inputObject | The object to be sent in the response body. |
 | statusCode | The HTTP status code for the response. |
 
+## Return Value
+
+A task that represents the asynchronous write operation.
+
 ## See Also
 
 * class [KestrunResponse](../KestrunResponse)

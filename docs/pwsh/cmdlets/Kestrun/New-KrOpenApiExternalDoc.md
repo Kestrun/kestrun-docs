@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 143
+nav_order: 145
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiExternalDoc
 ---
@@ -24,8 +24,8 @@ Creates a new OpenAPI External Documentation object.
 ### __AllParameterSets
 
 ```powershell
-New-KrOpenApiExternalDoc [-Url] <uri> [[-Description] <string>] [[-Extensions] <ordered>]
- [<CommonParameters>]
+New-KrOpenApiExternalDoc [[-Server] <KestrunHost>] [-Url] <uri> [[-Description] <string>]
+ [[-Extensions] <IDictionary>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -68,7 +68,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: 2
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -83,15 +83,37 @@ HelpMessage: ''
 A collection of OpenAPI extensions to add to the external documentation.
 
 ```yaml
-Type: System.Collections.Specialized.OrderedDictionary
+Type: System.Collections.IDictionary
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
+  Position: 3
   IsRequired: false
   ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Server
+
+The Kestrun server instance to which the OpenAPI external documentation will be associated.
+If not specified, the function will attempt to resolve the current server context.
+
+```yaml
+Type: Kestrun.Hosting.KestrunHost
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: false
+  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -110,7 +132,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 0
+  Position: 1
   IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -128,6 +150,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### Kestrun.Hosting.KestrunHost
+
+{{ Fill in the Description }}
 
 ## OUTPUTS
 

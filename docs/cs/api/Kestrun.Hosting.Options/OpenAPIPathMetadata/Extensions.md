@@ -9,7 +9,7 @@ grand_parent: "C# API"
 A map of custom extensions for the OpenAPI object.
 
 ```csharp
-public IDictionary<string, IOpenApiExtension>? Extensions { get; set; }
+public Dictionary<string, IOpenApiExtension>? Extensions { get; set; }
 ```
 
 ## See Also

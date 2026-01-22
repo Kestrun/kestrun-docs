@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Creates an OpenApiExternalDocs object from a URL string with optional extensions.
 
 ```csharp
-public static OpenApiExternalDocs CreateExternalDocs(string url, string? description = null, 
+public OpenApiExternalDocs CreateExternalDocs(string url, string? description = null, 
     IDictionary? extensions = null)
 ```
 
@@ -41,7 +41,7 @@ An OpenApiExternalDocs object.
 Creates an OpenApiExternalDocs object with optional extensions.
 
 ```csharp
-public static OpenApiExternalDocs CreateExternalDocs(Uri url, string? description = null, 
+public OpenApiExternalDocs CreateExternalDocs(Uri url, string? description = null, 
     IDictionary? extensions = null)
 ```
 

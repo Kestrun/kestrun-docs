@@ -11,8 +11,10 @@ cmdlets and attributes.
 
 Focus areas:
 
-- **Class-based Components**: Define schemas, request bodies, and responses using PowerShell classes.
+- **Class-based Components**: Define reusable schemas using PowerShell classes.
+- **Variable-based Components**: Define reusable request bodies and responses using annotated PowerShell variables.
 - **Attributes**: Decorate classes and properties with `[OpenApiSchemaComponent]`, `[OpenApiPropertyAttribute]`, etc.
+- **Scalars**: Use `OpenApi*` scalar wrapper types (`OpenApiUuid`, `OpenApiDate`, etc.) to model primitives with consistent `type`/`format`.
 - **Document Metadata**: Configure title, version, contact, license, and servers.
 - **Operation Decorators**: Annotate route functions with `[OpenApiPath]`, `[OpenApiResponse]`, and `[OpenApiRequestBody]`.
 - **Inheritance**: Reuse schemas via class inheritance.
@@ -26,9 +28,10 @@ Focus areas:
 | Concept              | Description                                                                    |
 |----------------------|--------------------------------------------------------------------------------|
 | **Schema Component** | A PowerShell class decorated with `[OpenApiSchemaComponent]`. Defines data structure. |
-| **Request Body**     | A class decorated with `[OpenApiRequestBodyComponent]`. Defines payload structure. |
+| **Request Body**     | A PowerShell variable decorated with `[OpenApiRequestBodyComponent]`. Defines a reusable payload entry under `components.requestBodies`. |
 | **Response**         | A variable decorated with `[OpenApiResponseComponent]`. Defines a reusable response entry under `components.responses`. |
 | **Parameter**        | A PowerShell parameter/variable decorated with `[OpenApiParameterComponent]`. Defines reusable parameters. |
+| **Scalar**           | An `OpenApi*` wrapper type (e.g., `OpenApiUuid`, `OpenApiDate`) that maps to an OpenAPI primitive `type` + `format`; often aliased into a named schema component for `$ref` reuse. |
 | **Callback**         | An operation-scoped async notification defined under `paths.{path}.{verb}.callbacks` (OpenAPI 3.1). |
 | **Webhook**          | A top-level OpenAPI webhook entry describing an outgoing event notification your API may send to subscribers. |
 | **Tag**              | A tag entry under `tags[]` used to group operations (OpenAPI 3.2 supports `parent`, `kind`, and tag-level `externalDocs`). |
@@ -415,21 +418,385 @@ Use it in your other schemas to produce `$ref` references:
 [OpenApiSchemaComponent(RequiredProperties = ('ticketDate'))]
 class BuyTicketRequest {
     [OpenApiProperty(Description = 'Date that the ticket is valid for.')]
-    [Date]$ticketDate
+### 4.4 OpenAPI scalars (OpenApiUuid / OpenApiDate / ...)
+
+Kestrun includes **scalar wrapper types** (implemented in `OpenApiScalars.cs`) that behave like OpenAPI primitives but are:
+
+- **Strongly typed** (PowerShell-friendly wrapper objects)
+- **Format-aware** (pre-declared OpenAPI `type` + `format`)
+- **Reusable** (use them directly, or alias them into your own component names)
+
+Common scalar types include:
+
+- `OpenApiUuid` → `type: string`, `format: uuid`
+- `OpenApiDate` → `type: string`, `format: date`
+- `OpenApiDateTime` → `type: string`, `format: date-time`
+- `OpenApiEmail` → `type: string`, `format: email`
+- `OpenApiInt32` / `OpenApiInt64` → `type: integer`, `format: int32|int64`
+- `OpenApiNumber` / `OpenApiFloat` / `OpenApiDouble` → `type: number`, `format: float|double`
+- `OpenApiBoolean` → `type: boolean`
+
+#### 4.4.1 Alias a scalar as a named component (recommended)
+
+Aliasing keeps your OpenAPI document readable by controlling the component name:
+
+```powershell
+[OpenApiSchemaComponent(Description = 'Employee identifier', Example = 'a54a57ca-36f8-421b-a6b4-2e8f26858a4c')]
+class EmployeeId : OpenApiUuid {}
+
+[OpenApiSchemaComponent(Description = 'Calendar date (YYYY-MM-DD)', Example = '2026-01-13')]
+class Date : OpenApiDate {}
+```
+
+Use the alias in your other schemas to produce `$ref` references:
+
+```powershell
+[OpenApiSchemaComponent(RequiredProperties = ('id', 'hireDate'))]
+class Employee {
+    [EmployeeId]$id
+    [Date]$hireDate
 }
 ```
 
-#### 4.4.2 Arrays of primitives
+OpenAPI result (fragment):
 
-If you want an array of a reusable primitive, define another component with `Array = $true` and inherit from the primitive component:
-
-```powershell
-[OpenApiSchemaComponent(Description = 'List of planned dates', Array = $true)]
-class EventDates : Date {}
+```yaml
+components:
+  schemas:
+    EmployeeId:
+      type: string
+      format: uuid
+      example: a54a57ca-36f8-421b-a6b4-2e8f26858a4c
+    Date:
+      type: string
+      format: date
+      example: "2026-01-13"
+    Employee:
+      type: object
+      required: [id, hireDate]
+      properties:
+        id:
+          $ref: "#/components/schemas/EmployeeId"
+        hireDate:
+          $ref: "#/components/schemas/Date"
 ```
 
-> **Tip:** If you *don’t* need a reusable component (no `$ref`), use the native type directly
-> (e.g. `[datetime]` / `[datetime[]]`) and set `Format`/`Example` on the property with `[OpenApiProperty]`.
+#### 4.4.2 Arrays of scalar aliases
+
+To define a **component schema that is an array** of another schema, inherit and set `Array = $true`:
+
+```powershell
+[OpenApiSchemaComponent(Description = 'List of visit dates', Array = $true)]
+class Dates : Date {}
+```
+
+OpenAPI result (fragment):
+
+```yaml
+components:
+  schemas:
+    Dates:
+      type: array
+      items:
+        $ref: "#/components/schemas/Date"
+```
+
+> **Tip:** If you don’t need a reusable component (no `$ref`), use native types directly (e.g. `[datetime]`, `[datetime[]]`)
+and set `Format`/`Example` on the property with `[OpenApiProperty]`.
+
+### 4.5 Schema patterns ("permutations") and their OpenAPI output
+
+This section shows common **PowerShell schema patterns** and the **OpenAPI shape** Kestrun generates.
+
+#### 4.5.1 Plain object schema
+
+```powershell
+[OpenApiSchemaComponent()]
+class User {
+    [string]$username
+    [string]$email
+}
+```
+
+```yaml
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        username: { type: string }
+        email: { type: string }
+```
+
+#### 4.5.2 Required properties (class-level)
+
+```powershell
+[OpenApiSchemaComponent(RequiredProperties = ('username'))]
+class User {
+    [string]$username
+    [string]$email
+}
+```
+
+```yaml
+components:
+  schemas:
+    User:
+      type: object
+      required: [username]
+      properties:
+        username: { type: string }
+        email: { type: string }
+```
+
+#### 4.5.3 Enums (ValidateSet vs PowerShell enum)
+
+**ValidateSet inline enums:**
+
+`[ValidateSet(...)]` on a string property becomes an inline OpenAPI `enum`:
+
+```powershell
+[OpenApiSchemaComponent()]
+class Order {
+    [ValidateSet('placed', 'approved', 'delivered')]
+    [string]$status
+}
+```
+
+```yaml
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [placed, approved, delivered]
+```
+
+**PowerShell enum as reusable schema component:**
+
+PowerShell `enum` types are automatically registered as **reusable schema components** under `components.schemas` and referenced via `$ref`:
+
+```powershell
+enum TicketType { general; event }
+
+[OpenApiSchemaComponent()]
+class Ticket {
+    [TicketType]$type
+}
+```
+
+```yaml
+components:
+  schemas:
+    TicketType:
+      type: string
+      enum: [general, event]
+    Ticket:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/TicketType'
+```
+
+This approach:
+
+- **Eliminates duplication** when the same enum is used in multiple properties or schemas
+- **Improves code generation** — tools generate a single enum type instead of duplicates
+- **Follows OpenAPI best practices** for reusable enums
+
+**Enum arrays:**
+
+When an enum is used in an array, the array items reference the enum component:
+
+```powershell
+enum TicketType { general; event }
+
+[OpenApiSchemaComponent()]
+class Reservation {
+    [TicketType[]]$ticketTypes
+}
+```
+
+```yaml
+components:
+  schemas:
+    TicketType:
+      type: string
+      enum: [general, event]
+    Reservation:
+      type: object
+      properties:
+        ticketTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TicketType'
+```
+
+> **Tip:** Use PowerShell `enum` types for values that should be reused across your API.
+Use `[ValidateSet(...)]` for one-off property constraints that won't be shared.
+
+#### 4.5.4 Arrays (property-level)
+
+```powershell
+[OpenApiSchemaComponent()]
+class Album {
+    [string[]]$photoUrls
+}
+```
+
+```yaml
+components:
+  schemas:
+    Album:
+      type: object
+      properties:
+        photoUrls:
+          type: array
+          items: { type: string }
+```
+
+#### 4.5.5 Inheritance → allOf composition
+
+Kestrun models inheritance as `allOf` so you can extend a base schema without duplicating it:
+
+```powershell
+[OpenApiSchemaComponent(RequiredProperties = ('id'))]
+class PersonBase {
+    [string]$id
+}
+
+[OpenApiSchemaComponent(RequiredProperties = ('email'))]
+class Person : PersonBase {
+    [string]$email
+}
+```
+
+```yaml
+components:
+  schemas:
+    Person:
+      allOf:
+        - $ref: "#/components/schemas/PersonBase"
+        - type: object
+          required: [email]
+          properties:
+            email: { type: string }
+```
+
+> **Note:** With `allOf`, required fields for derived members typically appear on the derived `allOf` entry (not at the top level).
+
+#### 4.5.6 Dictionary / additionalProperties
+
+To model an “object map” (keys → values), use `[OpenApiAdditionalProperties]`:
+
+```powershell
+[OpenApiSchemaComponent(Description = 'Inventory counts by status')]
+class Inventory {
+    [OpenApiAdditionalProperties()]
+    [int]$AdditionalProperties
+}
+```
+
+```yaml
+components:
+  schemas:
+    Inventory:
+      type: object
+      additionalProperties:
+        type: integer
+```
+
+#### 4.5.7 Composition via refs (oneOf / anyOf / allOf)
+
+For explicit composition (beyond inheritance), you can use the composition properties on `OpenApiProperties`:
+
+```powershell
+[OpenApiSchemaComponent(
+  OneOfTypes = @([Cat], [Dog]),
+    DiscriminatorPropertyName = 'kind',
+    DiscriminatorMappingKeys = ('cat', 'dog'),
+    DiscriminatorMappingRefs = ('#/components/schemas/Cat', '#/components/schemas/Dog')
+)]
+class Pet {}
+```
+
+OpenAPI result (fragment):
+
+```yaml
+components:
+  schemas:
+    Pet:
+      oneOf:
+        - $ref: "#/components/schemas/Cat"
+        - $ref: "#/components/schemas/Dog"
+      discriminator:
+        propertyName: kind
+        mapping:
+          cat: "#/components/schemas/Cat"
+          dog: "#/components/schemas/Dog"
+```
+
+---
+
+### 4.6 XML Modeling (OpenApiXml)
+
+Kestrun supports **OpenAPI 3.2 XML modeling** via the `OpenApiXml` attribute.
+
+The XML metadata is used in two places:
+
+1. **OpenAPI generation**: the attributes populate the OpenAPI `schema.xml` metadata.
+2. **Runtime XML conversion**: the same metadata is applied to **serialize and deserialize XML**.
+
+That means any object/class annotated with `OpenApiXml` can be:
+
+- **Written as modeled XML** (outbound) when the response is XML.
+- **Read from modeled XML** (inbound) when `Content-Type: application/xml`.
+
+Supported options include:
+
+- `Name`: override the element/attribute name.
+- `Attribute`: model a property as an XML attribute.
+- `Namespace` / `Prefix`: add a namespace and preferred prefix.
+- `Wrapped`: model arrays with a wrapper element.
+
+Example (PowerShell):
+
+```powershell
+[OpenApiSchemaComponent(RequiredProperties = ('Id', 'Name', 'Price'))]
+[OpenApiXml(Name = 'Product')]
+class Product {
+    [OpenApiXml(Name = 'id', Attribute = $true)]
+    [int]$Id
+
+    [OpenApiXml(Name = 'ProductName')]
+    [string]$Name
+
+    [OpenApiXml(Name = 'Price', Namespace = 'http://example.com/pricing', Prefix = 'price')]
+    [double]$Price
+
+    [OpenApiXml(Name = 'Item', Wrapped = $true)]
+    [string[]]$Items
+}
+
+function createProduct {
+    [OpenApiPath(HttpVerb = 'post', Pattern = '/products')]
+    [OpenApiResponse(StatusCode = '201', Schema = [Product], ContentType = ('application/json', 'application/xml'))]
+    param(
+        [OpenApiRequestBody(ContentType = 'application/xml')]
+        [Product]$Body
+    )
+
+    # $Body is populated from XML using the OpenApiXml mapping.
+    Write-KrResponse -InputObject $Body -StatusCode 201
+}
+```
+
+> **Note:** PowerShell script-defined classes are dynamic per runspace.
+> Kestrun handles this by parsing XML using the OpenApiXml mapping and letting PowerShell bind/convert in the active request runspace.
+
+See the runnable tutorial: [docs/pwsh/tutorial/10.openapi/23.XML-Modeling.md](/pwsh/tutorial/10.openapi/23.XML-Modeling)
 
 ---
 
@@ -445,13 +812,16 @@ class ProductSchema {
     [double]$price
 }
 
-# Define the Request Body Component
+# Define a schema type for the create operation (optional but common)
+class CreateProductRequest : ProductSchema {}
+
+# Define the Request Body Component (reusable entry under components.requestBodies)
 [OpenApiRequestBodyComponent(
     Description = 'Product creation payload',
-    IsRequired = $true,
+    Required = $true,
     ContentType = ('application/json', 'application/xml')
 )]
-class CreateProductRequest : ProductSchema {}
+[CreateProductRequest]$CreateProductRequest
 ```
 
 ### Usage in Route (Request Bodies)
@@ -459,9 +829,26 @@ class CreateProductRequest : ProductSchema {}
 ```powershell
 function createProduct {
     [OpenApiPath(HttpVerb = 'post', Pattern = '/products')]
-    [OpenApiRequestBody(Reference = 'CreateProductRequest')]
     [OpenApiResponse(StatusCode = '201')]
-    param()
+    param(
+        # Option A (typed body): if the type is resolvable at runtime, Kestrun prefers the
+        # matching components.requestBodies entry when a request-body component exists.
+        [OpenApiRequestBody(ContentType = 'application/json')]
+        [CreateProductRequest]$Body
+    )
+}
+```
+
+If you can't (or don't want to) type the runtime parameter (for example: script-defined types may not be visible in per-request runspaces), use a request-body reference:
+
+```powershell
+function createProduct {
+    [OpenApiPath(HttpVerb = 'post', Pattern = '/products')]
+    [OpenApiResponse(StatusCode = '201')]
+    param(
+        [OpenApiRequestBodyRef(ReferenceId = 'CreateProductRequest', Required = $true)]
+        [object]$Body
+    )
 }
 ```
 
@@ -576,7 +963,15 @@ Configure the top-level API information.
 Add-KrOpenApiInfo -Title 'My API' -Version '1.0.0' -Description 'API Description'
 
 # Contact & License
-Add-KrOpenApiContact -Name 'Support' -Email 'help@example.com'
+Add-KrOpenApiContact -Name 'Support' -Email 'help@example.com' -Extensions ([ordered]@{
+  # Vendor extension keys must start with `x-`.
+  # Keys that do not start with `x-` are skipped (a warning is logged).
+  'x-contact-department' = 'Developer Relations'
+  'x-logo' = [ordered]@{
+    url = 'https://example.com/logo.png'
+    altText = 'Company logo'
+  }
+})
 
 # License can be expressed either as a URL (common) or an SPDX identifier (OpenAPI 3.1/3.2)
 Add-KrOpenApiLicense -Name 'MIT' -Url 'https://opensource.org/licenses/MIT'
@@ -593,21 +988,137 @@ Add-KrOpenApiServer -Url '/' -Description 'Self'
 
 # External documentation (document-level)
 # Use Add-KrOpenApiExternalDoc to attach externalDocs to the OpenAPI document itself.
-$apiPortalExtensions = [ordered]@{ 'x-docType' = 'portal'; 'audience' = 'internal'; 'owner' = 'api-platform' }
+$apiPortalExtensions = [ordered]@{ 'x-docType' = 'portal'; 'x-audience' = 'internal'; 'x-owner' = 'api-platform' }
 Add-KrOpenApiExternalDoc -Description 'API portal' -Url 'https://example.com/api-portal' -Extensions $apiPortalExtensions
 
 # Tags (OpenAPI 3.2 hierarchical tags)
 # - Use -Parent/-Kind to build a hierarchy.
-# - Use -Extensions for tag-level `x-*` extensions (keys are normalized to `x-` when missing).
+# - Use -Extensions for tag-level `x-*` extensions (keys must start with `x-`).
 # - For tag-level externalDocs, create the object with New-KrOpenApiExternalDoc and pass it to Add-KrOpenApiTag -ExternalDocs.
 # - To add extensions to a tag's externalDocs, pass `-Extensions` to `New-KrOpenApiExternalDoc`.
 
-$ordersExternalDocs = New-KrOpenApiExternalDoc -Description 'Order docs' -Url 'https://example.com/orders' -Extensions ([ordered]@{ 'x-docType' = 'reference'; 'audience' = 'public' })
+$ordersExternalDocs = New-KrOpenApiExternalDoc -Description 'Order docs' -Url 'https://example.com/orders' -Extensions ([ordered]@{ 'x-docType' = 'reference'; 'x-audience' = 'public' })
 
 Add-KrOpenApiTag -Name 'operations' -Description 'Common operational endpoints' -Kind 'category' -Extensions ([ordered]@{ 'x-displayName' = 'Operations' })
 Add-KrOpenApiTag -Name 'orders' -Description 'Order operations' -Parent 'operations' -Kind 'resource' -ExternalDocs $ordersExternalDocs -Extensions ([ordered]@{ 'x-owner' = 'commerce-team' })
 Add-KrOpenApiTag -Name 'orders.read' -Description 'Read-only order operations' -Parent 'orders' -Kind 'operation'
+
+# Document-level extensions (top-level `x-*` fields)
+Add-KrOpenApiExtension -Extensions ([ordered]@{
+  'x-tagGroups' = @(
+    @{ name = 'Common'; tags = @('operations') },
+    @{ name = 'Commerce'; tags = @('orders', 'orders.read') }
+  )
+})
+
+# Operation-level extensions (add `x-*` fields on a route operation)
+function getMuseumHours {
+  [OpenApiPath(HttpVerb = 'get', Pattern = '/museum-hours', Tags = 'operations')]
+  [OpenApiExtension('x-badges', '{"name":"Beta","position":"before","color":"purple"}')]
+  param()
+}
 ```
+
+### Vendor Extensions (x-*) rules
+
+- Extension keys must start with `x-`.
+- Keys that do not start with `x-` are ignored (a warning is logged).
+- Null extension values are skipped.
+
+### Vendor Extensions (x-*) usage
+
+Vendor extensions are the standard OpenAPI way to attach extra, non-standard metadata.
+Kestrun supports extensions at multiple levels; the extension key/value is emitted directly into the generated OpenAPI JSON.
+
+> **Tip:** Prefer a single extension root like `x-kestrun-demo` (an object) rather than many unrelated `x-*` keys.
+
+#### Document-level extensions
+
+Use `Add-KrOpenApiExtension` for top-level `x-*` fields:
+
+```powershell
+$extensions = [ordered]@{
+  'x-tagGroups' = @(
+    @{ name = 'Common'; tags = @('operations') },
+    @{ name = 'Commerce'; tags = @('orders', 'orders.read') }
+  )
+}
+Add-KrOpenApiExtension -Extensions $extensions
+```
+
+Emits: `x-*` at the document root.
+
+#### Operation-level extensions
+
+Use `[OpenApiExtension('x-...', '<json>')]` on a route function:
+
+```powershell
+function getMuseumHours {
+  [OpenApiPath(HttpVerb = 'get', Pattern = '/museum-hours')]
+  [OpenApiExtension('x-badges', '{"name":"Beta","position":"before","color":"purple"}')]
+  param()
+}
+```
+
+Emits: `paths['/museum-hours'].get.x-*` (or the appropriate verb).
+
+#### Component-level extensions
+
+Kestrun supports `x-*` extensions on common component types:
+
+- **Schema components**: `[OpenApiExtension]` on `[OpenApiSchemaComponent]` classes → `components.schemas.<name>.x-*`
+- **Parameter components**: `[OpenApiExtension]` on `[OpenApiParameterComponent]` variables → `components.parameters.<name>.x-*`
+- **Request body components**: `[OpenApiExtension]` on `[OpenApiRequestBodyComponent]` variables → `components.requestBodies.<name>.x-*`
+- **Response components**: `[OpenApiExtension]` on `[OpenApiResponseComponent]` variables → `components.responses.<name>.x-*`
+- **Header components**: `New-KrOpenApiHeader -Extensions` → `components.headers.<name>.x-*`
+- **Link components**: `New-KrOpenApiLink -Extensions` → `components.links.<name>.x-*`
+- **Example components**: `New-KrOpenApiExample -Extensions` → `components.examples.<name>.x-*`
+
+Examples:
+
+```powershell
+# Schema component
+[OpenApiSchemaComponent()]
+[OpenApiExtension('x-kestrun-demo', '{"containsPii":true,"owner":"platform"}')]
+class Address {}
+
+# Parameter component
+[OpenApiParameterComponent(In = 'Header', Description = 'Correlation id')]
+[OpenApiExtension('x-kestrun-demo', '{"kind":"trace","format":"uuid"}')]
+[string]$correlationId = NoDefault
+
+# Request body component
+[OpenApiRequestBodyComponent(Description = 'Order creation payload', Required = $true, ContentType = 'application/json')]
+[OpenApiExtension('x-kestrun-demo', '{"domain":"orders","containsPii":true}')]
+[CreateOrderRequest]$CreateOrderRequestBody = NoDefault
+
+# Response component
+[OpenApiResponseComponent(Description = 'Resource not found', ContentType = ('application/json', 'application/xml'))]
+[OpenApiExtension('x-kestrun-demo', '{"kind":"error","retryable":false}')]
+[ErrorResponse]$NotFound = NoDefault
+
+# Header component
+$headerExt = [ordered]@{ 'x-kestrun-demo' = @{ unit = 'unix-seconds'; source = 'gateway' } }
+$XRateLimitResetHeader = New-KrOpenApiHeader -Schema ([OpenApiInt64]::new()) -Description 'Rate limit reset time' -Extensions $headerExt
+
+# Link component
+$linkExt = [ordered]@{ 'x-kestrun-demo' = @{ kind = 'follow-up'; auth = 'required' } }
+$GetUserLink = New-KrOpenApiLink -OperationId 'getUser' -Description 'Fetch the user' -Extensions $linkExt
+
+# Example component
+$exExt = [ordered]@{ 'x-kestrun-demo' = @{ purpose = 'docs'; stability = 'stable' } }
+$GetMuseumHoursResponseExternalExample = New-KrOpenApiExample -ExternalValue 'https://example.com/openapi/examples/museum-hours.json' -Extensions $exExt
+```
+
+For runnable samples + tests, see:
+
+- `docs/_includes/examples/pwsh/10.2-OpenAPI-Component-Schema.ps1`
+- `docs/_includes/examples/pwsh/10.4-OpenAPI-Component-Parameter.ps1`
+- `docs/_includes/examples/pwsh/10.5-OpenAPI-Component-Response.ps1`
+- `docs/_includes/examples/pwsh/10.6-OpenAPI-Components-RequestBody-Response.ps1`
+- `docs/_includes/examples/pwsh/10.9-OpenAPI-Component-Header.ps1`
+- `docs/_includes/examples/pwsh/10.10-OpenAPI-Component-Link.ps1`
+- `docs/_includes/examples/pwsh/10.13-OpenAPI-Examples.ps1`
 
 ---
 
@@ -648,11 +1159,25 @@ Defines possible responses. Can reference a class type directly or a component n
 Defines the expected request body.
 
 ```powershell
-# Reference a Component
-[OpenApiRequestBody(Reference = 'CreateUserRequest')]
+# Option A (typed body): if a matching request-body component exists with the same name
+# as the parameter type, Kestrun prefers it automatically.
+param(
+  [OpenApiRequestBody(ContentType = 'application/json')]
+  [CreateUserRequest]$Body
+)
 
-# Inline Definition (less common)
-[OpenApiRequestBody(Description = 'Raw text', ContentType = 'text/plain')]
+# Option B (reference a component explicitly): useful when the runtime parameter is [object]
+# or when script-defined types are not visible in per-request runspaces.
+param(
+  [OpenApiRequestBodyRef(ReferenceId = 'CreateUserRequest', Required = $true)]
+  [object]$Body
+)
+
+# Inline definition (less common)
+param(
+  [OpenApiRequestBody(Description = 'Raw text', ContentType = 'text/plain')]
+  [string]$Body
+)
 ```
 
 ### 9.4 `[OpenApiParameter]`
@@ -859,6 +1384,41 @@ const response = await fetch('http://api.example.com/products/search?page=1&page
 
 Use `QUERY` when you have complex search filters that don't fit cleanly in query parameters but want GET-like semantics (safe, repeatable, semantically correct).
 
+### 9.4.2 RFC 6570 Path Expressions (OpenAPI 3.2)
+
+In OpenAPI 3.2, path templates are **RFC 6570 URI templates**. This affects how routes are documented and how
+Kestrun maps ASP.NET Core route values into the OpenAPI document.
+
+Kestrun supports a strict subset of RFC 6570 path expressions for **variable mapping**:
+
+- `{var}` — single path segment
+- `{+var}` — reserved expansion (can represent multiple segments)
+- `{var*}` — explode (can represent multiple segments)
+
+> **Note:** ASP.NET Core inline constraints like `{id:int}` or `{id:[0-9]+}` are **not** part of RFC 6570 and are
+> not valid in OpenAPI 3.2 path templates. Kestrun rejects colon-based patterns when parsing RFC6570 templates.
+
+#### Multi-segment variables: OpenAPI vs runtime routing
+
+OpenAPI 3.2 uses `{+path}` / `{path*}` to express that a variable can cover multiple path segments.
+At runtime, ASP.NET Core typically needs a **catch-all** route parameter to match those requests:
+
+```text
+OpenAPI 3.2 template:  /files/{+path}
+Kestrun pattern:       /files/{**path}   (normalized to `{*path}` before ASP.NET Core routing)
+ASP.NET Core route:    /files/{*path}
+```
+
+> **Note:** Kestrun may show catch-all parameters as `{**name}` internally, but it normalizes them to the ASP.NET Core-compatible `{*name}` form at runtime.
+
+Kestrun maps the captured ASP.NET Core route values to RFC6570 variables using these rules:
+
+- Missing route values cause mapping to fail.
+- `{var}` rejects values containing `/`.
+- `{+var}` and `{var*}` accept multi-segment values; a leading `/` (from a catch-all) is trimmed before assignment.
+
+See the runnable tutorial: [docs/pwsh/tutorial/10.openapi/24.RFC6570-Variable-Mapping.md](/pwsh/tutorial/10.openapi/24.RFC6570-Variable-Mapping)
+
 ---
 
 ### 9.6 Headers (Reusable Response Headers)
@@ -987,8 +1547,8 @@ Access the UI at `/swagger`, `/redoc`, etc., and the raw JSON at `/openapi/v3.1/
 
 | Attribute | Target | Key Properties |
 | :--- | :--- | :--- |
-| **`[OpenApiSchemaComponent]`** | Class | `Key`, `Examples`, `Required`, `Description`, `Array` |
-| **`[OpenApiRequestBodyComponent]`** | Class | `Key`, `ContentType`, `IsRequired`, `Description` |
+| **`[OpenApiSchemaComponent]`** | Class | `Key`, `Examples`, `RequiredProperties`, `Description`, `Array`, `Type`, `Format`, `Example` |
+| **`[OpenApiRequestBodyComponent]`** | Variable | `Key`, `ContentType`, `Required`, `Description`, `Inline`, `Array`, `Type`, `Format` |
 | **`[OpenApiResponseComponent]`** | Class | `Description`, `JoinClassName` |
 | **`[OpenApiParameterComponent]`** | Parameter | `In`, `Description`, `Required`, `ContentType`, `Example`, `Minimum`, `Maximum`, `Default` |
 | **`[OpenApiHeaderComponent]`** | Class | `Description`, `JoinClassName` |
@@ -996,6 +1556,7 @@ Access the UI at `/swagger`, `/redoc`, etc., and the raw JSON at `/openapi/v3.1/
 | **`[OpenApiPropertyAttribute]`** | Parameter/Field | `Description`, `Example`, `Format`, `Required`, `Enum`, `Minimum`, `Maximum`, `Default` |
 | **`[OpenApiParameter]`** | Parameter/Field | `In` (Query/Header/Path/Cookie), `Name`, `Required`, `Description`, `Style`, `Explode` |
 | **`[OpenApiRequestBodyExampleRef]`** | Parameter | `Key`, `ReferenceId`, `ContentType`, `Inline` |
+| **`[OpenApiRequestBodyRef]`** | Parameter | `ReferenceId`, `Description`, `Inline`, `Required` |
 | **`[OpenApiResponseExampleRef]`** | Method | `StatusCode`, `Key`, `ReferenceId`, `ContentType`, `Inline` |
 | **`[OpenApiParameterExampleRef]`** | Parameter | `Key`, `ReferenceId`, `Inline` |
 | **`[OpenApiPath]`** | Method | `HttpVerb`, `Pattern`, `Summary`, `Description`, `Tags`, `OperationId`, `Deprecated`, `CorsPolicy` |
@@ -1020,12 +1581,12 @@ These properties are available on `[OpenApiSchemaComponent]`, `[OpenApiPropertyA
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | `Description` | String | Markdown-enabled description. |
-| `Required` | String[] | List of required property names (Class level). |
+| `RequiredProperties` | String[] | List of required property names (Class level). |
 | `Format` | String | Data format hint (e.g., `int64`, `email`, `date-time`). |
 | `Example` | Object | Example value for the schema or property. |
 | `Enum` | String[] | Allowed values list. |
 | `Default` | Object | Default value. |
-| `Minimum` / `Maximum` | Double | Numeric range constraints. |
+| `Minimum` / `Maximum` | String | Numeric range constraints. |
 | `MinLength` / `MaxLength` | Int | String length constraints. |
 | `Pattern` | String | Regex pattern for string validation. |
 | `MinItems` / `MaxItems` | Int | Array size constraints. |
@@ -1042,8 +1603,8 @@ These properties are available on `[OpenApiSchemaComponent]`, `[OpenApiPropertyA
 | Feature | Status | Notes |
 | :--- | :--- | :--- |
 | **Schemas** | ✅ Supported | Use `[OpenApiSchemaComponent]` classes |
-| **Request Bodies** | ✅ Supported | Use `[OpenApiRequestBodyComponent]` classes |
-| **Responses** | ✅ Supported | Use `[OpenApiResponseComponent]` classes |
+| **Request Bodies** | ✅ Supported | Use `[OpenApiRequestBodyComponent]` variables |
+| **Responses** | ✅ Supported | Use `[OpenApiResponseComponent]` variables |
 | **Parameters** | ✅ Supported | Define components with `[OpenApiParameterComponent]`, reference via `[OpenApiParameterRef]` |
 | **Headers** | ✅ Supported | Use `New-KrOpenApiHeader` + `Add-KrOpenApiComponent`, then reference via `OpenApiResponseHeaderRef` |
 | **Examples** | ✅ Supported | Use `New-KrOpenApiExample` + `Add-KrOpenApiComponent`, then reference via `OpenApiResponseExampleRef` / `OpenApiRequestBodyExampleRef` / `OpenApiParameterExampleRef` |
@@ -1052,7 +1613,7 @@ These properties are available on `[OpenApiSchemaComponent]`, `[OpenApiPropertyA
 | **Webhooks** | ✅ Supported | Use `[OpenApiWebhook]` on functions (top-level `webhooks` in OpenAPI 3.1) |
 | **Callbacks** | ✅ Supported | Use `[OpenApiCallback]` + `[OpenApiCallbackRef]` (operation-scoped `callbacks`) |
 | **Links** | ✅ Supported | Use `New-KrOpenApiLink` + `Add-KrOpenApiComponent`, then reference via `OpenApiResponseLinkRef` |
-| **Extensions (x-*)** | 🚧 Partial | Supported for `tags[]` and `externalDocs` (document-level and tag-level); other extension points may be added later |
+| **Extensions (x-*)** | ✅ Supported | Supported for document-level `Add-KrOpenApiExtension`, operation-level `[OpenApiExtension]`, and component-level extensions (schemas/parameters/requestBodies/responses plus header/link/example `-Extensions`) |
 
 ---
 

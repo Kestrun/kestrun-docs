@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 150
+nav_order: 152
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrSelfSignedCertificate
 ---

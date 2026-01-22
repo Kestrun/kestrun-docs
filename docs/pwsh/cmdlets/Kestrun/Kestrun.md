@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 132
+nav_order: 134
 render_with_liquid: false
 ocument type: module
 Help Version: 1.0.0.0
@@ -9,7 +9,7 @@ HelpInfoUri:
 Locale: ''
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: Kestrun Module
 ---
@@ -57,6 +57,10 @@ Adds caching headers to the HTTP response.
 ### [Add-KrClaimPolicy](Add-KrClaimPolicy.md)
 
 Adds a new claim policy to the KestrunClaims system.
+
+### [Add-KrClientCertificateAuthentication](Add-KrClientCertificateAuthentication.md)
+
+Adds Client Certificate authentication to the Kestrun server.
 
 ### [Add-KrCommonAccessLogMiddleware](Add-KrCommonAccessLogMiddleware.md)
 
@@ -209,6 +213,10 @@ Adds an OpenAPI component (Example or Link) to the specified OpenAPI document(s)
 ### [Add-KrOpenApiContact](Add-KrOpenApiContact.md)
 
 Adds contact information to the OpenAPI document.
+
+### [Add-KrOpenApiExtension](Add-KrOpenApiExtension.md)
+
+Adds an OpenAPI extension to specified OpenAPI documents.
 
 ### [Add-KrOpenApiExternalDoc](Add-KrOpenApiExternalDoc.md)
 

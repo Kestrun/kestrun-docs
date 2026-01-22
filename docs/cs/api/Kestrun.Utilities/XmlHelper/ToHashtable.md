@@ -6,15 +6,16 @@ grand_parent: "C# API"
 ---
 # XmlHelper.ToHashtable method
 
-Converts an XElement into a Hashtable. Nested elements become nested Hashtables; repeated elements become lists. Attributes are stored as keys prefixed with "@", xsi:nil="true" becomes `null`.
+Converts an XElement into a Hashtable, optionally using OpenAPI XML metadata hashtable (from PowerShell class metadata) to guide the conversion. Nested elements become nested Hashtables; repeated elements become lists. Attributes are stored as keys prefixed with "@" unless guided by OpenAPI metadata, xsi:nil="true" becomes `null`.
 
 ```csharp
-public static Hashtable ToHashtable(XElement element)
+public static Hashtable ToHashtable(XElement element, Hashtable? xmlMetadata = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | element | The XML element to convert. |
+| xmlMetadata | Optional OpenAPI XML metadata hashtable (as returned by GetOpenApiXmlMetadata()). Should contain 'ClassName', 'ClassXml', and 'Properties' keys. |
 
 ## Return Value
 

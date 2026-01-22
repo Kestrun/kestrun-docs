@@ -72,6 +72,9 @@
         "operationId": "listProducts",
         "parameters": [
           {
+            "$ref": "#/components/parameters/myCategory"
+          },
+          {
             "$ref": "#/components/parameters/correlationId"
           },
           {
@@ -390,6 +393,24 @@
       }
     },
     "parameters": {
+      "myCategory": {
+        "name": "myCategory",
+        "in": "header",
+        "description": "Filter by category item",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CategoryItem"
+            }
+          }
+        },
+        "x-kestrun-demo": {
+          "kind": "catalog-context",
+          "stability": "experimental",
+          "source": "client",
+          "contentType": "application/json"
+        }
+      },
       "correlationId": {
         "name": "correlationId",
         "in": "header",
@@ -402,6 +423,15 @@
             "summary": "Correlation id example",
             "value": "2f2d68c2-9b7a-4b5c-8b1d-0fdff2a4b9a3"
           }
+        },
+        "x-kestrun-demo": {
+          "kind": "trace",
+          "format": "uuid",
+          "propagatesTo": [
+            "logs",
+            "downstream"
+          ],
+          "recommended": true
         }
       },
       "clientContext": {

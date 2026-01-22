@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "OpenApiJsonNodeFactory.FromObject method"
+title: "OpenApiJsonNodeFactory.ToNode method"
 parent: "Kestrun.OpenApi"
 grand_parent: "C# API"
 ---
-# OpenApiJsonNodeFactory.FromObject method
+# OpenApiJsonNodeFactory.ToNode method
 
 Create a JsonNode from a .NET object.
 
 ```csharp
-public static JsonNode? FromObject(object? value)
+public static JsonNode? ToNode(object? value)
 ```
 
 | parameter | description |

@@ -16,11 +16,14 @@ public abstract class ParameterForInjectionInfoBase
 
 | name | description |
 | --- | --- |
+| [ContentTypes](ParameterForInjectionInfoBase/ContentTypes) { get; set; } | Content types associated with the parameter. |
 | [DefaultValue](ParameterForInjectionInfoBase/DefaultValue) { get; set; } | The default value of the parameter. |
+| [Explode](ParameterForInjectionInfoBase/Explode) { get; set; } | Indicates whether the parameter should be exploded. |
 | [In](ParameterForInjectionInfoBase/In) { get; set; } | The location of the parameter. |
 | [IsRequestBody](ParameterForInjectionInfoBase/IsRequestBody) { get; } | Indicates whether the parameter is from the request body. |
 | [Name](ParameterForInjectionInfoBase/Name) { get; set; } | The name of the parameter. |
 | [ParameterType](ParameterForInjectionInfoBase/ParameterType) { get; set; } | The .NET type of the parameter. |
+| [Style](ParameterForInjectionInfoBase/Style) { get; set; } | The style of the parameter. |
 | [Type](ParameterForInjectionInfoBase/Type) { get; set; } | The JSON schema type of the parameter. |
 
 ## See Also

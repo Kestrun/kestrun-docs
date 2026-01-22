@@ -19,6 +19,7 @@ public static class KestrunHostAuthnExtensions
 | static [AddApiKeyAuthentication](KestrunHostAuthnExtensions/AddApiKeyAuthentication)(…) | Adds API Key Authentication to the Kestrun host. (2 methods) |
 | static [AddAuthorization](KestrunHostAuthnExtensions/AddAuthorization)(…) | Adds authorization services to the Kestrun host. |
 | static [AddBasicAuthentication](KestrunHostAuthnExtensions/AddBasicAuthentication)(…) | Adds Basic Authentication to the Kestrun host. (2 methods) |
+| static [AddClientCertificateAuthentication](KestrunHostAuthnExtensions/AddClientCertificateAuthentication)(…) | Adds Client Certificate Authentication to the Kestrun host. (3 methods) |
 | static [AddCookieAuthentication](KestrunHostAuthnExtensions/AddCookieAuthentication)(…) | Adds Cookie Authentication to the Kestrun host. (2 methods) |
 | static [AddGitHubOAuthAuthentication](KestrunHostAuthnExtensions/AddGitHubOAuthAuthentication)(…) | Adds GitHub OAuth (Authorization Code) authentication with optional email enrichment. Creates three schemes: *scheme*, *scheme*.Cookies, *scheme*.Policy. |
 | static [AddJwtBearerAuthentication](KestrunHostAuthnExtensions/AddJwtBearerAuthentication)(…) | Adds JWT Bearer authentication to the Kestrun host. (2 methods) |

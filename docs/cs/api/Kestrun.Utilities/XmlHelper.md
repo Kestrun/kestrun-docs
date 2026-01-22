@@ -18,7 +18,7 @@ public static class XmlHelper
 | --- | --- |
 | static [MaxDepth](XmlHelper/MaxDepth) { get; set; } | Maximum recursion depth for object-to-XML conversion. This value can be adjusted if deeper object graphs need to be serialized. |
 | const [DefaultMaxDepth](XmlHelper/DefaultMaxDepth) | Default maximum recursion depth for object-to-XML conversion. Chosen to balance performance and stack safety for typical object graphs. Adjust if deeper object graphs need to be serialized. |
-| static [ToHashtable](XmlHelper/ToHashtable)(…) | Converts an XElement into a Hashtable. Nested elements become nested Hashtables; repeated elements become lists. Attributes are stored as keys prefixed with "@", xsi:nil="true" becomes `null`. |
+| static [ToHashtable](XmlHelper/ToHashtable)(…) | Converts an XElement into a Hashtable, optionally using OpenAPI XML metadata hashtable (from PowerShell class metadata) to guide the conversion. Nested elements become nested Hashtables; repeated elements become lists. Attributes are stored as keys prefixed with "@" unless guided by OpenAPI metadata, xsi:nil="true" becomes `null`. |
 | static [ToXml](XmlHelper/ToXml)(…) | Converts an object to an XElement with the specified name, handling nulls, primitives, dictionaries, enumerables, and complex types. |
 
 ## See Also

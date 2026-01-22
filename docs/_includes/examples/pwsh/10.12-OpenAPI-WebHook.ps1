@@ -17,7 +17,7 @@ New-KrLogger | Add-KrSinkConsole |
     Set-KrLoggerLevel -Value Debug |
     Register-KrLogger -Name 'console' -SetAsDefault
 
-$srv = New-KrServer -Name 'E-Commerce Webhook API' -PassThru
+New-KrServer -Name 'E-Commerce Webhook API'
 
 Add-KrEndpoint -Port $Port -IPAddress $IPAddress
 
@@ -33,7 +33,6 @@ Webhooks allow your subscribers to receive real-time notifications when events o
 '@
 
 Add-KrOpenApiContact -Email 'api-support@example.com' -Name 'API Support Team'
-Add-KrOpenApiServer -Url "http://$($IPAddress):$Port" -Description 'Local Development Server'
 
 # =========================================================
 #              WEBHOOK SCHEMAS (COMPONENTS)
@@ -399,10 +398,15 @@ function getWebhookInfo {
 Add-KrOpenApiRoute
 
 Build-KrOpenApiDocument
-Test-KrOpenApiDocument
+# Test and log OpenAPI document validation result
+if (Test-KrOpenApiDocument) {
+    Write-KrLog -Level Information -Message 'OpenAPI document built and validated successfully.'
+} else {
+    Write-KrLog -Level Error -Message 'OpenAPI document validation failed.'
+}
 
 # =========================================================
 #                      RUN SERVER
 # =========================================================
 
-Start-KrServer -Server $srv -CloseLogsOnExit
+Start-KrServer -CloseLogsOnExit

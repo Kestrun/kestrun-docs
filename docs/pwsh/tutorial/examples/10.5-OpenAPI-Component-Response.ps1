@@ -17,7 +17,7 @@ New-KrLogger | Add-KrSinkConsole |
     Set-KrLoggerLevel -Value Debug |
     Register-KrLogger -Name 'console' -SetAsDefault
 
-$srv = New-KrServer -Name 'OpenAPI Response Component' -PassThru
+New-KrServer -Name 'OpenAPI Response Component'
 
 Add-KrEndpoint -Port $Port -IPAddress $IPAddress
 # =========================================================
@@ -130,6 +130,7 @@ New-KrOpenApiLink -OperationId 'deleteArticle' -Description 'Delete the returned
 [OpenApiResponseHeaderRef(Key = 'X-Correlation-Id', ReferenceId = 'X-Correlation-Id')]
 [OpenApiResponseLinkRef(Key = 'get', ReferenceId = 'GetArticleLink')]
 [OpenApiResponseLinkRef(Key = 'delete', ReferenceId = 'DeleteArticleLink')]
+[OpenApiExtension('x-kestrun-demo', '{"stability":"beta","audience":"public","headers":["X-Correlation-Id"],"links":["get","delete"],"kind":"success"}')]
 [SuccessResponse]$OK = NoDefault
 
 [OpenApiResponseComponent(Description = 'Resource created successfully', ContentType = ('application/json', 'application/xml'))]
@@ -347,5 +348,4 @@ Test-KrOpenApiDocument
 #                      RUN SERVER
 # =========================================================
 
-Start-KrServer -Server $srv -CloseLogsOnExit
-
+Start-KrServer -CloseLogsOnExit

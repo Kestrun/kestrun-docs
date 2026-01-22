@@ -22,6 +22,8 @@ public static class AuthenticationDefaults
 | const [BasicSchemeName](AuthenticationDefaults/BasicSchemeName) | Basic authentication scheme name. |
 | const [BearerDisplayName](AuthenticationDefaults/BearerDisplayName) | Default display name for Bearer authentication. |
 | const [BearerSchemeName](AuthenticationDefaults/BearerSchemeName) | Bearer authentication scheme name. |
+| const [CertificateDisplayName](AuthenticationDefaults/CertificateDisplayName) | Default display name for Client Certificate authentication. |
+| const [CertificateSchemeName](AuthenticationDefaults/CertificateSchemeName) | Client Certificate authentication scheme name. |
 | const [CookiesDisplayName](AuthenticationDefaults/CookiesDisplayName) | Cookies authentication display name. |
 | const [CookiesSchemeName](AuthenticationDefaults/CookiesSchemeName) | Cookies authentication scheme name. |
 | const [DigestDisplayName](AuthenticationDefaults/DigestDisplayName) | Default display name for Digest authentication. |

@@ -29,14 +29,14 @@ public void WriteJsonResponse(object? inputObject, int statusCode = 200)
 Writes a JSON response using the specified input object and serializer settings.
 
 ```csharp
-public void WriteJsonResponse(object? inputObject, JsonSerializerSettings serializerSettings, 
+public void WriteJsonResponse(object? inputObject, JsonSerializerOptions serializerOptions, 
     int statusCode = 200, string? contentType = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | inputObject | The object to be converted to JSON. |
-| serializerSettings | The settings to use for JSON serialization. |
+| serializerOptions | The options to use for JSON serialization. |
 | statusCode | The HTTP status code for the response. |
 | contentType | The MIME type of the response content. |
 

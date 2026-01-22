@@ -24,6 +24,7 @@ public enum AuthenticationType
 | Oidc | `5` | OpenID Connect authentication. |
 | Cookie | `6` | Cookie authentication. |
 | Windows | `7` | Windows authentication. |
+| Certificate | `8` | Client Certificate authentication. |
 
 ## See Also
 

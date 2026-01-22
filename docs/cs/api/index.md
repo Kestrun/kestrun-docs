@@ -29,6 +29,8 @@ parent: "C#"
 | static class [AuthOptionsHelper](./Kestrun.Authentication/AuthOptionsHelper.md) | Helper class to retrieve authentication options from the DI container. |
 | class [BasicAuthenticationOptions](./Kestrun.Authentication/BasicAuthenticationOptions.md) | Options for configuring Basic Authentication in Kestrun. |
 | class [BasicAuthHandler](./Kestrun.Authentication/BasicAuthHandler.md) | Handles Basic Authentication for HTTP requests. |
+| class [ClientCertificateAuthenticationOptions](./Kestrun.Authentication/ClientCertificateAuthenticationOptions.md) | Options for configuring Client Certificate Authentication in Kestrun. |
+| class [ClientCertificateAuthHandler](./Kestrun.Authentication/ClientCertificateAuthHandler.md) | Handles Client Certificate Authentication for HTTP requests. |
 | class [CookieAuthOptions](./Kestrun.Authentication/CookieAuthOptions.md) | Options for cookie-based authentication. |
 | interface [IAuthenticationCommonOptions](./Kestrun.Authentication/IAuthenticationCommonOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
 | interface [IAuthenticationHostOptions](./Kestrun.Authentication/IAuthenticationHostOptions.md) | Defines common options for authentication, including code validation, claim issuance, and claim policy configuration. |
@@ -79,6 +81,8 @@ parent: "C#"
 | public type | description |
 | --- | --- |
 | static class [CertificateManager](./Kestrun.Certificates/CertificateManager.md) | Drop-in replacement for Pode’s certificate helpers, powered by Bouncy Castle. |
+| static class [ClientCertificateValidationCallbacks](./Kestrun.Certificates/ClientCertificateValidationCallbacks.md) | Built-in callbacks for validating TLS client certificates. |
+| static class [ClientCertificateValidationCompiler](./Kestrun.Certificates/ClientCertificateValidationCompiler.md) | Compiles C# or VB.NET code into a TLS client certificate validation callback. |
 | record [CsrOptions](./Kestrun.Certificates/CsrOptions.md) | Options for creating a Certificate Signing Request (CSR). |
 | record [CsrResult](./Kestrun.Certificates/CsrResult.md) | Represents the result of creating a Certificate Signing Request (CSR), including the PEM-encoded CSR and the private key. |
 | enum [ExportFormat](./Kestrun.Certificates/ExportFormat.md) | Specifies the format to use when exporting certificates. |
@@ -287,6 +291,9 @@ parent: "C#"
 | enum [OpenApiPathLikeKind](./Kestrun.OpenApi/OpenApiPathLikeKind.md) | Defines the kinds of OpenAPI path-like objects. |
 | static class [OpenApiSchemaDiscovery](./Kestrun.OpenApi/OpenApiSchemaDiscovery.md) | Helper to discover OpenAPI schema types in loaded assemblies. |
 | static class [OpenApiSpecVersionExtensions](./Kestrun.OpenApi/OpenApiSpecVersionExtensions.md) | Extension methods for OpenApiSpecVersion enum. |
+| record [Rfc6570PathMapping](./Kestrun.OpenApi/Rfc6570PathMapping.md) | Represents the result of mapping an RFC6570 path template to a Kestrel route pattern. |
+| static class [Rfc6570PathTemplateMapper](./Kestrun.OpenApi/Rfc6570PathTemplateMapper.md) | Maps OpenAPI 3.2 RFC6570 path templates to Kestrel-compatible route patterns. |
+| static class [Rfc6570VariableMapper](./Kestrun.OpenApi/Rfc6570VariableMapper.md) | Maps ASP.NET Core route values to RFC 6570 URI Template variable assignments. |
 
 ## Kestrun.Razor namespace
 

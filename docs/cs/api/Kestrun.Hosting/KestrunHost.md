@@ -31,6 +31,7 @@ public class KestrunHost : IDisposable
 | [CorsPolicyDefined](KestrunHost/CorsPolicyDefined) { get; } | Gets or sets a value indicating whether CORS (Cross-Origin Resource Sharing) is enabled. |
 | [DefaultCacheControl](KestrunHost/DefaultCacheControl) { get; } | Gets or sets the default cache control settings for HTTP responses. |
 | [DefaultHost](KestrunHost/DefaultHost) { get; } | Gets or sets a value indicating whether this instance is the default Kestrun host. |
+| [DefaultOpenApiDocumentDescriptor](KestrunHost/DefaultOpenApiDocumentDescriptor) { get; } | Gets the default OpenAPI document descriptor. |
 | [DefinedCorsPolicyNames](KestrunHost/DefinedCorsPolicyNames) { get; } | The list of CORS policy names that have been defined in the KestrunHost instance. |
 | [ExceptionOptions](KestrunHost/ExceptionOptions) { get; set; } | Gets or sets the exception options for configuring exception handling. |
 | [ForwardedHeaderOptions](KestrunHost/ForwardedHeaderOptions) { get; set; } | Gets or sets the forwarded headers options for configuring forwarded headers handling. |

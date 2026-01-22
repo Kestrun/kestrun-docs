@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 145
+nav_order: 147
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiLink
 ---
@@ -24,15 +24,17 @@ Creates a new OpenAPI Link object.
 ### ByOperationId (Default)
 
 ```powershell
-New-KrOpenApiLink -OperationId <string> [-Description <string>] [-Server <OpenApiServer>]
- [-Parameters <hashtable>] [-RequestBody <Object>] [<CommonParameters>]
+New-KrOpenApiLink -OperationId <string> [-Server <KestrunHost>] [-Description <string>]
+ [-OpenApiServer <OpenApiServer>] [-Parameters <IDictionary>] [-RequestBody <Object>]
+ [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ### ByOperationRef
 
 ```powershell
-New-KrOpenApiLink -OperationRef <string> [-Description <string>] [-Server <OpenApiServer>]
- [-Parameters <hashtable>] [-RequestBody <Object>] [<CommonParameters>]
+New-KrOpenApiLink -OperationRef <string> [-Server <KestrunHost>] [-Description <string>]
+ [-OpenApiServer <OpenApiServer>] [-Parameters <IDictionary>] [-RequestBody <Object>]
+ [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -53,6 +55,11 @@ Links allow you to specify how the output of one operation can be used as input 
 $link = New-KrOpenApiLink -OperationId "getUser" -Description "Link to get user details" -Parameters @{ "userId" = "$response.body#/id" }
 This link creates a new OpenAPI Link object that links to the "getUser" operation, with a description and parameters.
 
+### EXAMPLE 2
+
+$link = New-KrOpenApiLink -OperationRef "#/paths/~1users~1{userId}/get" -Description "Link to get user details"
+This link creates a new OpenAPI Link object that links to the operation referenced by the provided JSON Reference, with a description.
+
 ## PARAMETERS
 
 ### -Description
@@ -61,6 +68,48 @@ A description of the link.
 
 ```yaml
 Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Extensions
+
+A collection of OpenAPI extensions to add to the link.
+
+```yaml
+Type: System.Collections.IDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -OpenApiServer
+
+An OpenAPI Server object that specifies the server to be used for the linked operation.
+
+```yaml
+Type: Microsoft.OpenApi.OpenApiServer
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -123,7 +172,7 @@ HelpMessage: ''
 A hashtable mapping parameter names to runtime expressions or literal objects that define the parameters for the linked operation.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.Collections.IDictionary
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -162,10 +211,11 @@ HelpMessage: ''
 
 ### -Server
 
-An OpenAPI Server object that specifies the server to be used for the linked operation.
+The Kestrun server instance to which the OpenAPI link will be associated.
+If not specified, the function will attempt to resolve the current server context.
 
 ```yaml
-Type: Microsoft.OpenApi.OpenApiServer
+Type: Kestrun.Hosting.KestrunHost
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -173,7 +223,7 @@ ParameterSets:
 - Name: (All)
   Position: Named
   IsRequired: false
-  ValueFromPipeline: false
+  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -190,7 +240,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Kestrun.Hosting.KestrunHost
+
+{{ Fill in the Description }}
+
 ## OUTPUTS
+
+### Microsoft.OpenApi.OpenApiLink object.
+
+{{ Fill in the Description }}
+
+### Microsoft.OpenApi.OpenApiLink
+
+{{ Fill in the Description }}
 
 ## NOTES
 

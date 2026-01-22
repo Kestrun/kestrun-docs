@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 142
+nav_order: 144
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiExample
 ---
@@ -24,21 +24,23 @@ Creates a new OpenAPI Component Example object.
 ### Value (Default)
 
 ```powershell
-New-KrOpenApiExample -Summary <string> -Value <Object> [-Description <string>] [<CommonParameters>]
+New-KrOpenApiExample -Summary <string> -Value <Object> [-Server <KestrunHost>]
+ [-Description <string>] [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ### ExternalValue
 
 ```powershell
-New-KrOpenApiExample -Summary <string> -ExternalValue <string> [-Description <string>]
- [<CommonParameters>]
+New-KrOpenApiExample -Summary <string> -ExternalValue <string> [-Server <KestrunHost>]
+ [-Description <string>] [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ### DataValue
 
 ```powershell
-New-KrOpenApiExample -Summary <string> -DataValue <Object> [-Description <string>]
- [-SerializedValue <string>] [<CommonParameters>]
+New-KrOpenApiExample -Summary <string> -DataValue <Object> [-Server <KestrunHost>]
+ [-Description <string>] [-SerializedValue <string>] [-Extensions <IDictionary>]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -119,6 +121,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Extensions
+
+A dictionary of OpenAPI extensions to add to the example.
+
+```yaml
+Type: System.Collections.IDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -ExternalValue
 
 A URL that points to the literal example.
@@ -155,6 +178,28 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Server
+
+The Kestrun server instance to use.
+If not specified, the default server instance is used.
+
+```yaml
+Type: Kestrun.Hosting.KestrunHost
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -214,7 +259,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Kestrun.Hosting.KestrunHost
+
+{{ Fill in the Description }}
+
 ## OUTPUTS
+
+### Microsoft.OpenApi.OpenApiExample object.
+
+{{ Fill in the Description }}
 
 ### Microsoft.OpenApi.OpenApiExample
 

@@ -16,7 +16,7 @@ New-KrLogger | Add-KrSinkConsole |
     Set-KrLoggerLevel -Value Debug |
     Register-KrLogger -Name 'console' -SetAsDefault
 
-$srv = New-KrServer -Name 'OpenAPI RequestBody & Response Components' -PassThru
+New-KrServer -Name 'OpenAPI RequestBody & Response Components'
 Add-KrEndpoint -Port $Port -IPAddress $IPAddress
 # =========================================================
 #                 TOP-LEVEL OPENAPI
@@ -101,13 +101,16 @@ class ErrorDetail {
     Required = $true,
     ContentType = 'application/json'
 )]
-class CreateOrderRequestBody:CreateOrderRequest {}
+[OpenApiExtension('x-kestrun-demo', '{"stability":"beta","containsPii":true,"piiFields":["customerEmail"],"domain":"orders","kind":"request"}')]
+[CreateOrderRequest]$CreateOrderRequestBody = NoDefault
 
 # Response components (variable-based)
 [OpenApiResponseComponent(Description = 'Order successfully retrieved or created', ContentType = ('application/json', 'application/xml'))]
+[OpenApiExtension('x-kestrun-demo', '{"stability":"stable","domain":"orders","kind":"success"}')]
 [OrderResponse]$OrderResponseDefault = NoDefault
 
 [OpenApiResponseComponent(Description = 'Request validation error', ContentType = ('application/json', 'application/xml'))]
+[OpenApiExtension('x-kestrun-demo', '{"stability":"stable","domain":"orders","kind":"error","retryable":false}')]
 [ErrorDetail]$ErrorResponseDefault = NoDefault
 
 # =========================================================
@@ -137,8 +140,8 @@ function createOrder {
     [OpenApiResponseRefAttribute(StatusCode = '201', ReferenceId = 'OrderResponseDefault')]
     [OpenApiResponseRefAttribute(StatusCode = '400', ReferenceId = 'ErrorResponseDefault')]
     param(
-        [OpenApiRequestBody(ContentType = ('application/json', 'application/xml', 'application/x-www-form-urlencoded'))]
-        [CreateOrderRequestBody]$body
+        [OpenApiRequestBodyRef(ReferenceId = 'CreateOrderRequestBody')]
+        [CreateOrderRequest]$body
     )
 
     # Validate required fields
@@ -247,7 +250,7 @@ function updateOrder {
         [OpenApiParameter(In = [OaParameterLocation]::Path, Required = $true, Example = 'a54a57ca-36f8-421b-a6b4-2e8f26858a4c')]
         [guid]$orderId,
         [OpenApiRequestBody(ContentType = ('application/json', 'application/xml', 'application/x-www-form-urlencoded'))]
-        [CreateOrderRequestBody]$body
+        [CreateOrderRequest]$body
     )
 
     # Validate quantity if provided
@@ -284,11 +287,15 @@ function updateOrder {
 Add-KrOpenApiRoute
 
 Build-KrOpenApiDocument
-Test-KrOpenApiDocument
+# Test and log OpenAPI document validation result
+if (Test-KrOpenApiDocument) {
+    Write-KrLog -Level Information -Message 'OpenAPI document built and validated successfully.'
+} else {
+    Write-KrLog -Level Error -Message 'OpenAPI document validation failed.'
+}
 
 # =========================================================
 #                      RUN SERVER
 # =========================================================
 
-Start-KrServer -Server $srv -CloseLogsOnExit
-
+Start-KrServer -CloseLogsOnExit

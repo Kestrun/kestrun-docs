@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 144
+nav_order: 146
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrOpenApiHeader
 ---
@@ -24,17 +24,17 @@ Creates a new OpenAPI Header object.
 ### Schema (Default)
 
 ```powershell
-New-KrOpenApiHeader [-Server <KestrunHost>] [-DocId <string[]>] [-Description <string>] [-Required]
- [-Deprecated] [-AllowEmptyValue] [-Explode] [-AllowReserved] [-Style <ParameterStyle>]
- [-Example <Object>] [-Examples <hashtable>] [-Schema <Object>] [<CommonParameters>]
+New-KrOpenApiHeader [-Server <KestrunHost>] [-Description <string>] [-Required] [-Deprecated]
+ [-AllowEmptyValue] [-Explode] [-AllowReserved] [-Style <ParameterStyle>] [-Example <Object>]
+ [-Examples <hashtable>] [-Schema <Object>] [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ### Content
 
 ```powershell
-New-KrOpenApiHeader [-Server <KestrunHost>] [-DocId <string[]>] [-Description <string>] [-Required]
- [-Deprecated] [-AllowEmptyValue] [-Explode] [-AllowReserved] [-Style <ParameterStyle>]
- [-Example <Object>] [-Examples <hashtable>] [-Content <hashtable>] [<CommonParameters>]
+New-KrOpenApiHeader [-Server <KestrunHost>] [-Description <string>] [-Required] [-Deprecated]
+ [-AllowEmptyValue] [-Explode] [-AllowReserved] [-Style <ParameterStyle>] [-Example <Object>]
+ [-Examples <hashtable>] [-Content <IDictionary>] [-Extensions <IDictionary>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -116,11 +116,10 @@ HelpMessage: ''
 
 ### -Content
 
-A hashtable of content media types for the header.
-(OpenAPi3.2 and above) (Parameter set 'Content')
+A dictionary representing the content of the header, mapping media types to OpenAPI MediaType objects.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.Collections.IDictionary
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -178,30 +177,9 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -DocId
-
-The documentation IDs to which this header will be associated.
-
-```yaml
-Type: System.String[]
-DefaultValue: '[Kestrun.OpenApi.OpenApiDocDescriptor]::DefaultDocumentationIds'
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Example
 
-An example value for the header.
+A single example of the header value.
 
 ```yaml
 Type: System.Object
@@ -222,7 +200,7 @@ HelpMessage: ''
 
 ### -Examples
 
-A hashtable of example values for the header.
+A dictionary of multiple examples for the header.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -262,6 +240,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Extensions
+
+A dictionary of OpenAPI extensions to add to the header.
+
+```yaml
+Type: System.Collections.IDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Required
 
 Indicates whether the header is required.
@@ -285,8 +284,8 @@ HelpMessage: ''
 
 ### -Schema
 
-The schema type for the header.
-(Parameter set 'Schema')
+The schema defining the type of the header value.
+This can be a .NET type literal (e.g., [string], [int], etc.).
 
 ```yaml
 Type: System.Object
@@ -308,6 +307,7 @@ HelpMessage: ''
 ### -Server
 
 The Kestrun server instance to use.
+If not specified, the default server instance is used.
 
 ```yaml
 Type: Kestrun.Hosting.KestrunHost
@@ -361,10 +361,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 {{ Fill in the Description }}
 
 ## OUTPUTS
-
-### Microsoft.OpenApi.OpenApiHeader object.
-
-{{ Fill in the Description }}
 
 ### Microsoft.OpenApi.OpenApiHeader
 

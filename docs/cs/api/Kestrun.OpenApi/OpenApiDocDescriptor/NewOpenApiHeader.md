@@ -12,7 +12,8 @@ Creates a new OpenApiHeader with the specified properties.
 public OpenApiHeader NewOpenApiHeader(string? description = null, bool required = false, 
     bool deprecated = false, bool allowEmptyValue = false, ParameterStyle? style = default, 
     bool explode = false, bool allowReserved = false, object? example = null, 
-    Hashtable? examples = null, Type? schema = null, Hashtable? content = null)
+    Hashtable? examples = null, Type? schema = null, IDictionary? content = null, 
+    IDictionary? extensions = null)
 ```
 
 | parameter | description |
@@ -28,6 +29,7 @@ public OpenApiHeader NewOpenApiHeader(string? description = null, bool required 
 | examples | A collection of examples for the header. |
 | schema | The schema of the header. |
 | content | The content of the header. |
+| extensions | A collection of extensions for the header. |
 
 ## Return Value
 

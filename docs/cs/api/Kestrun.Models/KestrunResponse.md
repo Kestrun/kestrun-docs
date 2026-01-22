@@ -28,6 +28,7 @@ public class KestrunResponse
 | [Cookies](KestrunResponse/Cookies) { get; set; } | Gets or sets the list of Set-Cookie header values for the response. |
 | [Encoding](KestrunResponse/Encoding) { get; set; } | Text encoding for textual MIME types. |
 | [Headers](KestrunResponse/Headers) { get; set; } | Gets or sets the collection of HTTP headers for the response. |
+| [Host](KestrunResponse/Host) { get; } | Gets the KestrunHost associated with this response. |
 | [KrContext](KestrunResponse/KrContext) { get; set; } | Gets the associated KestrunContext for this response. |
 | [MapRouteOptions](KestrunResponse/MapRouteOptions) { get; } | Gets the route options associated with this response. |
 | [RedirectUrl](KestrunResponse/RedirectUrl) { get; set; } | Gets or sets the URL to redirect the response to, if an HTTP redirect is required. |

@@ -16,6 +16,10 @@ Generates OpenAPI v2 (Swagger) documents from C# types decorated with OpenApiSch
 
 Helper methods for accessing OpenAPI document components.
 
+Helper methods for accessing OpenAPI document components.
+
+Generates OpenAPI v2 (Swagger) documents from C# types decorated with OpenApiSchema attributes.
+
 Generates OpenAPI v2 (Swagger) documents from C# types decorated with OpenApiSchema attributes.
 
 Helper methods for accessing OpenAPI document components.
@@ -54,14 +58,20 @@ public class OpenApiDocDescriptor
 | [AddComponentLink](OpenApiDocDescriptor/AddComponentLink)(…) | Adds a component link to the OpenAPI document. |
 | [AddInlineExample](OpenApiDocDescriptor/AddInlineExample)(…) | Adds an inline example to the OpenAPI document. |
 | [AddInlineLink](OpenApiDocDescriptor/AddInlineLink)(…) | Adds an inline link to the OpenAPI document. |
+| [AddOpenApiExtension](OpenApiDocDescriptor/AddOpenApiExtension)(…) | Creates an OpenAPI extension in the document from the provided extensions dictionary. |
 | [AddTag](OpenApiDocDescriptor/AddTag)(…) | Adds a tag if it doesn't exist and returns the existing or newly created tag. |
 | [ApplySecurityScheme](OpenApiDocDescriptor/ApplySecurityScheme)(…) | Applies a security scheme to the OpenAPI document based on the provided authentication options. |
 | [ContainsTag](OpenApiDocDescriptor/ContainsTag)(…) | Determines whether the OpenAPI document contains a tag with the specified name. |
+| [CreateExternalDocs](OpenApiDocDescriptor/CreateExternalDocs)(…) | Creates an OpenApiExternalDocs object with optional extensions. (2 methods) |
+| [CreateInfoContact](OpenApiDocDescriptor/CreateInfoContact)(…) | Creates an OpenApiContact object with optional extensions. |
 | [GenerateComponents](OpenApiDocDescriptor/GenerateComponents)() | Generates the OpenAPI document by auto-discovering component types. |
 | [GenerateDoc](OpenApiDocDescriptor/GenerateDoc)() | Generates the OpenAPI document by processing components and building paths and webhooks. |
 | [InferPrimitiveSchema](OpenApiDocDescriptor/InferPrimitiveSchema)(…) | Infers a primitive OpenApiSchema from a .NET type. |
 | [LoadAnnotatedFunctions](OpenApiDocDescriptor/LoadAnnotatedFunctions)(…) | Enumerates all in-session PowerShell functions in the given runspace, detects those annotated with [OpenApiPath], and maps them into the provided KestrunHost. |
+| [NewOpenApiExample](OpenApiDocDescriptor/NewOpenApiExample)(…) | Creates a new OpenApiExample object. (2 methods) |
+| [NewOpenApiExternalExample](OpenApiDocDescriptor/NewOpenApiExternalExample)(…) | Creates a new OpenApiExample object. Using ExternalValue |
 | [NewOpenApiHeader](OpenApiDocDescriptor/NewOpenApiHeader)(…) | Creates a new OpenApiHeader with the specified properties. |
+| [NewOpenApiLink](OpenApiDocDescriptor/NewOpenApiLink)(…) | Creates a new OpenApiLink instance based on the provided parameters. |
 | [ReadAndDiagnose](OpenApiDocDescriptor/ReadAndDiagnose)(…) | Reads and diagnoses the OpenAPI document by serializing and re-parsing it. |
 | [RemoveTag](OpenApiDocDescriptor/RemoveTag)(…) | Removes a tag by instance. Returns true if removed. |
 | [ToJson](OpenApiDocDescriptor/ToJson)(…) | Serializes the OpenAPI document to a JSON string. |
@@ -71,8 +81,6 @@ public class OpenApiDocDescriptor
 | [TryGetTag](OpenApiDocDescriptor/TryGetTag)(…) | Tries to get a tag item by name from the OpenAPI document. |
 | const [DefaultDocumentationId](OpenApiDocDescriptor/DefaultDocumentationId) | Default documentation identifier. |
 | static readonly [DefaultDocumentationIds](OpenApiDocDescriptor/DefaultDocumentationIds) | Default documentation identifiers for OpenAPI authentication schemes. |
-| static [CreateExternalDocs](OpenApiDocDescriptor/CreateExternalDocs)(…) | Creates an OpenApiExternalDocs object with optional extensions. (2 methods) |
-| static [ToNode](OpenApiDocDescriptor/ToNode)(…) | Converts a .NET object to a JsonNode representation. |
 
 ## See Also
 

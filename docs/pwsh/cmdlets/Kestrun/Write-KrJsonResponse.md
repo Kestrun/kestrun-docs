@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 213
+nav_order: 215
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: Write-KrJsonResponse
 ---
@@ -35,7 +35,7 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Serializes the provided object to JSON using Newtonsoft.Json and writes it
+Serializes the provided object to JSON using System.Text.Json and writes it
 to the current HTTP response.
 The caller can specify the HTTP status code,
 serialization depth and formatting options.

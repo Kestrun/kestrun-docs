@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Default response content type for this route.
 
 ```csharp
-public string DefaultResponseContentType { get; set; }
+public string? DefaultResponseContentType { get; set; }
 ```
 
 ## See Also

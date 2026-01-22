@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 180
+nav_order: 182
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: Set-KrServerHttpsOptions
 ---
@@ -25,9 +25,12 @@ Configures HTTPS options for a Kestrun server instance.
 
 ```powershell
 Set-KrServerHttpsOptions [-Server <KestrunHost>] [-SslProtocols <SslProtocols>]
- [-ClientCertificateMode <ClientCertificateMode>] [-CheckCertificateRevocation]
- [-ServerCertificate <X509Certificate2>] [-ServerCertificateChain <X509Certificate2Collection>]
- [-HandshakeTimeout <int>] [-PassThru] [<CommonParameters>]
+ [-ClientCertificateValidationCode <string>] [-ClientCertificateValidationCodePath <string>]
+ [-ClientCertificateValidationLanguage <string>] [-ClientCertificateMode <ClientCertificateMode>]
+ [-ClientCertificateValidation <Func`4[X509Certificate2,X509Chain,SslPolicyErrors,bool]>]
+ [-CheckCertificateRevocation] [-ServerCertificate <X509Certificate2>]
+ [-ServerCertificateChain <X509Certificate2Collection>] [-HandshakeTimeout <int>] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### Options
@@ -106,6 +109,97 @@ This parameter is optional and can be set to a specific mode or left unset to us
 ```yaml
 Type: Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode
 DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClientCertificateValidation
+
+A .NET delegate invoked by Kestrel during the TLS handshake to validate the presented client certificate.
+The delegate signature is:
+Func[X509Certificate2, X509Chain, SslPolicyErrors, bool].
+Note: This delegate runs on Kestrel TLS threads (no PowerShell runspace), so it must be pure .NET, fast, and thread-safe.
+
+```yaml
+Type: System.Func`4[System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,System.Boolean]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClientCertificateValidationCode
+
+A C# or VB.NET method-body snippet that will be compiled with Roslyn into the TLS client certificate validation delegate.
+The generated method signature is:
+  bool Validate(X509Certificate2 certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClientCertificateValidationCodePath
+
+Path to a .cs/.csx or .vb file containing a method-body snippet that will be compiled with Roslyn into the TLS client certificate validation delegate.
+The language is inferred from the file extension.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Items
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClientCertificateValidationLanguage
+
+The language used for -ClientCertificateValidationCode.
+Valid values are CSharp and VBNet.
+
+```yaml
+Type: System.String
+DefaultValue: CSharp
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
@@ -295,7 +389,7 @@ The modified Kestrun server instance with the applied HTTPS options.
 ## NOTES
 
 This function is designed to be used in the context of a Kestrun server setup and allows for flexible configuration of HTTPS options.
-$ClientCertificateValidation, $ServerCertificateSelector, and $OnAuthenticate are currently not implemented in this cmdlet but can be added in future versions for more advanced scenarios.
+TLS callbacks (like client certificate validation) execute during the TLS handshake and must not rely on PowerShell runspaces.
 
 
 ## RELATED LINKS

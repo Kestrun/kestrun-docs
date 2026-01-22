@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 54
+nav_order: 56
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenApiTag
 ---
@@ -26,7 +26,7 @@ Adds a tag to the OpenAPI document.
 ```powershell
 Add-KrOpenApiTag [[-Server] <KestrunHost>] [[-DocId] <string[]>] [-Name] <string>
  [[-Summary] <string>] [[-Description] <string>] [[-Parent] <string>] [[-Kind] <string>]
- [[-ExternalDocs] <OpenApiExternalDocs>] [[-Extensions] <ordered>] [<CommonParameters>]
+ [[-ExternalDocs] <OpenApiExternalDocs>] [[-Extensions] <IDictionary>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -103,7 +103,7 @@ HelpMessage: ''
 A collection of OpenAPI extensions to add to the tag.
 
 ```yaml
-Type: System.Collections.Specialized.OrderedDictionary
+Type: System.Collections.IDictionary
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []

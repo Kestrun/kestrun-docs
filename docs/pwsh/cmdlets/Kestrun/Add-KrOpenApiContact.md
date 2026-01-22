@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 47
+nav_order: 48
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/12/2026
+ms.date: 01/22/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOpenApiContact
 ---
@@ -25,7 +25,7 @@ Adds contact information to the OpenAPI document.
 
 ```powershell
 Add-KrOpenApiContact [[-Server] <KestrunHost>] [[-DocId] <string[]>] [[-Name] <string>]
- [[-Url] <uri>] [[-Email] <string>] [<CommonParameters>]
+ [[-Url] <uri>] [[-Email] <string>] [[-Extensions] <IDictionary>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -43,6 +43,23 @@ This function adds contact information to the OpenAPI Info section using the pro
 
 # Add contact information to the default document
 Add-KrOpenApiContact -Name "John Doe" -Url "https://johndoe.com" -Email "john.doe@example.com"
+Adds contact information with the specified name, URL, and email to the default OpenAPI document.
+
+### EXAMPLE 2
+
+# Add contact information to multiple documents
+Add-KrOpenApiContact -DocId @('Default', 'v2') -Name "API Support" -Email "support@example.com"
+Adds contact information with the specified name and email to both the 'Default' and 'v2' OpenAPI documents.
+
+### EXAMPLE 3
+
+# Add contact information with extensions
+$extensions = [ordered]@{
+    'x-contact-type' = 'technical'
+    'x-timezone' = 'PST'
+}
+Add-KrOpenApiContact -Name "Tech Support" -Email "techsupport@example.com" -Extensions $extensions
+Adds contact information with the specified name, email, and extensions to the default OpenAPI document.
 
 ## PARAMETERS
 
@@ -80,6 +97,27 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 4
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Extensions
+
+A collection of OpenAPI extensions to add to the contact information.
+
+```yaml
+Type: System.Collections.IDictionary
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 5
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

@@ -16,7 +16,7 @@ public static class OpenApiJsonNodeFactory
 
 | name | description |
 | --- | --- |
-| static [FromObject](OpenApiJsonNodeFactory/FromObject)(…) | Create a JsonNode from a .NET object. |
+| static [ToNode](OpenApiJsonNodeFactory/ToNode)(…) | Create a JsonNode from a .NET object. |
 
 ## See Also
 
