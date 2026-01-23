@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/certauth
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/22/2026
+ms.date: 01/23/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrClientCertificateAuthentication
 ---
