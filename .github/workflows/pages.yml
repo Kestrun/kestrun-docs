@@ -51,6 +51,13 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Show generated robots.txt and sitemap locs
+        run: |
+          echo "=== _site/robots.txt ==="
+          cat _site/robots.txt
+          echo "=== sitemap first loc ==="
+          head -n 30 _site/sitemap.xml | sed -n '1,30p'
+
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v4
