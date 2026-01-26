@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 134
+nav_order: 137
 render_with_liquid: false
 ocument type: module
 Help Version: 1.0.0.0
@@ -9,7 +9,7 @@ HelpInfoUri:
 Locale: ''
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Kestrun
-ms.date: 01/23/2026
+ms.date: 01/26/2026
 PlatyPS schema version: 2024-05-01
 title: Kestrun Module
 ---
@@ -193,6 +193,10 @@ Adds a subject to the JWT token builder.
 ### [Add-KrListenUnixSocket](Add-KrListenUnixSocket.md)
 
 Adds a Unix socket listener to a Kestrun server instance.
+
+### [Add-KrLocalizationMiddleware](Add-KrLocalizationMiddleware.md)
+
+Adds localization middleware to the Kestrun server.
 
 ### [Add-KrMapRoute](Add-KrMapRoute.md)
 
@@ -441,6 +445,14 @@ Retrieves the JWT token from the builder result.
 ### [Get-KrJWTValidationParameter](Get-KrJWTValidationParameter.md)
 
 Retrieves the validation parameters for a JWT token builder result.
+
+### [Get-KrLocalizationCulture](Get-KrLocalizationCulture.md)
+
+Retrieves the list of available localization cultures.
+
+### [Get-KrLocalizedString](Get-KrLocalizedString.md)
+
+Returns a localized string for the current request culture.
 
 ### [Get-KrLoggerLevelSwitch](Get-KrLoggerLevelSwitch.md)
 

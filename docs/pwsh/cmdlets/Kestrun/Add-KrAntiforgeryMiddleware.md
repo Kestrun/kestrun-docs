@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/23/2026
+ms.date: 01/26/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrAntiforgeryMiddleware
 ---

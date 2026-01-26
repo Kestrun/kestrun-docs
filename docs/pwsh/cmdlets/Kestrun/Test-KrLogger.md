@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 202
+nav_order: 205
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/23/2026
+ms.date: 01/26/2026
 PlatyPS schema version: 2024-05-01
 title: Test-KrLogger
 ---

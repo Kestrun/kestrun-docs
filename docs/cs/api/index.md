@@ -190,6 +190,14 @@ parent: "C#"
 | abstract class [ParameterForInjectionInfoBase](./Kestrun.Languages/ParameterForInjectionInfoBase.md) | Base class for parameter information to be injected into a script. |
 | class [ParameterForInjectionResolved](./Kestrun.Languages/ParameterForInjectionResolved.md) | Resolved parameter information for injection into a script. |
 
+## Kestrun.Localization namespace
+
+| public type | description |
+| --- | --- |
+| class [KestrunLocalizationOptions](./Kestrun.Localization/KestrunLocalizationOptions.md) | Options for configuring PowerShell-style localization using string table files. |
+| class [KestrunLocalizationStore](./Kestrun.Localization/KestrunLocalizationStore.md) | Provides cached access to localized string tables with culture fallback support. |
+| static class [StringTableParser](./Kestrun.Localization/StringTableParser.md) | Parses PowerShell-style string table files containing key=value pairs. |
+
 ## Kestrun.Logging namespace
 
 | public type | description |
@@ -256,6 +264,8 @@ parent: "C#"
 | class [CommonAccessLogMiddleware](./Kestrun.Middleware/CommonAccessLogMiddleware.md) | ASP.NET Core middleware that emits Apache style common access log entries using Serilog. |
 | class [CommonAccessLogOptions](./Kestrun.Middleware/CommonAccessLogOptions.md) | Options controlling the behaviour of the [`CommonAccessLogMiddleware`](./Kestrun.Middleware/CommonAccessLogMiddleware.md). |
 | static class [FaviconMiddlewareExtensions](./Kestrun.Middleware/FaviconMiddlewareExtensions.md) | Provides extension methods for serving a favicon in ASP.NET Core applications. |
+| static class [KestrunLocalizationMiddlewareExtensions](./Kestrun.Middleware/KestrunLocalizationMiddlewareExtensions.md) | Extension methods for adding Kestrun localization middleware. |
+| class [KestrunRequestCultureMiddleware](./Kestrun.Middleware/KestrunRequestCultureMiddleware.md) | Middleware that resolves the request culture once and exposes localized strings. |
 | class [PowerShellRunspaceMiddleware](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) | Initializes a new instance of the [`PowerShellRunspaceMiddleware`](./Kestrun.Middleware/PowerShellRunspaceMiddleware.md) class. |
 | static class [PowerShellRunspaceMiddlewareExtensions](./Kestrun.Middleware/PowerShellRunspaceMiddlewareExtensions.md) | Extension methods for adding PowerShell runspace middleware. |
 | static class [StatusCodePageExtensions](./Kestrun.Middleware/StatusCodePageExtensions.md) | Extension methods for adding status code pages middleware. |

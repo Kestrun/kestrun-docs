@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 143
+nav_order: 146
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: https://docs.microsoft.com/en-us/dotnet/api/kestrun.hosting.options.maprouteoptions
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/23/2026
+ms.date: 01/26/2026
 PlatyPS schema version: 2024-05-01
 title: New-KrMapRouteOption
 ---

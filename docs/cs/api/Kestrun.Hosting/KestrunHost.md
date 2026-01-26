@@ -10,6 +10,8 @@ Provides hosting and configuration for the Kestrun application, including servic
 
 Adds health-check specific helpers to [`KestrunHost`](./KestrunHost).
 
+Extension methods for adding localization to the Kestrun host.
+
 Provides extension methods for adding PowerShell and Razor Pages to a Kestrun
 
 SSE broadcast extensions
@@ -38,6 +40,7 @@ public class KestrunHost : IDisposable
 | [IsConfigured](KestrunHost/IsConfigured) { get; } | Indicates whether the Kestrun host configuration has been applied. |
 | [IsRunning](KestrunHost/IsRunning) { get; } | Determines whether the Kestrun web application is currently running. |
 | [KestrunRoot](KestrunHost/KestrunRoot) { get; } | Gets the root directory path for the Kestrun application. |
+| [LocalizationStore](KestrunHost/LocalizationStore) { get; } | The localization store used by this host when `UseKestrunLocalization` is configured. May be null if localization middleware was not added. |
 | [Logger](KestrunHost/Logger) { get; } | Gets the Serilog logger instance used by the Kestrun host. |
 | [ModulePaths](KestrunHost/ModulePaths) { get; } | Gets the collection of module paths to be loaded by the Kestrun host. |
 | [OpenApiDocumentDescriptor](KestrunHost/OpenApiDocumentDescriptor) { get; } | Gets the OpenAPI document descriptor for configuring OpenAPI generation. |
@@ -62,6 +65,7 @@ public class KestrunHost : IDisposable
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddFileServer](KestrunHost/AddFileServer)(…) | Adds a file server middleware to the application. (2 methods) |
 | [AddHealthEndpoint](KestrunHost/AddHealthEndpoint)(…) | Registers a GET endpoint (default `/health`) that aggregates the state of all registered probes. (2 methods) |
+| [AddLocalization](KestrunHost/AddLocalization)(…) | Adds localization middleware using the specified options. (2 methods) |
 | [AddPowerShellRazorPages](KestrunHost/AddPowerShellRazorPages)() | Adds PowerShell Razor Pages to the application with default configuration and no route prefix. |
 | [AddPowerShellRazorPages](KestrunHost/AddPowerShellRazorPages)(…) | Adds PowerShell Razor Pages to the application. This middleware allows you to serve Razor Pages using PowerShell scripts. (5 methods) |
 | [AddPowerShellRuntime](KestrunHost/AddPowerShellRuntime)(…) | Adds a PowerShell runtime to the application. This middleware allows you to execute PowerShell scripts in response to HTTP requests. |
