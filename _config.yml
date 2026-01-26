@@ -5,6 +5,8 @@ theme: just-the-docs
 plugins:
   - jekyll-default-layout
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-last-modified-at
   
 url: https://kestrun.github.io
 
