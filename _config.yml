@@ -9,7 +9,7 @@ plugins:
   - jekyll-last-modified-at
   
 url: https://kestrun.github.io
-
+baseurl: ""
 sass:
   quiet_deps: true
 
