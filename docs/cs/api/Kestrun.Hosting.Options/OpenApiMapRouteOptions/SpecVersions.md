@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "OpenApiMapRouteOptions.SpecVersion property"
+title: "OpenApiMapRouteOptions.SpecVersions property"
 parent: "Kestrun.Hosting.Options"
 grand_parent: "C# API"
 ---
-# OpenApiMapRouteOptions.SpecVersion property
+# OpenApiMapRouteOptions.SpecVersions property
 
 The supported OpenAPI spec versions.
 
 ```csharp
-public OpenApiSpecVersion[] SpecVersion { get; set; }
+public OpenApiSpecVersion[] SpecVersions { get; set; }
 ```
 
 ## See Also

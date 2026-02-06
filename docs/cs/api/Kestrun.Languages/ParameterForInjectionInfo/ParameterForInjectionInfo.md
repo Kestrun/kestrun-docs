@@ -29,16 +29,19 @@ public ParameterForInjectionInfo(ParameterMetadata paramInfo, OpenApiParameter? 
 Constructs a ParameterForInjectionInfo from an OpenApiRequestBody.
 
 ```csharp
-public ParameterForInjectionInfo(ParameterMetadata paramInfo, OpenApiRequestBody requestBody)
+public ParameterForInjectionInfo(ParameterMetadata paramInfo, OpenApiRequestBody requestBody, 
+    KrFormOptions? formOptions)
 ```
 
 | parameter | description |
 | --- | --- |
 | paramInfo | The parameter metadata. |
 | requestBody | The OpenApiRequestBody to construct from. |
+| formOptions | The form options for handling form data. |
 
 ## See Also
 
+* class [KrFormOptions](../../Kestrun.Forms/KrFormOptions)
 * class [ParameterForInjectionInfo](../ParameterForInjectionInfo)
 * namespace [Kestrun.Languages](../../Kestrun)
 

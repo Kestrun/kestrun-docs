@@ -38,6 +38,7 @@ public class KestrunResponse
 | [ApplyCachingHeaders](KestrunResponse/ApplyCachingHeaders)(…) | Adds caching headers to the response based on the provided CacheControlHeaderValue options. |
 | [ApplyTo](KestrunResponse/ApplyTo)(…) | Applies the current KestrunResponse to the specified HttpResponse, setting status, headers, cookies, and writing the body. |
 | [GetHeader](KestrunResponse/GetHeader)(…) | Retrieves the value of the specified header from the response headers. |
+| [IsTextBasedContentType](KestrunResponse/IsTextBasedContentType)(…) | Determines whether the specified content type is text-based or supports a charset. |
 | [RevalidateCache](KestrunResponse/RevalidateCache)(…) | Attempts to revalidate the cache based on ETag and Last-Modified headers. If the resource is unchanged, sets the response status to 304 Not Modified. Returns true if a 304 response was written, false otherwise. |
 | [WriteBinaryResponse](KestrunResponse/WriteBinaryResponse)(…) | Writes a binary response with the specified data, status code, and content type. |
 | [WriteBsonResponse](KestrunResponse/WriteBsonResponse)(…) | Writes a BSON response with the specified input object, status code, and content type. |
@@ -69,7 +70,6 @@ public class KestrunResponse
 | [WriteYamlResponse](KestrunResponse/WriteYamlResponse)(…) | Writes a YAML response with the specified input object, status code, and content type. |
 | [WriteYamlResponseAsync](KestrunResponse/WriteYamlResponseAsync)(…) | Asynchronously writes a YAML response with the specified input object, status code, and content type. |
 | static readonly [TextBasedMimeTypes](KestrunResponse/TextBasedMimeTypes) | A set of MIME types that are considered text-based for response content. |
-| static [IsTextBasedContentType](KestrunResponse/IsTextBasedContentType)(…) | Determines whether the specified content type is text-based or supports a charset. |
 
 ## Remarks
 

@@ -111,6 +111,31 @@ parent: "C#"
 | class [KrHttpClientOptions](./Kestrun.Client/KrHttpClientOptions.md) | Extra options to shape HttpClient behavior. |
 | static class [KrHttpDownloads](./Kestrun.Client/KrHttpDownloads.md) | Helper methods for common HTTP download scenarios. |
 
+## Kestrun.Forms namespace
+
+| public type | description |
+| --- | --- |
+| interface [IKrFormPayload](./Kestrun.Forms/IKrFormPayload.md) | Represents a parsed form payload. |
+| interface [IKrPartSink](./Kestrun.Forms/IKrPartSink.md) | Defines a streaming sink for multipart parts. |
+| class [KrDiskPartSink](./Kestrun.Forms/KrDiskPartSink.md) | Stores part contents on disk. |
+| record [KrFilePart](./Kestrun.Forms/KrFilePart.md) | Represents a stored file part. |
+| record [KrFormContext](./Kestrun.Forms/KrFormContext.md) | Represents the form parsing context for a request. |
+| class [KrFormData](./Kestrun.Forms/KrFormData.md) | Represents a form payload containing named fields and files. |
+| static class [KrFormEndpoints](./Kestrun.Forms/KrFormEndpoints.md) | Provides endpoint mapping helpers for form routes. |
+| class [KrFormException](./Kestrun.Forms/KrFormException.md) | Represents form parsing errors with HTTP status codes. |
+| class [KrFormLimitExceededException](./Kestrun.Forms/KrFormLimitExceededException.md) | Represents a form parsing limit violation. |
+| class [KrFormLimits](./Kestrun.Forms/KrFormLimits.md) | Defines form parsing limits. |
+| class [KrFormOptions](./Kestrun.Forms/KrFormOptions.md) | Configures form parsing behavior for Kestrun. |
+| static class [KrFormParser](./Kestrun.Forms/KrFormParser.md) | Parses incoming form payloads into normalized form payloads. |
+| class [KrFormPartRule](./Kestrun.Forms/KrFormPartRule.md) | Defines a rule for a named multipart part. |
+| class [KrMultipart](./Kestrun.Forms/KrMultipart.md) | Represents a form payload containing ordered parts. |
+| enum [KrPartAction](./Kestrun.Forms/KrPartAction.md) | Defines the action taken for a part. |
+| record [KrPartContext](./Kestrun.Forms/KrPartContext.md) | Represents the context for a part as it is being processed. |
+| static class [KrPartDecompression](./Kestrun.Forms/KrPartDecompression.md) | Provides per-part decompression helpers. |
+| record [KrPartWriteResult](./Kestrun.Forms/KrPartWriteResult.md) | Represents the result of writing a part to storage. |
+| record [KrRawPart](./Kestrun.Forms/KrRawPart.md) | Represents a stored raw part, preserving order in multipart/mixed payloads. |
+| class [LimitedReadStream](./Kestrun.Forms/LimitedReadStream.md) | Stream wrapper that enforces a maximum number of bytes read. |
+
 ## Kestrun.Health namespace
 
 | public type | description |
@@ -137,6 +162,7 @@ parent: "C#"
 | class [KestrunHost](./Kestrun.Hosting/KestrunHost.md) | Provides hosting and configuration for the Kestrun application, including service registration, middleware setup, and runspace pool management. |
 | static class [KestrunHostAuthnExtensions](./Kestrun.Hosting/KestrunHostAuthnExtensions.md) | Provides extension methods for adding authentication schemes to the Kestrun host. |
 | static class [KestrunHostMapExtensions](./Kestrun.Hosting/KestrunHostMapExtensions.md) | Provides extension methods for mapping routes and handlers to the KestrunHost. |
+| record [KestrunHostRuntime](./Kestrun.Hosting/KestrunHostRuntime.md) | Represents runtime information for a Kestrun host. |
 | static class [KestrunHostScriptValidationExtensions](./Kestrun.Hosting/KestrunHostScriptValidationExtensions.md) | Provides extension methods for validating C# scripts in the context of a KestrunHost. |
 | static class [KestrunHostSessionExtensions](./Kestrun.Hosting/KestrunHostSessionExtensions.md) | Provides extension methods for configuring session state and distributed cache in Kestrun. |
 | static class [KestrunHostSignalRExtensions](./Kestrun.Hosting/KestrunHostSignalRExtensions.md) | Extension methods for KestrunHost to support SignalR real-time broadcasting. |
@@ -150,6 +176,7 @@ parent: "C#"
 | --- | --- |
 | static class [KestrunCompressionServiceCollectionExtensions](./Kestrun.Hosting.Compression/KestrunCompressionServiceCollectionExtensions.md) | Extension methods to add Kestrun compression services. |
 | class [KestrunResponseCompressionProvider](./Kestrun.Hosting.Compression/KestrunResponseCompressionProvider.md) | A response compression provider that respects endpoint metadata to disable compression. Wraps the built-in ResponseCompressionProvider. |
+| static class [KrRequestDecompressionExtensions](./Kestrun.Hosting.Compression/KrRequestDecompressionExtensions.md) | Extension methods for request decompression middleware. |
 
 ## Kestrun.Hosting.Options namespace
 

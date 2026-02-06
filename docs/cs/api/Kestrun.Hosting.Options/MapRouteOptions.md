@@ -24,6 +24,7 @@ public class MapRouteOptions
 | [DisableAntiforgery](MapRouteOptions/DisableAntiforgery) { get; set; } | If true, disables antiforgery protection for this route. |
 | [DisableResponseCompression](MapRouteOptions/DisableResponseCompression) { get; set; } | If true, disables response compression for this route. |
 | [Endpoints](MapRouteOptions/Endpoints) { get; set; } | Endpoints to bind the route to, if any. |
+| [FormOptions](MapRouteOptions/FormOptions) { get; set; } | Form parsing options for this route, if any. |
 | [HttpVerbs](MapRouteOptions/HttpVerbs) { get; set; } | The HTTP verbs (methods) that this route responds to. |
 | [OpenAPI](MapRouteOptions/OpenAPI) { get; set; } | OpenAPI metadata for this route. |
 | [PathLevelOpenAPIMetadata](MapRouteOptions/PathLevelOpenAPIMetadata) { get; set; } | Path-level OpenAPI common metadata for this route. |

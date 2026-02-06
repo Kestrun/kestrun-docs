@@ -19,6 +19,7 @@ public abstract class ParameterForInjectionInfoBase
 | [ContentTypes](ParameterForInjectionInfoBase/ContentTypes) { get; set; } | Content types associated with the parameter. |
 | [DefaultValue](ParameterForInjectionInfoBase/DefaultValue) { get; set; } | The default value of the parameter. |
 | [Explode](ParameterForInjectionInfoBase/Explode) { get; set; } | Indicates whether the parameter should be exploded. |
+| [FormOptions](ParameterForInjectionInfoBase/FormOptions) { get; set; } | Form options for handling form data. |
 | [In](ParameterForInjectionInfoBase/In) { get; set; } | The location of the parameter. |
 | [IsRequestBody](ParameterForInjectionInfoBase/IsRequestBody) { get; } | Indicates whether the parameter is from the request body. |
 | [Name](ParameterForInjectionInfoBase/Name) { get; set; } | The name of the parameter. |

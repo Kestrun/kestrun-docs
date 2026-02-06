@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Determines whether the specified content type is text-based or supports a charset.
 
 ```csharp
-public static bool IsTextBasedContentType(string type)
+public bool IsTextBasedContentType(string type)
 ```
 
 | parameter | description |

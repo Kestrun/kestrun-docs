@@ -23,7 +23,7 @@ public record OpenApiMapRouteOptions
 | [FormatVarName](OpenApiMapRouteOptions/FormatVarName) { get; set; } | The name of the route variable for format. |
 | [MapOptions](OpenApiMapRouteOptions/MapOptions) { get; set; } | The map route options. |
 | [RefreshVarName](OpenApiMapRouteOptions/RefreshVarName) { get; set; } | The name of the query variable for refresh. |
-| [SpecVersion](OpenApiMapRouteOptions/SpecVersion) { get; set; } | The supported OpenAPI spec versions. |
+| [SpecVersions](OpenApiMapRouteOptions/SpecVersions) { get; set; } | The supported OpenAPI spec versions. |
 | [VersionVarName](OpenApiMapRouteOptions/VersionVarName) { get; set; } | The name of the route variable for version. |
 
 ## See Also

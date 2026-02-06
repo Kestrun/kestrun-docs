@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 137
+nav_order: 142
 render_with_liquid: false
 ocument type: module
 Help Version: 1.0.0.0
@@ -9,7 +9,7 @@ HelpInfoUri:
 Locale: ''
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Kestrun
-ms.date: 01/26/2026
+ms.date: 02/06/2026
 PlatyPS schema version: 2024-05-01
 title: Kestrun Module
 ---
@@ -125,6 +125,14 @@ Adds a favicon to the Kestrun server.
 ### [Add-KrFileServerMiddleware](Add-KrFileServerMiddleware.md)
 
 Registers a file server to serve static files from a specified path.
+
+### [Add-KrFormOption](Add-KrFormOption.md)
+
+Adds a form option to the Kestrun server.
+
+### [Add-KrFormRoute](Add-KrFormRoute.md)
+
+Adds a form parsing route to the Kestrun server.
 
 ### [Add-KrForwardedHeader](Add-KrForwardedHeader.md)
 
@@ -261,6 +269,10 @@ Adds PowerShell support for Razor Pages.
 ### [Add-KrRazorPageService](Add-KrRazorPageService.md)
 
 Adds Razor Pages service to the server.
+
+### [Add-KrRequestDecompressionMiddleware](Add-KrRequestDecompressionMiddleware.md)
+
+Adds request decompression middleware to the server.
 
 ### [Add-KrRouteGroup](Add-KrRouteGroup.md)
 
@@ -430,6 +442,14 @@ Gets the current Kestrun environment for the PowerShell session.
 
 Gets the support status of known features in the current Kestrun runtime environment.
 
+### [Get-KrFormOption](Get-KrFormOption.md)
+
+Retrieves a form option from the Kestrun server.
+
+### [Get-KrFormPartRule](Get-KrFormPartRule.md)
+
+Retrieves a form part rule from the Kestrun server.
+
 ### [Get-KrJwkThumbprint](Get-KrJwkThumbprint.md)
 
 Computes an RFC 7638 JWK thumbprint for an RSA key.
@@ -593,6 +613,10 @@ Creates and configures a new [Microsoft.AspNetCore.Http.CookieBuilder] instance.
 ### [New-KrCorsPolicyBuilder](New-KrCorsPolicyBuilder.md)
 
 Creates a new CORS policy builder.
+
+### [New-KrFormPartRule](New-KrFormPartRule.md)
+
+Creates a new form part rule.
 
 ### [New-KrJWTBuilder](New-KrJWTBuilder.md)
 

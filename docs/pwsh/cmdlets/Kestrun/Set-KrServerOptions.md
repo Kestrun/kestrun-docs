@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 188
+nav_order: 194
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 01/26/2026
+ms.date: 02/06/2026
 PlatyPS schema version: 2024-05-01
 title: Set-KrServerOptions
 ---
@@ -24,10 +24,9 @@ Configures advanced options and operational limits for a Kestrun server instance
 ### __AllParameterSets
 
 ```powershell
-Set-KrServerOptions [[-Server] <KestrunHost>] [[-MaxRunspaces] <int>] [[-MinRunspaces] <int>]
+Set-KrServerOptions [[-MaxRunspaces] <int>] [[-MinRunspaces] <int>] [[-DefaultUploadPath] <string>]
  [-AllowSynchronousIO] [-DisableResponseHeaderCompression] [-DenyServerHeader]
- [-AllowAlternateSchemes] [-AllowHostHeaderOverride] [-DisableStringReuse] [-PassThru]
- [<CommonParameters>]
+ [-AllowAlternateSchemes] [-AllowHostHeaderOverride] [-DisableStringReuse] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -123,6 +122,29 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -DefaultUploadPath
+
+Specifies the default file system path where uploaded files will be stored.
+This path is used when no specific upload path is defined in form options.
+Default: System temporary directory (e.g., C:\Windows\Temp\kestrun-uploads).
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 2
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -DenyServerHeader
 
 If set to $true, removes the 'Server' HTTP header from responses for improved privacy and security.
@@ -202,7 +224,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: 0
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -225,52 +247,9 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
+  Position: 1
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance after applying the limits.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to configure.
-This parameter is mandatory and must be a valid server object.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 0
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -286,10 +265,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## OUTPUTS
 

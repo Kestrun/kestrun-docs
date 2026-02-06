@@ -50,13 +50,11 @@ public class KestrunHost : IDisposable
 | [RegisteredAuthentications](KestrunHost/RegisteredAuthentications) { get; } | Gets the registered authentication schemes in the Kestrun host. |
 | [RegisteredRoutes](KestrunHost/RegisteredRoutes) { get; } | Gets the registered routes in the Kestrun host. |
 | [RouteGroupStack](KestrunHost/RouteGroupStack) { get; } | Gets the stack used for managing route groups in the Kestrun host. |
+| [Runtime](KestrunHost/Runtime) { get; } | Gets the runtime information for the Kestrun host. |
 | [Scheduler](KestrunHost/Scheduler) { get; } | Gets the scheduler service used for managing scheduled tasks in the Kestrun host. Initialized in ConfigureServices via AddScheduler() |
 | [SharedState](KestrunHost/SharedState) { get; } | Gets the shared state store for managing shared data across requests and sessions. |
-| [StartTime](KestrunHost/StartTime) { get; } | Gets the timestamp when the Kestrun host was started. |
 | [StatusCodeOptions](KestrunHost/StatusCodeOptions) { get; set; } | Gets or sets the status code options for configuring status code pages. |
-| [StopTime](KestrunHost/StopTime) { get; } | Gets the timestamp when the Kestrun host was stopped. |
 | [Tasks](KestrunHost/Tasks) { get; } | Gets the ad-hoc task service used for running one-off tasks (PowerShell, C#, VB.NET). Initialized via AddTasks() |
-| [Uptime](KestrunHost/Uptime) { get; } | Gets the uptime duration of the Kestrun host. While running (no StopTime yet), this returns DateTime.UtcNow - StartTime. After stopping, it returns StopTime - StartTime. If StartTime is not set, returns null. |
 | [AddCallbacksAutomation](KestrunHost/AddCallbacksAutomation)(…) | Adds callback automation middleware to the Kestrun host. |
 | [AddControllers](KestrunHost/AddControllers)(…) | Adds MVC / API controllers to the application. |
 | [AddDefaultFiles](KestrunHost/AddDefaultFiles)(…) | Adds default files middleware to the application. This middleware serves default files like index.html when a directory is requested. (2 methods) |
@@ -64,6 +62,8 @@ public class KestrunHost : IDisposable
 | [AddFavicon](KestrunHost/AddFavicon)(…) | Adds a favicon middleware to the application. |
 | [AddFeature](KestrunHost/AddFeature)(…) | Adds a feature configuration action to the feature queue. This action will be executed when the features are applied. |
 | [AddFileServer](KestrunHost/AddFileServer)(…) | Adds a file server middleware to the application. (2 methods) |
+| [AddFormOption](KestrunHost/AddFormOption)(…) | Adds a form parsing option for the specified name. |
+| [AddFormPartRule](KestrunHost/AddFormPartRule)(…) | Adds a form part rule for the specified name. |
 | [AddHealthEndpoint](KestrunHost/AddHealthEndpoint)(…) | Registers a GET endpoint (default `/health`) that aggregates the state of all registered probes. (2 methods) |
 | [AddLocalization](KestrunHost/AddLocalization)(…) | Adds localization middleware using the specified options. (2 methods) |
 | [AddPowerShellRazorPages](KestrunHost/AddPowerShellRazorPages)() | Adds PowerShell Razor Pages to the application with default configuration and no route prefix. |
@@ -84,6 +84,8 @@ public class KestrunHost : IDisposable
 | [CreateRunspacePool](KestrunHost/CreateRunspacePool)(…) | Creates and returns a new [`KestrunRunspacePoolManager`](../Kestrun.Scripting/KestrunRunspacePoolManager) instance with the specified maximum number of runspaces. |
 | [Dispose](KestrunHost/Dispose)() | Releases all resources used by the [`KestrunHost`](./KestrunHost) instance. |
 | [EnableConfiguration](KestrunHost/EnableConfiguration)(…) | Applies the configured options to the Kestrel server and initializes the runspace pool. |
+| [GetFormOption](KestrunHost/GetFormOption)(…) | Gets the form parsing option for the specified name. |
+| [GetFormPartRule](KestrunHost/GetFormPartRule)(…) | Gets the form part rule for the specified name. |
 | [GetOrCreateOpenApiDocument](KestrunHost/GetOrCreateOpenApiDocument)(…) | Gets the OpenAPI document descriptor for the specified document ID. (2 methods) |
 | [GetSseConnectedClientCount](KestrunHost/GetSseConnectedClientCount)() | Gets the number of currently connected SSE broadcast clients, if available. |
 | [IsServiceRegistered](KestrunHost/IsServiceRegistered)(…) | Returns true if the specified service type has already been registered in the IServiceCollection. |
