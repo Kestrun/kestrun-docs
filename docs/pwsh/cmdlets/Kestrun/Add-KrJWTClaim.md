@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.jwt.jwtsecuritytoken
 Locale: en-US
 Module Name: Kestrun
-ms.date: 02/06/2026
+ms.date: 02/08/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrJWTClaim
 ---

@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions?view=aspnetcore-8.0
 Locale: en-US
 Module Name: Kestrun
-ms.date: 02/06/2026
+ms.date: 02/08/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrStaticFilesMiddleware
 ---
