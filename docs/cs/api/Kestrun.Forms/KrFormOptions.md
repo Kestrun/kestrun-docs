@@ -18,8 +18,8 @@ public sealed class KrFormOptions
 | --- | --- |
 | [KrFormOptions](KrFormOptions/KrFormOptions)() | Initializes a new instance of the [`KrFormOptions`](./KrFormOptions) class. |
 | [KrFormOptions](KrFormOptions/KrFormOptions)(…) | Initializes a new instance of the [`KrFormOptions`](./KrFormOptions) class by copying settings from another instance. |
+| [AllowedContentTypes](KrFormOptions/AllowedContentTypes) { get; } | Gets the allowed request content types. |
 | [AllowedPartContentEncodings](KrFormOptions/AllowedPartContentEncodings) { get; } | Gets the allowed part content encodings for decompression. |
-| [AllowedRequestContentTypes](KrFormOptions/AllowedRequestContentTypes) { get; } | Gets the allowed request content types. |
 | [ComputeSha256](KrFormOptions/ComputeSha256) { get; set; } | Gets or sets a value indicating whether SHA-256 hashes should be computed for file parts. |
 | [DefaultUploadPath](KrFormOptions/DefaultUploadPath) { get; set; } | Gets or sets the default upload path for stored parts. |
 | [Description](KrFormOptions/Description) { get; set; } | Gets or sets the description of the form parser. |

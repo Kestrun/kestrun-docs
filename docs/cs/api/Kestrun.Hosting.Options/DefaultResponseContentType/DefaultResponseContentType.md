@@ -9,15 +9,17 @@ grand_parent: "C# API"
 Default response content type for routes.
 
 ```csharp
-public DefaultResponseContentType(string ContentType)
+public DefaultResponseContentType(
+    IDictionary<string, ICollection<ContentTypeWithSchema>> ContentType)
 ```
 
 | parameter | description |
 | --- | --- |
-| ContentType | The default content type string. |
+| ContentType | The default response content type dictionary. |
 
 ## See Also
 
+* record [ContentTypeWithSchema](../ContentTypeWithSchema)
 * record [DefaultResponseContentType](../DefaultResponseContentType)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

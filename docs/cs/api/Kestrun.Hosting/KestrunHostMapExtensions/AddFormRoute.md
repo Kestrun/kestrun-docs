@@ -6,7 +6,7 @@ grand_parent: "C# API"
 ---
 # KestrunHostMapExtensions.AddFormRoute method
 
-Adds a POST route that parses form payloads using [`KrFormParser`](../../Kestrun.Forms/KrFormParser), injects the parsed payload into the runspace as `$FormPayload`, and then executes the provided PowerShell *userScriptBlock*. By default, only `multipart/form-data` is accepted; additional request content types (such as `application/x-www-form-urlencoded` and `multipart/mixed`) are opt-in via [`AllowedRequestContentTypes`](../../Kestrun.Forms/KrFormOptions/AllowedRequestContentTypes). This method also fills [`OpenAPI`](../../Kestrun.Hosting.Options/MapRouteOptions/OpenAPI) (unless disabled) so the route appears in generated OpenAPI documents.
+Adds a POST route that parses form payloads using [`KrFormParser`](../../Kestrun.Forms/KrFormParser), injects the parsed payload into the runspace as `$FormPayload`, and then executes the provided PowerShell *userScriptBlock*. By default, only `multipart/form-data` is accepted; additional request content types (such as `application/x-www-form-urlencoded` and `multipart/mixed`) are opt-in via [`AllowedContentTypes`](../../Kestrun.Forms/KrFormOptions/AllowedContentTypes). This method also fills [`OpenAPI`](../../Kestrun.Hosting.Options/MapRouteOptions/OpenAPI) (unless disabled) so the route appears in generated OpenAPI documents.
 
 ```csharp
 public static KestrunHost AddFormRoute(this KestrunHost host, string pattern, 

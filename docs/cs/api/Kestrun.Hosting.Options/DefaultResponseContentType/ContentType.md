@@ -6,14 +6,15 @@ grand_parent: "C# API"
 ---
 # DefaultResponseContentType.ContentType property
 
-The default content type string.
+The default response content type dictionary.
 
 ```csharp
-public string ContentType { get; set; }
+public IDictionary<string, ICollection<ContentTypeWithSchema>> ContentType { get; set; }
 ```
 
 ## See Also
 
+* record [ContentTypeWithSchema](../ContentTypeWithSchema)
 * record [DefaultResponseContentType](../DefaultResponseContentType)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

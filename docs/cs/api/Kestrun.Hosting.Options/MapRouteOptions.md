@@ -18,6 +18,7 @@ public class MapRouteOptions
 | --- | --- |
 | [MapRouteOptions](MapRouteOptions/MapRouteOptions)() | The default constructor. |
 | [AllowAnonymous](MapRouteOptions/AllowAnonymous) { get; set; } | If true, allows anonymous access to this route. |
+| [AllowedRequestContentTypes](MapRouteOptions/AllowedRequestContentTypes) { get; set; } | Content types that this route can consume, if any. |
 | [CallbackPlan](MapRouteOptions/CallbackPlan) { get; set; } | Callback requests associated with this route. |
 | [CorsPolicy](MapRouteOptions/CorsPolicy) { get; set; } | Name of the CORS policy to apply, if any. |
 | [DefaultResponseContentType](MapRouteOptions/DefaultResponseContentType) { get; set; } | Default response content type for this route. |
@@ -26,6 +27,7 @@ public class MapRouteOptions
 | [Endpoints](MapRouteOptions/Endpoints) { get; set; } | Endpoints to bind the route to, if any. |
 | [FormOptions](MapRouteOptions/FormOptions) { get; set; } | Form parsing options for this route, if any. |
 | [HttpVerbs](MapRouteOptions/HttpVerbs) { get; set; } | The HTTP verbs (methods) that this route responds to. |
+| [IsOpenApiAnnotatedFunctionRoute](MapRouteOptions/IsOpenApiAnnotatedFunctionRoute) { get; set; } | Indicates whether this route originated from an OpenAPI-annotated function definition. |
 | [OpenAPI](MapRouteOptions/OpenAPI) { get; set; } | OpenAPI metadata for this route. |
 | [PathLevelOpenAPIMetadata](MapRouteOptions/PathLevelOpenAPIMetadata) { get; set; } | Path-level OpenAPI common metadata for this route. |
 | [Pattern](MapRouteOptions/Pattern) { get; set; } | The route pattern to match for this option. |

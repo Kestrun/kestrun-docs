@@ -46,6 +46,7 @@ public class KestrunHost : IDisposable
 | [OpenApiDocumentDescriptor](KestrunHost/OpenApiDocumentDescriptor) { get; } | Gets the OpenAPI document descriptor for configuring OpenAPI generation. |
 | [OpenApiDocumentIds](KestrunHost/OpenApiDocumentIds) { get; } | Gets the IDs of all OpenAPI documents configured in the Kestrun host. |
 | [Options](KestrunHost/Options) { get; } | Gets the configuration options for the Kestrun host. |
+| [PowerShellErrorResponseScript](KestrunHost/PowerShellErrorResponseScript) { get; set; } | Gets or sets an optional PowerShell script used by PowerShell route execution to generate error responses. The script executes in the request runspace and is responsible for writing the response. |
 | [PowershellMiddlewareEnabled](KestrunHost/PowershellMiddlewareEnabled) { get; set; } | Gets the shared state manager for managing shared data across requests and sessions. |
 | [RegisteredAuthentications](KestrunHost/RegisteredAuthentications) { get; } | Gets the registered authentication schemes in the Kestrun host. |
 | [RegisteredRoutes](KestrunHost/RegisteredRoutes) { get; } | Gets the registered routes in the Kestrun host. |
@@ -95,6 +96,7 @@ public class KestrunHost : IDisposable
 | [Stop](KestrunHost/Stop)() | Initiates a graceful shutdown of the Kestrun web application. |
 | [StopAsync](KestrunHost/StopAsync)(…) | Stops the Kestrun web application asynchronously. |
 | [Use](KestrunHost/Use)(…) | Adds a middleware stage to the application pipeline. |
+| static [IsQuicSupported](KestrunHost/IsQuicSupported)() | Determines whether QUIC is supported by the current runtime/platform without directly calling preview-only APIs. |
 
 ## See Also
 

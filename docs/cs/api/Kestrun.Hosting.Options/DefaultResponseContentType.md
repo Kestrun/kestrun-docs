@@ -17,7 +17,7 @@ public record DefaultResponseContentType
 | name | description |
 | --- | --- |
 | [DefaultResponseContentType](DefaultResponseContentType/DefaultResponseContentType)(…) | Default response content type for routes. |
-| [ContentType](DefaultResponseContentType/ContentType) { get; set; } | The default content type string. |
+| [ContentType](DefaultResponseContentType/ContentType) { get; set; } | The default response content type dictionary. |
 
 ## See Also
 

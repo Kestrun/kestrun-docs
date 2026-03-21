@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 02/08/2026
+ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrFormRoute
 ---
@@ -48,7 +48,7 @@ Registers a POST route that parses multipart/form-data payloads using
 KrFormParser.
 Additional request content types (e.g., multipart/mixed
 and application/x-www-form-urlencoded) are opt-in via
-KrFormOptions.AllowedRequestContentTypes.
+KrFormOptions.AllowedContentTypes.
 Once parsed, it injects the parsed payload into the runspace as
 $FormPayload and invokes the provided script block.
 

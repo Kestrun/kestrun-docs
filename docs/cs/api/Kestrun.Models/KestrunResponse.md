@@ -27,10 +27,12 @@ public class KestrunResponse
 | [Context](KestrunResponse/Context) { get; } | Gets the HttpContext associated with the response. |
 | [Cookies](KestrunResponse/Cookies) { get; set; } | Gets or sets the list of Set-Cookie header values for the response. |
 | [Encoding](KestrunResponse/Encoding) { get; set; } | Text encoding for textual MIME types. |
+| [HasPostPonedWriteObject](KestrunResponse/HasPostPonedWriteObject) { get; } | Indicates whether there is a postponed write object with a non-null value, which can be used to determine if a deferred response write is pending. |
 | [Headers](KestrunResponse/Headers) { get; set; } | Gets or sets the collection of HTTP headers for the response. |
 | [Host](KestrunResponse/Host) { get; } | Gets the KestrunHost associated with this response. |
 | [KrContext](KestrunResponse/KrContext) { get; set; } | Gets the associated KestrunContext for this response. |
 | [MapRouteOptions](KestrunResponse/MapRouteOptions) { get; } | Gets the route options associated with this response. |
+| [PostPonedWriteObject](KestrunResponse/PostPonedWriteObject) { get; set; } | Gets or sets a postponed write object that can be used for deferred response writing, allowing the response to be constructed in multiple stages or after certain operations are completed. |
 | [RedirectUrl](KestrunResponse/RedirectUrl) { get; set; } | Gets or sets the URL to redirect the response to, if an HTTP redirect is required. |
 | [Request](KestrunResponse/Request) { get; set; } | Gets the associated KestrunRequest for this response. |
 | [StatusCode](KestrunResponse/StatusCode) { get; set; } | Gets or sets the HTTP status code for the response. |
@@ -39,6 +41,7 @@ public class KestrunResponse
 | [ApplyTo](KestrunResponse/ApplyTo)(…) | Applies the current KestrunResponse to the specified HttpResponse, setting status, headers, cookies, and writing the body. |
 | [GetHeader](KestrunResponse/GetHeader)(…) | Retrieves the value of the specified header from the response headers. |
 | [IsTextBasedContentType](KestrunResponse/IsTextBasedContentType)(…) | Determines whether the specified content type is text-based or supports a charset. |
+| [QueueResponseForWrite](KestrunResponse/QueueResponseForWrite)(…) | Queues a response payload for deferred writing, applying configured response schema conversion and validation when available. |
 | [RevalidateCache](KestrunResponse/RevalidateCache)(…) | Attempts to revalidate the cache based on ETag and Last-Modified headers. If the resource is unchanged, sets the response status to 304 Not Modified. Returns true if a 304 response was written, false otherwise. |
 | [WriteBinaryResponse](KestrunResponse/WriteBinaryResponse)(…) | Writes a binary response with the specified data, status code, and content type. |
 | [WriteBsonResponse](KestrunResponse/WriteBsonResponse)(…) | Writes a BSON response with the specified input object, status code, and content type. |
@@ -60,7 +63,7 @@ public class KestrunResponse
 | [WriteJsonResponseAsync](KestrunResponse/WriteJsonResponseAsync)(…) | Asynchronously writes a JSON response with the specified input object and HTTP status code. (3 methods) |
 | [WriteRedirectResponse](KestrunResponse/WriteRedirectResponse)(…) | Writes an HTTP redirect response with the specified URL and optional message. |
 | [WriteResponse](KestrunResponse/WriteResponse)(…) | Writes a response with the specified input object and HTTP status code. Chooses the response format based on the Accept header or defaults to text/plain. |
-| [WriteResponseAsync](KestrunResponse/WriteResponseAsync)(…) | Asynchronously writes a response with the specified input object and HTTP status code. Chooses the response format based on the Accept header or defaults to text/plain. |
+| [WriteResponseAsync](KestrunResponse/WriteResponseAsync)(…) | Asynchronously writes a response with the specified input object and HTTP status code. (2 methods) |
 | [WriteStatusOnly](KestrunResponse/WriteStatusOnly)(…) | Writes only the specified HTTP status code, clearing any body or content type. |
 | [WriteStreamResponse](KestrunResponse/WriteStreamResponse)(…) | Writes a stream response with the specified stream, status code, and content type. |
 | [WriteTextResponse](KestrunResponse/WriteTextResponse)(…) | Writes a text response with the specified input object, status code, and content type. |
@@ -70,6 +73,7 @@ public class KestrunResponse
 | [WriteYamlResponse](KestrunResponse/WriteYamlResponse)(…) | Writes a YAML response with the specified input object, status code, and content type. |
 | [WriteYamlResponseAsync](KestrunResponse/WriteYamlResponseAsync)(…) | Asynchronously writes a YAML response with the specified input object, status code, and content type. |
 | static readonly [TextBasedMimeTypes](KestrunResponse/TextBasedMimeTypes) | A set of MIME types that are considered text-based for response content. |
+| record [WriteObject](KestrunResponse.WriteObject) | Represents a simple object for writing responses with a value and status code. |
 
 ## Remarks
 

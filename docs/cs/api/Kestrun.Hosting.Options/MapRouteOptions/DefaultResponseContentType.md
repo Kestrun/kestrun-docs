@@ -9,11 +9,13 @@ grand_parent: "C# API"
 Default response content type for this route.
 
 ```csharp
-public string? DefaultResponseContentType { get; set; }
+public IDictionary<string, ICollection<ContentTypeWithSchema>>? 
+    DefaultResponseContentType { get; set; }
 ```
 
 ## See Also
 
+* record [ContentTypeWithSchema](../ContentTypeWithSchema)
 * class [MapRouteOptions](../MapRouteOptions)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

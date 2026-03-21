@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 207
+nav_order: 209
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 02/08/2026
+ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
 title: Test-KrCapability
 ---
@@ -36,15 +36,21 @@ This cmdlet has the following aliases,
 
 This cmdlet checks if a given feature, identified by its name, is supported in the current Kestrun runtime environment.
 It can be used to determine if certain capabilities are available based on the runtime version and configuration.
+For HTTP/3 checks, this cmdlet also verifies platform QUIC availability.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 Test-KrCapability -Feature "Http3"
-This example checks if the Http3 feature is supported in the current Kestrun runtime environment.
+This example checks if HTTP/3 is supported and QUIC is available on the current platform/runtime.
 
 ### EXAMPLE 2
+
+Test-KrCapability -Feature "Quic"
+This example checks if QUIC is available using Kestrun host capability detection.
+
+### EXAMPLE 3
 
 Test-KrCapability -Feature "SomeOtherFeature"
 This example checks if a feature named "SomeOtherFeature" is supported, using a raw string.

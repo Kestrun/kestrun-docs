@@ -31,6 +31,16 @@
                 }
               }
             }
+          },
+          "406": {
+            "description": "Not Acceptable",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KestrunErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -88,21 +98,41 @@
             }
           },
           "400": {
-            "description": "Invalid input",
+            "description": "Bad Request",
             "content": {
-              "application/json": {
+              "application/problem+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/KestrunErrorResponse"
                 }
-              },
-              "application/xml": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/problem+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/KestrunErrorResponse"
                 }
-              },
-              "application/yaml": {
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/problem+json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/KestrunErrorResponse"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KestrunErrorResponse"
                 }
               }
             }
@@ -115,7 +145,6 @@
     "schemas": {
       "Date": {
         "type": "string",
-        "additionalProperties": false,
         "description": "A calendar date (YYYY-MM-DD).",
         "format": "date",
         "example": "2026-01-13"
@@ -123,14 +152,12 @@
       "Money": {
         "minimum": 0,
         "type": "number",
-        "additionalProperties": false,
         "description": "A monetary amount. Prefer decimals for currency values.",
         "format": "decimal",
         "example": 19.99
       },
       "EmployeeId": {
         "type": "string",
-        "additionalProperties": false,
         "description": "Server-generated employee identifier.",
         "format": "uuid",
         "example": "a54a57ca-36f8-421b-a6b4-2e8f26858a4c"
@@ -140,7 +167,6 @@
         "items": {
           "$ref": "#/components/schemas/Date"
         },
-        "additionalProperties": false,
         "description": "List of visit dates."
       },
       "Address": {
@@ -312,7 +338,6 @@
         "items": {
           "$ref": "#/components/schemas/EmployeeResponse"
         },
-        "additionalProperties": false,
         "description": "List of employees."
       },
       "TicketType": {
@@ -355,7 +380,6 @@
         "items": {
           "$ref": "#/components/schemas/LineItem"
         },
-        "additionalProperties": false,
         "description": "List of ticket line items."
       },
       "PurchaseRequest": {
@@ -435,28 +459,6 @@
         "additionalProperties": false,
         "description": "Ticket purchase response."
       },
-      "ErrorResponse": {
-        "required": [
-          "code",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer",
-            "description": "HTTP-like error code.",
-            "format": "int32",
-            "example": 400
-          },
-          "message": {
-            "type": "string",
-            "description": "Human-readable error message.",
-            "example": "Invalid input"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Standard error response."
-      },
       "InventoryCounts": {
         "patternProperties": {
           "^[a-z][a-z0-9_]*$": {
@@ -464,8 +466,48 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false,
+        "type": "object",
         "description": "Inventory counts by status key."
+      },
+      "KestrunErrorResponse": {
+        "required": [
+          "status",
+          "error",
+          "reason",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "error": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "details": {
+            "type": "string"
+          },
+          "exception": {
+            "type": "string"
+          },
+          "stackTrace": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          }
+        }
       }
     }
   }

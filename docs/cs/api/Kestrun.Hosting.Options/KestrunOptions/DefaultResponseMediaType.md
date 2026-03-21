@@ -9,11 +9,12 @@ grand_parent: "C# API"
 Gets or sets the default media type to use for responses when no Accept header is provided.
 
 ```csharp
-public string? DefaultResponseMediaType { get; set; }
+public Dictionary<string, ICollection<ContentTypeWithSchema>> DefaultResponseMediaType { get; set; }
 ```
 
 ## See Also
 
+* record [ContentTypeWithSchema](../ContentTypeWithSchema)
 * class [KestrunOptions](../KestrunOptions)
 * namespace [Kestrun.Hosting.Options](../../Kestrun)
 

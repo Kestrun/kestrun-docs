@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "KrFormOptions.AllowedRequestContentTypes property"
+title: "KrFormOptions.AllowedContentTypes property"
 parent: "Kestrun.Forms"
 grand_parent: "C# API"
 ---
-# KrFormOptions.AllowedRequestContentTypes property
+# KrFormOptions.AllowedContentTypes property
 
 Gets the allowed request content types.
 
 ```csharp
-public List<string> AllowedRequestContentTypes { get; }
+public List<string> AllowedContentTypes { get; }
 ```
 
 ## See Also

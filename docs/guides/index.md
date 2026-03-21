@@ -20,6 +20,8 @@ Deeper, cross-cutting subjects (logging, deployment, performance, etc.).
 | [CORS](./cors) | Cross-origin policies and browser preflight behavior |
 | [Authentication](./authentication) | JWT, OAuth 2.0, OpenID Connect (OIDC), and client certificates (mTLS) |
 | [OpenAPI Generation](./openapi) | Generate and document APIs with OpenAPI 3.0+ specifications |
+| [Dotnet Tool](./tooling) | Install, update, and use the `kestrun` CLI via `Kestrun.Tool` |
+| [Production Deployment (No Containers)](./production-nocontainer) | Deploy custom Kestrun apps to VM/bare-metal service hosts |
 | [Real-time (SSE & SignalR)](./realtime) | Stream events via SSE or build interactive apps with SignalR |
 | [Scheduling](./scheduling) | Background jobs via intervals and CRON (PS & C#) |
 | [Sessions](./sessions) | Cookie-based per-client state across requests |
@@ -28,10 +30,10 @@ Deeper, cross-cutting subjects (logging, deployment, performance, etc.).
 | [Status Code Pages](./statuscodepages) | Friendly error pages and re-execution flows |
 | [Certificates](./certificates) | Generate, import, export, and validate X.509 |
 | [File & Form Uploads](./uploads) | Multipart parsing, streaming storage, and validation rules/limits |
+| [Imperative vs Declarative Routing](./routing-styles) | Compare `Add-KrMapRoute` with `[OpenApiPath]` attribute routing |
 
 ## Planned
 
-- Deployment & hosting models
 - Performance & benchmarking
 - Configuration & environment separation
 - Security / hardening checklist

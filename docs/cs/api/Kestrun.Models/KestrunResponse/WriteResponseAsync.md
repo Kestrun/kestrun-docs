@@ -1,10 +1,34 @@
 ---
 layout: default
-title: "KestrunResponse.WriteResponseAsync method"
+title: "KestrunResponse.WriteResponseAsync method (1 of 2)"
 parent: "Kestrun.Models"
 grand_parent: "C# API"
 ---
-# KestrunResponse.WriteResponseAsync method
+# KestrunResponse.WriteResponseAsync method (1 of 2)
+
+Asynchronously writes a response with the specified input object and HTTP status code.
+
+```csharp
+public Task WriteResponseAsync(WriteObject inputObject)
+```
+
+| parameter | description |
+| --- | --- |
+| inputObject | The object to be sent in the response body. |
+
+## Return Value
+
+A task that represents the asynchronous write operation.
+
+## See Also
+
+* record [WriteObject](../KestrunResponse.WriteObject)
+* class [KestrunResponse](../KestrunResponse)
+* namespace [Kestrun.Models](../../Kestrun)
+
+---
+
+# KestrunResponse.WriteResponseAsync method (2 of 2)
 
 Asynchronously writes a response with the specified input object and HTTP status code. Chooses the response format based on the Accept header or defaults to text/plain.
 

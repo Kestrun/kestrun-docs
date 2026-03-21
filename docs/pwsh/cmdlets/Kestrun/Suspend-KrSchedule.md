@@ -1,14 +1,14 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 205
+nav_order: 207
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 02/08/2026
+ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
 title: Suspend-KrSchedule
 ---

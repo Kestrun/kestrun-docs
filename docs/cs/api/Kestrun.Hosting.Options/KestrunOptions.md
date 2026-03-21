@@ -18,6 +18,7 @@ public class KestrunOptions
 | --- | --- |
 | [KestrunOptions](KestrunOptions/KestrunOptions)() | Initializes a new instance of the [`KestrunOptions`](./KestrunOptions) class with default values. |
 | [ApplicationName](KestrunOptions/ApplicationName) { get; set; } | Application name (optional, for diagnostics). |
+| [DefaultApiResponseMediaType](KestrunOptions/DefaultApiResponseMediaType) { get; set; } | Gets or sets the default media type to use for API responses when no Accept header is provided. |
 | [DefaultResponseMediaType](KestrunOptions/DefaultResponseMediaType) { get; set; } | Gets or sets the default media type to use for responses when no Accept header is provided. |
 | [DefaultUploadPath](KestrunOptions/DefaultUploadPath) { get; set; } | Gets or sets the default upload path for form parts. |
 | [Health](KestrunOptions/Health) { get; set; } | Gets or sets the health endpoint configuration. |

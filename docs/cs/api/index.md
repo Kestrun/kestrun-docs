@@ -182,6 +182,7 @@ parent: "C#"
 
 | public type | description |
 | --- | --- |
+| record [ContentTypeWithSchema](./Kestrun.Hosting.Options/ContentTypeWithSchema.md) | Represents a response content type and its associated schema for this route. |
 | record [DefaultResponseContentType](./Kestrun.Hosting.Options/DefaultResponseContentType.md) | Default response content type for routes. |
 | class [ExceptionOptions](./Kestrun.Hosting.Options/ExceptionOptions.md) | Options for configuring Kestrun-style exception handling middleware. |
 | static class [KestrelOptionsExtensions](./Kestrun.Hosting.Options/KestrelOptionsExtensions.md) | Provides extension methods for copying configuration between KestrelServerOptions instances. |
@@ -207,6 +208,13 @@ parent: "C#"
 | static class [JwtInspector](./Kestrun.Jwt/JwtInspector.md) | Provides methods for inspecting and extracting parameters from JWT tokens. |
 | class [JwtParameters](./Kestrun.Jwt/JwtParameters.md) | Represents all parameters extracted from a JWT, including header fields, standard properties, and claims. |
 | class [JwtTokenBuilder](./Kestrun.Jwt/JwtTokenBuilder.md) | Fluent utility to create any flavour of JWS/JWE in one line. |
+
+## Kestrun.KrException namespace
+
+| public type | description |
+| --- | --- |
+| class [AcceptHeaderException](./Kestrun.KrException/AcceptHeaderException.md) | Exception thrown when there is an error parsing the Accept header from the client. The StatusCode property indicates the HTTP status code that should be returned to the client. |
+| class [ParameterForInjectionException](./Kestrun.KrException/ParameterForInjectionException.md) | Exception thrown when there is an error resolving a parameter for injection. The StatusCode property indicates the HTTP status code that should be returned to the client. |
 
 ## Kestrun.Languages namespace
 
@@ -317,7 +325,6 @@ parent: "C#"
 | static class [OaParameterExtensions](./Kestrun.OpenApi/OaParameterExtensions.md) | Extensions for OaParameterLocation. |
 | static class [OaSchemaTypeExtensions](./Kestrun.OpenApi/OaSchemaTypeExtensions.md) | Extension methods for OaSchemaType enum. |
 | static class [OpenApiComponentAnnotationScanner](./Kestrun.OpenApi/OpenApiComponentAnnotationScanner.md) | Scans PowerShell script files for OpenAPI component annotations defined via attributes. |
-| static class [OpenApiComponentClone](./Kestrun.OpenApi/OpenApiComponentClone.md) | Helper methods for cloning OpenAPI components. |
 | enum [OpenApiComponentConflictResolution](./Kestrun.OpenApi/OpenApiComponentConflictResolution.md) | Defines conflict resolution strategies when adding OpenAPI components. |
 | enum [OpenApiComponentKind](./Kestrun.OpenApi/OpenApiComponentKind.md) | Represents the fixed component buckets defined by the OpenAPI 3.2 specification under the `components` object. |
 | static class [OpenApiComponentKindExtensions](./Kestrun.OpenApi/OpenApiComponentKindExtensions.md) | Extension methods for [`OpenApiComponentKind`](./Kestrun.OpenApi/OpenApiComponentKind.md). |
