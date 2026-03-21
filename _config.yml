@@ -8,7 +8,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
   
-url: https://kestrun.github.io
+url: https://docs.kestrun.dev
 baseurl: ""
 sass:
   quiet_deps: true
