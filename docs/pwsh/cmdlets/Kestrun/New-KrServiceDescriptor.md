@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 146
+nav_order: 164
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
@@ -10,23 +10,23 @@ Locale: en-US
 Module Name: Kestrun
 ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
-title: New-KrCertificateRequest
+title: New-KrServiceDescriptor
 ---
 
-# New-KrCertificateRequest
+# New-KrServiceDescriptor
 
 ## SYNOPSIS
 
-Creates a PEM-encoded CSR (and returns the private key).
+Creates a Service.psd1 descriptor file.
 
 ## SYNTAX
 
 ### __AllParameterSets
 
 ```powershell
-New-KrCertificateRequest [-DnsNames] <string[]> [[-KeyType] <string>] [[-KeyLength] <int>]
- [[-Country] <string>] [[-Org] <string>] [[-OrgUnit] <string>] [[-CommonName] <string>]
- [<CommonParameters>]
+New-KrServiceDescriptor [[-Path] <string>] [-Name] <string> [-Description] <string>
+ [-Version] <version> [[-EntryPoint] <string>] [[-ServiceLogPath] <string>]
+ [[-PreservePaths] <string[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -36,38 +36,31 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Creates a PEM-encoded CSR (Certificate Signing Request) and returns the private key.
-The CSR can be used to request a certificate from a CA (Certificate Authority).
+Creates a Service.psd1 descriptor file used by Kestrun.Tool content-root service install flow.
+Required keys are FormatVersion, Name, Description, Version, and EntryPoint.
+Optional keys are ServiceLogPath and PreservePaths.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
-
-### EXAMPLE 2
-
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
+New-KrServiceDescriptor -Name demo -Description 'Demo service' -Version 1.2.0
 
 ## PARAMETERS
 
-### -CommonName
+### -Confirm
 
-The common name (CN) to include in the CSR.
-This is typically the fully qualified domain name (FQDN) for the certificate.
+Prompts for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 DefaultValue: ''
 SupportsWildcards: false
-Aliases: []
+Aliases:
+- cf
 ParameterSets:
 - Name: (All)
-  Position: 6
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -77,10 +70,9 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Country
+### -Description
 
-The country name (2-letter code) to include in the CSR.
-This is typically the ISO 3166-1 alpha-2 code (e.g., 'US' for the United States).
+Service description value.
 
 ```yaml
 Type: System.String
@@ -89,29 +81,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 3
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -DnsNames
-
-The DNS name(s) for which the certificate is requested.
-This can include multiple names for Subject Alternative Names (SANs).
-
-```yaml
-Type: System.String[]
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 0
+  Position: 2
   IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -121,56 +91,10 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -KeyLength
+### -EntryPoint
 
-The length of the key to generate.
-Defaults to 2048 bits for RSA keys.
-This parameter is ignored for ECDSA keys.
-
-```yaml
-Type: System.Int32
-DefaultValue: 2048
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 2
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -KeyType
-
-The type of key to generate for the CSR.
-Options are 'Rsa' or 'Ecdsa'.
-Defaults to 'Rsa'.
-
-```yaml
-Type: System.String
-DefaultValue: Rsa
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 1
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Org
-
-The organization name to include in the CSR.
-This is typically the legal name of the organization.
+Optional entry point path relative to the content root.
+Defaults to Service.ps1.
 
 ```yaml
 Type: System.String
@@ -189,10 +113,95 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -OrgUnit
+### -Force
 
-The organizational unit name to include in the CSR.
-This is typically the department or division within the organization.
+Overwrite an existing descriptor file.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Name
+
+Immutable service name value written to the descriptor.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 1
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Path
+
+Target descriptor path.
+Accepts either a descriptor file path or a directory path.
+When a directory path is provided, Service.psd1 is appended automatically.
+
+```yaml
+Type: System.String
+DefaultValue: Service.psd1
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -PreservePaths
+
+Optional list of relative file/folder paths that must be preserved during service update.
+
+```yaml
+Type: System.String[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 6
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ServiceLogPath
+
+Optional default service log path.
 
 ```yaml
 Type: System.String
@@ -202,6 +211,51 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 5
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Version
+
+Service version.
+Must be compatible with System.Version.
+
+```yaml
+Type: System.Version
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 3
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not executed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: ''
+SupportsWildcards: false
+Aliases:
+- wi
+ParameterSets:
+- Name: (All)
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -222,11 +276,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Certificates.CertificateManager.CsrResult]
-
-{{ Fill in the Description }}
-
-### Kestrun.Certificates.CsrResult
+### System.Management.Automation.PSObject
 
 {{ Fill in the Description }}
 

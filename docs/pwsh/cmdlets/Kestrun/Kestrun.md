@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 142
+nav_order: 143
 render_with_liquid: false
 ocument type: module
 Help Version: 1.0.0.0
@@ -522,6 +522,10 @@ Returns a snapshot of the current schedule.
 
 Gets the current Kestrun server instance.
 
+### [Get-KrServiceDescriptor](Get-KrServiceDescriptor.md)
+
+Reads a Service.psd1 descriptor file.
+
 ### [Get-KrSessionByte](Get-KrSessionByte.md)
 
 Retrieves a byte array value from the session by key.
@@ -670,6 +674,14 @@ Creates a new self-signed certificate.
 
 Creates a new Kestrun server instance.
 
+### [New-KrServiceDescriptor](New-KrServiceDescriptor.md)
+
+Creates a Service.psd1 descriptor file.
+
+### [New-KrServicePackage](New-KrServicePackage.md)
+
+Creates a Kestrun service package (.krpack).
+
 ### [New-KrTask](New-KrTask.md)
 
 Creates a task without starting it.
@@ -805,6 +817,10 @@ Sets the named pipe options for a Kestrun server instance. (Windows Operating Sy
 ### [Set-KrServerOptions](Set-KrServerOptions.md)
 
 Configures advanced options and operational limits for a Kestrun server instance.
+
+### [Set-KrServiceDescriptor](Set-KrServiceDescriptor.md)
+
+Updates a Service.psd1 descriptor file.
 
 ### [Set-KrSessionByte](Set-KrSessionByte.md)
 

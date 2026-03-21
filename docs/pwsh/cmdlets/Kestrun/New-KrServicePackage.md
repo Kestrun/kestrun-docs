@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 199
+nav_order: 165
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
@@ -10,23 +10,30 @@ Locale: en-US
 Module Name: Kestrun
 ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
-title: Set-KrServerOptions
+title: New-KrServicePackage
 ---
 
-# Set-KrServerOptions
+# New-KrServicePackage
 
 ## SYNOPSIS
 
-Configures advanced options and operational limits for a Kestrun server instance.
+Creates a Kestrun service package (.krpack).
 
 ## SYNTAX
 
-### __AllParameterSets
+### FromFolder (Default)
 
 ```powershell
-Set-KrServerOptions [[-MaxRunspaces] <int>] [[-MinRunspaces] <int>] [[-DefaultUploadPath] <string>]
- [-AllowSynchronousIO] [-DisableResponseHeaderCompression] [-DenyServerHeader]
- [-AllowAlternateSchemes] [-AllowHostHeaderOverride] [-DisableStringReuse] [<CommonParameters>]
+New-KrServicePackage -SourceFolder <string> [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### FromScript
+
+```powershell
+New-KrServicePackage -ScriptPath <string> -Version <version> [-Name <string>]
+ [-Description <string>] [-ServiceLogPath <string>] [-PreservePaths <string[]>]
+ [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -36,29 +43,75 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-The Set-KrServerOptions function allows fine-grained configuration of a Kestrun server instance.
-It enables administrators to control server behavior, resource usage, and protocol compliance by
-setting limits on request sizes, connection counts, timeouts, and other operational parameters.
-Each parameter is optional and, if not specified, the server will use its built-in default value.
+Creates a .krpack archive from either:
+- A source folder that already contains Service.psd1 (validated before packaging), or
+- A script file plus Name/Version metadata (a Service.psd1 descriptor is generated automatically).
+
+For generated descriptors, FormatVersion is set to '1.0' and EntryPoint is set to the script file name.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-Set-KrServerOptions -Server $srv -MaxRequestBodySize 1000000
-Configures the server instance $srv to limit request body size to 1,000,000 bytes.
+New-KrServicePackage -SourceFolder .\my-service -OutputPath .\my-service.krpack
 
 ### EXAMPLE 2
 
-Set-KrServerOptions -Server $srv -AllowSynchronousIO
-Configures the server instance $srv to allow synchronous IO operations.
+New-KrServicePackage -ScriptPath .\server.ps1 -Name demo -Version 1.2.0 -OutputPath .\demo.krpack
+
+### EXAMPLE 3
+
+New-KrServicePackage -ScriptPath .\server.ps1 -Version 1.2.0
 
 ## PARAMETERS
 
-### -AllowAlternateSchemes
+### -Confirm
 
-If set to $true, allows alternate URI schemes (other than HTTP/HTTPS) in requests.
-Default: $false.
+Prompts for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: ''
+SupportsWildcards: false
+Aliases:
+- cf
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Description
+
+Optional description used when generating Service.psd1 from ScriptPath.
+Defaults to Name.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: FromScript
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Force
+
+Overwrite an existing output file.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -77,18 +130,18 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -AllowHostHeaderOverride
+### -Name
 
-If set to $true, permits overriding the Host header in incoming requests.
-Default: $false.
+Service name used when generating Service.psd1 from ScriptPath.
+If omitted, defaults to the script filename without extension.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
+Type: System.String
+DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
+- Name: FromScript
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -99,34 +152,12 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -AllowSynchronousIO
+### -OutputPath
 
-If set to $true, allows synchronous IO operations on the server.
-Synchronous IO can impact scalability and is generally discouraged.
-Default: $false.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -DefaultUploadPath
-
-Specifies the default file system path where uploaded files will be stored.
-This path is used when no specific upload path is defined in form options.
-Default: System temporary directory (e.g., C:\Windows\Temp\kestrun-uploads).
+Output .krpack path.
+Defaults:
+- SourceFolder mode: <SourceFolderName>.krpack in current directory
+- ScriptPath mode: <Name>-<Version>.krpack in current directory
 
 ```yaml
 Type: System.String
@@ -135,28 +166,6 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -DenyServerHeader
-
-If set to $true, removes the 'Server' HTTP header from responses for improved privacy and security.
-Default: $false.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -167,18 +176,17 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -DisableResponseHeaderCompression
+### -PreservePaths
 
-If set to $true, disables compression of HTTP response headers.
-Default: $false.
+Optional relative file/folder paths to preserve during service update.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
+Type: System.String[]
+DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
+- Name: FromScript
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -189,18 +197,39 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -DisableStringReuse
+### -ScriptPath
 
-If set to $true, disables internal string reuse optimizations, which may increase memory usage but can help with certain debugging scenarios.
-Default: $false.
+Script file to package.
+A Service.psd1 descriptor is generated automatically.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
+Type: System.String
+DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
+- Name: FromScript
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ServiceLogPath
+
+Optional ServiceLogPath written to generated Service.psd1.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: FromScript
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -211,21 +240,20 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -MaxRunspaces
+### -SourceFolder
 
-Specifies the maximum number of runspaces to use for script execution.
-This can help control resource usage and concurrency in script execution.
-Default: 2x CPU cores or as specified in the KestrunOptions.
+Folder to package.
+Must contain a valid Service.psd1 descriptor.
 
 ```yaml
-Type: System.Int32
-DefaultValue: 0
+Type: System.String
+DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
-- Name: (All)
-  Position: 0
-  IsRequired: false
+- Name: FromFolder
+  Position: Named
+  IsRequired: true
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -234,20 +262,41 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -MinRunspaces
+### -Version
 
-Specifies the minimum number of runspaces to use for script execution.
-This ensures that at least a certain number of runspaces are always available for processing requests.
-Default: 1.
+Service version used when generating Service.psd1 from ScriptPath.
 
 ```yaml
-Type: System.Int32
-DefaultValue: 1
+Type: System.Version
+DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
+- Name: FromScript
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not executed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: ''
+SupportsWildcards: false
+Aliases:
+- wi
+ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -268,11 +317,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### System.Management.Automation.PSObject
+
+{{ Fill in the Description }}
+
 ## NOTES
-
-All parameters are optional except for -Server.
-Defaults are based on typical Kestrun server settings as of the latest release.
-
 
 ## RELATED LINKS
 

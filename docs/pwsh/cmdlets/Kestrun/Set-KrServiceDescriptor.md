@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 146
+nav_order: 200
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
@@ -10,23 +10,23 @@ Locale: en-US
 Module Name: Kestrun
 ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
-title: New-KrCertificateRequest
+title: Set-KrServiceDescriptor
 ---
 
-# New-KrCertificateRequest
+# Set-KrServiceDescriptor
 
 ## SYNOPSIS
 
-Creates a PEM-encoded CSR (and returns the private key).
+Updates a Service.psd1 descriptor file.
 
 ## SYNTAX
 
 ### __AllParameterSets
 
 ```powershell
-New-KrCertificateRequest [-DnsNames] <string[]> [[-KeyType] <string>] [[-KeyLength] <int>]
- [[-Country] <string>] [[-Org] <string>] [[-OrgUnit] <string>] [[-CommonName] <string>]
- [<CommonParameters>]
+Set-KrServiceDescriptor [[-Path] <string>] [[-Description] <string>] [[-Version] <version>]
+ [[-EntryPoint] <string>] [[-ServiceLogPath] <string>] [[-PreservePaths] <string[]>]
+ [-ClearServiceLogPath] [-ClearPreservePaths] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -36,38 +36,29 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Creates a PEM-encoded CSR (Certificate Signing Request) and returns the private key.
-The CSR can be used to request a certificate from a CA (Certificate Authority).
+Updates Description, Version, EntryPoint, ServiceLogPath, and PreservePaths values in Service.psd1.
+Name is immutable and cannot be changed by this cmdlet.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
-
-### EXAMPLE 2
-
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
+Set-KrServiceDescriptor -Path .\Service.psd1 -Description 'Updated' -Version 1.2.1
 
 ## PARAMETERS
 
-### -CommonName
+### -ClearPreservePaths
 
-The common name (CN) to include in the CSR.
-This is typically the fully qualified domain name (FQDN) for the certificate.
+Removes PreservePaths from the descriptor.
 
 ```yaml
-Type: System.String
-DefaultValue: ''
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 6
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -77,10 +68,73 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Country
+### -ClearServiceLogPath
 
-The country name (2-letter code) to include in the CSR.
-This is typically the ISO 3166-1 alpha-2 code (e.g., 'US' for the United States).
+Removes ServiceLogPath from the descriptor.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Confirm
+
+Prompts for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: ''
+SupportsWildcards: false
+Aliases:
+- cf
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -Description
+
+New description value.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 1
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -EntryPoint
+
+New entry point path value.
 
 ```yaml
 Type: System.String
@@ -99,10 +153,32 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -DnsNames
+### -Path
 
-The DNS name(s) for which the certificate is requested.
-This can include multiple names for Subject Alternative Names (SANs).
+Descriptor path.
+Accepts either a descriptor file path or a directory path.
+When a directory path is provided, Service.psd1 is appended automatically.
+
+```yaml
+Type: System.String
+DefaultValue: Service.psd1
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -PreservePaths
+
+Replaces PreservePaths with a new list of relative file/folder paths.
 
 ```yaml
 Type: System.String[]
@@ -111,30 +187,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 0
-  IsRequired: true
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -KeyLength
-
-The length of the key to generate.
-Defaults to 2048 bits for RSA keys.
-This parameter is ignored for ECDSA keys.
-
-```yaml
-Type: System.Int32
-DefaultValue: 2048
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 2
+  Position: 5
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -144,33 +197,9 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -KeyType
+### -ServiceLogPath
 
-The type of key to generate for the CSR.
-Options are 'Rsa' or 'Ecdsa'.
-Defaults to 'Rsa'.
-
-```yaml
-Type: System.String
-DefaultValue: Rsa
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 1
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Org
-
-The organization name to include in the CSR.
-This is typically the legal name of the organization.
+New default service log path.
 
 ```yaml
 Type: System.String
@@ -189,19 +218,41 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -OrgUnit
+### -Version
 
-The organizational unit name to include in the CSR.
-This is typically the department or division within the organization.
+New version value compatible with System.Version.
 
 ```yaml
-Type: System.String
+Type: System.Version
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 5
+  Position: 2
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not executed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: ''
+SupportsWildcards: false
+Aliases:
+- wi
+ParameterSets:
+- Name: (All)
+  Position: Named
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -222,11 +273,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Certificates.CertificateManager.CsrResult]
-
-{{ Fill in the Description }}
-
-### Kestrun.Certificates.CsrResult
+### System.Management.Automation.PSObject
 
 {{ Fill in the Description }}
 

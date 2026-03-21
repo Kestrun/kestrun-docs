@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 152
+nav_order: 125
 render_with_liquid: false
 ocument type: cmdlet
 external help file: Kestrun-Help.xml
@@ -10,21 +10,21 @@ Locale: en-US
 Module Name: Kestrun
 ms.date: 03/21/2026
 PlatyPS schema version: 2024-05-01
-title: New-KrLogger
+title: Get-KrServiceDescriptor
 ---
 
-# New-KrLogger
+# Get-KrServiceDescriptor
 
 ## SYNOPSIS
 
-Creates a new instance of Serilog.LoggerConfiguration.
+Reads a Service.psd1 descriptor file.
 
 ## SYNTAX
 
 ### __AllParameterSets
 
 ```powershell
-New-KrLogger [<CommonParameters>]
+Get-KrServiceDescriptor [[-Path] <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -34,21 +34,38 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Creates a new instance of Serilog.LoggerConfiguration that can be used to configure logging sinks and enrichers.
+Reads Service.psd1 and returns a normalized object with FormatVersion, Name, Description, Version, EntryPoint, ServiceLogPath, and PreservePaths.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
-$loggerConfig = New-KrLogger
-Creates a new logger configuration instance that can be used to add sinks and enrichers.
-
-### EXAMPLE 2
-
-$loggerConfig = New-KrLogger | Add-KrSinkConsole | Add-KrEnrichProperty -Name 'ScriptName' -Values 'Test'
-    Creates a new logger configuration instance, adds a console sink, and enriches logs with a property.
+Get-KrServiceDescriptor
 
 ## PARAMETERS
+
+### -Path
+
+Descriptor path.
+Accepts either a descriptor file path or a directory path.
+When a directory path is provided, Service.psd1 is appended automatically.
+
+```yaml
+Type: System.String
+DefaultValue: Service.psd1
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 0
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
 
 ### CommonParameters
 
@@ -59,17 +76,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None. You cannot pipe objects to New-KrLogger.
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
 
-### Instance of Serilog.LoggerConfiguration.
-
-{{ Fill in the Description }}
-
-### Serilog.LoggerConfiguration
+### System.Management.Automation.PSObject
 
 {{ Fill in the Description }}
 
