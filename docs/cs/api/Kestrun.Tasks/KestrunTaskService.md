@@ -9,7 +9,7 @@ grand_parent: "C# API"
 Service to run ad-hoc Kestrun tasks in PowerShell, C#, or VB.NET, with status, result, and cancellation.
 
 ```csharp
-public sealed class KestrunTaskService
+public sealed class KestrunTaskService : IDisposable
 ```
 
 | parameter | description |
@@ -24,6 +24,7 @@ public sealed class KestrunTaskService
 | [KestrunTaskService](KestrunTaskService/KestrunTaskService)(…) | Service to run ad-hoc Kestrun tasks in PowerShell, C#, or VB.NET, with status, result, and cancellation. |
 | [Cancel](KestrunTaskService/Cancel)(…) | Attempts to cancel a task. |
 | [Create](KestrunTaskService/Create)(…) | Creates a task from a code snippet without starting it. |
+| [Dispose](KestrunTaskService/Dispose)() | Cancels active tasks, waits briefly for runners to quiesce, disposes quiesced cancellation sources, clears the task registry, and releases the task runspace pool. |
 | [Get](KestrunTaskService/Get)(…) | Gets a task by id. |
 | [GetResult](KestrunTaskService/GetResult)(…) | Gets the output object for a completed task. |
 | [GetState](KestrunTaskService/GetState)(…) | Gets the current state for a task. |

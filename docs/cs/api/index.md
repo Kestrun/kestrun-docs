@@ -57,11 +57,6 @@ parent: "C#"
 | static class [CallbackRequestFactory](./Kestrun.Callback/CallbackRequestFactory.md) | Factory for creating [`CallbackRequest`](./Kestrun.Callback/CallbackRequest.md) instances from callback plans and runtime context. |
 | record [CallbackResult](./Kestrun.Callback/CallbackResult.md) | Represents the result of a callback operation. |
 | record [CallbackRuntimeContext](./Kestrun.Callback/CallbackRuntimeContext.md) | Represents the runtime context for executing a callback operation. |
-| static class [CallbackRuntimeContextFactory](./Kestrun.Callback/CallbackRuntimeContextFactory.md) | Factory for creating [`CallbackRuntimeContext`](./Kestrun.Callback/CallbackRuntimeContext.md) instances from HTTP context. |
-| class [CallbackWorker](./Kestrun.Callback/CallbackWorker.md) | Background worker that processes callback requests from the queue. |
-| class [DefaultCallbackRetryPolicy](./Kestrun.Callback/DefaultCallbackRetryPolicy.md) | Default implementation of [`ICallbackRetryPolicy`](./Kestrun.Callback/ICallbackRetryPolicy.md) using exponential backoff with jitter. |
-| class [DefaultCallbackUrlResolver](./Kestrun.Callback/DefaultCallbackUrlResolver.md) | Default implementation of [`ICallbackUrlResolver`](./Kestrun.Callback/ICallbackUrlResolver.md) that resolves callback URLs using JSON Pointer expressions and variable tokens. |
-| class [HttpCallbackSender](./Kestrun.Callback/HttpCallbackSender.md) | Sender for performing callback requests. |
 | interface [ICallbackBodySerializer](./Kestrun.Callback/ICallbackBodySerializer.md) | Serializes the body of a callback request based on the callback plan and runtime context. |
 | interface [ICallbackDispatcher](./Kestrun.Callback/ICallbackDispatcher.md) | Dispatcher for enqueuing callback requests. |
 | interface [ICallbackRetryPolicy](./Kestrun.Callback/ICallbackRetryPolicy.md) | Defines a policy for retrying callback requests based on their results. |
@@ -69,10 +64,6 @@ parent: "C#"
 | interface [ICallbackSigner](./Kestrun.Callback/ICallbackSigner.md) | Signer for signing callback requests. |
 | interface [ICallbackStore](./Kestrun.Callback/ICallbackStore.md) | Store for persisting callback requests and their states. |
 | interface [ICallbackUrlResolver](./Kestrun.Callback/ICallbackUrlResolver.md) | Resolves callback URLs based on templates and runtime context. |
-| class [InMemoryCallbackDispatcher](./Kestrun.Callback/InMemoryCallbackDispatcher.md) | In-memory dispatcher for enqueuing callback requests. |
-| class [InMemoryCallbackDispatchWorker](./Kestrun.Callback/InMemoryCallbackDispatchWorker.md) | In-memory implementation of [`ICallbackDispatcher`](./Kestrun.Callback/ICallbackDispatcher.md). Enqueues callback requests into an in-memory queue for processing. |
-| class [InMemoryCallbackQueue](./Kestrun.Callback/InMemoryCallbackQueue.md) | In-memory queue for callback requests. |
-| class [JsonCallbackBodySerializer](./Kestrun.Callback/JsonCallbackBodySerializer.md) | JSON implementation of [`ICallbackBodySerializer`](./Kestrun.Callback/ICallbackBodySerializer.md). |
 | record [RetryDecision](./Kestrun.Callback/RetryDecision.md) | Represents a decision made by a callback retry policy. |
 | enum [RetryDecisionKind](./Kestrun.Callback/RetryDecisionKind.md) | Enumerates the kinds of retry decisions. |
 
@@ -131,10 +122,8 @@ parent: "C#"
 | class [KrMultipart](./Kestrun.Forms/KrMultipart.md) | Represents a form payload containing ordered parts. |
 | enum [KrPartAction](./Kestrun.Forms/KrPartAction.md) | Defines the action taken for a part. |
 | record [KrPartContext](./Kestrun.Forms/KrPartContext.md) | Represents the context for a part as it is being processed. |
-| static class [KrPartDecompression](./Kestrun.Forms/KrPartDecompression.md) | Provides per-part decompression helpers. |
 | record [KrPartWriteResult](./Kestrun.Forms/KrPartWriteResult.md) | Represents the result of writing a part to storage. |
 | record [KrRawPart](./Kestrun.Forms/KrRawPart.md) | Represents a stored raw part, preserving order in multipart/mixed payloads. |
-| class [LimitedReadStream](./Kestrun.Forms/LimitedReadStream.md) | Stream wrapper that enforces a maximum number of bytes read. |
 
 ## Kestrun.Health namespace
 
@@ -231,7 +220,6 @@ parent: "C#"
 | --- | --- |
 | class [KestrunLocalizationOptions](./Kestrun.Localization/KestrunLocalizationOptions.md) | Options for configuring PowerShell-style localization using string table files. |
 | class [KestrunLocalizationStore](./Kestrun.Localization/KestrunLocalizationStore.md) | Provides cached access to localized string tables with culture fallback support. |
-| static class [StringTableParser](./Kestrun.Localization/StringTableParser.md) | Parses PowerShell-style string table files containing key=value pairs. |
 
 ## Kestrun.Logging namespace
 
@@ -247,12 +235,6 @@ parent: "C#"
 | --- | --- |
 | class [ErrorRecordWrapper](./Kestrun.Logging.Data/ErrorRecordWrapper.md) | Wraps an ErrorRecord object to provide additional logging information. |
 | class [InvocationInfoWrapper](./Kestrun.Logging.Data/InvocationInfoWrapper.md) | Wraps the PowerShell InvocationInfo object and exposes its properties for logging purposes. |
-
-## Kestrun.Logging.Enrichers namespace
-
-| public type | description |
-| --- | --- |
-| class [ErrorRecordEnricher](./Kestrun.Logging.Enrichers/ErrorRecordEnricher.md) | Enriches Serilog log events with error record and invocation info from WrapperException. |
 
 ## Kestrun.Logging.Enrichers.Extensions namespace
 

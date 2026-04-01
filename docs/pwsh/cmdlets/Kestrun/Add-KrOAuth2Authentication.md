@@ -8,7 +8,7 @@ external help file: Kestrun-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: Kestrun
-ms.date: 03/21/2026
+ms.date: 04/01/2026
 PlatyPS schema version: 2024-05-01
 title: Add-KrOAuth2Authentication
 ---
@@ -27,8 +27,9 @@ Adds OAuth 2.0 (Authorization Code) authentication to the Kestrun server.
 Add-KrOAuth2Authentication [[-Server] <KestrunHost>] [[-AuthenticationScheme] <string>]
  [[-DisplayName] <string>] [[-Description] <string>] [[-ClientId] <string>]
  [[-ClientSecret] <string>] [[-AuthorizationEndpoint] <string>] [[-TokenEndpoint] <string>]
- [[-CallbackPath] <string>] [[-ClaimPolicy] <ClaimPolicyConfig>] [[-Options] <OAuth2Options>]
- [-Deprecated] [-SaveTokens] [-UsePkce] [-PassThru] [<CommonParameters>]
+ [[-OAuth2MetadataUrl] <string>] [[-CallbackPath] <string>] [[-ClaimPolicy] <ClaimPolicyConfig>]
+ [[-Options] <OAuth2Options>] [-Deprecated] [-SaveTokens] [-UsePkce] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -40,6 +41,10 @@ This cmdlet has the following aliases,
 
 Configures the Kestrun server to use a generic OAuth 2.0 authorization-code flow.
 You can pass a prebuilt OAuthOptions object, or specify individual items (authority, paths, client, etc.).
+For OAuth2 metadata/OpenAPI support, set -OAuth2MetadataUrl or set OAuth2MetadataUrl on the provided OAuth2Options object.
+To auto-resolve missing endpoints from metadata at startup, also set the ResolveEndpointsFromMetadata property on the OAuth2Options instance (for example: $Options.ResolveEndpointsFromMetadata = $true).
+Metadata discovery requires HTTPS by default.
+To explicitly allow HTTP metadata URLs in trusted non-production environments, set $Options.AllowInsecureMetadataHttp = $true.
 
 ## EXAMPLES
 
@@ -103,7 +108,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 8
+  Position: 9
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -124,7 +129,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 9
+  Position: 10
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -239,6 +244,28 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -OAuth2MetadataUrl
+
+Optional OAuth2 authorization server metadata URL (RFC 8414).
+Used for OpenAPI metadata and optional endpoint discovery.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 8
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Options
 
 An instance of Kestrun.Authentication.OAuth2Options containing the OAuth configuration.
@@ -250,7 +277,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 10
+  Position: 11
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -388,6 +415,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 This is a convenience wrapper around the C# extension AddOAuth2Authentication.
+OAuth2MetadataUrl is OpenAPI metadata and is not passed directly to ASP.NET Core AddOAuth.
 
 
 ## RELATED LINKS

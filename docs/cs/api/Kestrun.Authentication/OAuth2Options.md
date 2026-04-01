@@ -17,6 +17,7 @@ public class OAuth2Options : OAuthOptions, IAuthenticationHostOptions, IOpenApiA
 | name | description |
 | --- | --- |
 | [OAuth2Options](OAuth2Options/OAuth2Options)() | Initializes a new instance of the [`OAuth2Options`](./OAuth2Options) class. |
+| [AllowInsecureMetadataHttp](OAuth2Options/AllowInsecureMetadataHttp) { get; set; } | Gets or sets a value indicating whether OAuth2 metadata discovery may use a non-HTTPS URL. Defaults to `false` so metadata discovery requires HTTPS. |
 | [AuthenticationScheme](OAuth2Options/AuthenticationScheme) { get; set; } | Gets or sets the authentication scheme name. |
 | [ClaimPolicy](OAuth2Options/ClaimPolicy) { get; set; } | Configuration for claim policy enforcement. |
 | [CookieOptions](OAuth2Options/CookieOptions) { get; } | Options for cookie authentication. |
@@ -28,6 +29,8 @@ public class OAuth2Options : OAuthOptions, IAuthenticationHostOptions, IOpenApiA
 | [GlobalScheme](OAuth2Options/GlobalScheme) { get; set; } |  |
 | [Host](OAuth2Options/Host) { get; set; } |  |
 | [Logger](OAuth2Options/Logger) { get; set; } |  |
+| [OAuth2MetadataUrl](OAuth2Options/OAuth2MetadataUrl) { get; set; } | Gets or sets the OAuth2 authorization server metadata URL (RFC 8414). This is used for OpenAPI metadata and optional endpoint discovery. |
+| [ResolveEndpointsFromMetadata](OAuth2Options/ResolveEndpointsFromMetadata) { get; set; } | Gets or sets a value indicating whether missing OAuth2 endpoints should be resolved from [`OAuth2MetadataUrl`](./OAuth2Options/OAuth2MetadataUrl). |
 | [ApplyTo](OAuth2Options/ApplyTo)(…) | Helper to copy values from a user-supplied OAuth2Options instance to the instance created by the framework inside AddOAuth(). Reassigning the local variable (opts = source) would not work because only the local reference changes – the framework keeps the original instance. (2 methods) |
 
 ## See Also
