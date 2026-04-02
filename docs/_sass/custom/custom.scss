@@ -1,0 +1,157 @@
+/* hero wordmark base */
+.wordmark {
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* gradient variant */
+.wordmark--gradient {
+  background: linear-gradient(90deg, #e66b2d, #e63946 35%, #1d3557 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* optional soft glow */
+.wordmark--glow {
+  text-shadow: 0 8px 24px rgba(29, 53, 87, 0.22);
+}
+
+/* tagline */
+.wordmark-tagline {
+  text-align: center;
+  margin-top: .4rem;
+  opacity: .8;
+  font-size: 1rem;
+}
+
+/* (optional) hide default page title on homepage if you want a clean hero */
+.home .page-title { display: none; }
+
+
+// make sidebar wider (default: 264px)
+$nav-width: 360px; // or 340px, 360px depending on your strings
+
+.site-nav,
+.site-header,
+.site-footer {
+  width: 100%;
+
+  @include mq(lg) {
+    width: $nav-width;
+  }
+}
+
+.kestrun-footer {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kestrun-footer__lead,
+.kestrun-footer__meta,
+.kestrun-footer__links {
+  margin: 0;
+}
+
+.kestrun-footer__lead {
+  color: #1d3557;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.kestrun-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.kestrun-footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  line-height: 1.5;
+}
+
+.kestrun-footer__link,
+.kestrun-footer__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.kestrun-footer__link {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(29, 53, 87, 0.14);
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #1d3557;
+  font-weight: 600;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.kestrun-footer__link:hover,
+.kestrun-footer__link:focus-visible {
+  background: #eef4ff;
+  border-color: rgba(29, 53, 87, 0.24);
+  transform: translateY(-1px);
+}
+
+.kestrun-footer__button {
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(29, 53, 87, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffe082, #ffca28);
+  color: #1f2937;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(29, 53, 87, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.kestrun-footer__icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.kestrun-footer__button:hover,
+.kestrun-footer__button:focus-visible {
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  transform: translateY(-1px);
+}
+
+.kestrun-footer__button:hover,
+.kestrun-footer__button:focus-visible {
+  box-shadow: 0 12px 24px rgba(29, 53, 87, 0.16);
+}
+
+.kestrun-footer__button:focus-visible,
+.kestrun-footer__link:focus-visible {
+  outline: 2px solid #1d3557;
+  outline-offset: 2px;
+}
+
+/* Respect iOS safe areas so text isn't under the notch */
+@supports (padding: max(0px)) {
+  :root { --safe-left: env(safe-area-inset-left); --safe-right: env(safe-area-inset-right); }
+
+  /* Just the Docs uses .side-bar as the fixed column; you also styled .site-nav */
+  .side-bar,
+  .site-nav,
+  .site-header,
+  .site-footer {
+    padding-left: max(16px, var(--safe-left));
+  }
+
+  /* Optional: keep main content comfy on the right, too */
+  .main {
+    padding-right: max(16px, var(--safe-right));
+  }
+}

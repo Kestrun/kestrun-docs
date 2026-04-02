@@ -36,10 +36,6 @@ nav_external_links:
   - title: Kestrun on GitHub
     url: https://github.com/kestrun/kestrun
     hide_icon: false
- 
-just_the_docs:
-  custom_css:
-    - docs/assets/css/custom.css
 
 # Footer settings
 footer_content: ""
