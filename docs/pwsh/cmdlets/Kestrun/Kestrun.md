@@ -1,18 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 143
+nav_order: 146
 render_with_liquid: false
-ocument type: module
-Help Version: 1.0.0.0
-HelpInfoUri: 
-Locale: ''
-Module Guid: 00000000-0000-0000-0000-000000000000
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
-title: Kestrun Module
----
+title: Kestrun
 
 # Kestrun Module
 
@@ -88,7 +79,7 @@ Adds SQL Server distributed cache services to the Kestrun server.
 
 ### [Add-KrEndpoint](Add-KrEndpoint.md)
 
-Creates a new Kestrun server instance with specified options and listeners.
+Adds a Kestrun endpoint using explicit parameters or environment-based binding.
 
 ### [Add-KrEnrichEnvironment](Add-KrEnrichEnvironment.md)
 
@@ -421,6 +412,10 @@ Exports an X509Certificate2 to PFX or PEM(+key).
 
 Exports the OpenAPI document for the specified Kestrun server in the desired format.
 
+### [Export-KrSharedState](Export-KrSharedState.md)
+
+Exports a PowerShell object to a serialized XML representation.
+
 ### [Get-KrBuiltTargetFrameworkVersion](Get-KrBuiltTargetFrameworkVersion.md)
 
 Gets the target framework version that Kestrun was built against.
@@ -473,6 +468,11 @@ Retrieves the list of available localization cultures.
 ### [Get-KrLocalizedString](Get-KrLocalizedString.md)
 
 Returns a localized string for the current request culture.
+
+### [Get-KrLock](Get-KrLock.md)
+
+Retrieves a lock object associated with the specified key, creating it if it does not already exist.
+This lock can be used to synchronize access to shared resources across different parts of the application within the current process.
 
 ### [Get-KrLoggerLevelSwitch](Get-KrLoggerLevelSwitch.md)
 
@@ -574,6 +574,10 @@ Retrieves the Kestrun module version information.
 
 Imports a PFX/PEM certificate file and returns X509Certificate2.
 
+### [Import-KrSharedState](Import-KrSharedState.md)
+
+Imports a PowerShell object from a serialized XML representation.
+
 ### [Initialize-KrRoot](Initialize-KrRoot.md)
 
 Initializes the Kestrun root directory for path resolution.
@@ -617,6 +621,10 @@ Creates and configures a new [Microsoft.AspNetCore.Http.CookieBuilder] instance.
 ### [New-KrCorsPolicyBuilder](New-KrCorsPolicyBuilder.md)
 
 Creates a new CORS policy builder.
+
+### [New-KrDockerDeployment](New-KrDockerDeployment.md)
+
+Creates a Docker Compose deployment bundle from a Kestrun service package.
 
 ### [New-KrFormPartRule](New-KrFormPartRule.md)
 
@@ -668,7 +676,7 @@ Creates a new Kestrun health ProbeResult object.
 
 ### [New-KrSelfSignedCertificate](New-KrSelfSignedCertificate.md)
 
-Creates a new self-signed certificate.
+Creates a self-signed certificate or localhost development certificate bundle.
 
 ### [New-KrServer](New-KrServer.md)
 
@@ -905,6 +913,10 @@ Updates an existing JWT token.
 ### [Update-KrSynchronizedCounter](Update-KrSynchronizedCounter.md)
 
 Updates a synchronized counter in a thread-safe manner.
+
+### [Use-KrLock](Use-KrLock.md)
+
+Executes a script block while holding a named lock to ensure exclusive access to a resource.
 
 ### [Write-KrBinaryResponse](Write-KrBinaryResponse.md)
 

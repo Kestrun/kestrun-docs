@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 200
+nav_order: 204
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: Set-KrServiceDescriptor
----
 
 # Set-KrServiceDescriptor
 
@@ -26,7 +18,8 @@ Updates a Service.psd1 descriptor file.
 ```powershell
 Set-KrServiceDescriptor [[-Path] <string>] [[-Description] <string>] [[-Version] <version>]
  [[-EntryPoint] <string>] [[-ServiceLogPath] <string>] [[-PreservePaths] <string[]>]
- [-ClearServiceLogPath] [-ClearPreservePaths] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-ApplicationDataFolders] <string[]>] [-ClearServiceLogPath] [-ClearPreservePaths]
+ [-ClearApplicationDataFolders] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -36,7 +29,7 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Updates Description, Version, EntryPoint, ServiceLogPath, and PreservePaths values in Service.psd1.
+Updates Description, Version, EntryPoint, ServiceLogPath, PreservePaths, and ApplicationDataFolders values in Service.psd1.
 Name is immutable and cannot be changed by this cmdlet.
 
 ## EXAMPLES
@@ -46,6 +39,48 @@ Name is immutable and cannot be changed by this cmdlet.
 Set-KrServiceDescriptor -Path .\Service.psd1 -Description 'Updated' -Version 1.2.1
 
 ## PARAMETERS
+
+### -ApplicationDataFolders
+
+Replaces ApplicationDataFolders with a new list of relative application-data folder paths.
+
+```yaml
+Type: System.String[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 6
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ClearApplicationDataFolders
+
+Removes ApplicationDataFolders from the descriptor.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
 
 ### -ClearPreservePaths
 

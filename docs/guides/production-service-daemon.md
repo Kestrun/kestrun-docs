@@ -54,7 +54,8 @@ New-KrServiceDescriptor `
   -Version 1.2.0 `
   -EntryPoint '.\Service.ps1' `
   -ServiceLogPath '.\logs\service.log' `
-  -PreservePaths @('config/production.json', 'data/', 'logs/')
+  -PreservePaths @('config/production.json') `
+  -ApplicationDataFolders @('data/', 'logs/')
 ```
 
 Quick verification:
@@ -79,7 +80,7 @@ When using package or descriptor-based content deployments, `Service.psd1` shoul
 - `Version`
 - `EntryPoint`
 
-Optional keys include `ServiceLogPath` and `PreservePaths`.
+Optional keys include `ServiceLogPath`, `PreservePaths`, and `ApplicationDataFolders`.
 
 Example:
 
@@ -92,6 +93,8 @@ Example:
   EntryPoint = './Service.ps1'
   PreservePaths = @(
     'config/production.json'
+  )
+  ApplicationDataFolders = @(
     'data/'
     'logs/'
   )
@@ -99,6 +102,7 @@ Example:
 ```
 
 `PreservePaths` values must be relative paths that resolve inside the app root (absolute paths and root-escaping paths are rejected).
+`ApplicationDataFolders` values follow the same relative-path rules.
 During `service update --package`, those paths are
 staged from the current install and restored after the package content is applied.
 
@@ -115,8 +119,17 @@ Required:
 Optional:
 
 - `-OutputPath <string>`: output package path. If omitted, defaults to `<SourceFolderName>.krpack` in the current directory.
+- `-ExcludeApplicationDataFolders`: omit files under descriptor `ApplicationDataFolders` from the package archive.
+- `-ExcludePaths <string[]>`: omit additional relative files or folders from the package archive.
 - `-Force`: overwrite an existing output file.
 - `-WhatIf` and `-Confirm`: standard PowerShell safety switches.
+
+Notes:
+
+- Exclusions apply only to `-SourceFolder` packaging.
+- Excluded paths must stay under `-SourceFolder`.
+- `Service.psd1` and the descriptor `EntryPoint` cannot be excluded.
+- `-ExcludeApplicationDataFolders` does not rewrite `Service.psd1`; it only removes those files from the archive payload.
 
 Examples:
 
@@ -129,6 +142,13 @@ New-KrServicePackage -SourceFolder .\MyServiceApp -OutputPath .\my-service.krpac
 
 # Overwrite existing package
 New-KrServicePackage -SourceFolder .\MyServiceApp -OutputPath .\my-service.krpack -Force
+
+# Skip package-time app data plus extra local-only content
+New-KrServicePackage `
+  -SourceFolder .\MyServiceApp `
+  -ExcludeApplicationDataFolders `
+  -ExcludePaths @('secrets/dev.json', 'scratch/') `
+  -OutputPath .\my-service.krpack
 ```
 
 ### Parameter set 2: package from a script and generate `Service.psd1`
@@ -219,6 +239,43 @@ Keep the resulting hex hash for `--content-root-checksum`.
 ```powershell
 dotnet kestrun service install --package .\my-service.krpack
 ```
+
+Use an explicit local runtime package for offline installs:
+
+```powershell
+dotnet kestrun service install --package .\my-service.krpack --runtime-package .\Kestrun.Service.win-x64.1.0.0-rc.1.nupkg
+```
+
+`--runtime-package` also accepts a folder. Kestrun selects the expected
+`Kestrun.Service.<rid>.<version>.nupkg` file for the current platform and target version.
+
+```powershell
+dotnet kestrun service install --package .\my-service.krpack --runtime-package .\artifacts\nuget --runtime-version 1.0.0-rc.1
+```
+
+Use a local/private runtime feed:
+
+```powershell
+dotnet kestrun service install --package .\my-service.krpack --runtime-source .\artifacts\nuget --runtime-cache .\.kestrun-runtime-cache
+```
+
+Prefetch the service runtime into cache without installing a service bundle:
+
+```powershell
+dotnet kestrun service install --runtime-version 1.0.0-rc.1 --runtime-source .\artifacts\nuget --runtime-cache .\.kestrun-runtime-cache
+```
+
+Use a direct runtime package URL with auth headers:
+
+```powershell
+dotnet kestrun service install --package .\my-service.krpack --runtime-source https://packages.example.com/Kestrun.Service.win-x64.1.0.0-rc.1.nupkg --content-root-bearer-token <token>
+```
+
+`service install` requires a resolvable runtime package and does not fall back to the runtime
+payload bundled with `Kestrun.Tool` when runtime acquisition fails.
+
+Runtime cache uses a canonical package path (`packages/<id>/<version>/<id>.<version>.nupkg`) and
+an extracted working payload path (`expanded/<id>/...`).
 
 With checksum verification:
 
@@ -321,8 +378,12 @@ dotnet kestrun service start --name my-service
 ## Current Limits
 
 - `service install --package` and `service update --package` support local `.krpack` files and HTTP(S) package URLs.
-- Private package URLs can use bearer token auth via `--content-root-bearer-token`.
-- HTTPS certificate bypass is available via `--content-root-ignore-certificate` and should be used only for controlled environments.
+- `service install --package` resolves `Kestrun.Service.<rid>` for the current platform automatically.
+  Use `--runtime-package` or `--runtime-source` to override runtime acquisition.
+- `--runtime-package` can point to a single `.nupkg` file or to a folder containing per-RID runtime packages.
+- `service install` can run without `--package` to prefetch the runtime cache when at least one runtime acquisition option is supplied.
+- Private package URLs and HTTP(S) runtime-source downloads can use bearer token auth via `--content-root-bearer-token`.
+- HTTPS certificate bypass is available via `--content-root-ignore-certificate` for package/runtime-source downloads and should be used only for controlled environments.
 
 ---
 

@@ -80,6 +80,7 @@ parent: "C#"
 | static class [JwkJson](./Kestrun.Certificates/JwkJson.md) | JSON serializer options for JWK serialization. |
 | enum [KeyType](./Kestrun.Certificates/KeyType.md) | Specifies the type of cryptographic key to use for certificate operations. |
 | class [RsaJwk](./Kestrun.Certificates/RsaJwk.md) | Represents an RSA JSON Web Key (JWK). |
+| record [SelfSignedCertificateResult](./Kestrun.Certificates/SelfSignedCertificateResult.md) | Represents the result of creating a self-signed certificate or development certificate bundle. |
 | record [SelfSignedOptions](./Kestrun.Certificates/SelfSignedOptions.md) | Options for creating a self-signed certificate. |
 
 ## Kestrun.Claims namespace
@@ -274,6 +275,32 @@ parent: "C#"
 | --- | --- |
 | static class [TableExtensions](./Kestrun.Logging.Utils.Console.Extensions/TableExtensions.md) | Provides extension methods for the [`Table`](./Kestrun.Logging.Utils.Console/Table.md) class. |
 
+## Kestrun.Mcp namespace
+
+| public type | description |
+| --- | --- |
+| interface [IKestrunOpenApiProvider](./Kestrun.Mcp/IKestrunOpenApiProvider.md) | OpenAPI retrieval contract used by MCP tool handlers. |
+| interface [IKestrunRequestInvoker](./Kestrun.Mcp/IKestrunRequestInvoker.md) | Request invocation contract used by MCP tool handlers. |
+| interface [IKestrunRequestValidator](./Kestrun.Mcp/IKestrunRequestValidator.md) | Request validation contract used by MCP tool handlers. |
+| interface [IKestrunRouteInspector](./Kestrun.Mcp/IKestrunRouteInspector.md) | Route inspection contract used by MCP tool handlers. |
+| interface [IKestrunRuntimeInspector](./Kestrun.Mcp/IKestrunRuntimeInspector.md) | Runtime inspection contract used by MCP tool handlers. |
+| record [KestrunMcpError](./Kestrun.Mcp/KestrunMcpError.md) | Structured error information returned by Kestrun MCP services. |
+| record [KestrunOpenApiDocumentResult](./Kestrun.Mcp/KestrunOpenApiDocumentResult.md) | Structured OpenAPI document payload. |
+| class [KestrunOpenApiProvider](./Kestrun.Mcp/KestrunOpenApiProvider.md) | Default OpenAPI provider implementation backed by [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
+| record [KestrunRequestInput](./Kestrun.Mcp/KestrunRequestInput.md) | Proposed request payload used by validation and invocation tools. |
+| class [KestrunRequestInvoker](./Kestrun.Mcp/KestrunRequestInvoker.md) | Default route invoker implementation that uses the live HTTP pipeline. |
+| record [KestrunRequestInvokerOptions](./Kestrun.Mcp/KestrunRequestInvokerOptions.md) | Configures safety boundaries for the MCP request invoker. |
+| record [KestrunRequestValidationResult](./Kestrun.Mcp/KestrunRequestValidationResult.md) | Request validation result. |
+| class [KestrunRequestValidator](./Kestrun.Mcp/KestrunRequestValidator.md) | Default request validation implementation backed by route metadata. |
+| record [KestrunRouteDetail](./Kestrun.Mcp/KestrunRouteDetail.md) | Detailed route metadata for a single route selection. |
+| class [KestrunRouteInspector](./Kestrun.Mcp/KestrunRouteInspector.md) | Default route inspector implementation backed by [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
+| record [KestrunRouteInvokeResult](./Kestrun.Mcp/KestrunRouteInvokeResult.md) | Route invocation result returned by the safe invoker. |
+| record [KestrunRouteResponseSchema](./Kestrun.Mcp/KestrunRouteResponseSchema.md) | Response metadata extracted from OpenAPI. |
+| record [KestrunRouteSummary](./Kestrun.Mcp/KestrunRouteSummary.md) | Summarized route metadata for MCP discovery operations. |
+| record [KestrunRuntimeInspectionResult](./Kestrun.Mcp/KestrunRuntimeInspectionResult.md) | Safe runtime inspection payload. |
+| class [KestrunRuntimeInspector](./Kestrun.Mcp/KestrunRuntimeInspector.md) | Default runtime inspector implementation backed by [`KestrunHost`](./Kestrun.Hosting/KestrunHost.md). |
+| record [KestrunRuntimeListener](./Kestrun.Mcp/KestrunRuntimeListener.md) | Listener metadata exposed through runtime inspection. |
+
 ## Kestrun.Middleware namespace
 
 | public type | description |
@@ -408,6 +435,7 @@ parent: "C#"
 | static class [HostingExtensions](./Kestrun.Utilities/HostingExtensions.md) | Provides extension methods for hosting Kestrun servers. |
 | [Flags] enum [HttpVerb](./Kestrun.Utilities/HttpVerb.md) | Common HTTP verbs recognized by the framework. |
 | static class [HttpVerbExtensions](./Kestrun.Utilities/HttpVerbExtensions.md) | Extension methods for the [`HttpVerb`](./Kestrun.Utilities/HttpVerb.md) enum. |
+| static class [KestrunLockRegistry](./Kestrun.Utilities/KestrunLockRegistry.md) | Provides a registry of named SemaphoreSlim instances used to synchronize access to shared resources within the current process. The same key always returns the same semaphore instance. |
 | static class [ObjectToDictionaryConverter](./Kestrun.Utilities/ObjectToDictionaryConverter.md) | Utility for converting arbitrary .NET objects to a Dictionary with string keys and values. Handles dictionaries, enumerables, and objects with public properties. |
 | static class [PowerShellModuleLocator](./Kestrun.Utilities/PowerShellModuleLocator.md) | Utility class to locate the Kestrun PowerShell module. It searches for the module in both development and production environments. |
 | static class [RateLimiterOptionsExtensions](./Kestrun.Utilities/RateLimiterOptionsExtensions.md) | Provides extension methods for copying rate limiter options and policies. |

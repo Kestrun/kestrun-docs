@@ -11,7 +11,7 @@ Options for creating a Certificate Signing Request (CSR).
 ```csharp
 public CsrOptions(IEnumerable<string> DnsNames, KeyType KeyType = KeyType.Rsa, 
     int KeyLength = 2048, string? Country = null, string? Org = null, string? OrgUnit = null, 
-    string? CommonName = null)
+    string? CommonName = null, X509KeyUsageFlags? KeyUsageFlags = default)
 ```
 
 | parameter | description |
@@ -23,6 +23,7 @@ public CsrOptions(IEnumerable<string> DnsNames, KeyType KeyType = KeyType.Rsa,
 | Org | The organization name for the subject distinguished name. |
 | OrgUnit | The organizational unit for the subject distinguished name. |
 | CommonName | The common name for the subject distinguished name. |
+| KeyUsageFlags | Optional X.509 key usage flags to include in the CSR extension request. Null or None omits the key usage extension. |
 
 ## Remarks
 

@@ -13,8 +13,7 @@
     - Write-KrSseEvent
 #>
 param(
-    [int]$Port = 5000,
-    [IPAddress]$IPAddress = [IPAddress]::Loopback
+    [int]$Port = $env:PORT ?? 5000
 )
 
 if (-not (Get-Module Kestrun)) { Import-Module Kestrun }
@@ -27,9 +26,7 @@ New-KrLogger |
 
 New-KrServer -Name 'Kestrun SSE Broadcast Demo'
 
-Add-KrEndpoint -Port $Port -IPAddress $IPAddress
-
- 
+Add-KrEndpoint -Port $Port
 
 # Add the broadcast SSE endpoints (implemented in C#; keeps connections open)
 # 1) Default broadcast SSE stream (schema defaults to string in OpenAPI)
@@ -37,7 +34,6 @@ Add-KrSseBroadcastMiddleware -Path '/sse/broadcast' -KeepAliveSeconds 15
 
 # 2) Progress broadcast SSE stream (OpenAPI payload schema: OperationProgressEvent)
 Add-KrSseBroadcastMiddleware -Path '/sse/broadcast/progress' -KeepAliveSeconds 15
-
 
 Enable-KrConfiguration
 

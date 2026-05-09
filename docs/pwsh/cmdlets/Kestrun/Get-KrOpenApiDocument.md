@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 114
+nav_order: 116
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: Get-KrOpenApiDocument
----
 
 # Get-KrOpenApiDocument
 

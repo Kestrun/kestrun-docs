@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 125
+nav_order: 127
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: Get-KrServiceDescriptor
----
 
 # Get-KrServiceDescriptor
 
@@ -34,7 +26,7 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Reads Service.psd1 and returns a normalized object with FormatVersion, Name, Description, Version, EntryPoint, ServiceLogPath, and PreservePaths.
+Reads Service.psd1 and returns a normalized object with FormatVersion, Name, Description, Version, EntryPoint, ServiceLogPath, PreservePaths, and ApplicationDataFolders.
 
 ## EXAMPLES
 

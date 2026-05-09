@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 214
+nav_order: 218
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: Test-KrCertificate
----
 
 # Test-KrCertificate
 
@@ -25,7 +17,8 @@ Validates a certificate’s chain, EKU, and cryptographic strength.
 
 ```powershell
 Test-KrCertificate [-Certificate] <X509Certificate2> [[-ExpectedPurpose] <string[]>]
- [-CheckRevocation] [-AllowWeakAlgorithms] [-DenySelfSigned] [-StrictPurpose] [<CommonParameters>]
+ [[-CertificateChain] <X509Certificate2[]>] [[-FailureReasonVariable] <string>] [-CheckRevocation]
+ [-AllowWeakAlgorithms] [-DenySelfSigned] [-StrictPurpose] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -44,16 +37,27 @@ validate against expected purposes.
 
 ### EXAMPLE 1
 
-Test-KestrunCertificate -Certificate $cert -DenySelfSigned -CheckRevocation
+Test-KrCertificate -Certificate $cert -DenySelfSigned -CheckRevocation
 
 ### EXAMPLE 2
 
-Test-KestrunCertificate -Certificate $cert -AllowWeakAlgorithms -ExpectedPurpose '1.3.6.1.5.5.7.3.1'
+Test-KrCertificate -Certificate $cert -AllowWeakAlgorithms -ExpectedPurpose '1.3.6.1.5.5.7.3.1'
 
 ### EXAMPLE 3
 
-Test-KestrunCertificate -Certificate $cert -StrictPurpose
+Test-KrCertificate -Certificate $cert -StrictPurpose
 If specified, the certificate will be validated against these purposes.
+
+### EXAMPLE 4
+
+$bundle = New-KrSelfSignedCertificate -Development -Exportable
+$isValid = Test-KrCertificate -Certificate $bundle.LeafCertificate -CertificateChain $bundle.RootCertificate -FailureReasonVariable 'reason'
+if (-not $isValid) { Write-Host "Validation failed: $reason" }
+
+### EXAMPLE 5
+
+$isValid = Test-KrCertificate -Certificate $cert -FailureReasonVariable 'reason'
+if (-not $isValid) { Write-Host "Validation failed: $reason" }
 
 ## PARAMETERS
 
@@ -91,6 +95,28 @@ ParameterSets:
 - Name: (All)
   Position: 0
   IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -CertificateChain
+
+Optional additional certificates used to build trust for the target certificate, such as
+a private development root CA or intermediate certificates.
+
+```yaml
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 2
+  IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
@@ -154,6 +180,28 @@ Aliases: []
 ParameterSets:
 - Name: (All)
   Position: 1
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -FailureReasonVariable
+
+Optional variable name that will receive the validation failure reason in the caller scope.
+When validation succeeds, the target variable is set to an empty string.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 3
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false

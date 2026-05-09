@@ -9,20 +9,33 @@ grand_parent: "C# API"
 Options for creating a self-signed certificate.
 
 ```csharp
-public SelfSignedOptions(IEnumerable<string> DnsNames, KeyType KeyType = KeyType.Rsa, 
-    int KeyLength = 2048, IEnumerable<KeyPurposeID>? Purposes = null, int ValidDays = 365, 
-    bool Ephemeral = false, bool Exportable = false)
+public SelfSignedOptions(IEnumerable<string>? DnsNames, KeyType KeyType = KeyType.Rsa, 
+    int KeyLength = 2048, IEnumerable<KeyPurposeID>? Purposes = null, 
+    X509KeyUsageFlags? KeyUsageFlags = default, int ValidDays = 365, bool Ephemeral = false, 
+    bool Exportable = false, bool IsCertificateAuthority = false, 
+    X509Certificate2? IssuerCertificate = null, bool Development = false, 
+    X509Certificate2? RootCertificate = null, string RootName = "Kestrun Development Root CA", 
+    int LeafValidDays = 30, int RootValidDays = 3650, bool TrustRoot = false)
 ```
 
 | parameter | description |
 | --- | --- |
-| DnsNames | The DNS names to include in the certificate's Subject Alternative Name (SAN) extension. |
+| DnsNames | The DNS names to include in the certificate's Subject Alternative Name (SAN) extension. When *Development* is true and this value is null, localhost loopback defaults are used for the leaf certificate. |
 | KeyType | The type of cryptographic key to use (RSA or ECDSA). |
 | KeyLength | The length of the cryptographic key in bits. |
 | Purposes | The key purposes (Extended Key Usage) for the certificate. |
+| KeyUsageFlags | The X.509 Key Usage flags to apply to the certificate. Null or None uses the default flags for the selected key type. |
 | ValidDays | The number of days the certificate will be valid. |
 | Ephemeral | If true, the certificate will not be stored in the Windows certificate store. |
 | Exportable | If true, the private key can be exported from the certificate. |
+| IsCertificateAuthority | If true, emits a CA certificate suitable for issuing child certificates. |
+| IssuerCertificate | Optional issuer certificate used to sign the generated certificate. The issuer must contain a private key and be a CA certificate. |
+| Development | If true, creates a development bundle consisting of a CA root certificate and an issued leaf certificate. |
+| RootCertificate | Optional development root certificate used to sign the generated development leaf certificate. |
+| RootName | The common name to use when creating a new development root certificate. |
+| LeafValidDays | The number of days the generated development leaf certificate is valid. |
+| RootValidDays | The number of days a generated development root certificate is valid. |
+| TrustRoot | When true on Windows, adds the effective development root certificate to the CurrentUser Root store. |
 
 ## Remarks
 

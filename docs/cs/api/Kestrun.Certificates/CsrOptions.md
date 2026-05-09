@@ -22,6 +22,7 @@ public record CsrOptions
 | [DnsNames](CsrOptions/DnsNames) { get; set; } | The DNS names to include in the CSR's Subject Alternative Name (SAN) extension. |
 | [KeyLength](CsrOptions/KeyLength) { get; set; } | The length of the cryptographic key in bits. |
 | [KeyType](CsrOptions/KeyType) { get; set; } | The type of cryptographic key to use (RSA or ECDSA). |
+| [KeyUsageFlags](CsrOptions/KeyUsageFlags) { get; set; } | Optional X.509 key usage flags to include in the CSR extension request. Null or None omits the key usage extension. |
 | [Org](CsrOptions/Org) { get; set; } | The organization name for the subject distinguished name. |
 | [OrgUnit](CsrOptions/OrgUnit) { get; set; } | The organizational unit for the subject distinguished name. |
 

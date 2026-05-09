@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 165
+nav_order: 169
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: New-KrServicePackage
----
 
 # New-KrServicePackage
 
@@ -24,7 +16,8 @@ Creates a Kestrun service package (.krpack).
 ### FromFolder (Default)
 
 ```powershell
-New-KrServicePackage -SourceFolder <string> [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm]
+New-KrServicePackage -SourceFolder <string> [-ExcludeApplicationDataFolders]
+ [-ExcludePaths <string[]>] [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -33,7 +26,8 @@ New-KrServicePackage -SourceFolder <string> [-OutputPath <string>] [-Force] [-Wh
 ```powershell
 New-KrServicePackage -ScriptPath <string> -Version <version> [-Name <string>]
  [-Description <string>] [-ServiceLogPath <string>] [-PreservePaths <string[]>]
- [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ApplicationDataFolders <string[]>] [-OutputPath <string>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -63,7 +57,32 @@ New-KrServicePackage -ScriptPath .\server.ps1 -Name demo -Version 1.2.0 -OutputP
 
 New-KrServicePackage -ScriptPath .\server.ps1 -Version 1.2.0
 
+### EXAMPLE 4
+
+New-KrServicePackage -SourceFolder .\my-service -ExcludeApplicationDataFolders -ExcludePaths @('secrets/dev.json', 'scratch/') -OutputPath .\my-service.krpack
+
 ## PARAMETERS
+
+### -ApplicationDataFolders
+
+Optional relative application-data folders to preserve during service update.
+
+```yaml
+Type: System.String[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: FromScript
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
 
 ### -Confirm
 
@@ -99,6 +118,50 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: FromScript
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ExcludeApplicationDataFolders
+
+In SourceFolder mode, excludes files under descriptor ApplicationDataFolders from the package archive.
+The descriptor values are kept unchanged so those folders can still be preserved during service update.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: FromFolder
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ExcludePaths
+
+In SourceFolder mode, excludes specific relative files or folders from the package archive.
+Paths must stay under SourceFolder and cannot exclude Service.psd1 or the EntryPoint file.
+
+```yaml
+Type: System.String[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: FromFolder
   Position: Named
   IsRequired: false
   ValueFromPipeline: false

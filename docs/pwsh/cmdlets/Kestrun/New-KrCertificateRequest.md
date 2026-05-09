@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 146
+nav_order: 149
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: New-KrCertificateRequest
----
 
 # New-KrCertificateRequest
 
@@ -26,7 +18,7 @@ Creates a PEM-encoded CSR (and returns the private key).
 ```powershell
 New-KrCertificateRequest [-DnsNames] <string[]> [[-KeyType] <string>] [[-KeyLength] <int>]
  [[-Country] <string>] [[-Org] <string>] [[-OrgUnit] <string>] [[-CommonName] <string>]
- [<CommonParameters>]
+ [[-KeyUsage] <X509KeyUsageFlags[]>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -43,15 +35,26 @@ The CSR can be used to request a certificate from a CA (Certificate Authority).
 
 ### EXAMPLE 1
 
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
+$csrResult = New-KrCertificateRequest -DnsNames 'example.com' -Country US
+$csrResult.CsrPem | Set-Content -Path 'C:\path\to\csr.pem'
+$csrResult.PrivateKeyPem | Set-Content -Path 'C:\path\to\private.key'
+
+Creates a CSR with minimal subject information and saves the CSR and private key to files.
 
 ### EXAMPLE 2
 
-$csr, $priv = New-KestrunCertificateRequest -DnsNames 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
-$csr | Set-Content -Path 'C:\path\to\csr.pem'
-$priv | Set-Content -Path 'C:\path\to\private.key'
+$csrResult = New-KrCertificateRequest -DnsNames 'example.com' -Country US -Org 'Example Corp' -OrgUnit 'IT' -CommonName 'example.com'
+$csrResult.CsrPem | Set-Content -Path 'C:\path\to\csr.pem'
+$csrResult.PrivateKeyPem | Set-Content -Path 'C:\path\to\private.key'
+
+Creates a CSR with detailed subject information and saves the CSR and private key to files.
+
+### EXAMPLE 3
+
+$csrResult = New-KrCertificateRequest -DnsNames 'example.com' -CommonName 'example.com' -KeyUsage DigitalSignature,KeyEncipherment
+$csrResult.CsrPem
+
+Creates a CSR that includes an explicit key-usage extension request.
 
 ## PARAMETERS
 
@@ -167,6 +170,28 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -KeyUsage
+
+Optional X.509 key usage flags to include in the CSR extension request.
+Use this when the target CA or downstream tooling expects explicit key-usage hints in the CSR.
+
+```yaml
+Type: System.Security.Cryptography.X509Certificates.X509KeyUsageFlags[]
+DefaultValue: '@()'
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 7
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Org
 
 The organization name to include in the CSR.
@@ -222,7 +247,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### [Kestrun.Certificates.CertificateManager.CsrResult]
+### [Kestrun.Certificates.CsrResult]
 
 {{ Fill in the Description }}
 

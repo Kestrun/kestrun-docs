@@ -27,8 +27,8 @@ public static class CertificateManager
 | static [GetPurposes](CertificateManager/GetPurposes)(…) | Gets the enhanced key usage purposes (EKU) from the specified X509 certificate. |
 | static [Import](CertificateManager/Import)(…) | Imports an X509 certificate from the specified file path, with optional password and private key file. (4 methods) |
 | static [NewCertificateRequest](CertificateManager/NewCertificateRequest)(…) | Creates a new Certificate Signing Request (CSR) and returns the PEM-encoded CSR and the private key. |
-| static [NewSelfSigned](CertificateManager/NewSelfSigned)(…) | Creates a new self-signed X509 certificate using the specified options. |
-| static [Validate](CertificateManager/Validate)(…) | Validates the specified X509 certificate according to the provided options. |
+| static [NewSelfSigned](CertificateManager/NewSelfSigned)(…) | Creates a new self-signed certificate based on the provided options. If the Development flag is set, a development certificate bundle (including a root and leaf certificate) will be created; otherwise, a single self-signed certificate will be generated according to the specified options. |
+| static [Validate](CertificateManager/Validate)(…) | Validates the specified X509 certificate according to the provided options. (4 methods) |
 
 ## See Also
 

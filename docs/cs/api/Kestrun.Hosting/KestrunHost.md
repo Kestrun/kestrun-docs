@@ -31,6 +31,7 @@ public class KestrunHost : IDisposable
 | [ApplicationName](KestrunHost/ApplicationName) { get; } | Gets the application name for the Kestrun host. |
 | [ComponentAnnotations](KestrunHost/ComponentAnnotations) { get; } | Gets the scanned OpenAPI component annotations from PowerShell scripts. |
 | [CorsPolicyDefined](KestrunHost/CorsPolicyDefined) { get; } | Gets or sets a value indicating whether CORS (Cross-Origin Resource Sharing) is enabled. |
+| [CurrentUrls](KestrunHost/CurrentUrls) { get; } | Gets the currently known application URLs for this host. |
 | [DefaultCacheControl](KestrunHost/DefaultCacheControl) { get; } | Gets or sets the default cache control settings for HTTP responses. |
 | [DefaultHost](KestrunHost/DefaultHost) { get; } | Gets or sets a value indicating whether this instance is the default Kestrun host. |
 | [DefaultOpenApiDocumentDescriptor](KestrunHost/DefaultOpenApiDocumentDescriptor) { get; } | Gets the default OpenAPI document descriptor. |

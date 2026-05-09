@@ -17,12 +17,21 @@ public record SelfSignedOptions
 | name | description |
 | --- | --- |
 | [SelfSignedOptions](SelfSignedOptions/SelfSignedOptions)(…) | Options for creating a self-signed certificate. |
-| [DnsNames](SelfSignedOptions/DnsNames) { get; set; } | The DNS names to include in the certificate's Subject Alternative Name (SAN) extension. |
+| [Development](SelfSignedOptions/Development) { get; set; } | If true, creates a development bundle consisting of a CA root certificate and an issued leaf certificate. |
+| [DnsNames](SelfSignedOptions/DnsNames) { get; set; } | The DNS names to include in the certificate's Subject Alternative Name (SAN) extension. When *Development* is true and this value is null, localhost loopback defaults are used for the leaf certificate. |
 | [Ephemeral](SelfSignedOptions/Ephemeral) { get; set; } | If true, the certificate will not be stored in the Windows certificate store. |
 | [Exportable](SelfSignedOptions/Exportable) { get; set; } | If true, the private key can be exported from the certificate. |
+| [IsCertificateAuthority](SelfSignedOptions/IsCertificateAuthority) { get; set; } | If true, emits a CA certificate suitable for issuing child certificates. |
+| [IssuerCertificate](SelfSignedOptions/IssuerCertificate) { get; set; } | Optional issuer certificate used to sign the generated certificate. The issuer must contain a private key and be a CA certificate. |
 | [KeyLength](SelfSignedOptions/KeyLength) { get; set; } | The length of the cryptographic key in bits. |
 | [KeyType](SelfSignedOptions/KeyType) { get; set; } | The type of cryptographic key to use (RSA or ECDSA). |
+| [KeyUsageFlags](SelfSignedOptions/KeyUsageFlags) { get; set; } | The X.509 Key Usage flags to apply to the certificate. Null or None uses the default flags for the selected key type. |
+| [LeafValidDays](SelfSignedOptions/LeafValidDays) { get; set; } | The number of days the generated development leaf certificate is valid. |
 | [Purposes](SelfSignedOptions/Purposes) { get; set; } | The key purposes (Extended Key Usage) for the certificate. |
+| [RootCertificate](SelfSignedOptions/RootCertificate) { get; set; } | Optional development root certificate used to sign the generated development leaf certificate. |
+| [RootName](SelfSignedOptions/RootName) { get; set; } | The common name to use when creating a new development root certificate. |
+| [RootValidDays](SelfSignedOptions/RootValidDays) { get; set; } | The number of days a generated development root certificate is valid. |
+| [TrustRoot](SelfSignedOptions/TrustRoot) { get; set; } | When true on Windows, adds the effective development root certificate to the CurrentUser Root store. |
 | [ValidDays](SelfSignedOptions/ValidDays) { get; set; } | The number of days the certificate will be valid. |
 
 ## Remarks

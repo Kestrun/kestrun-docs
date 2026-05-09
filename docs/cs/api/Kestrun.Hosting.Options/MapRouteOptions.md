@@ -26,6 +26,7 @@ public class MapRouteOptions
 | [DisableResponseCompression](MapRouteOptions/DisableResponseCompression) { get; set; } | If true, disables response compression for this route. |
 | [Endpoints](MapRouteOptions/Endpoints) { get; set; } | Endpoints to bind the route to, if any. |
 | [FormOptions](MapRouteOptions/FormOptions) { get; set; } | Form parsing options for this route, if any. |
+| [HandlerName](MapRouteOptions/HandlerName) { get; set; } | Best-effort handler identity for the route when a named source is available. |
 | [HttpVerbs](MapRouteOptions/HttpVerbs) { get; set; } | The HTTP verbs (methods) that this route responds to. |
 | [IsOpenApiAnnotatedFunctionRoute](MapRouteOptions/IsOpenApiAnnotatedFunctionRoute) { get; set; } | Indicates whether this route originated from an OpenAPI-annotated function definition. |
 | [OpenAPI](MapRouteOptions/OpenAPI) { get; set; } | OpenAPI metadata for this route. |

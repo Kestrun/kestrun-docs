@@ -6,10 +6,10 @@ grand_parent: "C# API"
 ---
 # SelfSignedOptions.DnsNames property
 
-The DNS names to include in the certificate's Subject Alternative Name (SAN) extension.
+The DNS names to include in the certificate's Subject Alternative Name (SAN) extension. When *Development* is true and this value is null, localhost loopback defaults are used for the leaf certificate.
 
 ```csharp
-public IEnumerable<string> DnsNames { get; set; }
+public IEnumerable<string>? DnsNames { get; set; }
 ```
 
 ## See Also

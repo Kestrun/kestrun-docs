@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "CertificateManager.Validate method"
+title: "CertificateManager.Validate method (1 of 4)"
 parent: "Kestrun.Certificates"
 grand_parent: "C# API"
 ---
-# CertificateManager.Validate method
+# CertificateManager.Validate method (1 of 4)
 
 Validates the specified X509 certificate according to the provided options.
 
@@ -22,6 +22,100 @@ public static bool Validate(X509Certificate2 cert, bool checkRevocation = false,
 | denySelfSigned | Whether to deny self-signed certificates. |
 | expectedPurpose | A collection of expected key purposes (EKU) for the certificate. |
 | strictPurpose | If true, the certificate must match the expected purposes exactly. |
+
+## Return Value
+
+True if the certificate is valid according to the specified options; otherwise, false.
+
+## See Also
+
+* class [CertificateManager](../CertificateManager)
+* namespace [Kestrun.Certificates](../../Kestrun)
+
+---
+
+# CertificateManager.Validate method (2 of 4)
+
+Validates the specified X509 certificate according to the provided options.
+
+```csharp
+public static bool Validate(X509Certificate2 cert, bool checkRevocation, bool allowWeakAlgorithms, 
+    bool denySelfSigned, OidCollection? expectedPurpose, bool strictPurpose, 
+    out string failureReason)
+```
+
+| parameter | description |
+| --- | --- |
+| cert | The X509Certificate2 to validate. |
+| checkRevocation | Whether to check certificate revocation status. |
+| allowWeakAlgorithms | Whether to allow weak algorithms such as SHA-1 or small key sizes. |
+| denySelfSigned | Whether to deny self-signed certificates. |
+| expectedPurpose | A collection of expected key purposes (EKU) for the certificate. |
+| strictPurpose | If true, the certificate must match the expected purposes exactly. |
+| failureReason | The reason validation failed; empty when validation succeeds. |
+
+## Return Value
+
+True if the certificate is valid according to the specified options; otherwise, false.
+
+## See Also
+
+* class [CertificateManager](../CertificateManager)
+* namespace [Kestrun.Certificates](../../Kestrun)
+
+---
+
+# CertificateManager.Validate method (3 of 4)
+
+Validates the specified X509 certificate according to the provided options.
+
+```csharp
+public static bool Validate(X509Certificate2 cert, bool checkRevocation, bool allowWeakAlgorithms, 
+    bool denySelfSigned, OidCollection? expectedPurpose, bool strictPurpose, 
+    X509Certificate2Collection? certificateChain)
+```
+
+| parameter | description |
+| --- | --- |
+| cert | The X509Certificate2 to validate. |
+| checkRevocation | Whether to check certificate revocation status. |
+| allowWeakAlgorithms | Whether to allow weak algorithms such as SHA-1 or small key sizes. |
+| denySelfSigned | Whether to deny self-signed certificates. |
+| expectedPurpose | A collection of expected key purposes (EKU) for the certificate. |
+| strictPurpose | If true, the certificate must match the expected purposes exactly. |
+| certificateChain | Optional chain certificates used to help build trust, such as a private development root or intermediates. |
+
+## Return Value
+
+True if the certificate is valid according to the specified options; otherwise, false.
+
+## See Also
+
+* class [CertificateManager](../CertificateManager)
+* namespace [Kestrun.Certificates](../../Kestrun)
+
+---
+
+# CertificateManager.Validate method (4 of 4)
+
+Validates the specified X509 certificate according to the provided options.
+
+```csharp
+public static bool Validate(X509Certificate2 cert, bool checkRevocation, bool allowWeakAlgorithms, 
+    bool denySelfSigned, OidCollection? expectedPurpose, bool strictPurpose, 
+    X509Certificate2Collection? certificateChain, out string failureReason)
+```
+
+| parameter | description |
+| --- | --- |
+| cert | The X509Certificate2 to validate. |
+| checkRevocation | Whether to check certificate revocation status. |
+| allowWeakAlgorithms | Whether to allow weak algorithms such as SHA-1 or small key sizes. |
+| denySelfSigned | Whether to deny self-signed certificates. |
+| expectedPurpose | A collection of expected key purposes (EKU) for the certificate. |
+| strictPurpose | If true, the certificate must match the expected purposes exactly. |
+| certificateChain | Optional chain certificates used to help build trust, such as a private development root or intermediates. |
+| failureReason | The reason validation failed; empty when validation succeeds. |
 
 ## Return Value
 

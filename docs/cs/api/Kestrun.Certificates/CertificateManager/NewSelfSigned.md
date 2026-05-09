@@ -6,10 +6,10 @@ grand_parent: "C# API"
 ---
 # CertificateManager.NewSelfSigned method
 
-Creates a new self-signed X509 certificate using the specified options.
+Creates a new self-signed certificate based on the provided options. If the Development flag is set, a development certificate bundle (including a root and leaf certificate) will be created; otherwise, a single self-signed certificate will be generated according to the specified options.
 
 ```csharp
-public static X509Certificate2 NewSelfSigned(SelfSignedOptions o)
+public static SelfSignedCertificateResult NewSelfSigned(SelfSignedOptions o)
 ```
 
 | parameter | description |
@@ -18,10 +18,11 @@ public static X509Certificate2 NewSelfSigned(SelfSignedOptions o)
 
 ## Return Value
 
-A new self-signed X509Certificate2 instance.
+A result containing the generated certificate and any development-bundle metadata.
 
 ## See Also
 
+* record [SelfSignedCertificateResult](../SelfSignedCertificateResult)
 * record [SelfSignedOptions](../SelfSignedOptions)
 * class [CertificateManager](../CertificateManager)
 * namespace [Kestrun.Certificates](../../Kestrun)

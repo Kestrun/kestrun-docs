@@ -3,15 +3,7 @@ layout: default
 parent: PowerShell Cmdlets
 nav_order: 10
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/certauth
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: Add-KrClientCertificateAuthentication
----
 
 # Add-KrClientCertificateAuthentication
 

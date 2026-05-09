@@ -43,6 +43,7 @@ It combines the performance of C# with the flexibility of PowerShell, making it 
 - 📚 **Tutorials**: [pwsh/tutorial/](/pwsh/tutorial/)
 - 📘 **Guides**: [guides/](/guides/)
 - 🛠️ **Dotnet Tool**: [Kestrun CLI (`Kestrun.Tool`)](/guides/tooling)
+- 🤖 **MCP Server**: [Kestrun MCP Guide](/guides/mcp)
 
 ## Getting started
 
@@ -63,6 +64,7 @@ Use the [Guides](/guides/) to add real-world features:
 - Authentication (JWT, API keys, etc.)
 - Logging and observability
 - OpenAPI documentation and UI
+- MCP-based runtime inspection and local agent tooling
 
 ### 3. Run and test locally
 
@@ -73,7 +75,7 @@ Spin up your server, validate endpoints, and iterate quickly.
 Choose your deployment model:
 
 - **Service/daemon** → [Production Deployment](/guides/production-service-daemon)
-- **Container** → see the repository examples today; dedicated deployment docs are still planned
+- **Container** → [Production Deployment (Container)](/guides/production-container)
 
 ## Minimal example
 
@@ -93,6 +95,15 @@ Add-KrMapRoute -Verbs Get -Path '/cs/hello' -Code @'
 
 Start-KrServer
 ```
+
+By default, `Add-KrEndpoint -Port 5000` binds loopback (`127.0.0.1` for IPv4).
+Environment-based bindings such as `$env:PORT` and `ASPNETCORE_URLS` can still
+target all interfaces when the deployment requires it.
+
+`Add-KrEndpoint` also supports environment-based binding when no explicit target is provided. For example,
+`$env:PORT='8080'; Add-KrEndpoint` binds to `0.0.0.0:8080`, and `ASPNETCORE_URLS` supports full listener URLs.
+When you need listener-specific routing, `Add-KrEndpoint -PassThru` returns endpoint spec strings that can be
+passed directly to `Add-KrMapRoute -Endpoints`.
 
 ## OpenAPI example
 
@@ -136,7 +147,3 @@ Start-KrServer
 [Kestrel documentation]: https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
 [PowerShell documentation]: https://learn.microsoft.com/en-us/powershell/
 [OpenAPI documentation]:https://spec.openapis.org/oas/
-
----
-
-<small>If Kestrun helps you, consider supporting the project ☕</small>

@@ -1,17 +1,9 @@
 ---
 layout: default
 parent: PowerShell Cmdlets
-nav_order: 164
+nav_order: 168
 render_with_liquid: false
-ocument type: cmdlet
-external help file: Kestrun-Help.xml
-HelpUri: ''
-Locale: en-US
-Module Name: Kestrun
-ms.date: 04/01/2026
-PlatyPS schema version: 2024-05-01
 title: New-KrServiceDescriptor
----
 
 # New-KrServiceDescriptor
 
@@ -26,7 +18,8 @@ Creates a Service.psd1 descriptor file.
 ```powershell
 New-KrServiceDescriptor [[-Path] <string>] [-Name] <string> [-Description] <string>
  [-Version] <version> [[-EntryPoint] <string>] [[-ServiceLogPath] <string>]
- [[-PreservePaths] <string[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-PreservePaths] <string[]>] [[-ApplicationDataFolders] <string[]>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -38,7 +31,7 @@ This cmdlet has the following aliases,
 
 Creates a Service.psd1 descriptor file used by Kestrun.Tool content-root service install flow.
 Required keys are FormatVersion, Name, Description, Version, and EntryPoint.
-Optional keys are ServiceLogPath and PreservePaths.
+Optional keys are ServiceLogPath, PreservePaths, and ApplicationDataFolders.
 
 ## EXAMPLES
 
@@ -47,6 +40,27 @@ Optional keys are ServiceLogPath and PreservePaths.
 New-KrServiceDescriptor -Name demo -Description 'Demo service' -Version 1.2.0
 
 ## PARAMETERS
+
+### -ApplicationDataFolders
+
+Optional list of relative application-data folders that must be preserved during service update.
+
+```yaml
+Type: System.String[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: 7
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
 
 ### -Confirm
 
