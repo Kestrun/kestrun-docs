@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 99
 render_with_liquid: false
 title: Export-KrOpenApiDocument
+---
 
 # Export-KrOpenApiDocument
 

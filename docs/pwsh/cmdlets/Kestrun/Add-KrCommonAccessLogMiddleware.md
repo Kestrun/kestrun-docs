@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 11
 render_with_liquid: false
 title: Add-KrCommonAccessLogMiddleware
+---
 
 # Add-KrCommonAccessLogMiddleware
 
@@ -16,18 +17,17 @@ Adds Apache style common access logging to the Kestrun server.
 ### Logger (Default)
 
 ```powershell
-Add-KrCommonAccessLogMiddleware [-Server <KestrunHost>] [-Level <LogEventLevel>] [-Logger <ILogger>]
- [-ExcludeQueryString] [-ExcludeProtocol] [-IncludeElapsedMilliseconds] [-UseUtcTimestamp]
- [-TimestampFormat <string>] [-ClientAddressHeader <string>] [-PassThru] [<CommonParameters>]
+Add-KrCommonAccessLogMiddleware [-Level <LogEventLevel>] [-Logger <ILogger>] [-ExcludeQueryString]
+ [-ExcludeProtocol] [-IncludeElapsedMilliseconds] [-UseUtcTimestamp] [-TimestampFormat <string>]
+ [-ClientAddressHeader <string>] [<CommonParameters>]
 ```
 
 ### LoggerName
 
 ```powershell
-Add-KrCommonAccessLogMiddleware -LoggerName <string> [-Server <KestrunHost>]
- [-Level <LogEventLevel>] [-ExcludeQueryString] [-ExcludeProtocol] [-IncludeElapsedMilliseconds]
- [-UseUtcTimestamp] [-TimestampFormat <string>] [-ClientAddressHeader <string>] [-PassThru]
- [<CommonParameters>]
+Add-KrCommonAccessLogMiddleware -LoggerName <string> [-Level <LogEventLevel>] [-ExcludeQueryString]
+ [-ExcludeProtocol] [-IncludeElapsedMilliseconds] [-UseUtcTimestamp] [-TimestampFormat <string>]
+ [-ClientAddressHeader <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -53,9 +53,9 @@ and configures it to log timestamps in UTC.
 
 ### EXAMPLE 2
 
-$server = New-KrServer -Name "My Server" |
-    Add-KrListener -Port 8080 -IPAddress ([IPAddress]::Any) |
-    Add-KrCommonAccessLogMiddleware -LoggerName 'myLogger' -PassThru
+New-KrServer -Name "My Server"
+Add-KrListener -Port 8080 -IPAddress ([IPAddress]::Any)
+Add-KrCommonAccessLogMiddleware -LoggerName 'myLogger'
 
 Creates a new Kestrun server instance, adds a listener on port 8080 and the PowerShell runtime,
 then adds the Common Access Log middleware using the named logger 'myLogger' and returns the
@@ -221,49 +221,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-Returns the server instance to enable fluent pipelines when specified.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The target Kestrun server instance.
-When omitted the current server is resolved automatically.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -TimestampFormat
 
 Optional custom timestamp format string.
@@ -316,15 +273,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

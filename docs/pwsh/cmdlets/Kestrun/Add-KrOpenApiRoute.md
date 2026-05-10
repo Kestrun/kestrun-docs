@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 57
 render_with_liquid: false
 title: Add-KrOpenApiRoute
+---
 
 # Add-KrOpenApiRoute
 

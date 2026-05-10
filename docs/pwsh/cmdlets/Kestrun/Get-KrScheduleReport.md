@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 124
 render_with_liquid: false
 title: Get-KrScheduleReport
+---
 
 # Get-KrScheduleReport
 

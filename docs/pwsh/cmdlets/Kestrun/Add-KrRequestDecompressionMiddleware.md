@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 63
 render_with_liquid: false
 title: Add-KrRequestDecompressionMiddleware
+---
 
 # Add-KrRequestDecompressionMiddleware
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 74
 render_with_liquid: false
 title: Add-KrSinkSyslogLocal
+---
 
 # Add-KrSinkSyslogLocal
 

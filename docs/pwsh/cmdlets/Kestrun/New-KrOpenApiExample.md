@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 158
 render_with_liquid: false
 title: New-KrOpenApiExample
+---
 
 # New-KrOpenApiExample
 

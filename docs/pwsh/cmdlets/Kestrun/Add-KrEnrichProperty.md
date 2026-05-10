@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 24
 render_with_liquid: false
 title: Add-KrEnrichProperty
+---
 
 # Add-KrEnrichProperty
 

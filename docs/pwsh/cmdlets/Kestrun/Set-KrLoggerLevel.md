@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 195
 render_with_liquid: false
 title: Set-KrLoggerLevel
+---
 
 # Set-KrLoggerLevel
 

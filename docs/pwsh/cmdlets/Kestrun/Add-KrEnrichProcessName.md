@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 23
 render_with_liquid: false
 title: Add-KrEnrichProcessName
+---
 
 # Add-KrEnrichProcessName
 

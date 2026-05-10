@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 46
 render_with_liquid: false
 title: Add-KrLocalizationMiddleware
+---
 
 # Add-KrLocalizationMiddleware
 
@@ -16,17 +17,15 @@ Adds localization middleware to the Kestrun server.
 ### Items (Default)
 
 ```powershell
-Add-KrLocalizationMiddleware [-Server <KestrunHost>] [-DefaultCulture <string>]
- [-ResourcesBasePath <string>] [-FileName <string>] [-QueryKey <string>] [-CookieName <string>]
- [-DisableAcceptLanguage] [-EnableQuery] [-EnableCookie] [-SetDefaultThreadCulture] [-PassThru]
- [<CommonParameters>]
+Add-KrLocalizationMiddleware [-DefaultCulture <string>] [-ResourcesBasePath <string>]
+ [-FileName <string>] [-QueryKey <string>] [-CookieName <string>] [-DisableAcceptLanguage]
+ [-EnableQuery] [-EnableCookie] [-SetDefaultThreadCulture] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrLocalizationMiddleware -Options <KestrunLocalizationOptions> [-Server <KestrunHost>]
- [-PassThru] [<CommonParameters>]
+Add-KrLocalizationMiddleware -Options <KestrunLocalizationOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -208,27 +207,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-Returns the server instance for chaining.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -QueryKey
 
 Query string key used to request a culture.
@@ -266,27 +244,6 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to configure.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -333,15 +290,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

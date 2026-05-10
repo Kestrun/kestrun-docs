@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 160
 render_with_liquid: false
 title: New-KrOpenApiHeader
+---
 
 # New-KrOpenApiHeader
 

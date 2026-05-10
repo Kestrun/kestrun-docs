@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 166
 render_with_liquid: false
 title: New-KrSelfSignedCertificate
+---
 
 # New-KrSelfSignedCertificate
 

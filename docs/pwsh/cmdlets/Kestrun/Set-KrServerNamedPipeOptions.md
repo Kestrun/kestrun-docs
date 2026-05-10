@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 202
 render_with_liquid: false
 title: Set-KrServerNamedPipeOptions
+---
 
 # Set-KrServerNamedPipeOptions
 

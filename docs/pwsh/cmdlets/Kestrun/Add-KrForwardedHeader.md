@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 29
 render_with_liquid: false
 title: Add-KrForwardedHeader
+---
 
 # Add-KrForwardedHeader
 
@@ -16,20 +17,19 @@ Adds Forwarded Headers middleware to a Kestrun server.
 ### Items (Default)
 
 ```powershell
-Add-KrForwardedHeader [-Server <KestrunHost>] [-XForwardedFor] [-XForwardedProto] [-XForwardedHost]
- [-XForwardedPrefix] [-All] [-ForwardLimit <int>] [-KnownNetworks <string[]>]
- [-KnownProxies <string[]>] [-ForwardedForHeaderName <string>] [-ForwardedProtoHeaderName <string>]
+Add-KrForwardedHeader [-XForwardedFor] [-XForwardedProto] [-XForwardedHost] [-XForwardedPrefix]
+ [-All] [-ForwardLimit <int>] [-KnownNetworks <string[]>] [-KnownProxies <string[]>]
+ [-ForwardedForHeaderName <string>] [-ForwardedProtoHeaderName <string>]
  [-ForwardedHostHeaderName <string>] [-ForwardedPrefixHeaderName <string>]
  [-OriginalForHeaderName <string>] [-OriginalProtoHeaderName <string>]
  [-OriginalHostHeaderName <string>] [-OriginalPrefixHeaderName <string>] [-RequireHeaderSymmetry]
- [-PassThru] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrForwardedHeader -Options <ForwardedHeadersOptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrForwardedHeader -Options <ForwardedHeadersOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -336,28 +336,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet returns the Kestrun server instance after adding
-the middleware.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -RequireHeaderSymmetry
 
 Switch to require that all enabled forwarded headers are present in the request.
@@ -372,28 +350,6 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the Forwarded Headers middleware will be added.
-If not specified, the cmdlet will attempt to resolve the current server context.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -494,15 +450,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

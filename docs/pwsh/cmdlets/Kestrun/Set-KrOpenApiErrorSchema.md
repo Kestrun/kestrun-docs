@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 197
 render_with_liquid: false
 title: Set-KrOpenApiErrorSchema
+---
 
 # Set-KrOpenApiErrorSchema
 

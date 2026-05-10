@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 175
 render_with_liquid: false
 title: Register-KrLogger
+---
 
 # Register-KrLogger
 

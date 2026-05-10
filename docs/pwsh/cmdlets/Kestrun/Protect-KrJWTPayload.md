@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 173
 render_with_liquid: false
 title: Protect-KrJWTPayload
+---
 
 # Protect-KrJWTPayload
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 2
 render_with_liquid: false
 title: Add-KrAntiforgeryMiddleware
+---
 
 # Add-KrAntiforgeryMiddleware
 
@@ -16,16 +17,14 @@ Adds an Antiforgery service to the server.
 ### Items (Default)
 
 ```powershell
-Add-KrAntiforgeryMiddleware [-Server <KestrunHost>] [-FormFieldName <string>] [-CookieName <string>]
- [-HeaderName <string>] [-SuppressXFrameOptionsHeader] [-SuppressReadingTokenFromFormBody]
- [-PassThru] [<CommonParameters>]
+Add-KrAntiforgeryMiddleware [-FormFieldName <string>] [-CookieName <string>] [-HeaderName <string>]
+ [-SuppressXFrameOptionsHeader] [-SuppressReadingTokenFromFormBody] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrAntiforgeryMiddleware -Options <AntiforgeryOptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrAntiforgeryMiddleware -Options <AntiforgeryOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -42,12 +41,12 @@ It can be used to protect against Cross-Site Request Forgery (CSRF) attacks by g
 
 ### EXAMPLE 1
 
-$server | Add-KrAntiforgeryMiddleware -Cookie $cookieBuilder -FormField '__RequestVerificationToken' -HeaderName 'X-CSRF-Token' -SuppressXFrameOptionsHeader
+Add-KrAntiforgeryMiddleware -Cookie $cookieBuilder -FormField '__RequestVerificationToken' -HeaderName 'X-CSRF-Token' -SuppressXFrameOptionsHeader
 This example adds an Antiforgery service to the server with a custom cookie builder, form field name, and header name.
 
 ### EXAMPLE 2
 
-$server | Add-KrAntiforgeryMiddleware -Options $options
+Add-KrAntiforgeryMiddleware -Options $options
 This example adds an Antiforgery service to the server using the specified Antiforgery options.
 
 ## PARAMETERS
@@ -55,7 +54,7 @@ This example adds an Antiforgery service to the server using the specified Antif
 ### -CookieName
 
 The name of the cookie to use for the Antiforgery token.
-Default is ".Kestrun.AntiXSRF".
+Default is '.Kestrun.AntiXSRF'.
 
 ```yaml
 Type: System.String
@@ -99,7 +98,7 @@ HelpMessage: ''
 ### -HeaderName
 
 The name of the header to use for the Antiforgery token.
-Default is "X-CSRF-TOKEN".
+Default is 'X-CSRF-TOKEN'.
 
 ```yaml
 Type: System.String
@@ -132,48 +131,6 @@ ParameterSets:
   Position: Named
   IsRequired: true
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance after adding the Antiforgery service.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the Antiforgery service will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -233,15 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

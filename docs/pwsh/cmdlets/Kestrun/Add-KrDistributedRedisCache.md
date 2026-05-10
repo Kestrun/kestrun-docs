@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 15
 render_with_liquid: false
 title: Add-KrDistributedRedisCache
+---
 
 # Add-KrDistributedRedisCache
 

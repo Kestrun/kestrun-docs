@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 25
 render_with_liquid: false
 title: Add-KrFaviconMiddleware
+---
 
 # Add-KrFaviconMiddleware
 
@@ -16,8 +17,7 @@ Adds a favicon to the Kestrun server.
 ### __AllParameterSets
 
 ```powershell
-Add-KrFaviconMiddleware [[-Server] <KestrunHost>] [[-IconPath] <string>] [-PassThru]
- [<CommonParameters>]
+Add-KrFaviconMiddleware [[-IconPath] <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -34,12 +34,12 @@ It can be used to set a custom favicon for the server's web interface.
 
 ### EXAMPLE 1
 
-$server | Add-KrFaviconMiddleware -IconPath 'C:\path\to\favicon.ico'
+Add-KrFaviconMiddleware -IconPath 'C:\path\to\favicon.ico'
 This example adds a custom favicon to the server from the specified path.
 
 ### EXAMPLE 2
 
-$server | Add-KrFaviconMiddleware
+Add-KrFaviconMiddleware
 This example adds the default embedded favicon to the server.
 
 ## PARAMETERS
@@ -56,51 +56,9 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -PassThru
-
-If specified, returns the modified server instance after adding the favicon.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the favicon will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
   Position: 0
   IsRequired: false
-  ValueFromPipeline: true
+  ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -116,10 +74,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## OUTPUTS
 

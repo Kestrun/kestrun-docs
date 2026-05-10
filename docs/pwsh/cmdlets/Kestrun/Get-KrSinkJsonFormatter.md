@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 133
 render_with_liquid: false
 title: Get-KrSinkJsonFormatter
+---
 
 # Get-KrSinkJsonFormatter
 

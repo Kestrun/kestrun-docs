@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 186
 render_with_liquid: false
 title: Send-KrSseBroadcastEvent
+---
 
 # Send-KrSseBroadcastEvent
 

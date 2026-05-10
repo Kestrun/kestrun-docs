@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 141
 render_with_liquid: false
 title: Initialize-KrRoot
+---
 
 # Initialize-KrRoot
 

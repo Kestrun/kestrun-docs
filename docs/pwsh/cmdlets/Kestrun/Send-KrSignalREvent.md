@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 183
 render_with_liquid: false
 title: Send-KrSignalREvent
+---
 
 # Send-KrSignalREvent
 

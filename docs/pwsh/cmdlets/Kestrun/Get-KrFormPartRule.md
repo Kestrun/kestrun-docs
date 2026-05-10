@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 107
 render_with_liquid: false
 title: Get-KrFormPartRule
+---
 
 # Get-KrFormPartRule
 

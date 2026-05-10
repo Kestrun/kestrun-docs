@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 40
 render_with_liquid: false
 title: Add-KrJWTBearerAuthentication
+---
 
 # Add-KrJWTBearerAuthentication
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 53
 render_with_liquid: false
 title: Add-KrOpenApiExternalDoc
+---
 
 # Add-KrOpenApiExternalDoc
 

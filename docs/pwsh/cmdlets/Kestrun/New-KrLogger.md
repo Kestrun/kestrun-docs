@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 156
 render_with_liquid: false
 title: New-KrLogger
+---
 
 # New-KrLogger
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 10
 render_with_liquid: false
 title: Add-KrClientCertificateAuthentication
+---
 
 # Add-KrClientCertificateAuthentication
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 188
 render_with_liquid: false
 title: Set-KrCorsExposedHeader
+---
 
 # Set-KrCorsExposedHeader
 

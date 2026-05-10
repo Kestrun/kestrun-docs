@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 191
 render_with_liquid: false
 title: Set-KrCorsOrigin
+---
 
 # Set-KrCorsOrigin
 

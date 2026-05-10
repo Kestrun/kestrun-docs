@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 112
 render_with_liquid: false
 title: Get-KrLocalizationCulture
+---
 
 # Get-KrLocalizationCulture
 

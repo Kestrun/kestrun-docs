@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 151
 render_with_liquid: false
 title: New-KrCookieBuilder
+---
 
 # New-KrCookieBuilder
 

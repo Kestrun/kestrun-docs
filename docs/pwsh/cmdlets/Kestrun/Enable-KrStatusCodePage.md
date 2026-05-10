@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 96
 render_with_liquid: false
 title: Enable-KrStatusCodePage
+---
 
 # Enable-KrStatusCodePage
 
@@ -16,56 +17,52 @@ Enables Status Code Pages for a Kestrun server.
 ### Default (Default)
 
 ```powershell
-Enable-KrStatusCodePage [-Server <KestrunHost>] [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage [<CommonParameters>]
 ```
 
 ### Redirect
 
 ```powershell
-Enable-KrStatusCodePage -LocationFormat <string> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Enable-KrStatusCodePage -LocationFormat <string> [<CommonParameters>]
 ```
 
 ### ReExecute
 
 ```powershell
-Enable-KrStatusCodePage -PathFormat <string> [-Server <KestrunHost>] [-QueryFormat <string>]
- [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage -PathFormat <string> [-QueryFormat <string>] [<CommonParameters>]
 ```
 
 ### Template
 
 ```powershell
-Enable-KrStatusCodePage -ContentType <string> -BodyFormat <string> [-Server <KestrunHost>]
- [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage -ContentType <string> -BodyFormat <string> [<CommonParameters>]
 ```
 
 ### LanguageOptions
 
 ```powershell
-Enable-KrStatusCodePage [-Server <KestrunHost>] [-LanguageOptions <LanguageOptions>] [-PassThru]
- [<CommonParameters>]
+Enable-KrStatusCodePage [-LanguageOptions <LanguageOptions>] [<CommonParameters>]
 ```
 
 ### ScriptBlock
 
 ```powershell
-Enable-KrStatusCodePage [-Server <KestrunHost>] [-ScriptBlock <scriptblock>]
- [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>] [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage [-ScriptBlock <scriptblock>] [-ExtraRefs <Assembly[]>]
+ [-Arguments <hashtable>] [<CommonParameters>]
 ```
 
 ### Code
 
 ```powershell
-Enable-KrStatusCodePage -Code <string> -Language <ScriptLanguage> [-Server <KestrunHost>]
- [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>] [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage -Code <string> -Language <ScriptLanguage> [-ExtraRefs <Assembly[]>]
+ [-Arguments <hashtable>] [<CommonParameters>]
 ```
 
 ### CodeFilePath
 
 ```powershell
-Enable-KrStatusCodePage -CodeFilePath <string> [-Server <KestrunHost>] [-ExtraRefs <Assembly[]>]
- [-Arguments <hashtable>] [-PassThru] [<CommonParameters>]
+Enable-KrStatusCodePage -CodeFilePath <string> [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>]
+ [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -361,27 +358,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the function will return the created route object.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -PathFormat
 
 The path to re-execute for ReExecute mode (e.g.
@@ -449,27 +425,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance (resolved if omitted via Resolve-KestrunServer).
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -479,15 +434,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

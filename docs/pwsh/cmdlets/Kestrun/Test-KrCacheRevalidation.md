@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 216
 render_with_liquid: false
 title: Test-KrCacheRevalidation
+---
 
 # Test-KrCacheRevalidation
 

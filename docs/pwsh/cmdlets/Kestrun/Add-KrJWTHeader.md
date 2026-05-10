@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 42
 render_with_liquid: false
 title: Add-KrJWTHeader
+---
 
 # Add-KrJWTHeader
 

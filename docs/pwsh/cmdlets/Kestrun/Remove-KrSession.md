@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 178
 render_with_liquid: false
 title: Remove-KrSession
+---
 
 # Remove-KrSession
 

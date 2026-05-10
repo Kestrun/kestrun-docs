@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 152
 render_with_liquid: false
 title: New-KrCorsPolicyBuilder
+---
 
 # New-KrCorsPolicyBuilder
 

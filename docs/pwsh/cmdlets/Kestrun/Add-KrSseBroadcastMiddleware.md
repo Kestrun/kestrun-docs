@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 77
 render_with_liquid: false
 title: Add-KrSseBroadcastMiddleware
+---
 
 # Add-KrSseBroadcastMiddleware
 
@@ -16,24 +17,23 @@ Adds an SSE broadcast endpoint to the server.
 ### Items (Default)
 
 ```powershell
-Add-KrSseBroadcastMiddleware [-Server <KestrunHost>] [-Path <string>] [-DocId <string[]>]
- [-KeepAliveSeconds <int>] [-OperationId <string>] [-Summary <string>] [-Description <string>]
- [-Tags <string[]>] [-StatusCode <string>] [-ResponseDescription <string>]
- [-ItemSchemaType <Object>] [-PassThru] [<CommonParameters>]
+Add-KrSseBroadcastMiddleware [-Path <string>] [-DocId <string[]>] [-KeepAliveSeconds <int>]
+ [-OperationId <string>] [-Summary <string>] [-Description <string>] [-Tags <string[]>]
+ [-StatusCode <string>] [-ResponseDescription <string>] [-ItemSchemaType <Object>]
+ [<CommonParameters>]
 ```
 
 ### ItemsSkipOpenApi
 
 ```powershell
-Add-KrSseBroadcastMiddleware [-Server <KestrunHost>] [-Path <string>] [-DocId <string[]>]
- [-SkipOpenApi] [-PassThru] [<CommonParameters>]
+Add-KrSseBroadcastMiddleware [-Path <string>] [-DocId <string[]>] [-SkipOpenApi]
+ [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrSseBroadcastMiddleware -Options <SseBroadcastOptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrSseBroadcastMiddleware -Options <SseBroadcastOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -56,9 +56,9 @@ Adds an SSE broadcast endpoint at '/sse/broadcast' and returns the server instan
 
 ### EXAMPLE 2
 
-$server = New-KrServer -Name 'MyServer'
-Add-KrSseBroadcastMiddleware -Server $server -Path '/events' -KeepAliveSeconds 30
-Adds an SSE broadcast endpoint at '/events' with 30-second keep-alives to the specified server.
+New-KrServer -Name 'MyServer'
+ Add-KrSseBroadcastMiddleware -Path '/events' -KeepAliveSeconds 30
+ Adds an SSE broadcast endpoint at '/events' with 30-second keep-alives to the specified server.
 
 ### EXAMPLE 3
 
@@ -210,27 +210,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, returns the modified server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Path
 
 The URL path where the SSE broadcast endpoint will be accessible.
@@ -273,28 +252,6 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance.
-If not provided, the default server is used.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -395,15 +352,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
 
 ## NOTES
 
 Call this before Enable-KrConfiguration.
+The SSE broadcast endpoint allows clients to connect and receive server-sent events broadcast via Send-KrSseBroadcastEvent.
+This cmdlet is part of the Kestrun PowerShell module and is used to manage SSE broadcast endpoints on the Kestrun server.
 
 
 ## RELATED LINKS

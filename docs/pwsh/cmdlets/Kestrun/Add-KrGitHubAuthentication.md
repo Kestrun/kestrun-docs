@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 30
 render_with_liquid: false
 title: Add-KrGitHubAuthentication
+---
 
 # Add-KrGitHubAuthentication
 

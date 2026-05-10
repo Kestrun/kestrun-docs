@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 242
 render_with_liquid: false
 title: Write-KrTextResponse
+---
 
 # Write-KrTextResponse
 

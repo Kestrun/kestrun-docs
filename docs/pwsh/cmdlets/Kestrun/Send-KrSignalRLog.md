@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 185
 render_with_liquid: false
 title: Send-KrSignalRLog
+---
 
 # Send-KrSignalRLog
 

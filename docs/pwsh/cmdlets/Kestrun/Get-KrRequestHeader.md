@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 120
 render_with_liquid: false
 title: Get-KrRequestHeader
+---
 
 # Get-KrRequestHeader
 

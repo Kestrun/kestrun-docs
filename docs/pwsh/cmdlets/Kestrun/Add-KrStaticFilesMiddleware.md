@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 78
 render_with_liquid: false
 title: Add-KrStaticFilesMiddleware
+---
 
 # Add-KrStaticFilesMiddleware
 
@@ -16,21 +17,20 @@ Registers a static file server to serve files from a specified path.
 ### Items (Default)
 
 ```powershell
-Add-KrStaticFilesMiddleware [-Server <KestrunHost>] [-RootPath <string>] [-RequestPath <string>]
+Add-KrStaticFilesMiddleware [-RootPath <string>] [-RequestPath <string>]
  [-HttpsCompression <HttpsCompressionMode>] [-ServeUnknownFileTypes] [-DefaultContentType <string>]
  [-RedirectToAppendTrailingSlash] [-ContentTypeMap <hashtable>] [-NoCache] [-NoStore]
  [-MaxAge <int>] [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>] [-MinFresh <int>]
  [-NoTransform] [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate] [-ProxyRevalidate]
- [-PassThru] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrStaticFilesMiddleware -Options <StaticFileOptions> [-Server <KestrunHost>] [-NoCache]
- [-NoStore] [-MaxAge <int>] [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>]
- [-MinFresh <int>] [-NoTransform] [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate]
- [-ProxyRevalidate] [-PassThru] [<CommonParameters>]
+Add-KrStaticFilesMiddleware -Options <StaticFileOptions> [-NoCache] [-NoStore] [-MaxAge <int>]
+ [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>] [-MinFresh <int>] [-NoTransform]
+ [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate] [-ProxyRevalidate] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -47,18 +47,18 @@ It can be used to serve files like images, stylesheets, and scripts.
 
 ### EXAMPLE 1
 
-$server | Add-KrStaticFilesMiddleware -RequestPath '/static' -HttpsCompression -ServeUnknownFileTypes -DefaultContentType 'application/octet-stream' -RedirectToAppendTrailingSlash
+Add-KrStaticFilesMiddleware -RequestPath '/static' -HttpsCompression -ServeUnknownFileTypes -DefaultContentType 'application/octet-stream' -RedirectToAppendTrailingSlash
 This example adds a static file service to the server for the path '/static', enabling HTTPS compression, allowing serving unknown file types,
 setting the default content type to 'application/octet-stream', and redirecting requests to append a trailing slash.
 
 ### EXAMPLE 2
 
-$server | Add-KrStaticFilesMiddleware -Options $options
+Add-KrStaticFilesMiddleware -Options $options
 This example adds a static file service to the server using the specified StaticFileOptions.
 
 ### EXAMPLE 3
 
-$server | Add-KrStaticFilesMiddleware -RequestPath '/static' -MaxAge 600 -Public -MustRevalidate
+Add-KrStaticFilesMiddleware -RequestPath '/static' -MaxAge 600 -Public -MustRevalidate
 This example adds a static file service to the server for the path '/static', setting caching headers with a max-age of 600 seconds,
 marking the response as public, and adding the must-revalidate directive.
 
@@ -337,27 +337,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance after adding the static file service.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Private
 
 If specified, adds a 'private' directive to the Cache-Control header.
@@ -484,27 +463,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance to which the static file service will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -ServeUnknownFileTypes
 
 If specified, allows serving files with unknown MIME types.
@@ -557,15 +515,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

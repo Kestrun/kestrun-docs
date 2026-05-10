@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 68
 render_with_liquid: false
 title: Add-KrSignalRHubMiddleware
+---
 
 # Add-KrSignalRHubMiddleware
 
@@ -16,23 +17,21 @@ Maps a SignalR hub class to the given URL path.
 ### Items (Default)
 
 ```powershell
-Add-KrSignalRHubMiddleware [-Server <KestrunHost>] [-Path <string>] [-DocId <string[]>]
- [-Summary <string>] [-Description <string>] [-Tags <string[]>] [-HubName <string>]
- [-IncludeNegotiateEndpoint] [-PassThru] [<CommonParameters>]
+Add-KrSignalRHubMiddleware [-Path <string>] [-DocId <string[]>] [-Summary <string>]
+ [-Description <string>] [-Tags <string[]>] [-HubName <string>] [-IncludeNegotiateEndpoint]
+ [<CommonParameters>]
 ```
 
 ### ItemsSkipOpenApi
 
 ```powershell
-Add-KrSignalRHubMiddleware [-Server <KestrunHost>] [-Path <string>] [-DocId <string[]>]
- [-SkipOpenApi] [-PassThru] [<CommonParameters>]
+Add-KrSignalRHubMiddleware [-Path <string>] [-DocId <string[]>] [-SkipOpenApi] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrSignalRHubMiddleware -Options <SignalROptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrSignalRHubMiddleware -Options <SignalROptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -48,8 +47,22 @@ This function allows you to map a SignalR hub class to a specific URL path on th
 
 ### EXAMPLE 1
 
-Add-KrSignalRHubMiddleware -Path '/hubs/notifications' -PassThru
-Adds a SignalR hub at the path '/hubs/notifications' and returns the modified server instance.
+Add-KrSignalRHubMiddleware -Path '/hubs/notifications' -HubName 'NotificationsHub' -IncludeNegotiateEndpoint
+Adds a SignalR hub at the path '/hubs/notifications' with the hub name 'NotificationsHub' and includes the negotiate endpoint.
+
+### EXAMPLE 2
+
+$options = [Kestrun.Hosting.Options.SignalROptions]::new()
+$options.Path = '/hubs/updates'
+$options.HubName = 'UpdatesHub'
+$options.IncludeNegotiateEndpoint = $true
+Add-KrSignalRHubMiddleware -Options $options
+Adds a SignalR hub at the path '/hubs/updates' with the hub name 'UpdatesHub' and includes the negotiate endpoint, using the provided options object for configuration.
+
+### EXAMPLE 3
+
+Add-KrSignalRHubMiddleware -Path '/hubs/alerts' -HubName 'AlertsHub' -SkipOpenApi
+Adds a SignalR hub at the path '/hubs/alerts' with the hub name 'AlertsHub' and skips OpenAPI documentation for this endpoint.
 
 ## PARAMETERS
 
@@ -167,27 +180,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance after adding the SignalR hub.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Path
 
 The URL path where the SignalR hub will be accessible.
@@ -209,27 +201,6 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the SignalR hub will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -308,10 +279,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## OUTPUTS
 

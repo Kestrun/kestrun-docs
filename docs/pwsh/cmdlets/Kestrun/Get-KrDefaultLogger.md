@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 103
 render_with_liquid: false
 title: Get-KrDefaultLogger
+---
 
 # Get-KrDefaultLogger
 

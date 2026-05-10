@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 66
 render_with_liquid: false
 title: Add-KrScriptBlock
+---
 
 # Add-KrScriptBlock
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 95
 render_with_liquid: false
 title: Enable-KrExceptionHandling
+---
 
 # Enable-KrExceptionHandling
 
@@ -16,59 +17,59 @@ Enables exception handling middleware for a Kestrun server instance.
 ### Default (Default)
 
 ```powershell
-Enable-KrExceptionHandling [-Server <KestrunHost>] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling [<CommonParameters>]
 ```
 
 ### ExceptionHandlingPath
 
 ```powershell
-Enable-KrExceptionHandling -ExceptionHandlingPath <string> [-Server <KestrunHost>]
- [-CreateScopeForErrors] [-AllowStatusCode404Response] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling -ExceptionHandlingPath <string> [-CreateScopeForErrors]
+ [-AllowStatusCode404Response] [<CommonParameters>]
 ```
 
 ### CodeFilePath
 
 ```powershell
-Enable-KrExceptionHandling -CodeFilePath <string> [-Server <KestrunHost>] [-CreateScopeForErrors]
+Enable-KrExceptionHandling -CodeFilePath <string> [-CreateScopeForErrors]
  [-AllowStatusCode404Response] [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>]
- [-ExtraImports <string[]>] [-PassThru] [<CommonParameters>]
+ [-ExtraImports <string[]>] [<CommonParameters>]
 ```
 
 ### Code
 
 ```powershell
-Enable-KrExceptionHandling -Code <string> -Language <ScriptLanguage> [-Server <KestrunHost>]
- [-CreateScopeForErrors] [-AllowStatusCode404Response] [-ExtraRefs <Assembly[]>]
- [-Arguments <hashtable>] [-ExtraImports <string[]>] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling -Code <string> -Language <ScriptLanguage> [-CreateScopeForErrors]
+ [-AllowStatusCode404Response] [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>]
+ [-ExtraImports <string[]>] [<CommonParameters>]
 ```
 
 ### ScriptBlock
 
 ```powershell
-Enable-KrExceptionHandling [-Server <KestrunHost>] [-CreateScopeForErrors]
- [-AllowStatusCode404Response] [-ScriptBlock <scriptblock>] [-ExtraRefs <Assembly[]>]
- [-Arguments <hashtable>] [-ExtraImports <string[]>] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling [-CreateScopeForErrors] [-AllowStatusCode404Response]
+ [-ScriptBlock <scriptblock>] [-ExtraRefs <Assembly[]>] [-Arguments <hashtable>]
+ [-ExtraImports <string[]>] [<CommonParameters>]
 ```
 
 ### LanguageOptions
 
 ```powershell
-Enable-KrExceptionHandling [-Server <KestrunHost>] [-CreateScopeForErrors]
- [-AllowStatusCode404Response] [-LanguageOptions <LanguageOptions>] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling [-CreateScopeForErrors] [-AllowStatusCode404Response]
+ [-LanguageOptions <LanguageOptions>] [<CommonParameters>]
 ```
 
 ### Json
 
 ```powershell
-Enable-KrExceptionHandling [-Server <KestrunHost>] [-IncludeDetailsInDevelopment]
- [-UseProblemDetails] [-Compress] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling [-IncludeDetailsInDevelopment] [-UseProblemDetails] [-Compress]
+ [<CommonParameters>]
 ```
 
 ### DeveloperExceptionPage
 
 ```powershell
-Enable-KrExceptionHandling -DeveloperExceptionPage [-Server <KestrunHost>]
- [-SourceCodeLineCount <int>] [-SourceCodePath <string>] [-PassThru] [<CommonParameters>]
+Enable-KrExceptionHandling -DeveloperExceptionPage [-SourceCodeLineCount <int>]
+ [-SourceCodePath <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -467,27 +468,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, returns the modified Kestrun server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -ScriptBlock
 
 A PowerShell script block to execute for custom error handling logic.
@@ -502,27 +482,6 @@ ParameterSets:
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance (resolved if omitted via Resolve-KestrunServer).
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
@@ -602,19 +561,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### The modified Kestrun server instance if the PassThru parameter is specified; otherwise
-
-{{ Fill in the Description }}
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

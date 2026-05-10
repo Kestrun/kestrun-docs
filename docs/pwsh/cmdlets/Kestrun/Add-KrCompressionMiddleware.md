@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 12
 render_with_liquid: false
 title: Add-KrCompressionMiddleware
+---
 
 # Add-KrCompressionMiddleware
 
@@ -16,15 +17,14 @@ Adds response compression to the server.
 ### Items (Default)
 
 ```powershell
-Add-KrCompressionMiddleware [-Server <KestrunHost>] [-EnableForHttps] [-MimeTypes <string[]>]
- [-ExcludedMimeTypes <string[]>] [-DisableGzip] [-DisableBrotli] [-PassThru] [<CommonParameters>]
+Add-KrCompressionMiddleware [-EnableForHttps] [-MimeTypes <string[]>]
+ [-ExcludedMimeTypes <string[]>] [-DisableGzip] [-DisableBrotli] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrCompressionMiddleware -Options <ResponseCompressionOptions> [-Server <KestrunHost>]
- [-PassThru] [<CommonParameters>]
+Add-KrCompressionMiddleware -Options <ResponseCompressionOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -41,12 +41,12 @@ It can be used to compress responses using various algorithms like Gzip, Brotli,
 
 ### EXAMPLE 1
 
-$server | Add-KrCompressionMiddleware -EnableForHttps -MimeTypes 'text/plain', 'application/json' -ExcludedMimeTypes 'image/*' -Providers $gzipProvider, $brotliProvider
+Add-KrCompressionMiddleware -EnableForHttps -MimeTypes 'text/plain', 'application/json' -ExcludedMimeTypes 'image/*' -Providers $gzipProvider, $brotliProvider
 This example adds response compression to the server, enabling it for HTTPS requests, and specifying the MIME types to compress and exclude, as well as the compression providers to use.
 
 ### EXAMPLE 2
 
-$server | Add-KrCompressionMiddleware -Options $options
+Add-KrCompressionMiddleware -Options $options
 This example adds response compression to the server using the specified ResponseCompressionOptions.
 
 ## PARAMETERS
@@ -178,48 +178,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the response compression will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -229,15 +187,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

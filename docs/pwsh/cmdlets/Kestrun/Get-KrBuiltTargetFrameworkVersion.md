@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 101
 render_with_liquid: false
 title: Get-KrBuiltTargetFrameworkVersion
+---
 
 # Get-KrBuiltTargetFrameworkVersion
 

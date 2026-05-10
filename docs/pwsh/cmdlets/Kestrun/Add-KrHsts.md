@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 36
 render_with_liquid: false
 title: Add-KrHsts
+---
 
 # Add-KrHsts
 
@@ -16,14 +17,14 @@ Adds HTTP Strict Transport Security (HSTS) middleware to a Kestrun server instan
 ### Items (Default)
 
 ```powershell
-Add-KrHsts [-Server <KestrunHost>] [-MaxAgeDays <int>] [-IncludeSubDomains] [-Preload]
- [-ExcludedHosts <string[]>] [-AllowInDevelopment] [-PassThru] [<CommonParameters>]
+Add-KrHsts [-MaxAgeDays <int>] [-IncludeSubDomains] [-Preload] [-ExcludedHosts <string[]>]
+ [-AllowInDevelopment] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrHsts -Options <HstsOptions> [-Server <KestrunHost>] [-PassThru] [<CommonParameters>]
+Add-KrHsts -Options <HstsOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -178,30 +179,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If this switch is specified, the cmdlet will return the modified Kestrun server instance
-after adding the HSTS middleware.
-This allows for further chaining of cmdlets or inspection of
-the server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Preload
 
 A switch indicating whether the site should be included in browsers' HSTS preload list.
@@ -224,28 +201,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance to which the HSTS middleware will be added.
-If not specified, the cmdlet will attempt to use the current server context.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -255,15 +210,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

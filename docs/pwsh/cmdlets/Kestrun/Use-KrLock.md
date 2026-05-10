@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 226
 render_with_liquid: false
 title: Use-KrLock
+---
 
 # Use-KrLock
 

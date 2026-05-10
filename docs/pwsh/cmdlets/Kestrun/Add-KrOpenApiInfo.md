@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 54
 render_with_liquid: false
 title: Add-KrOpenApiInfo
+---
 
 # Add-KrOpenApiInfo
 

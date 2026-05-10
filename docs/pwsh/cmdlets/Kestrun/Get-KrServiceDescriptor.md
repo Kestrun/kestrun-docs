@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 127
 render_with_liquid: false
 title: Get-KrServiceDescriptor
+---
 
 # Get-KrServiceDescriptor
 

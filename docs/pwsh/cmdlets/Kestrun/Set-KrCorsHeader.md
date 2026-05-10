@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 189
 render_with_liquid: false
 title: Set-KrCorsHeader
+---
 
 # Set-KrCorsHeader
 

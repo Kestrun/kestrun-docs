@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 35
 render_with_liquid: false
 title: Add-KrHostFiltering
+---
 
 # Add-KrHostFiltering
 
@@ -16,15 +17,14 @@ Adds Host Filtering middleware to a Kestrun server instance.
 ### Items (Default)
 
 ```powershell
-Add-KrHostFiltering [-Server <KestrunHost>] [-AllowedHosts <string[]>] [-NotAllowEmptyHosts]
- [-ExcludeFailureMessage] [-PassThru] [<CommonParameters>]
+Add-KrHostFiltering [-AllowedHosts <string[]>] [-NotAllowEmptyHosts] [-ExcludeFailureMessage]
+ [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrHostFiltering -Options <HostFilteringOptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrHostFiltering -Options <HostFilteringOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -150,52 +150,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If this switch is specified, the cmdlet will return the modified Kestrun server instance
-after adding the Host Filtering middleware.
-This allows for further chaining of cmdlets or inspection of
-the server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Server
-
-The Kestrun server instance to which the Host Filtering middleware will be added.
-If not specified, the cmdlet will attempt to use the current Kestrun server instance.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -205,15 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

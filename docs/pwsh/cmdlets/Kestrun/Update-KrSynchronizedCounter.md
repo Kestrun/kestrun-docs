@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 225
 render_with_liquid: false
 title: Update-KrSynchronizedCounter
+---
 
 # Update-KrSynchronizedCounter
 

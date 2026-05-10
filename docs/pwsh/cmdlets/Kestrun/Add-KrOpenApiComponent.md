@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 50
 render_with_liquid: false
 title: Add-KrOpenApiComponent
+---
 
 # Add-KrOpenApiComponent
 

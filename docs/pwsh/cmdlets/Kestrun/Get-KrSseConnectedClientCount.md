@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 134
 render_with_liquid: false
 title: Get-KrSseConnectedClientCount
+---
 
 # Get-KrSseConnectedClientCount
 

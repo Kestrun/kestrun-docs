@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 206
 render_with_liquid: false
 title: Set-KrSessionInt32
+---
 
 # Set-KrSessionInt32
 

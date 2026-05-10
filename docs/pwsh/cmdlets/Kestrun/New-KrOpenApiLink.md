@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 161
 render_with_liquid: false
 title: New-KrOpenApiLink
+---
 
 # New-KrOpenApiLink
 

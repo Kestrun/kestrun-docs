@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 26
 render_with_liquid: false
 title: Add-KrFileServerMiddleware
+---
 
 # Add-KrFileServerMiddleware
 
@@ -16,21 +17,20 @@ Registers a file server to serve static files from a specified path.
 ### Items (Default)
 
 ```powershell
-Add-KrFileServerMiddleware [-Server <KestrunHost>] [-RootPath <string>] [-RequestPath <string>]
+Add-KrFileServerMiddleware [-RootPath <string>] [-RequestPath <string>]
  [-HttpsCompression <HttpsCompressionMode>] [-ServeUnknownFileTypes] [-DefaultContentType <string>]
  [-EnableDirectoryBrowsing] [-RedirectToAppendTrailingSlash] [-ContentTypeMap <hashtable>]
  [-NoCache] [-NoStore] [-MaxAge <int>] [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>]
  [-MinFresh <int>] [-NoTransform] [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate]
- [-ProxyRevalidate] [-PassThru] [<CommonParameters>]
+ [-ProxyRevalidate] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrFileServerMiddleware -Options <FileServerOptions> [-Server <KestrunHost>] [-NoCache]
- [-NoStore] [-MaxAge <int>] [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>]
- [-MinFresh <int>] [-NoTransform] [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate]
- [-ProxyRevalidate] [-PassThru] [<CommonParameters>]
+Add-KrFileServerMiddleware -Options <FileServerOptions> [-NoCache] [-NoStore] [-MaxAge <int>]
+ [-SharedMaxAge <int>] [-MaxStale] [-MaxStaleLimit <int>] [-MinFresh <int>] [-NoTransform]
+ [-OnlyIfCached] [-Public] [-Private] [-MustRevalidate] [-ProxyRevalidate] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -47,13 +47,13 @@ It can be used to serve files like images, stylesheets, and scripts.
 
 ### EXAMPLE 1
 
-$server | Add-KrFileServerMiddleware -RequestPath '/files' -EnableDirectoryBrowsing
+Add-KrFileServerMiddleware -RequestPath '/files' -EnableDirectoryBrowsing
 This example adds a file server to the server for the path '/files', enabling directory browsing.
 The file server will use the default options for serving static files.
 
 ### EXAMPLE 2
 
-$server | Add-KrFileServerMiddleware -Options $options
+Add-KrFileServerMiddleware -Options $options
 This example adds a file server to the server using the specified FileServerOptions.
 
 ## PARAMETERS
@@ -353,27 +353,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet will return the modified server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Private
 
 If specified, adds a 'private' directive to the Cache-Control header.
@@ -500,27 +479,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance to which the file server will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -ServeUnknownFileTypes
 
 If specified, allows serving files with unknown MIME types.
@@ -573,15 +531,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

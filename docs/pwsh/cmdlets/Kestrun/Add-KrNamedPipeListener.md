@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 48
 render_with_liquid: false
 title: Add-KrNamedPipeListener
+---
 
 # Add-KrNamedPipeListener
 

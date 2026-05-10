@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 76
 render_with_liquid: false
 title: Add-KrSinkSyslogUdp
+---
 
 # Add-KrSinkSyslogUdp
 

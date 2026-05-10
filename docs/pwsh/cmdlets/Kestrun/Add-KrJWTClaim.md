@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 41
 render_with_liquid: false
 title: Add-KrJWTClaim
+---
 
 # Add-KrJWTClaim
 

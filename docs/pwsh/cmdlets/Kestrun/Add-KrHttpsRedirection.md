@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 38
 render_with_liquid: false
 title: Add-KrHttpsRedirection
+---
 
 # Add-KrHttpsRedirection
 
@@ -16,15 +17,13 @@ Adds HTTPS redirection middleware to the Kestrun server.
 ### Items (Default)
 
 ```powershell
-Add-KrHttpsRedirection [-Server <KestrunHost>] [-RedirectStatusCode <int>] [-HttpsPort <int>]
- [-PassThru] [<CommonParameters>]
+Add-KrHttpsRedirection [-RedirectStatusCode <int>] [-HttpsPort <int>] [<CommonParameters>]
 ```
 
 ### Options
 
 ```powershell
-Add-KrHttpsRedirection -Options <HttpsRedirectionOptions> [-Server <KestrunHost>] [-PassThru]
- [<CommonParameters>]
+Add-KrHttpsRedirection -Options <HttpsRedirectionOptions> [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -101,27 +100,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, the cmdlet returns the modified Kestrun server instance.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -RedirectStatusCode
 
 The HTTP status code to use for redirection.
@@ -145,27 +123,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance to which the HTTPS redirection middleware will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
@@ -175,15 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 

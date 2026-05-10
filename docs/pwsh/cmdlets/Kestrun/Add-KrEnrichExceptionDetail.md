@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 20
 render_with_liquid: false
 title: Add-KrEnrichExceptionDetail
+---
 
 # Add-KrEnrichExceptionDetail
 

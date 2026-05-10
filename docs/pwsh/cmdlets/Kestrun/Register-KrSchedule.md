@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 176
 render_with_liquid: false
 title: Register-KrSchedule
+---
 
 # Register-KrSchedule
 

@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 49
 render_with_liquid: false
 title: Add-KrOAuth2Authentication
+---
 
 # Add-KrOAuth2Authentication
 

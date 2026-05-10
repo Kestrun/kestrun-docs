@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 31
 render_with_liquid: false
 title: Add-KrHealthEndpoint
+---
 
 # Add-KrHealthEndpoint
 

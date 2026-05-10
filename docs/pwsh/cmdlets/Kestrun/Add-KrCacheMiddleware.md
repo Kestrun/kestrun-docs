@@ -4,6 +4,7 @@ parent: PowerShell Cmdlets
 nav_order: 7
 render_with_liquid: false
 title: Add-KrCacheMiddleware
+---
 
 # Add-KrCacheMiddleware
 
@@ -16,10 +17,10 @@ Adds response caching to the Kestrun server.
 ### __AllParameterSets
 
 ```powershell
-Add-KrCacheMiddleware [[-Server] <KestrunHost>] [[-SizeLimit] <long>] [[-MaximumBodySize] <long>]
- [[-MaxAge] <int>] [[-SharedMaxAge] <int>] [[-MaxStaleLimit] <int>] [[-MinFresh] <int>]
- [-UseCaseSensitivePaths] [-NoCache] [-NoStore] [-MaxStale] [-NoTransform] [-OnlyIfCached] [-Public]
- [-Private] [-MustRevalidate] [-ProxyRevalidate] [-PassThru] [<CommonParameters>]
+Add-KrCacheMiddleware [[-SizeLimit] <long>] [[-MaximumBodySize] <long>] [[-MaxAge] <int>]
+ [[-SharedMaxAge] <int>] [[-MaxStaleLimit] <int>] [[-MinFresh] <int>] [-UseCaseSensitivePaths]
+ [-NoCache] [-NoStore] [-MaxStale] [-NoTransform] [-OnlyIfCached] [-Public] [-Private]
+ [-MustRevalidate] [-ProxyRevalidate] [<CommonParameters>]
 ```
 
 ## ALIASES
@@ -36,13 +37,13 @@ It can be used to improve performance by caching responses for frequently reques
 
 ### EXAMPLE 1
 
-$server | Add-KrCacheMiddleware -SizeLimit 10485760 -MaximumBody 65536 -UseCaseSensitivePaths
+Add-KrCacheMiddleware -SizeLimit 10485760 -MaximumBody 65536 -UseCaseSensitivePaths
 This example adds response caching to the server with a size limit of 10MB, a maximum body size of 64KB,
 and enables case-sensitive paths.
 
 ### EXAMPLE 2
 
-$server | Add-KrCacheMiddleware
+Add-KrCacheMiddleware
 This example adds response caching to the server with default settings.
 
 ## PARAMETERS
@@ -58,7 +59,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 3
+  Position: 2
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -81,7 +82,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 2
+  Position: 1
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -123,7 +124,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 5
+  Position: 4
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -144,7 +145,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 6
+  Position: 5
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -259,27 +260,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -PassThru
-
-If specified, returns the modified server instance after adding response caching.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-DefaultValue: False
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -Private
 
 If specified, the 'private' directive will be added to the Cache-Control header.
@@ -343,27 +323,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -Server
-
-The Kestrun server instance to which response caching will be added.
-
-```yaml
-Type: Kestrun.Hosting.KestrunHost
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: (All)
-  Position: 0
-  IsRequired: false
-  ValueFromPipeline: true
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -SharedMaxAge
 
 If specified, sets the 's-maxage' directive in seconds for the Cache-Control header
@@ -376,7 +335,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 4
+  Position: 3
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -399,7 +358,7 @@ SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: 1
+  Position: 0
   IsRequired: false
   ValueFromPipeline: false
   ValueFromPipelineByPropertyName: false
@@ -439,15 +398,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
-
 ## OUTPUTS
-
-### Kestrun.Hosting.KestrunHost
-
-{{ Fill in the Description }}
 
 ## NOTES
 
